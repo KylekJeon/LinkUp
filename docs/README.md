@@ -1,6 +1,6 @@
 # LinkUp: A MeetUp Clone
 
-[LinkUp Link]("https://linkupapplication.herokuapp.com/#/welcome")
+[LinkUp Link]("https://linkupapplication.herokuapp.com")
 
 [MeetUp Link]("meetup.com")
 
@@ -20,11 +20,11 @@ LinkUp is a web application based on MeetUp, built by using Ruby on Rails for th
 
 ## Design Docs
 
-- [Wireframes](/wireframes)
-- [React components](/component-hierarchy.md)
-- [API endpoints](/api-endpoints.md)
-- [DB schema](/schema.md)
-- [Sample State](/sample-state.md)
+- [Wireframes](wireframes)
+- [React components](component-hierarchy.md)
+- [API endpoints](api-endpoints.md)
+- [DB schema](schema.md)
+- [Sample State](sample-state.md)
 
 ## Implementation Timeline
 
