@@ -1,6 +1,6 @@
 # LinkUp: A MeetUp Clone
 
-[LinkUp Link]("https://linkupapplication.herokuapp.com")
+[LinkUp Link]("linkupapplication.herokuapp.com")
 
 [MeetUp Link]("meetup.com")
 
