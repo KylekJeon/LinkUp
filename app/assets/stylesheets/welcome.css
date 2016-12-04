@@ -13,10 +13,11 @@
 }
 
 .welcome-header-heading-link {
-  padding: 10px 5px;
+  padding-top: 15px;
   font-family: 'Pacifico', cursive;
   color: #049287;
   font-size: 26px;
+  margin-left: 20px;
 }
 
 .welcome-header-heading-logo {
@@ -29,6 +30,8 @@
 .welcome-header-list {
   display: flex;
   justify-content: space-between;
+  margin-right: 20px;
+  padding-top: 5px;
 }
 
 .welcome-header-list > li {
@@ -41,7 +44,7 @@
   background-color: #3fe0d0;
   border: 1px solid #3fe0d0;
   border-radius: 5px;
-  color: #E1E6E8;
+  color: white;
   font-family: sans-serif;
 }
 
