@@ -128,8 +128,8 @@
 }
 
 .explore img {
-  width: 200px;
-  height: 150px;
+  width: 150px;
+  height: 115px;
   padding: 20px 50px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -147,14 +147,14 @@
 .explore-first-row {
   display: flex;
   justify-content: center;;
-  width: 1200px;
+  width: 900px;
   margin: 10px auto;
 }
 
 .explore-second-row {
   display: flex;
   justify-content: center;
-  width: 1200px;
+  width: 900px;
   margin: 60px auto;
 }
 

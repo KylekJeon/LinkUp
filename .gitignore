@@ -18,3 +18,5 @@
 node_modules/
 .bundle.js
 .bundle.map.js
+npm-debug.log
+.DS_Store

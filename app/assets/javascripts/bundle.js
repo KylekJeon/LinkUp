@@ -39831,23 +39831,23 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _welcome = __webpack_require__(289);
+	var _welcome = __webpack_require__(270);
 	
 	var _welcome2 = _interopRequireDefault(_welcome);
 	
-	var _front = __webpack_require__(285);
+	var _front = __webpack_require__(283);
 	
 	var _front2 = _interopRequireDefault(_front);
 	
-	var _welcome_page = __webpack_require__(290);
+	var _welcome_page = __webpack_require__(286);
 	
 	var _welcome_page2 = _interopRequireDefault(_welcome_page);
 	
-	var _login_form_container = __webpack_require__(291);
+	var _login_form_container = __webpack_require__(287);
 	
 	var _login_form_container2 = _interopRequireDefault(_login_form_container);
 	
-	var _signup_form_container = __webpack_require__(293);
+	var _signup_form_container = __webpack_require__(289);
 	
 	var _signup_form_container2 = _interopRequireDefault(_signup_form_container);
 	
@@ -45439,96 +45439,126 @@
 	  value: true
 	});
 	
-	var _reactRedux = __webpack_require__(207);
-	
-	var _greeting = __webpack_require__(271);
-	
-	var _greeting2 = _interopRequireDefault(_greeting);
-	
-	var _session_actions = __webpack_require__(204);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    currentUser: state.session.currentUser
-	  };
-	};
-	
-	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	  return { logout: function logout() {
-	      return dispatch((0, _session_actions.logout)());
-	    } };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_greeting2.default);
-
-/***/ },
-/* 271 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
 	var _reactRouter = __webpack_require__(216);
 	
+	var _reactPlayer = __webpack_require__(271);
+	
+	var _reactPlayer2 = _interopRequireDefault(_reactPlayer);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Greeting = function Greeting(_ref) {
-	  var currentUser = _ref.currentUser,
-	      logout = _ref.logout;
-	
-	
-	  var content1 = void 0;
-	  var content2 = void 0;
-	
-	  if (currentUser !== null) {
-	    content1 = _react2.default.createElement(
-	      'h3',
-	      null,
-	      'Welcome ',
-	      currentUser.username,
-	      '!'
-	    );
-	    content2 = _react2.default.createElement(
-	      'button',
-	      { onClick: logout },
-	      'Logout'
-	    );
-	  } else {
-	    content1 = _react2.default.createElement(
-	      _reactRouter.Link,
-	      { to: '/signup' },
-	      'Sign Up'
-	    );
-	    content2 = _react2.default.createElement(
-	      _reactRouter.Link,
-	      { to: '/login' },
-	      'Log In'
-	    );
-	  }
-	
+	var Welcome = function Welcome(props) {
 	  return _react2.default.createElement(
 	    'section',
-	    { className: 'current_user' },
-	    content1,
-	    _react2.default.createElement('br', null),
-	    content2
+	    { className: 'welcome-section' },
+	    _react2.default.createElement(
+	      'header',
+	      { className: 'welcome-header' },
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/', className: 'welcome-header-heading-link welcome-header-child' },
+	        'Create a LinkUp'
+	      ),
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/', className: 'welcome-header-heading-logo' },
+	        'LinkUp'
+	      ),
+	      _react2.default.createElement(
+	        'ul',
+	        { className: 'welcome-header-list welcome-header-child' },
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/welcome/login', className: 'welcome-header-nav-login' },
+	            'Log In'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/welcome/signup', className: 'welcome-header-nav-signup' },
+	            'Sign Up'
+	          )
+	        )
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'welcome-header-body' },
+	      props.children
+	    ),
+	    _react2.default.createElement(
+	      'footer',
+	      { className: 'welcome-footer' },
+	      _react2.default.createElement(
+	        'section',
+	        { className: 'welcome-footer-section' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'welcome-footer-section-top' },
+	          _react2.default.createElement(
+	            'pre',
+	            { className: 'welcome-footer-startgroup' },
+	            'Start a LinkUp Group'
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/welcome/login', className: 'welcome-footer-section-login' },
+	            'Log in'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'welcome-footer-section-bottom' },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '#', className: 'welcome-footer-section-login' },
+	            'Home'
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '#', className: 'welcome-footer-section-login' },
+	            'About Us'
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '#', className: 'welcome-footer-section-login' },
+	            'Contact'
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '#', className: 'welcome-footer-section-login' },
+	            'Location'
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '#', className: 'welcome-footer-section-login' },
+	            'Terms'
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '#', className: 'welcome-footer-section-login' },
+	            'API'
+	          )
+	        )
+	      )
+	    )
 	  );
 	};
 	
-	exports.default = Greeting;
+	exports.default = Welcome;
 
 /***/ },
-/* 272 */,
-/* 273 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45545,29 +45575,29 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _props3 = __webpack_require__(274);
+	var _props3 = __webpack_require__(272);
 	
-	var _YouTube = __webpack_require__(275);
+	var _YouTube = __webpack_require__(273);
 	
 	var _YouTube2 = _interopRequireDefault(_YouTube);
 	
-	var _SoundCloud = __webpack_require__(279);
+	var _SoundCloud = __webpack_require__(277);
 	
 	var _SoundCloud2 = _interopRequireDefault(_SoundCloud);
 	
-	var _Vimeo = __webpack_require__(282);
+	var _Vimeo = __webpack_require__(280);
 	
 	var _Vimeo2 = _interopRequireDefault(_Vimeo);
 	
-	var _FilePlayer = __webpack_require__(281);
+	var _FilePlayer = __webpack_require__(279);
 	
 	var _FilePlayer2 = _interopRequireDefault(_FilePlayer);
 	
-	var _Streamable = __webpack_require__(283);
+	var _Streamable = __webpack_require__(281);
 	
 	var _Streamable2 = _interopRequireDefault(_Streamable);
 	
-	var _Vidme = __webpack_require__(284);
+	var _Vidme = __webpack_require__(282);
 	
 	var _Vidme2 = _interopRequireDefault(_Vidme);
 	
@@ -45717,7 +45747,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 274 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45810,7 +45840,7 @@
 	};
 
 /***/ },
-/* 275 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45829,15 +45859,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _loadScript = __webpack_require__(276);
+	var _loadScript = __webpack_require__(274);
 	
 	var _loadScript2 = _interopRequireDefault(_loadScript);
 	
-	var _Base2 = __webpack_require__(277);
+	var _Base2 = __webpack_require__(275);
 	
 	var _Base3 = _interopRequireDefault(_Base2);
 	
-	var _utils = __webpack_require__(278);
+	var _utils = __webpack_require__(276);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
@@ -46060,7 +46090,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 276 */
+/* 274 */
 /***/ function(module, exports) {
 
 	
@@ -46131,7 +46161,7 @@
 
 
 /***/ },
-/* 277 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46144,7 +46174,7 @@
 	
 	var _react = __webpack_require__(1);
 	
-	var _props2 = __webpack_require__(274);
+	var _props2 = __webpack_require__(272);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -46284,7 +46314,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 278 */
+/* 276 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -46336,7 +46366,7 @@
 	}
 
 /***/ },
-/* 279 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46353,15 +46383,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _fetchJsonp = __webpack_require__(280);
+	var _fetchJsonp = __webpack_require__(278);
 	
 	var _fetchJsonp2 = _interopRequireDefault(_fetchJsonp);
 	
-	var _FilePlayer2 = __webpack_require__(281);
+	var _FilePlayer2 = __webpack_require__(279);
 	
 	var _FilePlayer3 = _interopRequireDefault(_FilePlayer2);
 	
-	var _props3 = __webpack_require__(274);
+	var _props3 = __webpack_require__(272);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
@@ -46488,7 +46518,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 280 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
@@ -46601,7 +46631,7 @@
 	});
 
 /***/ },
-/* 281 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46620,7 +46650,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Base2 = __webpack_require__(277);
+	var _Base2 = __webpack_require__(275);
 	
 	var _Base3 = _interopRequireDefault(_Base2);
 	
@@ -46777,7 +46807,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 282 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46798,7 +46828,7 @@
 	
 	var _queryString = __webpack_require__(247);
 	
-	var _Base2 = __webpack_require__(277);
+	var _Base2 = __webpack_require__(275);
 	
 	var _Base3 = _interopRequireDefault(_Base2);
 	
@@ -46985,7 +47015,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 283 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46996,7 +47026,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _FilePlayer2 = __webpack_require__(281);
+	var _FilePlayer2 = __webpack_require__(279);
 	
 	var _FilePlayer3 = _interopRequireDefault(_FilePlayer2);
 	
@@ -47068,7 +47098,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 284 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47079,7 +47109,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _FilePlayer2 = __webpack_require__(281);
+	var _FilePlayer2 = __webpack_require__(279);
 	
 	var _FilePlayer3 = _interopRequireDefault(_FilePlayer2);
 	
@@ -47151,7 +47181,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 285 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47166,7 +47196,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _greeting_container = __webpack_require__(270);
+	var _greeting_container = __webpack_require__(284);
 	
 	var _greeting_container2 = _interopRequireDefault(_greeting_container);
 	
@@ -47226,10 +47256,41 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
 
 /***/ },
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _greeting = __webpack_require__(285);
+	
+	var _greeting2 = _interopRequireDefault(_greeting);
+	
+	var _session_actions = __webpack_require__(204);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    currentUser: state.session.currentUser
+	  };
+	};
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return { logout: function logout() {
+	      return dispatch((0, _session_actions.logout)());
+	    } };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_greeting2.default);
+
+/***/ },
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47244,120 +47305,55 @@
 	
 	var _reactRouter = __webpack_require__(216);
 	
-	var _reactPlayer = __webpack_require__(273);
-	
-	var _reactPlayer2 = _interopRequireDefault(_reactPlayer);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Welcome = function Welcome(props) {
+	var Greeting = function Greeting(_ref) {
+	  var currentUser = _ref.currentUser,
+	      logout = _ref.logout;
+	
+	
+	  var content1 = void 0;
+	  var content2 = void 0;
+	
+	  if (currentUser !== null) {
+	    content1 = _react2.default.createElement(
+	      'h3',
+	      null,
+	      'Welcome ',
+	      currentUser.username,
+	      '!'
+	    );
+	    content2 = _react2.default.createElement(
+	      'button',
+	      { onClick: logout },
+	      'Logout'
+	    );
+	  } else {
+	    content1 = _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/signup' },
+	      'Sign Up'
+	    );
+	    content2 = _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: '/login' },
+	      'Log In'
+	    );
+	  }
+	
 	  return _react2.default.createElement(
 	    'section',
-	    { className: 'welcome-section' },
-	    _react2.default.createElement(
-	      'header',
-	      { className: 'welcome-header' },
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/', className: 'welcome-header-heading-link welcome-header-child' },
-	        'Create a LinkUp'
-	      ),
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/', className: 'welcome-header-heading-logo' },
-	        'LinkUp'
-	      ),
-	      _react2.default.createElement(
-	        'ul',
-	        { className: 'welcome-header-list welcome-header-child' },
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/welcome/login', className: 'welcome-header-nav-login' },
-	            'Log In'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/welcome/signup', className: 'welcome-header-nav-signup' },
-	            'Sign Up'
-	          )
-	        )
-	      )
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'welcome-header-body' },
-	      props.children
-	    ),
-	    _react2.default.createElement(
-	      'footer',
-	      { className: 'welcome-footer' },
-	      _react2.default.createElement(
-	        'section',
-	        { className: 'welcome-footer-section' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'welcome-footer-section-top' },
-	          _react2.default.createElement(
-	            'pre',
-	            { className: 'welcome-footer-startgroup' },
-	            'Start a LinkUp Group'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/welcome/login', className: 'welcome-footer-section-login' },
-	            'Log in'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'welcome-footer-section-bottom' },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'Home'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'About Us'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'Contact'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'Location'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'Terms'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'API'
-	          )
-	        )
-	      )
-	    )
+	    { className: 'current_user' },
+	    content1,
+	    _react2.default.createElement('br', null),
+	    content2
 	  );
 	};
 	
-	exports.default = Welcome;
+	exports.default = Greeting;
 
 /***/ },
-/* 290 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47370,7 +47366,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactPlayer = __webpack_require__(273);
+	var _reactPlayer = __webpack_require__(271);
 	
 	var _reactPlayer2 = _interopRequireDefault(_reactPlayer);
 	
@@ -47492,7 +47488,7 @@
 	exports.default = WelcomePage;
 
 /***/ },
-/* 291 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47503,7 +47499,7 @@
 	
 	var _reactRedux = __webpack_require__(207);
 	
-	var _login_form = __webpack_require__(292);
+	var _login_form = __webpack_require__(288);
 	
 	var _login_form2 = _interopRequireDefault(_login_form);
 	
@@ -47529,7 +47525,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_login_form2.default);
 
 /***/ },
-/* 292 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47661,7 +47657,7 @@
 	exports.default = LoginForm;
 
 /***/ },
-/* 293 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47672,7 +47668,7 @@
 	
 	var _reactRedux = __webpack_require__(207);
 	
-	var _signup_form = __webpack_require__(294);
+	var _signup_form = __webpack_require__(290);
 	
 	var _signup_form2 = _interopRequireDefault(_signup_form);
 	
@@ -47698,7 +47694,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_signup_form2.default);
 
 /***/ },
-/* 294 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
