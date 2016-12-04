@@ -47389,7 +47389,103 @@
 	        frameborder: '0'
 	      })
 	    ),
-	    _react2.default.createElement('div', { className: 'explore' })
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'explore' },
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'explore-header' },
+	        'Explore'
+	      ),
+	      _react2.default.createElement(
+	        'section',
+	        { className: 'explore-first-row' },
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement('img', { className: 'pic-1', src: "http://purewellnesschicago.com/index_files/rvm1.jpg" }),
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            'Sports'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement('img', { className: 'pic-2', src: "http://www.clipartkid.com/images/77/small-music-notes-clipart-fRzIRF-clipart.png" }),
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            'Music'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement('img', { className: 'pic-3', src: "http://nutritionfacts.org/wp-content/themes/NutritionFacts/img/heart.png" }),
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            'Health & Fitness'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement('img', { className: 'pic-4', src: "http://www.pngmart.com/files/1/Outdoor-Sports-Activities-PNG-Transparent-Image.png" }),
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            'Outdoor Adventures'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'section',
+	        { className: 'explore-second-row' },
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement('img', { className: 'pic-5', src: "http://masterpiecemanager.com/wp-content/uploads/2012/07/art-management.png" }),
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            'Arts'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement('img', { className: 'pic-6', src: "http://www.zeinmarketing.co.uk/wp-content/uploads/2014/10/Social-Media-Banners-No-Background.png" }),
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            'Social'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement('img', { className: 'pic-7', src: "https://openclipart.org/image/2400px/svg_to_png/242209/Business-Meeting-No-Background.png" }),
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            'Career & Business'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement('img', { className: 'pic-8', src: "http://i.kinja-img.com/gawker-media/image/upload/s--tgQAbik9--/vdj8mhwn5kgsn5gmwnl5.png" }),
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            'Food & Drinks'
+	          )
+	        )
+	      )
+	    )
 	  );
 	};
 	
