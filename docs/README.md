@@ -20,11 +20,11 @@ LinkUp is a web application based on MeetUp, built by using Ruby on Rails for th
 
 ## Design Docs
 
-- [Wireframes](docs/wireframes)
-- [React components](docs/component-hierarchy.md)
-- [API endpoints](docs/api-endpoints.md)
-- [DB schema](docs/schema.md)
-- [Sample State](docs/sample-state.md)
+- [Wireframes](/wireframes)
+- [React components](/component-hierarchy.md)
+- [API endpoints](/api-endpoints.md)
+- [DB schema](/schema.md)
+- [Sample State](/sample-state.md)
 
 ## Implementation Timeline
 
