@@ -13,7 +13,7 @@
 
 **GroupsContainer**
   - groups page
-    + groupindex
+    + eventContainer
   - group creation page
 
 **EventsContainer**
@@ -41,5 +41,6 @@
 |"/welcome/signup"|"SignUpFormContainer"|
 |"/group"|"GroupContainer"|
 |"/group/create"|"GroupFormContainer"|
-|"/event"|"EventContainer"|
-|"/event/create"|"EventFormContainer"|
+|"/group/:groupId"|"GroupIndexContainer"|
+|"/group/:groupId/event/:eventId"|"EventContainer"|
+|"/group/:groupId/event/create"|"EventFormContainer"|

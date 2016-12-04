@@ -32,10 +32,10 @@
 
 - `GET /api/events`
   - ordered by date
-- `POST /api/events`
-- `GET /api/events/:id`
-- `DELETE /api/events/:id`
-- `PATCH /api/events/:id`
+- `POST /api/groups/:groupId/events`
+- `GET /api/groups/:groupId/events/:id`
+- `DELETE /api/events/groups/:groupId/:id`
+- `PATCH /api/events/groups/:groupId/:id`
 
 ### Calendars
 
