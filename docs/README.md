@@ -1,8 +1,8 @@
 # LinkUp: A MeetUp Clone
 
-[LinkUp Link]("linkupapplication.herokuapp.com")
+[LinkUp Link](linkupapplication.herokuapp.com)
 
-[MeetUp Link]("meetup.com")
+[MeetUp Link](meetup.com)
 
 ## Minimum Viable Product
 
