@@ -1,10 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 import App from './app';
-import Welcome from './welcome';
-import Front from './front'
-import SessionFormContainer from './session/session_form_container';
+import Welcome from './welcome/welcome';
+import Front from './front';
+import WelcomePage from './welcome/welcome_page';
+import LoginFormContainer from './session/login_form_container';
+import SignUpFormContainer from './session/signup_form_container';
 
 
 const Root = ({ store }) => {
@@ -26,11 +28,14 @@ const Root = ({ store }) => {
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path='/' component={ Front }>
-          <IndexRoute component={ App } onEnter={_ensureLoggedIn} />
-          <Route path='welcome' onEnter={_redirectIfLoggedIn} component={ Welcome } />
-            <Route path='welcome/login' component={ SessionFormContainer }/>
-            <Route path='welcome/signup' component={ SessionFormContainer }/>
+        <Route path='/' component={ App }>
+          <IndexRedirect to='/front' />
+          <Route path='front' component={ Front } onEnter={_ensureLoggedIn} />
+          <Route path='welcome' onEnter={_redirectIfLoggedIn} component={ Welcome } >
+            <IndexRoute component={ WelcomePage } />
+            <Route path='login' component={ LoginFormContainer }/>
+            <Route path='signup' component={ SignUpFormContainer }/>
+          </Route>
         </Route>
       </Router>
     </Provider>

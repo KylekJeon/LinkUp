@@ -10,14 +10,16 @@
   background: white;
   position: relative;
   z-index: 1;
+  border-bottom: 1px solid #ccc;
 }
 
 .welcome-header-heading-link {
   padding-top: 15px;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Courgette', cursive;
   color: #049287;
-  font-size: 26px;
+  font-size: 20px;
   margin-left: 20px;
+  padding-top: 25px;
 }
 
 .welcome-header-heading-logo {
@@ -83,4 +85,40 @@
   .video-wrapper {
     height: 300px;
   }
+}
+
+.welcome-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  background: black;
+  color: white;
+}
+
+.welcome-footer-section {
+  width: 900px;
+  overflow: hidden;
+}
+
+.welcome-footer-section-top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.welcome-footer-section-login {
+  display: block;
+  padding-top: 17px;
+  font-family: arial;
+}
+
+.welcome-footer-startgroup {
+  font-family: arial;
+}
+
+.welcome-footer-section-bottom {
+  display: flex;
+  justify-content: space-between;
 }
