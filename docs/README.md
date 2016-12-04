@@ -8,7 +8,7 @@
 
 LinkUp is a web application based on MeetUp, built by using Ruby on Rails for the backend, and React/Redux on the frontend. By the end of week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data, and sufficient CSS styling:
 
-- [ ] Hosting on heroku
+- [ ] Hosting on Heroku
 - [ ] Production README
 - [ ] New account creation, login, and guest/demo
 - [ ] Groups and joining groups
@@ -54,4 +54,4 @@ LinkUp is a web application based on MeetUp, built by using Ruby on Rails for th
 
 ### Phase 7: Bonus (1 day)
 
-**Objective:** Any additional bonus featuers
+**Objective:** Any additional bonus features
