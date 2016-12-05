@@ -1,0 +1,178 @@
+.front-header {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.front-header-heading-link {
+  padding-top: 15px;
+  font-family: 'Courgette', cursive;
+  color: #29a599;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 25px;
+}
+
+.front-header-heading-logo {
+  padding: 20px 5px;
+  font-family: 'Pacifico', cursive;
+  color: #29a599;
+  font-size: 36px;
+}
+
+.front-header-list {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+  padding-top: 5px;
+  width: 155px;
+  position: relative;
+  right: 30px;
+}
+
+.front-header-list > li {
+  display: inline-block;
+  padding: 27px 5px;
+}
+
+.front-header-list img {
+  width: 35px;
+  height: 35px;
+}
+
+.front-header-nav-message {
+  background-color: #3fe0d0;
+  border: 1px solid #3fe0d0;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.front-header-nav-notification {
+  background-color: #29a599;
+  border: 1px solid #29a599;
+  border-radius: 5px;
+  top: 10px;
+  display: inline-block;
+}
+
+.front-header-nav-profile {
+  background-color: #049287;
+  border: 1px solid #049287;
+  border-radius: 5px;
+  top: 10px;
+  display: inline-block;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.content-header {
+  height: 260px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #29a599
+}
+
+.content-header-box {
+  width: 950px;
+}
+
+.content-header-text {
+  overflow: hidden;
+  height: 60px;
+  width: 950px;
+  border-bottom: 1px solid white;
+}
+
+.content-header-text-header {
+  display: block;
+  border: 0;
+  margin-top: 30px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+.content-header-nextlinkup {
+  width: 650px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  float: left;
+}
+
+.content-header-nextlinkup > h3 {
+  font-size: 30px;
+  margin: 15px;
+}
+
+.content-header-nextlinkup > h4 {
+  font-size: 22px;
+  margin: 15px;
+}
+
+.content-header-nextlinkup > h5 {
+  font-size: 16px;
+  margin: 15px;
+}
+
+.content-header-calendar-location {
+  width: 200px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  float: right;
+}
+
+.content-header-calendar-location > h3 {
+  font-size: 16px;
+}
+
+.front-header-nav-profile {
+  position: relative;
+  top: 0;
+}
+
+.front-header-nav-profile
+
+.front-header-profile-list {
+  display: none;
+  position: absolute;
+  width: 100px;
+  border-radius: 5px;
+  position: absolute;
+  left: -165px;
+  top: 60px;
+  height: 100px;
+  width: 200px;
+  background: #eee;
+  box-shadow: 1px 1px 1px 1px #aaa;
+}
+
+
+
+.front-header-profile-list > li {
+  padding: 7px;
+  border-bottom: 1px solid white;
+  color: #aaa;
+  border-radius: 5px;
+}
+
+.profile-show {
+  display: block;
+}
+
+.profile-show:before {
+  content: "";
+  display: none;
+  position: absolute;
+  border-bottom: 10px solid #eee;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: 50px;
+  left: 7px;
+  z-index: 1;
+}

@@ -96,3 +96,9 @@
   font-size: 20px;
   font-family: sans-serif;
 }
+
+.login-error {
+  text-align: center;
+  color: red;
+  padding-top: 15px;
+}

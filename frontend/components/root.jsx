@@ -2,8 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 import App from './app';
-import Welcome from './welcome/welcome';
-import Front from './front';
+import WelcomeContainer from './welcome/welcome_container';
+import FrontContainer from './front/front_container';
 import WelcomePage from './welcome/welcome_page';
 import LoginFormContainer from './session/login_form_container';
 import SignUpFormContainer from './session/signup_form_container';
@@ -30,8 +30,8 @@ const Root = ({ store }) => {
       <Router history={ hashHistory }>
         <Route path='/' component={ App }>
           <IndexRedirect to='/front' />
-          <Route path='front' component={ Front } onEnter={_ensureLoggedIn} />
-          <Route path='welcome' onEnter={_redirectIfLoggedIn} component={ Welcome } >
+          <Route path='front' component={ FrontContainer } onEnter={_ensureLoggedIn} />
+          <Route path='welcome' onEnter={_redirectIfLoggedIn} component={ WelcomeContainer } >
             <IndexRoute component={ WelcomePage } />
             <Route path='login' component={ LoginFormContainer }/>
             <Route path='signup' component={ SignUpFormContainer }/>

@@ -14,8 +14,8 @@
   font-family: sans-serif;
   text-align: center;
   font-size: 24px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 10px;
   background-color: #fafafa;
   width: 500px;
   margin: 0 auto;
@@ -41,7 +41,7 @@
 
 .signup-form {
   width: 500px;
-  height: 436px;
+  height: 490px;
   margin-top: 20px;
   left: 0;
   right: 0;
@@ -57,18 +57,14 @@
   display: block;
   margin: 10px 0;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   font-family: arial;
   font-weight: 500;
 }
 
-.signup-label:first-child {
-  margin-top: 20px;
-}
-
 .signup-label input {
   width: 400px;
-  height: 35px;
+  height: 25px;
   border: 2px solid #eee;
   border-radius: 5px;
   margin-top: 2px;
@@ -88,10 +84,16 @@
   border-radius: 5px;
   text-align: center;
   display: block;
-  margin: 50px auto;
+  margin: 30px auto;
   padding-left: 5px;
   background-color: #29a599;
   color: white;
   font-size: 20px;
   font-family: sans-serif;
+}
+
+.signup-error {
+  color: red;
+  text-align: center;
+  padding-top: 15px;
 }

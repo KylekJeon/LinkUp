@@ -22,7 +22,7 @@ export function login(user) {
   return (dispatch) => {
     return APIUtil.login(user).then(
       user => dispatch(receiveCurrentUser(user)),
-      err => dispatch(receiveErrors(err.responseJson))
+      err => dispatch(receiveErrors(err.responseJSON))
     );
   };
 }
@@ -31,7 +31,7 @@ export function signup(user) {
   return (dispatch) => {
     return APIUtil.signup(user).then(
       user => dispatch(receiveCurrentUser(user)),
-      err => dispatch(receiveErrors(err.responseJson))
+      err => dispatch(receiveErrors(err.responseJSON))
     );
   };
 }

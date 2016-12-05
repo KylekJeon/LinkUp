@@ -9,9 +9,9 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  first_name      :string           not null
+#  last_name       :string           not null
 #
-
-
 
 class User < ActiveRecord::Base
   after_initialize :ensure_session_token

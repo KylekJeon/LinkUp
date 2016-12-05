@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Top = ({ children }) => (
+const App = ({ children }) => (
   <div>
     { children }
   </div>
 );
 
-export default Top;
+export default App;

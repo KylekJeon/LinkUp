@@ -39754,7 +39754,7 @@
 	    return APIUtil.login(user).then(function (user) {
 	      return dispatch(receiveCurrentUser(user));
 	    }, function (err) {
-	      return dispatch(receiveErrors(err.responseJson));
+	      return dispatch(receiveErrors(err.responseJSON));
 	    });
 	  };
 	}
@@ -39764,7 +39764,7 @@
 	    return APIUtil.signup(user).then(function (user) {
 	      return dispatch(receiveCurrentUser(user));
 	    }, function (err) {
-	      return dispatch(receiveErrors(err.responseJson));
+	      return dispatch(receiveErrors(err.responseJSON));
 	    });
 	  };
 	}
@@ -39831,13 +39831,13 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _welcome = __webpack_require__(270);
+	var _welcome_container = __webpack_require__(291);
 	
-	var _welcome2 = _interopRequireDefault(_welcome);
+	var _welcome_container2 = _interopRequireDefault(_welcome_container);
 	
-	var _front = __webpack_require__(283);
+	var _front_container = __webpack_require__(293);
 	
-	var _front2 = _interopRequireDefault(_front);
+	var _front_container2 = _interopRequireDefault(_front_container);
 	
 	var _welcome_page = __webpack_require__(286);
 	
@@ -39881,10 +39881,10 @@
 	        _reactRouter.Route,
 	        { path: '/', component: _app2.default },
 	        _react2.default.createElement(_reactRouter.IndexRedirect, { to: '/front' }),
-	        _react2.default.createElement(_reactRouter.Route, { path: 'front', component: _front2.default, onEnter: _ensureLoggedIn }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'front', component: _front_container2.default, onEnter: _ensureLoggedIn }),
 	        _react2.default.createElement(
 	          _reactRouter.Route,
-	          { path: 'welcome', onEnter: _redirectIfLoggedIn, component: _welcome2.default },
+	          { path: 'welcome', onEnter: _redirectIfLoggedIn, component: _welcome_container2.default },
 	          _react2.default.createElement(_reactRouter.IndexRoute, { component: _welcome_page2.default }),
 	          _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _login_form_container2.default }),
 	          _react2.default.createElement(_reactRouter.Route, { path: 'signup', component: _signup_form_container2.default })
@@ -45418,7 +45418,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Top = function Top(_ref) {
+	var App = function App(_ref) {
 	  var children = _ref.children;
 	  return _react2.default.createElement(
 	    'div',
@@ -45427,7 +45427,7 @@
 	  );
 	};
 	
-	exports.default = Top;
+	exports.default = App;
 
 /***/ },
 /* 270 */
@@ -45438,6 +45438,8 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(1);
 	
@@ -45451,109 +45453,162 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Welcome = function Welcome(props) {
-	  return _react2.default.createElement(
-	    'section',
-	    { className: 'welcome-section' },
-	    _react2.default.createElement(
-	      'header',
-	      { className: 'welcome-header' },
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/', className: 'welcome-header-heading-link welcome-header-child' },
-	        'Create a LinkUp'
-	      ),
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/', className: 'welcome-header-heading-logo' },
-	        'LinkUp'
-	      ),
-	      _react2.default.createElement(
-	        'ul',
-	        { className: 'welcome-header-list welcome-header-child' },
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/welcome/login', className: 'welcome-header-nav-login' },
-	            'Log In'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/welcome/signup', className: 'welcome-header-nav-signup' },
-	            'Sign Up'
-	          )
-	        )
-	      )
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'welcome-header-body' },
-	      props.children
-	    ),
-	    _react2.default.createElement(
-	      'footer',
-	      { className: 'welcome-footer' },
-	      _react2.default.createElement(
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Welcome = function (_React$Component) {
+	  _inherits(Welcome, _React$Component);
+	
+	  function Welcome(props) {
+	    _classCallCheck(this, Welcome);
+	
+	    var _this = _possibleConstructorReturn(this, (Welcome.__proto__ || Object.getPrototypeOf(Welcome)).call(this, props));
+	
+	    _this.loginGuest = _this.loginGuest.bind(_this);
+	    _this.redirect = _this.redirect.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Welcome, [{
+	    key: 'redirect',
+	    value: function redirect() {
+	      this.props.router.push('/');
+	    }
+	  }, {
+	    key: 'loginGuest',
+	    value: function loginGuest(e) {
+	      var _this2 = this;
+	
+	      e.preventDefault();
+	      var user = {
+	        username: "Guest",
+	        password: "guest123"
+	      };
+	      this.props.login(user).then(function () {
+	        return _this2.redirect();
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
 	        'section',
-	        { className: 'welcome-footer-section' },
+	        { className: 'welcome-section' },
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'welcome-footer-section-top' },
+	          'header',
+	          { className: 'welcome-header' },
 	          _react2.default.createElement(
-	            'pre',
-	            { className: 'welcome-footer-startgroup' },
-	            'Start a LinkUp Group'
+	            _reactRouter.Link,
+	            { to: '/', className: 'welcome-header-heading-link welcome-header-child' },
+	            'Create a LinkUp'
 	          ),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/welcome/login', className: 'welcome-footer-section-login' },
-	            'Log in'
+	            { to: '/', className: 'welcome-header-heading-logo' },
+	            'LinkUp'
+	          ),
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'welcome-header-list welcome-header-child' },
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'button',
+	                { onClick: this.loginGuest, className: 'welcome-header-guest' },
+	                'Guest'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/welcome/login', className: 'welcome-header-nav-login' },
+	                'Log In'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/welcome/signup', className: 'welcome-header-nav-signup' },
+	                'Sign Up'
+	              )
+	            )
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'welcome-footer-section-bottom' },
+	          { className: 'welcome-header-body' },
+	          this.props.children
+	        ),
+	        _react2.default.createElement(
+	          'footer',
+	          { className: 'welcome-footer' },
 	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'Home'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'About Us'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'Contact'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'Location'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'Terms'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '#', className: 'welcome-footer-section-login' },
-	            'API'
+	            'section',
+	            { className: 'welcome-footer-section' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'welcome-footer-section-top' },
+	              _react2.default.createElement(
+	                'pre',
+	                { className: 'welcome-footer-startgroup' },
+	                'Start a LinkUp Group'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/welcome/login', className: 'welcome-footer-section-login' },
+	                'Log in'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'welcome-footer-section-bottom' },
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Home'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'About Us'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Contact'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Location'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Terms'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'API'
+	              )
+	            )
 	          )
 	        )
-	      )
-	    )
-	  );
-	};
+	      );
+	    }
+	  }]);
+	
+	  return Welcome;
+	}(_react2.default.Component);
 	
 	exports.default = Welcome;
 
@@ -47181,81 +47236,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 283 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _greeting_container = __webpack_require__(284);
-	
-	var _greeting_container2 = _interopRequireDefault(_greeting_container);
-	
-	var _reactRedux = __webpack_require__(207);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var App = function (_React$Component) {
-	  _inherits(App, _React$Component);
-	
-	  function App(props) {
-	    _classCallCheck(this, App);
-	
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
-	  }
-	
-	  _createClass(App, [{
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate() {
-	      if (this.props.currentUser === null) {
-	        this.props.router.push('/welcome');
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'LinkUp'
-	        ),
-	        _react2.default.createElement(_greeting_container2.default, null),
-	        this.props.children
-	      );
-	    }
-	  }]);
-	
-	  return App;
-	}(_react2.default.Component);
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    currentUser: state.session.currentUser
-	  };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
-
-/***/ },
+/* 283 */,
 /* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -47370,6 +47351,8 @@
 	
 	var _reactPlayer2 = _interopRequireDefault(_reactPlayer);
 	
+	var _reactRouter = __webpack_require__(216);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var WelcomePage = function WelcomePage(props) {
@@ -47399,7 +47382,11 @@
 	        _react2.default.createElement(
 	          'label',
 	          null,
-	          _react2.default.createElement('img', { className: 'pic-1', src: "http://purewellnesschicago.com/index_files/rvm1.jpg" }),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'welcome-pic-links' },
+	            _react2.default.createElement('img', { className: 'pic-1 welcome-pic', src: "http://purewellnesschicago.com/index_files/rvm1.jpg" })
+	          ),
 	          _react2.default.createElement(
 	            'pre',
 	            null,
@@ -47409,7 +47396,11 @@
 	        _react2.default.createElement(
 	          'label',
 	          null,
-	          _react2.default.createElement('img', { className: 'pic-2', src: "http://www.clipartkid.com/images/77/small-music-notes-clipart-fRzIRF-clipart.png" }),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'welcome-pic-links' },
+	            _react2.default.createElement('img', { className: 'pic-2 welcome-pic', src: "http://www.clipartkid.com/images/77/small-music-notes-clipart-fRzIRF-clipart.png" })
+	          ),
 	          _react2.default.createElement(
 	            'pre',
 	            null,
@@ -47419,7 +47410,11 @@
 	        _react2.default.createElement(
 	          'label',
 	          null,
-	          _react2.default.createElement('img', { className: 'pic-3', src: "http://nutritionfacts.org/wp-content/themes/NutritionFacts/img/heart.png" }),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'welcome-pic-links' },
+	            _react2.default.createElement('img', { className: 'pic-3 welcome-pic', src: "http://nutritionfacts.org/wp-content/themes/NutritionFacts/img/heart.png" })
+	          ),
 	          _react2.default.createElement(
 	            'pre',
 	            null,
@@ -47429,7 +47424,11 @@
 	        _react2.default.createElement(
 	          'label',
 	          null,
-	          _react2.default.createElement('img', { className: 'pic-4', src: "http://www.pngmart.com/files/1/Outdoor-Sports-Activities-PNG-Transparent-Image.png" }),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'welcome-pic-links' },
+	            _react2.default.createElement('img', { className: 'pic-4 welcome-pic', src: "http://www.pngmart.com/files/1/Outdoor-Sports-Activities-PNG-Transparent-Image.png" })
+	          ),
 	          _react2.default.createElement(
 	            'pre',
 	            null,
@@ -47443,7 +47442,11 @@
 	        _react2.default.createElement(
 	          'label',
 	          null,
-	          _react2.default.createElement('img', { className: 'pic-5', src: "http://masterpiecemanager.com/wp-content/uploads/2012/07/art-management.png" }),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'welcome-pic-links' },
+	            _react2.default.createElement('img', { className: 'pic-5 welcome-pic', src: "http://masterpiecemanager.com/wp-content/uploads/2012/07/art-management.png" })
+	          ),
 	          _react2.default.createElement(
 	            'pre',
 	            null,
@@ -47453,7 +47456,11 @@
 	        _react2.default.createElement(
 	          'label',
 	          null,
-	          _react2.default.createElement('img', { className: 'pic-6', src: "http://www.zeinmarketing.co.uk/wp-content/uploads/2014/10/Social-Media-Banners-No-Background.png" }),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'welcome-pic-links' },
+	            _react2.default.createElement('img', { className: 'pic-6 welcome-pic', src: "http://www.zeinmarketing.co.uk/wp-content/uploads/2014/10/Social-Media-Banners-No-Background.png" })
+	          ),
 	          _react2.default.createElement(
 	            'pre',
 	            null,
@@ -47463,7 +47470,11 @@
 	        _react2.default.createElement(
 	          'label',
 	          null,
-	          _react2.default.createElement('img', { className: 'pic-7', src: "https://openclipart.org/image/2400px/svg_to_png/242209/Business-Meeting-No-Background.png" }),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'welcome-pic-links' },
+	            _react2.default.createElement('img', { className: 'pic-7 welcome-pic', src: "https://openclipart.org/image/2400px/svg_to_png/242209/Business-Meeting-No-Background.png" })
+	          ),
 	          _react2.default.createElement(
 	            'pre',
 	            null,
@@ -47473,7 +47484,11 @@
 	        _react2.default.createElement(
 	          'label',
 	          null,
-	          _react2.default.createElement('img', { className: 'pic-8', src: "http://i.kinja-img.com/gawker-media/image/upload/s--tgQAbik9--/vdj8mhwn5kgsn5gmwnl5.png" }),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'welcome-pic-links' },
+	            _react2.default.createElement('img', { className: 'pic-8 welcome-pic', src: "http://i.kinja-img.com/gawker-media/image/upload/s--tgQAbik9--/vdj8mhwn5kgsn5gmwnl5.png" })
+	          ),
 	          _react2.default.createElement(
 	            'pre',
 	            null,
@@ -47567,6 +47582,7 @@
 	    _this.handleSubmit = _this.handleSubmit.bind(_this);
 	    _this.redirect = _this.redirect.bind(_this);
 	    _this.update = _this.update.bind(_this);
+	    _this.renderErrors = _this.renderErrors.bind(_this);
 	    return _this;
 	  }
 	
@@ -47594,6 +47610,21 @@
 	    key: 'redirect',
 	    value: function redirect() {
 	      this.props.router.push('/');
+	    }
+	  }, {
+	    key: 'renderErrors',
+	    value: function renderErrors() {
+	      return _react2.default.createElement(
+	        'ul',
+	        { className: 'login-error' },
+	        this.props.errors.map(function (error, i) {
+	          return _react2.default.createElement(
+	            'li',
+	            { key: 'error-' + i },
+	            error
+	          );
+	        })
+	      );
 	    }
 	  }, {
 	    key: 'render',
@@ -47624,6 +47655,7 @@
 	          _react2.default.createElement(
 	            'form',
 	            { className: 'login-form' },
+	            this.renderErrors(),
 	            _react2.default.createElement(
 	              'label',
 	              { className: 'login-label' },
@@ -47640,11 +47672,6 @@
 	              _react2.default.createElement('input', { type: 'text', onChange: this.update("password"), value: this.state.password })
 	            ),
 	            _react2.default.createElement('input', { className: 'login-button', type: 'submit', onClick: this.handleSubmit, value: 'Log In' })
-	          ),
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            errors
 	          )
 	        )
 	      );
@@ -47732,11 +47759,15 @@
 	    _this.state = {
 	      username: "",
 	      email: "",
-	      password: ""
+	      password: "",
+	      first_name: "",
+	      last_name: "",
+	      confirm_email: ""
 	    };
 	    _this.handleSubmit = _this.handleSubmit.bind(_this);
 	    _this.redirect = _this.redirect.bind(_this);
 	    _this.update = _this.update.bind(_this);
+	    _this.renderErrors = _this.renderErrors.bind(_this);
 	    return _this;
 	  }
 	
@@ -47764,6 +47795,21 @@
 	    key: 'redirect',
 	    value: function redirect() {
 	      this.props.router.push('/');
+	    }
+	  }, {
+	    key: 'renderErrors',
+	    value: function renderErrors() {
+	      return _react2.default.createElement(
+	        'ul',
+	        { className: 'signup-error' },
+	        this.props.errors.map(function (error, i) {
+	          return _react2.default.createElement(
+	            'li',
+	            { key: 'error-' + i },
+	            error
+	          );
+	        })
+	      );
 	    }
 	  }, {
 	    key: 'render',
@@ -47794,6 +47840,7 @@
 	          _react2.default.createElement(
 	            'form',
 	            { className: 'signup-form' },
+	            this.renderErrors(),
 	            _react2.default.createElement(
 	              'label',
 	              { className: 'signup-label' },
@@ -47801,7 +47848,6 @@
 	              _react2.default.createElement('br', null),
 	              _react2.default.createElement('input', { type: 'text', onChange: this.update("username"), value: this.state.username })
 	            ),
-	            _react2.default.createElement('br', null),
 	            _react2.default.createElement(
 	              'label',
 	              { className: 'signup-label' },
@@ -47809,7 +47855,27 @@
 	              _react2.default.createElement('br', null),
 	              _react2.default.createElement('input', { type: 'text', onChange: this.update("email"), value: this.state.email })
 	            ),
-	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	              'label',
+	              { className: 'signup-label' },
+	              'Confirm Email',
+	              _react2.default.createElement('br', null),
+	              _react2.default.createElement('input', { type: 'text', onChange: this.update("confirm_email"), value: this.state.confirm_email })
+	            ),
+	            _react2.default.createElement(
+	              'label',
+	              { className: 'signup-label' },
+	              'First Name',
+	              _react2.default.createElement('br', null),
+	              _react2.default.createElement('input', { type: 'text', onChange: this.update("first_name"), value: this.state.first_name })
+	            ),
+	            _react2.default.createElement(
+	              'label',
+	              { className: 'signup-label' },
+	              'Last Name',
+	              _react2.default.createElement('br', null),
+	              _react2.default.createElement('input', { type: 'text', onChange: this.update("last_name"), value: this.state.last_name })
+	            ),
 	            _react2.default.createElement(
 	              'label',
 	              { className: 'signup-label' },
@@ -47818,11 +47884,6 @@
 	              _react2.default.createElement('input', { type: 'text', onChange: this.update("password"), value: this.state.password })
 	            ),
 	            _react2.default.createElement('input', { className: 'signup-button', type: 'submit', onClick: this.handleSubmit, value: 'Sign Up' })
-	          ),
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            errors
 	          )
 	        )
 	      );
@@ -47833,6 +47894,297 @@
 	}(_react2.default.Component);
 	
 	exports.default = SignUpForm;
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _welcome = __webpack_require__(270);
+	
+	var _welcome2 = _interopRequireDefault(_welcome);
+	
+	var _session_actions = __webpack_require__(204);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return {
+	    login: function login(user) {
+	      return dispatch((0, _session_actions.login)(user));
+	    }
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(_welcome2.default);
+
+/***/ },
+/* 292 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _greeting_container = __webpack_require__(284);
+	
+	var _greeting_container2 = _interopRequireDefault(_greeting_container);
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _reactRouter = __webpack_require__(216);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Front = function (_React$Component) {
+	  _inherits(Front, _React$Component);
+	
+	  function Front(props) {
+	    _classCallCheck(this, Front);
+	
+	    var _this = _possibleConstructorReturn(this, (Front.__proto__ || Object.getPrototypeOf(Front)).call(this, props));
+	
+	    _this.state = {
+	      profile: ""
+	    };
+	    _this.toggleProfileDrop = _this.toggleProfileDrop.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Front, [{
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {
+	      if (this.props.currentUser === null) {
+	        this.props.router.push('/welcome');
+	      }
+	    }
+	  }, {
+	    key: 'toggleProfileDrop',
+	    value: function toggleProfileDrop(e) {
+	      debugger;
+	      e.preventDefault();
+	      if (this.state.profile === "") {
+	        this.setState({ profile: "profile-show" });
+	      } else {
+	        this.setState({ profile: "" });
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'section',
+	        { className: 'front-section' },
+	        _react2.default.createElement(
+	          'header',
+	          { className: 'front-header' },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'front-header-heading-link front-header-child' },
+	            'Create a LinkUp'
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'front-header-heading-logo' },
+	            'LinkUp'
+	          ),
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'front-header-list' },
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/front/messages', className: 'front-header-nav-message' },
+	                _react2.default.createElement('img', { src: 'https://cdn2.iconfinder.com/data/icons/messages-chat-2/24/chat-bubble-circle-3-512.png' })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'button',
+	                { className: 'front-header-nav-notification' },
+	                _react2.default.createElement('img', { src: 'https://freeiconshop.com/files/edd/notification-outline.png' })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'span',
+	                { onClick: this.toggleProfileDrop, className: 'front-header-nav-profile' },
+	                _react2.default.createElement('img', { src: 'http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png' }),
+	                _react2.default.createElement(
+	                  'ul',
+	                  { className: 'front-header-profile-list {this.state.profile}' },
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      _reactRouter.Link,
+	                      { to: '/' },
+	                      'Profile'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      _reactRouter.Link,
+	                      { to: '/' },
+	                      'Settings'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'button',
+	                      { onClick: this.props.logout },
+	                      'Log Out'
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'section',
+	          { className: 'content-header' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'content-header-box' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'content-header-text' },
+	              _react2.default.createElement(
+	                'h4',
+	                { className: 'content-header-text-header' },
+	                'YOUR NEXT MEETUP'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'content-header-next-box group' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'content-header-nextlinkup' },
+	                _react2.default.createElement(
+	                  'h3',
+	                  null,
+	                  'So You\'ve Been Accepted to App Academy'
+	                ),
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  'How to be Okay With Doing Nothing but Coding With Your Life and Losing All Friends and Loved Ones for Three Months'
+	                ),
+	                _react2.default.createElement(
+	                  'h5',
+	                  null,
+	                  'Hosted by the Masochist Association of New York'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'content-header-calendar-location' },
+	                _react2.default.createElement(
+	                  'h3',
+	                  null,
+	                  'Date: Forever. This is your life now'
+	                ),
+	                _react2.default.createElement(
+	                  'h3',
+	                  null,
+	                  'Location: New York City'
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'LinkUp'
+	          ),
+	          _react2.default.createElement(_greeting_container2.default, null),
+	          this.props.children
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Front;
+	}(_react2.default.Component);
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    currentUser: state.session.currentUser
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Front);
+
+/***/ },
+/* 293 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _front = __webpack_require__(292);
+	
+	var _front2 = _interopRequireDefault(_front);
+	
+	var _session_actions = __webpack_require__(204);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    currentUser: state.session.currentUser
+	  };
+	};
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return { logout: function logout() {
+	      return dispatch((0, _session_actions.logout)());
+	    } };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_front2.default);
 
 /***/ }
 /******/ ]);

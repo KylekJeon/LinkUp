@@ -14,16 +14,16 @@
 }
 
 .welcome-header-heading-link {
-  padding-top: 15px;
+  padding-top: 20px;
   font-family: 'Courgette', cursive;
   color: #29a599;
   font-size: 20px;
   margin-left: 20px;
-  padding-top: 25px;
+  margin-top: 20px;
 }
 
 .welcome-header-heading-logo {
-  padding: 10px 5px;
+  padding: 20px 5px;
   font-family: 'Pacifico', cursive;
   color: #29a599;
   font-size: 36px;
@@ -43,24 +43,38 @@
 
 .welcome-header-nav-login {
   padding: 10px;
-  background-color: #3fe0d0;
-  border: 1px solid #3fe0d0;
-  border-radius: 5px;
-  color: white;
-  font-family: sans-serif;
-}
-
-.welcome-header-nav-signup {
-  padding: 10px;
   background-color: #29a599;
   border: 1px solid #29a599;
   border-radius: 5px;
   color: white;
   font-family: sans-serif;
+  position: relative;
+  top: 10px;
+}
+
+.welcome-header-nav-signup {
+  padding: 10px;
+  background-color: #049287;
+  border: 1px solid #049287;
+  border-radius: 5px;
+  color: white;
+  font-family: sans-serif;
+  position: relative;
+  top: 10px;
+}
+
+.welcome-header-guest {
+  padding: 10px;
+  background-color: #3fe0d0;
+  border: 1px solid #3fe0d0;
+  border-radius: 5px;
+  color: white;
+  font-family: sans-serif;
+  margin: auto 0;
 }
 
 .welcome-header-child {
-  width: 178.95px;
+  width: 268.5px;
 }
 
 .welcome-header-body {
@@ -127,14 +141,6 @@
   margin-bottom: 30px;
 }
 
-.explore img {
-  width: 150px;
-  height: 115px;
-  padding: 20px 50px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .explore-header {
   text-align: center;
   font-size: 36px;
@@ -166,6 +172,21 @@
 
 .explore label {
   padding: 0 20px;
+}
+
+.explore img {
+  width: 150px;
+  height: 115px;
+  padding: 20px 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 0;
+  transition: top .5s;
+}
+
+.explore img:hover {
+  top: -20px;
 }
 
 .pic-1 {
