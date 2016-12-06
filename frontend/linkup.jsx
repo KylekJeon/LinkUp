@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -17,5 +17,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
     store = configureStore();
   }
   window.store = store;
-  ReactDom.render(<Root store={ store } />, root);
+  ReactDOM.render(<Root store={ store } />, root);
 });

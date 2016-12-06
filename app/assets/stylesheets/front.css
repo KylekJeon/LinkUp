@@ -156,6 +156,14 @@
   box-shadow: 1px 1px 1px 1px #aaa;
 }
 
+.front-header-profile-list a {
+  display: block;
+  padding: 7px;
+  border-bottom: 1px solid white;
+  color: #aaa;
+  border-radius: 5px;
+}
+
 .front-header-profile-list:before {
   content: "";
   display: block;

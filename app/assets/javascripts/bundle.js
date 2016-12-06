@@ -39851,6 +39851,14 @@
 	
 	var _signup_form_container2 = _interopRequireDefault(_signup_form_container);
 	
+	var _users_container = __webpack_require__(293);
+	
+	var _users_container2 = _interopRequireDefault(_users_container);
+	
+	var _front_page_container = __webpack_require__(298);
+	
+	var _front_page_container2 = _interopRequireDefault(_front_page_container);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Root = function Root(_ref) {
@@ -39888,7 +39896,12 @@
 	          _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _login_form_container2.default }),
 	          _react2.default.createElement(_reactRouter.Route, { path: 'signup', component: _signup_form_container2.default })
 	        ),
-	        _react2.default.createElement(_reactRouter.Route, { path: 'front', component: _front_container2.default, onEnter: _ensureLoggedIn })
+	        _react2.default.createElement(
+	          _reactRouter.Route,
+	          { path: 'front', component: _front_container2.default, onEnter: _ensureLoggedIn },
+	          _react2.default.createElement(_reactRouter.IndexRoute, { component: _front_page_container2.default }),
+	          _react2.default.createElement(_reactRouter.Route, { path: 'users/:userId', component: _users_container2.default })
+	        )
 	      )
 	    )
 	  );
@@ -47315,10 +47328,6 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _greeting_container = __webpack_require__(286);
-	
-	var _greeting_container2 = _interopRequireDefault(_greeting_container);
-	
 	var _reactRedux = __webpack_require__(207);
 	
 	var _reactRouter = __webpack_require__(216);
@@ -47341,11 +47350,10 @@
 	
 	    _this.state = {
 	      display: "front-invisible",
-	      groupCalendar: "calendar"
+	      groupCalendar: "calendar",
+	      userId: _this.props.currentUser.id
 	    };
 	    _this.toggleProfileDrop = _this.toggleProfileDrop.bind(_this);
-	    _this.toggleGroup = _this.toggleGroup.bind(_this);
-	    _this.toggleCalendar = _this.toggleCalendar.bind(_this);
 	    return _this;
 	  }
 	
@@ -47366,26 +47374,9 @@
 	      }
 	    }
 	  }, {
-	    key: 'toggleGroup',
-	    value: function toggleGroup() {
-	      this.setState({ groupCalendar: "group" });
-	    }
-	  }, {
-	    key: 'toggleCalendar',
-	    value: function toggleCalendar() {
-	      this.setState({ groupCalendar: "calendar" });
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var profileClass = "front-header-profile-list " + this.state.display;
-	      var group = "search-bar-group ";
-	      var calendar = "search-bar-calendar ";
-	      if (this.state.groupCalendar === 'calendar') {
-	        calendar = calendar + "search-chosen";
-	      } else {
-	        group = group + "search-chosen";
-	      }
 	
 	      return _react2.default.createElement(
 	        'section',
@@ -47412,7 +47403,7 @@
 	              _react2.default.createElement(
 	                _reactRouter.Link,
 	                { to: '/front/messages', className: 'front-header-nav-message' },
-	                _react2.default.createElement('img', { src: 'https://cdn2.iconfinder.com/data/icons/messages-chat-2/24/chat-bubble-circle-3-512.png' })
+	                _react2.default.createElement('img', { src: window.messageIcon })
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -47421,7 +47412,7 @@
 	              _react2.default.createElement(
 	                'button',
 	                { className: 'front-header-nav-notification' },
-	                _react2.default.createElement('img', { src: 'https://freeiconshop.com/files/edd/notification-outline.png' })
+	                _react2.default.createElement('img', { src: window.notificationIcon })
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -47430,25 +47421,25 @@
 	              _react2.default.createElement(
 	                'button',
 	                { onClick: this.toggleProfileDrop, className: 'front-header-nav-profile' },
-	                _react2.default.createElement('img', { src: 'http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png' }),
+	                _react2.default.createElement('img', { src: window.profileIcon }),
 	                _react2.default.createElement(
 	                  'ul',
 	                  { className: profileClass },
 	                  _react2.default.createElement(
-	                    'li',
-	                    null,
+	                    _reactRouter.Link,
+	                    { to: '/front/users/' + this.state.userId },
 	                    _react2.default.createElement(
-	                      _reactRouter.Link,
-	                      { to: '/' },
+	                      'li',
+	                      null,
 	                      'Profile'
 	                    )
 	                  ),
 	                  _react2.default.createElement(
-	                    'li',
-	                    null,
+	                    _reactRouter.Link,
+	                    { to: '/' },
 	                    _react2.default.createElement(
-	                      _reactRouter.Link,
-	                      { to: '/' },
+	                      'li',
+	                      null,
 	                      'Settings'
 	                    )
 	                  ),
@@ -47462,294 +47453,7 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(
-	          'section',
-	          { className: 'content-header' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'content-header-box' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'content-header-text' },
-	              _react2.default.createElement(
-	                'h4',
-	                { className: 'content-header-text-header' },
-	                'YOUR NEXT MEETUP'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'content-header-next-box group' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'content-header-nextlinkup' },
-	                _react2.default.createElement(
-	                  'h3',
-	                  null,
-	                  'So You\'ve Been Accepted to App Academy'
-	                ),
-	                _react2.default.createElement(
-	                  'h4',
-	                  null,
-	                  'How to be Okay With Doing Nothing but Coding With Your Life and Losing All Friends and Loved Ones for Three Months'
-	                ),
-	                _react2.default.createElement(
-	                  'h5',
-	                  null,
-	                  'Hosted by the Masochist Association of New York'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'content-header-calendar-location' },
-	                _react2.default.createElement(
-	                  'h3',
-	                  null,
-	                  'Date: Forever. This is your life now'
-	                ),
-	                _react2.default.createElement(
-	                  'h3',
-	                  null,
-	                  'Location: New York City'
-	                )
-	              )
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'section',
-	          { className: 'content-main group' },
-	          _react2.default.createElement(
-	            'form',
-	            { className: 'search-bar group' },
-	            _react2.default.createElement('input', { className: 'search-bar-input', type: 'text', placeholder: 'All LinkUps' }),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              ' Within 5 miles of New York '
-	            ),
-	            _react2.default.createElement(
-	              'button',
-	              { onClick: this.toggleCalendar, className: calendar },
-	              'Calendar'
-	            ),
-	            _react2.default.createElement(
-	              'button',
-	              { onClick: this.toggleGroup, className: group },
-	              'Groups'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'content-main-list-day' },
-	            _react2.default.createElement(
-	              'h4',
-	              null,
-	              'THURSDAY, DECEMBER 22'
-	            ),
-	            _react2.default.createElement(
-	              'ul',
-	              { className: 'content-main-list group' },
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'content-list-time' },
-	                  '7:00PM'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-first' },
-	                  'Happy Birthday To Me'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-middle' },
-	                  'Birthday Party? Nah, App Academy Man'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-last' },
-	                  'Everyone in class going'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'content-list-time' },
-	                  '8:00PM'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-first' },
-	                  'freak out about fullstack'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-middle' },
-	                  'Who\'s staying overnight?'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-last' },
-	                  'Most people in class going'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'content-list-time' },
-	                  '9:00PM'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-first' },
-	                  'slumber party at the app'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-middle' },
-	                  'I hope you brought your pillow armor'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-last' },
-	                  'the brave, the bold, the fearless going'
-	                )
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'content-main-list-day' },
-	            _react2.default.createElement(
-	              'h4',
-	              null,
-	              'THURSDAY, DECEMBER 22'
-	            ),
-	            _react2.default.createElement(
-	              'ul',
-	              { className: 'content-main-list group' },
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'content-list-time' },
-	                  '7:00PM'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-first' },
-	                  'Happy Birthday To Me'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-middle' },
-	                  'Birthday Party? Nah, App Academy Man'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-last' },
-	                  'Everyone in class going'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'content-list-time' },
-	                  '8:15PM'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-first' },
-	                  'freak out about fullstack'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-middle' },
-	                  'Who\'s staying overnight?'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-last' },
-	                  'Most people in class going'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'content-list-time' },
-	                  '9:00PM'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-first' },
-	                  'slumber party at the app'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-middle' },
-	                  'I hope you brought your pillow armor'
-	                ),
-	                _react2.default.createElement(
-	                  'span',
-	                  { className: 'content-list-item content-list-last' },
-	                  'the brave, the bold, the fearless going'
-	                )
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'ul',
-	            { className: 'content-main-list-linkups' },
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/' },
-	                'All LinkUps'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/' },
-	                'My LinkUps & Suggestions'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/' },
-	                'My LinkUps'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/' },
-	                'I\'m going'
-	              )
-	            )
-	          )
-	        ),
+	        this.props.children,
 	        _react2.default.createElement(
 	          'footer',
 	          { className: 'welcome-footer' },
@@ -47813,112 +47517,11 @@
 	  return Front;
 	}(_react2.default.Component);
 	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    currentUser: state.session.currentUser
-	  };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Front);
+	exports.default = Front;
 
 /***/ },
-/* 286 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _reactRedux = __webpack_require__(207);
-	
-	var _greeting = __webpack_require__(287);
-	
-	var _greeting2 = _interopRequireDefault(_greeting);
-	
-	var _session_actions = __webpack_require__(204);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    currentUser: state.session.currentUser
-	  };
-	};
-	
-	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	  return { logout: function logout() {
-	      return dispatch((0, _session_actions.logout)());
-	    } };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_greeting2.default);
-
-/***/ },
-/* 287 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouter = __webpack_require__(216);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Greeting = function Greeting(_ref) {
-	  var currentUser = _ref.currentUser,
-	      logout = _ref.logout;
-	
-	
-	  var content1 = void 0;
-	  var content2 = void 0;
-	
-	  if (currentUser !== null) {
-	    content1 = _react2.default.createElement(
-	      'h3',
-	      null,
-	      'Welcome ',
-	      currentUser.username,
-	      '!'
-	    );
-	    content2 = _react2.default.createElement(
-	      'button',
-	      { onClick: logout },
-	      'Logout'
-	    );
-	  } else {
-	    content1 = _react2.default.createElement(
-	      _reactRouter.Link,
-	      { to: '/signup' },
-	      'Sign Up'
-	    );
-	    content2 = _react2.default.createElement(
-	      _reactRouter.Link,
-	      { to: '/login' },
-	      'Log In'
-	    );
-	  }
-	
-	  return _react2.default.createElement(
-	    'section',
-	    { className: 'current_user' },
-	    content1,
-	    _react2.default.createElement('br', null),
-	    content2
-	  );
-	};
-	
-	exports.default = Greeting;
-
-/***/ },
+/* 286 */,
+/* 287 */,
 /* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -47950,7 +47553,7 @@
 	      _react2.default.createElement('iframe', {
 	        className: 'wrapped-video',
 	        src: 'https://www.youtube.com/embed/BvJIfDy6CVQ?wmode=transparent&autoplay=1',
-	        frameborder: '0'
+	        frameBorder: '0'
 	      })
 	    ),
 	    _react2.default.createElement(
@@ -47970,7 +47573,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-1 welcome-pic', src: "http://purewellnesschicago.com/index_files/rvm1.jpg" })
+	            _react2.default.createElement('img', { className: 'pic-1 welcome-pic', src: window.sportsImage })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -47984,7 +47587,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-2 welcome-pic', src: "https://www.clipartkid.com/images/77/small-music-notes-clipart-fRzIRF-clipart.png" })
+	            _react2.default.createElement('img', { className: 'pic-2 welcome-pic', src: window.musicImage })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -47998,7 +47601,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-3 welcome-pic', src: "https://nutritionfacts.org/wp-content/themes/NutritionFacts/img/heart.png" })
+	            _react2.default.createElement('img', { className: 'pic-3 welcome-pic', src: window.healthImage })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48012,7 +47615,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-4 welcome-pic', src: "http://www.pngmart.com/files/1/Outdoor-Sports-Activities-PNG-Transparent-Image.png" })
+	            _react2.default.createElement('img', { className: 'pic-4 welcome-pic', src: window.outdoorImage })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48030,7 +47633,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-5 welcome-pic', src: "http://masterpiecemanager.com/wp-content/uploads/2012/07/art-management.png" })
+	            _react2.default.createElement('img', { className: 'pic-5 welcome-pic', src: window.artsImage })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48044,7 +47647,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-6 welcome-pic', src: "http://www.zeinmarketing.co.uk/wp-content/uploads/2014/10/Social-Media-Banners-No-Background.png" })
+	            _react2.default.createElement('img', { className: 'pic-6 welcome-pic', src: window.socialImage })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48058,7 +47661,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-7 welcome-pic', src: "https://openclipart.org/image/2400px/svg_to_png/242209/Business-Meeting-No-Background.png" })
+	            _react2.default.createElement('img', { className: 'pic-7 welcome-pic', src: window.businessImage })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48072,7 +47675,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-8 welcome-pic', src: "https://i.kinja-img.com/gawker-media/image/upload/s--tgQAbik9--/vdj8mhwn5kgsn5gmwnl5.png" })
+	            _react2.default.createElement('img', { className: 'pic-8 welcome-pic', src: window.foodImage })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48479,6 +48082,527 @@
 	}(_react2.default.Component);
 	
 	exports.default = SignUpForm;
+
+/***/ },
+/* 293 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _users = __webpack_require__(294);
+	
+	var _users2 = _interopRequireDefault(_users);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    currentUser: state.session.currentUser
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(_users2.default);
+
+/***/ },
+/* 294 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var User = function (_React$Component) {
+	  _inherits(User, _React$Component);
+	
+	  function User(props) {
+	    _classCallCheck(this, User);
+	
+	    var _this = _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).call(this, props));
+	
+	    _this.state = {
+	      user: _this.props.currentUser
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(User, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      if (this.currentUser.id !== parseInt(this.props.params.userId)) {
+	        this.props.router.push('/');
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	
+	      return _react2.default.createElement(
+	        'section',
+	        { className: 'profile-page-container group' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'profile-page-name' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            this.state.user.first_name,
+	            ' ',
+	            this.state.user.last_name
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'profile-picture' },
+	          _react2.default.createElement('img', { src: window.profilePicture })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'profile-page-bio' },
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Email: ',
+	            this.state.user.email
+	          ),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Username: ',
+	            this.state.user.username
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'profile-page-groups' },
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            'Member of these LinkUps'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return User;
+	}(_react2.default.Component);
+	
+	exports.default = User;
+
+/***/ },
+/* 295 */,
+/* 296 */,
+/* 297 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(216);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var FrontPage = function (_React$Component) {
+	  _inherits(FrontPage, _React$Component);
+	
+	  function FrontPage(props) {
+	    _classCallCheck(this, FrontPage);
+	
+	    var _this = _possibleConstructorReturn(this, (FrontPage.__proto__ || Object.getPrototypeOf(FrontPage)).call(this, props));
+	
+	    _this.state = {
+	      groupCalendar: "calendar"
+	    };
+	    _this.toggleGroup = _this.toggleGroup.bind(_this);
+	    _this.toggleCalendar = _this.toggleCalendar.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(FrontPage, [{
+	    key: 'toggleGroup',
+	    value: function toggleGroup() {
+	      this.setState({ groupCalendar: "group" });
+	    }
+	  }, {
+	    key: 'toggleCalendar',
+	    value: function toggleCalendar() {
+	      this.setState({ groupCalendar: "calendar" });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var group = "search-bar-group ";
+	      var calendar = "search-bar-calendar ";
+	      if (this.state.groupCalendar === 'calendar') {
+	        calendar = calendar + "search-chosen";
+	      } else {
+	        group = group + "search-chosen";
+	      }
+	
+	      return _react2.default.createElement(
+	        'section',
+	        null,
+	        _react2.default.createElement(
+	          'section',
+	          { className: 'content-header' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'content-header-box' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'content-header-text' },
+	              _react2.default.createElement(
+	                'h4',
+	                { className: 'content-header-text-header' },
+	                'YOUR NEXT MEETUP'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'content-header-next-box group' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'content-header-nextlinkup' },
+	                _react2.default.createElement(
+	                  'h3',
+	                  null,
+	                  'So You\'ve Been Accepted to App Academy'
+	                ),
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  'How to be Okay With Doing Nothing but Coding With Your Life and Losing All Friends and Loved Ones for Three Months'
+	                ),
+	                _react2.default.createElement(
+	                  'h5',
+	                  null,
+	                  'Hosted by the Masochist Association of New York'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'content-header-calendar-location' },
+	                _react2.default.createElement(
+	                  'h3',
+	                  null,
+	                  'Date: Forever. This is your life now'
+	                ),
+	                _react2.default.createElement(
+	                  'h3',
+	                  null,
+	                  'Location: New York City'
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'section',
+	          { className: 'content-main group' },
+	          _react2.default.createElement(
+	            'form',
+	            { className: 'search-bar group' },
+	            _react2.default.createElement('input', { className: 'search-bar-input', type: 'text', placeholder: 'All LinkUps' }),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              ' Within 5 miles of New York '
+	            ),
+	            _react2.default.createElement(
+	              'button',
+	              { onClick: this.toggleCalendar, className: calendar },
+	              'Calendar'
+	            ),
+	            _react2.default.createElement(
+	              'button',
+	              { onClick: this.toggleGroup, className: group },
+	              'Groups'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'content-main-list-day' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'THURSDAY, DECEMBER 22'
+	            ),
+	            _react2.default.createElement(
+	              'ul',
+	              { className: 'content-main-list group' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '7:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'Happy Birthday To Me'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'Birthday Party? Nah, App Academy Man'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'Everyone in class going'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '8:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'freak out about fullstack'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'Who\'s staying overnight?'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'Most people in class going'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '9:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'slumber party at the app'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'I hope you brought your pillow armor'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'the brave, the bold, the fearless going'
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'content-main-list-day' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'THURSDAY, DECEMBER 22'
+	            ),
+	            _react2.default.createElement(
+	              'ul',
+	              { className: 'content-main-list group' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '7:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'Happy Birthday To Me'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'Birthday Party? Nah, App Academy Man'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'Everyone in class going'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '8:15PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'freak out about fullstack'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'Who\'s staying overnight?'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'Most people in class going'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '9:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'slumber party at the app'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'I hope you brought your pillow armor'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'the brave, the bold, the fearless going'
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'content-main-list-linkups' },
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/' },
+	                'All LinkUps'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/' },
+	                'My LinkUps & Suggestions'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/' },
+	                'My LinkUps'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/' },
+	                'I\'m going'
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return FrontPage;
+	}(_react2.default.Component);
+	
+	exports.default = FrontPage;
+
+/***/ },
+/* 298 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _front_page = __webpack_require__(297);
+	
+	var _front_page2 = _interopRequireDefault(_front_page);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    currentUser: state.session.currentUser
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(_front_page2.default);
 
 /***/ }
 /******/ ]);

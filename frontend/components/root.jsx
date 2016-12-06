@@ -7,7 +7,8 @@ import FrontContainer from './front/front_container';
 import WelcomePage from './welcome/welcome_page';
 import LoginFormContainer from './session/login_form_container';
 import SignUpFormContainer from './session/signup_form_container';
-
+import UsersContainer from './users/users_container';
+import FrontPageContainer from './front/front_page_container';
 
 const Root = ({ store }) => {
 
@@ -36,6 +37,8 @@ const Root = ({ store }) => {
             <Route path='signup' component={ SignUpFormContainer }/>
           </Route>
           <Route path='front' component={ FrontContainer } onEnter={_ensureLoggedIn}>
+            <IndexRoute component={ FrontPageContainer } />
+            <Route path='users/:userId' component={ UsersContainer }/>
           </Route>
         </Route>
       </Router>

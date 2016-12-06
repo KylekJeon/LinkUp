@@ -1,0 +1,60 @@
+.profile-page-container {
+  width: 950px;
+  min-height: 650px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background: white;
+  margin: 25px auto;
+  padding: 25px;
+}
+
+.profile-page-name {
+  width: 650px;
+  padding: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  float: left;
+}
+
+.profile-page-name h1 {
+  font-family: arial;
+  font-size: 28px;
+  text-transform: capitalize;
+  font-weight: bolder;
+  display: inline;
+}
+
+.profile-picture {
+  width: 240px;
+  height: 240px;
+  float: right;
+
+}
+
+.profile-page-bio {
+  float: left;
+  width: 650px;
+  height: 170px;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-page-bio span {
+  font-family: arial;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.profile-page-groups {
+  float: left;
+  width: 550px;
+  height: 300px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-page-groups h3 {
+  font-family: arial;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+}
