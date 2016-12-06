@@ -125,7 +125,7 @@ class Front extends React.Component {
             <span className='content-list-item content-list-last'>Everyone in class going</span>
           </li>
           <li>
-            <div className='content-list-time'>8:00PM</div>
+            <div className='content-list-time'>8:15PM</div>
             <span className='content-list-item content-list-first'>freak out about fullstack</span>
             <span className='content-list-item content-list-middle'>Who's staying overnight?</span>
             <span className='content-list-item content-list-last'>Most people in class going</span>

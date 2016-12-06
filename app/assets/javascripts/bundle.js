@@ -47665,7 +47665,7 @@
 	                _react2.default.createElement(
 	                  'div',
 	                  { className: 'content-list-time' },
-	                  '8:00PM'
+	                  '8:15PM'
 	                ),
 	                _react2.default.createElement(
 	                  'span',
