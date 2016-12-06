@@ -47430,7 +47430,7 @@
 	              _react2.default.createElement(
 	                'button',
 	                { onClick: this.toggleProfileDrop, className: 'front-header-nav-profile' },
-	                _react2.default.createElement('img', { src: 'http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png' }),
+	                _react2.default.createElement('img', { src: 'https://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png' }),
 	                _react2.default.createElement(
 	                  'ul',
 	                  { className: profileClass },
@@ -47970,7 +47970,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-1 welcome-pic', src: "http://purewellnesschicago.com/index_files/rvm1.jpg" })
+	            _react2.default.createElement('img', { className: 'pic-1 welcome-pic', src: "https://purewellnesschicago.com/index_files/rvm1.jpg" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -47984,7 +47984,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-2 welcome-pic', src: "http://www.clipartkid.com/images/77/small-music-notes-clipart-fRzIRF-clipart.png" })
+	            _react2.default.createElement('img', { className: 'pic-2 welcome-pic', src: "https://www.clipartkid.com/images/77/small-music-notes-clipart-fRzIRF-clipart.png" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -47998,7 +47998,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-3 welcome-pic', src: "http://nutritionfacts.org/wp-content/themes/NutritionFacts/img/heart.png" })
+	            _react2.default.createElement('img', { className: 'pic-3 welcome-pic', src: "https://nutritionfacts.org/wp-content/themes/NutritionFacts/img/heart.png" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48012,7 +48012,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-4 welcome-pic', src: "http://www.pngmart.com/files/1/Outdoor-Sports-Activities-PNG-Transparent-Image.png" })
+	            _react2.default.createElement('img', { className: 'pic-4 welcome-pic', src: "https://www.pngmart.com/files/1/Outdoor-Sports-Activities-PNG-Transparent-Image.png" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48030,7 +48030,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-5 welcome-pic', src: "http://masterpiecemanager.com/wp-content/uploads/2012/07/art-management.png" })
+	            _react2.default.createElement('img', { className: 'pic-5 welcome-pic', src: "https://masterpiecemanager.com/wp-content/uploads/2012/07/art-management.png" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48044,7 +48044,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-6 welcome-pic', src: "http://www.zeinmarketing.co.uk/wp-content/uploads/2014/10/Social-Media-Banners-No-Background.png" })
+	            _react2.default.createElement('img', { className: 'pic-6 welcome-pic', src: "https://www.zeinmarketing.co.uk/wp-content/uploads/2014/10/Social-Media-Banners-No-Background.png" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48072,7 +48072,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-8 welcome-pic', src: "http://i.kinja-img.com/gawker-media/image/upload/s--tgQAbik9--/vdj8mhwn5kgsn5gmwnl5.png" })
+	            _react2.default.createElement('img', { className: 'pic-8 welcome-pic', src: "https://i.kinja-img.com/gawker-media/image/upload/s--tgQAbik9--/vdj8mhwn5kgsn5gmwnl5.png" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
