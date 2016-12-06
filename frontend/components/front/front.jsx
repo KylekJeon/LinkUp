@@ -57,7 +57,7 @@ class Front extends React.Component {
             <li><Link to='/front/messages' className='front-header-nav-message'><img src="https://cdn2.iconfinder.com/data/icons/messages-chat-2/24/chat-bubble-circle-3-512.png"/></Link></li>
             <li><button className='front-header-nav-notification'><img src="https://freeiconshop.com/files/edd/notification-outline.png"/></button></li>
             <li>
-              <button onClick={this.toggleProfileDrop} className='front-header-nav-profile'><img src="https://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png"/>
+              <button onClick={this.toggleProfileDrop} className='front-header-nav-profile'><img src="http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png"/>
                 <ul className={profileClass}>
                   <li><Link to='/'>Profile</Link></li>
                   <li><Link to='/'>Settings</Link></li>

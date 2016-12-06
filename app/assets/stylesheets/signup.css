@@ -1,11 +1,12 @@
 .signup-page {
   background-color: #fafafa;
-  height: 650px;
+  height: 755px;
   overflow: hidden;
 }
 
 .signup-page-container {
   margin-top: 40px;
+  height: 750px;
 }
 
 .signup-header {
@@ -41,7 +42,7 @@
 
 .signup-form {
   width: 500px;
-  height: 490px;
+  height: 560px;
   margin-top: 20px;
   left: 0;
   right: 0;

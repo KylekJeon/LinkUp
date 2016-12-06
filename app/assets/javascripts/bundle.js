@@ -39881,14 +39881,14 @@
 	        _reactRouter.Route,
 	        { path: '/', component: _app2.default },
 	        _react2.default.createElement(_reactRouter.IndexRedirect, { to: '/front' }),
-	        _react2.default.createElement(_reactRouter.Route, { path: 'front', component: _front_container2.default, onEnter: _ensureLoggedIn }),
 	        _react2.default.createElement(
 	          _reactRouter.Route,
 	          { path: 'welcome', onEnter: _redirectIfLoggedIn, component: _welcome_container2.default },
 	          _react2.default.createElement(_reactRouter.IndexRoute, { component: _welcome_page2.default }),
 	          _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _login_form_container2.default }),
 	          _react2.default.createElement(_reactRouter.Route, { path: 'signup', component: _signup_form_container2.default })
-	        )
+	        ),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'front', component: _front_container2.default, onEnter: _ensureLoggedIn })
 	      )
 	    )
 	  );
@@ -47430,7 +47430,7 @@
 	              _react2.default.createElement(
 	                'button',
 	                { onClick: this.toggleProfileDrop, className: 'front-header-nav-profile' },
-	                _react2.default.createElement('img', { src: 'https://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png' }),
+	                _react2.default.createElement('img', { src: 'http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png' }),
 	                _react2.default.createElement(
 	                  'ul',
 	                  { className: profileClass },
@@ -47970,7 +47970,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-1 welcome-pic', src: "https://purewellnesschicago.com/index_files/rvm1.jpg" })
+	            _react2.default.createElement('img', { className: 'pic-1 welcome-pic', src: "http://purewellnesschicago.com/index_files/rvm1.jpg" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48012,7 +48012,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-4 welcome-pic', src: "https://www.pngmart.com/files/1/Outdoor-Sports-Activities-PNG-Transparent-Image.png" })
+	            _react2.default.createElement('img', { className: 'pic-4 welcome-pic', src: "http://www.pngmart.com/files/1/Outdoor-Sports-Activities-PNG-Transparent-Image.png" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48030,7 +48030,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-5 welcome-pic', src: "https://masterpiecemanager.com/wp-content/uploads/2012/07/art-management.png" })
+	            _react2.default.createElement('img', { className: 'pic-5 welcome-pic', src: "http://masterpiecemanager.com/wp-content/uploads/2012/07/art-management.png" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
@@ -48044,7 +48044,7 @@
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/', className: 'welcome-pic-links' },
-	            _react2.default.createElement('img', { className: 'pic-6 welcome-pic', src: "https://www.zeinmarketing.co.uk/wp-content/uploads/2014/10/Social-Media-Banners-No-Background.png" })
+	            _react2.default.createElement('img', { className: 'pic-6 welcome-pic', src: "http://www.zeinmarketing.co.uk/wp-content/uploads/2014/10/Social-Media-Banners-No-Background.png" })
 	          ),
 	          _react2.default.createElement(
 	            'pre',
