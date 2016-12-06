@@ -108,16 +108,19 @@
 .content-header-nextlinkup > h3 {
   font-size: 30px;
   margin: 15px;
+  margin-left: 0;
 }
 
 .content-header-nextlinkup > h4 {
   font-size: 22px;
   margin: 15px;
+  margin-left: 0;
 }
 
 .content-header-nextlinkup > h5 {
   font-size: 16px;
   margin: 15px;
+  margin-left: 0;
 }
 
 .content-header-calendar-location {
@@ -136,10 +139,7 @@
   top: 0;
 }
 
-.front-header-nav-profile
-
 .front-header-profile-list {
-  display: none;
   position: absolute;
   width: 100px;
   border-radius: 5px;
@@ -152,7 +152,17 @@
   box-shadow: 1px 1px 1px 1px #aaa;
 }
 
-
+.front-header-profile-list:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 10px solid #eee;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -10px;
+  right: 7px;
+  z-index: 1;
+}
 
 .front-header-profile-list > li {
   padding: 7px;
@@ -161,18 +171,88 @@
   border-radius: 5px;
 }
 
-.profile-show {
+.front-invisible {
+  display: none;
+}
+
+.front-visible {
   display: block;
 }
 
-.profile-show:before {
-  content: "";
-  display: none;
+.content-main {
+  width: 950px;
+  background: #aaa;
+  margin: 0 auto;
+  height: 1000px;
+  position: relative
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar {
+  width: 950px;
+  background: black;
   position: absolute;
-  border-bottom: 10px solid #eee;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  top: 50px;
-  left: 7px;
-  z-index: 1;
+  height: 70px;
+  padding: 15px;
+  box-sizing: border-box;
+  top: -35px;
+  color: white;
+  border-radius: 5px;
+}
+
+.search-bar-input {
+  width: 250px;
+  background: white;
+  color: black;
+  height: 40px;
+  float: left;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.search-bar p {
+  width: 200px;
+  float: left;
+  margin-left: 30px;
+  margin-top: 10px;
+  font-family: arial;
+}
+
+.search-bar-group {
+  width: 100px;
+  float: right;
+  border: 1px solid #3F454D;
+  height: 40px;
+  display: block;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #3F454D;
+  font-weight: 700;
+  font-family: arial;
+  font-size: 16px;
+}
+
+.search-bar-calendar {
+  width: 100px;
+  float: right;
+  border: 1px solid #3F454D;
+  height: 40px;
+  display: block;
+  text-align: center;
+  border-left: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #3F454D;
+  font-weight: 700;
+  font-family: arial;
+  font-size: 16px;
+}
+
+.search-chosen {
+  background: #52575E;
+  font-weight: bold;
+  color: #ccc;
 }

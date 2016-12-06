@@ -7,9 +7,11 @@ class Front extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      profile: ""
+      display: "front-invisible",
+      groupCalendar: "calendar"
     };
     this.toggleProfileDrop = this.toggleProfileDrop.bind(this);
+    this.toggleGroupCalendar = this.toggleGroupCalendar.bind(this);
   }
 
   componentDidUpdate(){
@@ -18,17 +20,33 @@ class Front extends React.Component {
     }
   }
 
-  toggleProfileDrop(e) {
-    debugger
-    e.preventDefault();
-    if(this.state.profile === ""){
-      this.setState( {profile: "profile-show"} );
+  toggleProfileDrop() {
+    if(this.state.display === "front-invisible"){
+      this.setState({ display: 'front-visible' });
     } else {
-      this.setState( {profile: "" } );
+      this.setState({ display: 'front-invisible' });
+    }
+  }
+
+  toggleGroupCalendar() {
+    if(this.state.groupCalendar === "calendar"){
+      this.setState({ groupCalendar: 'groups' });
+    } else {
+      this.setState({ groupCalendar: 'calendar' });
     }
   }
 
   render(){
+    const profileClass = "front-header-profile-list " + this.state.display;
+    let group = "search-bar-group ";
+    let calendar = "search-bar-calendar ";
+    if(this.state.groupCalendar === 'calendar'){
+      calendar = calendar + "search-chosen";
+    } else {
+      group = group + "search-chosen";
+    }
+
+
     return(
       <section className='front-section'>
         <header className='front-header'>
@@ -38,13 +56,13 @@ class Front extends React.Component {
             <li><Link to='/front/messages' className='front-header-nav-message'><img src="https://cdn2.iconfinder.com/data/icons/messages-chat-2/24/chat-bubble-circle-3-512.png"/></Link></li>
             <li><button className='front-header-nav-notification'><img src="https://freeiconshop.com/files/edd/notification-outline.png"/></button></li>
             <li>
-              <span onClick={this.toggleProfileDrop} className='front-header-nav-profile'><img src="http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png"/>
-                <ul className='front-header-profile-list {this.state.profile}'>
+              <button onClick={this.toggleProfileDrop} className='front-header-nav-profile'><img src="http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png"/>
+                <ul className={profileClass}>
                   <li><Link to='/'>Profile</Link></li>
                   <li><Link to='/'>Settings</Link></li>
-                  <li><button onClick={this.props.logout}>Log Out</button></li>
+                  <li onClick={this.props.logout}>Log Out</li>
                 </ul>
-              </span>
+              </button>
             </li>
         </ul>
         </header>
@@ -66,11 +84,25 @@ class Front extends React.Component {
             </div>
           </div>
         </section>
-        <div>
-          <h1>LinkUp</h1>
-          <GreetingContainer />
-          { this.props.children }
-        </div>
+        <section className='content-main'>
+          <form className='search-bar group'>
+            <input className='search-bar-input' type='text' placeholder="All LinkUps"/>
+            <p> Within 5 miles of New York </p>
+            <button onClick={this.toggleGroupCalendar} className={calendar}>Calendar</button>
+            <button onClick={this.toggleGroupCalendar} className={group}>Groups</button>
+          </form>
+          <ul className='content-main-list'>
+            <h4>THURSDAY, DECEMBER 22</h4>
+            <li>
+              <div className='content-list-time'>7:00PM</div>
+              <span class='content-list-first'>Happy Birthday To Me</span>
+              <span class='content-list-second'>Birthday Party? Nah, App Academy Man</span>
+              <span class='content-list-third'>Everyone in class going</span>
+            </li>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
       </section>
     );
   }
