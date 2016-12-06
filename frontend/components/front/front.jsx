@@ -11,7 +11,8 @@ class Front extends React.Component {
       groupCalendar: "calendar"
     };
     this.toggleProfileDrop = this.toggleProfileDrop.bind(this);
-    this.toggleGroupCalendar = this.toggleGroupCalendar.bind(this);
+    this.toggleGroup = this.toggleGroup.bind(this);
+    this.toggleCalendar = this.toggleCalendar.bind(this);
   }
 
   componentDidUpdate(){
@@ -28,12 +29,12 @@ class Front extends React.Component {
     }
   }
 
-  toggleGroupCalendar() {
-    if(this.state.groupCalendar === "calendar"){
-      this.setState({ groupCalendar: 'groups' });
-    } else {
-      this.setState({ groupCalendar: 'calendar' });
-    }
+  toggleGroup() {
+    this.setState({ groupCalendar: "group"});
+  }
+
+  toggleCalendar() {
+    this.setState({ groupCalendar: "calendar" });
   }
 
   render(){
@@ -84,25 +85,82 @@ class Front extends React.Component {
             </div>
           </div>
         </section>
-        <section className='content-main'>
+        <section className='content-main group'>
           <form className='search-bar group'>
             <input className='search-bar-input' type='text' placeholder="All LinkUps"/>
             <p> Within 5 miles of New York </p>
-            <button onClick={this.toggleGroupCalendar} className={calendar}>Calendar</button>
-            <button onClick={this.toggleGroupCalendar} className={group}>Groups</button>
+            <button onClick={this.toggleCalendar} className={calendar}>Calendar</button>
+            <button onClick={this.toggleGroup} className={group}>Groups</button>
           </form>
-          <ul className='content-main-list'>
+          <div className='content-main-list-day'>
             <h4>THURSDAY, DECEMBER 22</h4>
+          <ul className='content-main-list group'>
             <li>
               <div className='content-list-time'>7:00PM</div>
-              <span class='content-list-first'>Happy Birthday To Me</span>
-              <span class='content-list-second'>Birthday Party? Nah, App Academy Man</span>
-              <span class='content-list-third'>Everyone in class going</span>
+              <span className='content-list-item content-list-first'>Happy Birthday To Me</span>
+              <span className='content-list-item content-list-middle'>Birthday Party? Nah, App Academy Man</span>
+              <span className='content-list-item content-list-last'>Everyone in class going</span>
             </li>
-            <li></li>
-            <li></li>
+            <li>
+              <div className='content-list-time'>8:00PM</div>
+              <span className='content-list-item content-list-first'>freak out about fullstack</span>
+              <span className='content-list-item content-list-middle'>Who's staying overnight?</span>
+              <span className='content-list-item content-list-last'>Most people in class going</span>
+            </li>
+            <li>
+              <div className='content-list-time'>9:00PM</div>
+              <span className='content-list-item content-list-first'>slumber party at the app</span>
+              <span className='content-list-item content-list-middle'>I hope you brought your pillow armor</span>
+              <span className='content-list-item content-list-last'>the brave, the bold, the fearless going</span>
+            </li>
           </ul>
+        </div>
+        <div className='content-main-list-day'>
+          <h4>THURSDAY, DECEMBER 22</h4>
+        <ul className='content-main-list group'>
+          <li>
+            <div className='content-list-time'>7:00PM</div>
+            <span className='content-list-item content-list-first'>Happy Birthday To Me</span>
+            <span className='content-list-item content-list-middle'>Birthday Party? Nah, App Academy Man</span>
+            <span className='content-list-item content-list-last'>Everyone in class going</span>
+          </li>
+          <li>
+            <div className='content-list-time'>8:00PM</div>
+            <span className='content-list-item content-list-first'>freak out about fullstack</span>
+            <span className='content-list-item content-list-middle'>Who's staying overnight?</span>
+            <span className='content-list-item content-list-last'>Most people in class going</span>
+          </li>
+          <li>
+            <div className='content-list-time'>9:00PM</div>
+            <span className='content-list-item content-list-first'>slumber party at the app</span>
+            <span className='content-list-item content-list-middle'>I hope you brought your pillow armor</span>
+            <span className='content-list-item content-list-last'>the brave, the bold, the fearless going</span>
+          </li>
+        </ul>
+      </div>
+        <ul className='content-main-list-linkups'>
+          <li><Link to='/'>All LinkUps</Link></li>
+          <li><Link to='/'>My LinkUps & Suggestions</Link></li>
+          <li><Link to='/'>My LinkUps</Link></li>
+          <li><Link to='/'>I'm going</Link></li>
+        </ul>
         </section>
+        <footer className='welcome-footer'>
+          <section className='welcome-footer-section'>
+            <div className='welcome-footer-section-top'>
+              <pre className='welcome-footer-startgroup'>Start a LinkUp Group</pre>
+              <Link to='/welcome/login' className='welcome-footer-section-login'>Log in</Link>
+            </div>
+            <div className='welcome-footer-section-bottom'>
+              <Link to='#' className='welcome-footer-section-login'>Home</Link>
+              <Link to='#' className='welcome-footer-section-login'>About Us</Link>
+              <Link to='#' className='welcome-footer-section-login'>Contact</Link>
+              <Link to='#' className='welcome-footer-section-login'>Location</Link>
+              <Link to='#' className='welcome-footer-section-login'>Terms</Link>
+              <Link to='#' className='welcome-footer-section-login'>API</Link>
+            </div>
+          </section>
+        </footer>
       </section>
     );
   }

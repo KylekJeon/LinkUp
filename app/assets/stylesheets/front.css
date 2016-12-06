@@ -1,3 +1,7 @@
+.front-section {
+  background: #fafafa;
+}
+
 .front-header {
   display: flex;
   justify-content: space-between;
@@ -181,12 +185,10 @@
 
 .content-main {
   width: 950px;
-  background: #aaa;
   margin: 0 auto;
-  height: 1000px;
-  position: relative
-  display: flex;
-  justify-content: space-between;
+  min-height: 600px;
+  position: relative;
+  padding-top: 70px;
 }
 
 .search-bar {
@@ -255,4 +257,100 @@
   background: #52575E;
   font-weight: bold;
   color: #ccc;
+}
+
+.content-main-list-day {
+  float: left;
+  margin-bottom: 15px;
+}
+
+.content-main-list-day > h4 {
+  margin-bottom: 30px;
+  padding-left: 15px;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.content-main-list > li {
+  width: 650px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  border-bottom: 0;
+}
+
+
+.content-list-time {
+  float: left;
+  min-height: 90px;
+  margin-right: 20px;
+  color: #999;
+}
+
+.content-list-item {
+  display: block;
+  padding: 2px;
+  font-family: arial;
+}
+
+.content-list-first {
+  text-transform: uppercase;
+  color: #999;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.content-list-middle {
+  text-transform: capitalize;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.content-list-last {
+  color: #999;
+}
+
+
+.content-main-list li:first-of-type  {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.content-main-list li:last-of-type {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 1px solid #aaa;
+}
+
+.content-main-list-linkups {
+  position: absolute;
+  right: 0;
+  top: 116px;
+}
+
+.content-main-list-linkups li {
+  width: 260px;
+  padding: 7px 5px;
+  border: 1px solid #aaa;
+  border-bottom: 0;
+  font-family: "Bree Serif", arial;
+  background: white;
+}
+
+.content-main-list-linkups li:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.content-main-list-linkups li:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 1px solid #aaa;
+}
+
+.content-main-list-linkups a {
+  margin-left: 10px;
 }

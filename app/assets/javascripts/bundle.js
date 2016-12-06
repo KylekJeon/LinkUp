@@ -47344,7 +47344,8 @@
 	      groupCalendar: "calendar"
 	    };
 	    _this.toggleProfileDrop = _this.toggleProfileDrop.bind(_this);
-	    _this.toggleGroupCalendar = _this.toggleGroupCalendar.bind(_this);
+	    _this.toggleGroup = _this.toggleGroup.bind(_this);
+	    _this.toggleCalendar = _this.toggleCalendar.bind(_this);
 	    return _this;
 	  }
 	
@@ -47365,13 +47366,14 @@
 	      }
 	    }
 	  }, {
-	    key: 'toggleGroupCalendar',
-	    value: function toggleGroupCalendar() {
-	      if (this.state.groupCalendar === "calendar") {
-	        this.setState({ groupCalendar: 'groups' });
-	      } else {
-	        this.setState({ groupCalendar: 'calendar' });
-	      }
+	    key: 'toggleGroup',
+	    value: function toggleGroup() {
+	      this.setState({ groupCalendar: "group" });
+	    }
+	  }, {
+	    key: 'toggleCalendar',
+	    value: function toggleCalendar() {
+	      this.setState({ groupCalendar: "calendar" });
 	    }
 	  }, {
 	    key: 'render',
@@ -47516,7 +47518,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'section',
-	          { className: 'content-main' },
+	          { className: 'content-main group' },
 	          _react2.default.createElement(
 	            'form',
 	            { className: 'search-bar group' },
@@ -47528,49 +47530,280 @@
 	            ),
 	            _react2.default.createElement(
 	              'button',
-	              { onClick: this.toggleGroupCalendar, className: calendar },
+	              { onClick: this.toggleCalendar, className: calendar },
 	              'Calendar'
 	            ),
 	            _react2.default.createElement(
 	              'button',
-	              { onClick: this.toggleGroupCalendar, className: group },
+	              { onClick: this.toggleGroup, className: group },
 	              'Groups'
 	            )
 	          ),
 	          _react2.default.createElement(
-	            'ul',
-	            { className: 'content-main-list' },
+	            'div',
+	            { className: 'content-main-list-day' },
 	            _react2.default.createElement(
 	              'h4',
 	              null,
 	              'THURSDAY, DECEMBER 22'
 	            ),
 	            _react2.default.createElement(
+	              'ul',
+	              { className: 'content-main-list group' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '7:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'Happy Birthday To Me'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'Birthday Party? Nah, App Academy Man'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'Everyone in class going'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '8:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'freak out about fullstack'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'Who\'s staying overnight?'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'Most people in class going'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '9:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'slumber party at the app'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'I hope you brought your pillow armor'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'the brave, the bold, the fearless going'
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'content-main-list-day' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'THURSDAY, DECEMBER 22'
+	            ),
+	            _react2.default.createElement(
+	              'ul',
+	              { className: 'content-main-list group' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '7:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'Happy Birthday To Me'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'Birthday Party? Nah, App Academy Man'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'Everyone in class going'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '8:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'freak out about fullstack'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'Who\'s staying overnight?'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'Most people in class going'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'content-list-time' },
+	                  '9:00PM'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-first' },
+	                  'slumber party at the app'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-middle' },
+	                  'I hope you brought your pillow armor'
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'content-list-item content-list-last' },
+	                  'the brave, the bold, the fearless going'
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'content-main-list-linkups' },
+	            _react2.default.createElement(
 	              'li',
 	              null,
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'content-list-time' },
-	                '7:00PM'
-	              ),
-	              _react2.default.createElement(
-	                'span',
-	                { 'class': 'content-list-first' },
-	                'Happy Birthday To Me'
-	              ),
-	              _react2.default.createElement(
-	                'span',
-	                { 'class': 'content-list-second' },
-	                'Birthday Party? Nah, App Academy Man'
-	              ),
-	              _react2.default.createElement(
-	                'span',
-	                { 'class': 'content-list-third' },
-	                'Everyone in class going'
+	                _reactRouter.Link,
+	                { to: '/' },
+	                'All LinkUps'
 	              )
 	            ),
-	            _react2.default.createElement('li', null),
-	            _react2.default.createElement('li', null)
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/' },
+	                'My LinkUps & Suggestions'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/' },
+	                'My LinkUps'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/' },
+	                'I\'m going'
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'footer',
+	          { className: 'welcome-footer' },
+	          _react2.default.createElement(
+	            'section',
+	            { className: 'welcome-footer-section' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'welcome-footer-section-top' },
+	              _react2.default.createElement(
+	                'pre',
+	                { className: 'welcome-footer-startgroup' },
+	                'Start a LinkUp Group'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/welcome/login', className: 'welcome-footer-section-login' },
+	                'Log in'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'welcome-footer-section-bottom' },
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Home'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'About Us'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Contact'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Location'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Terms'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'API'
+	              )
+	            )
 	          )
 	        )
 	      );
