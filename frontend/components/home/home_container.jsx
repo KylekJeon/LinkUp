@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Front from './front';
+import Home from './home';
 import { logout } from './../../actions/session_actions';
 import { fetchGroups } from './../../actions/group_actions';
 
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Front);
+)(Home);

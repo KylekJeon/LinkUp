@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-class Front extends React.Component {
+class Home extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -13,9 +13,11 @@ class Front extends React.Component {
     this.toggleProfileDrop = this.toggleProfileDrop.bind(this);
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.props.fetchGroups();
   }
+
+
 
   componentDidUpdate(){
     if(this.props.currentUser === null){
@@ -45,7 +47,7 @@ class Front extends React.Component {
             <li>
               <button onClick={this.toggleProfileDrop} className='front-header-nav-profile'><img src={window.profileIcon}/>
                 <ul className={profileClass}>
-                  <Link to={`/front/users/${this.state.userId}`}><li>Profile</li></Link>
+                  <Link to={`/users/${this.state.userId}`}><li>Profile</li></Link>
                   <Link to='/'><li>Settings</li></Link>
                   <li onClick={this.props.logout}>Log Out</li>
                 </ul>
@@ -75,4 +77,4 @@ class Front extends React.Component {
   }
 }
 
-export default Front;
+export default Home;

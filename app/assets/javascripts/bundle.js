@@ -39840,13 +39840,17 @@
 	
 	var _welcome_container2 = _interopRequireDefault(_welcome_container);
 	
-	var _front_container = __webpack_require__(284);
-	
-	var _front_container2 = _interopRequireDefault(_front_container);
-	
 	var _welcome_page = __webpack_require__(286);
 	
 	var _welcome_page2 = _interopRequireDefault(_welcome_page);
+	
+	var _home_container = __webpack_require__(302);
+	
+	var _home_container2 = _interopRequireDefault(_home_container);
+	
+	var _home_page_container = __webpack_require__(304);
+	
+	var _home_page_container2 = _interopRequireDefault(_home_page_container);
 	
 	var _login_form_container = __webpack_require__(287);
 	
@@ -39859,10 +39863,6 @@
 	var _users_container = __webpack_require__(291);
 	
 	var _users_container2 = _interopRequireDefault(_users_container);
-	
-	var _front_page_container = __webpack_require__(293);
-	
-	var _front_page_container2 = _interopRequireDefault(_front_page_container);
 	
 	var _group_page_container = __webpack_require__(298);
 	
@@ -39897,7 +39897,7 @@
 	      _react2.default.createElement(
 	        _reactRouter.Route,
 	        { path: '/', component: _app2.default },
-	        _react2.default.createElement(_reactRouter.IndexRedirect, { to: '/front' }),
+	        _react2.default.createElement(_reactRouter.IndexRedirect, { to: '/home' }),
 	        _react2.default.createElement(
 	          _reactRouter.Route,
 	          { path: 'welcome', onEnter: _redirectIfLoggedIn, component: _welcome_container2.default },
@@ -39907,10 +39907,10 @@
 	        ),
 	        _react2.default.createElement(
 	          _reactRouter.Route,
-	          { path: 'front', component: _front_container2.default, onEnter: _ensureLoggedIn },
-	          _react2.default.createElement(_reactRouter.IndexRoute, { component: _front_page_container2.default }),
-	          _react2.default.createElement(_reactRouter.Route, { path: 'users/:userId', component: _users_container2.default }),
-	          _react2.default.createElement(_reactRouter.Route, { path: 'groups/:groupId', component: _group_page_container2.default })
+	          { path: 'home', component: _home_container2.default, onEnter: _ensureLoggedIn },
+	          _react2.default.createElement(_reactRouter.IndexRoute, { component: _home_page_container2.default }),
+	          _react2.default.createElement(_reactRouter.Route, { path: '/users/:userId', component: _users_container2.default }),
+	          _react2.default.createElement(_reactRouter.Route, { path: '/groups/:groupId', component: _group_page_container2.default })
 	        )
 	      )
 	    )
@@ -47289,259 +47289,8 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 284 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _reactRedux = __webpack_require__(207);
-	
-	var _front = __webpack_require__(285);
-	
-	var _front2 = _interopRequireDefault(_front);
-	
-	var _session_actions = __webpack_require__(204);
-	
-	var _group_actions = __webpack_require__(296);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    currentUser: state.session.currentUser
-	  };
-	};
-	
-	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	  return {
-	    logout: function logout() {
-	      return dispatch((0, _session_actions.logout)());
-	    },
-	    fetchGroups: function fetchGroups() {
-	      return dispatch((0, _group_actions.fetchGroups)());
-	    }
-	  };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_front2.default);
-
-/***/ },
-/* 285 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(207);
-	
-	var _reactRouter = __webpack_require__(216);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Front = function (_React$Component) {
-	  _inherits(Front, _React$Component);
-	
-	  function Front(props) {
-	    _classCallCheck(this, Front);
-	
-	    var _this = _possibleConstructorReturn(this, (Front.__proto__ || Object.getPrototypeOf(Front)).call(this, props));
-	
-	    _this.state = {
-	      display: "front-invisible",
-	      groupCalendar: "calendar",
-	      userId: _this.props.currentUser.id
-	    };
-	    _this.toggleProfileDrop = _this.toggleProfileDrop.bind(_this);
-	    return _this;
-	  }
-	
-	  _createClass(Front, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.props.fetchGroups();
-	    }
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate() {
-	      if (this.props.currentUser === null) {
-	        this.props.router.push('/welcome');
-	      }
-	    }
-	  }, {
-	    key: 'toggleProfileDrop',
-	    value: function toggleProfileDrop() {
-	      if (this.state.display === "front-invisible") {
-	        this.setState({ display: 'front-visible' });
-	      } else {
-	        this.setState({ display: 'front-invisible' });
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var profileClass = "front-header-profile-list " + this.state.display;
-	
-	      return _react2.default.createElement(
-	        'section',
-	        { className: 'front-section' },
-	        _react2.default.createElement(
-	          'header',
-	          { className: 'front-header' },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/', className: 'front-header-heading-link front-header-child' },
-	            'Create a LinkUp'
-	          ),
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/', className: 'front-header-heading-logo' },
-	            'LinkUp'
-	          ),
-	          _react2.default.createElement(
-	            'ul',
-	            { className: 'front-header-list' },
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/front/messages', className: 'front-header-nav-message' },
-	                _react2.default.createElement('img', { src: window.messageIcon })
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                'button',
-	                { className: 'front-header-nav-notification' },
-	                _react2.default.createElement('img', { src: window.notificationIcon })
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                'button',
-	                { onClick: this.toggleProfileDrop, className: 'front-header-nav-profile' },
-	                _react2.default.createElement('img', { src: window.profileIcon }),
-	                _react2.default.createElement(
-	                  'ul',
-	                  { className: profileClass },
-	                  _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: '/front/users/' + this.state.userId },
-	                    _react2.default.createElement(
-	                      'li',
-	                      null,
-	                      'Profile'
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: '/' },
-	                    _react2.default.createElement(
-	                      'li',
-	                      null,
-	                      'Settings'
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    'li',
-	                    { onClick: this.props.logout },
-	                    'Log Out'
-	                  )
-	                )
-	              )
-	            )
-	          )
-	        ),
-	        this.props.children,
-	        _react2.default.createElement(
-	          'footer',
-	          { className: 'welcome-footer' },
-	          _react2.default.createElement(
-	            'section',
-	            { className: 'welcome-footer-section' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'welcome-footer-section-top' },
-	              _react2.default.createElement(
-	                'pre',
-	                { className: 'welcome-footer-startgroup' },
-	                'Start a LinkUp Group'
-	              ),
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/welcome/login', className: 'welcome-footer-section-login' },
-	                'Log in'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'welcome-footer-section-bottom' },
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '#', className: 'welcome-footer-section-login' },
-	                'Home'
-	              ),
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '#', className: 'welcome-footer-section-login' },
-	                'About Us'
-	              ),
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '#', className: 'welcome-footer-section-login' },
-	                'Contact'
-	              ),
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '#', className: 'welcome-footer-section-login' },
-	                'Location'
-	              ),
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '#', className: 'welcome-footer-section-login' },
-	                'Terms'
-	              ),
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '#', className: 'welcome-footer-section-login' },
-	                'API'
-	              )
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Front;
-	}(_react2.default.Component);
-	
-	exports.default = Front;
-
-/***/ },
+/* 284 */,
+/* 285 */,
 /* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -48159,18 +47908,13 @@
 	  function User(props) {
 	    _classCallCheck(this, User);
 	
-	    var _this = _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).call(this, props));
-	
-	    _this.state = {
-	      user: _this.props.currentUser
-	    };
-	    return _this;
+	    return _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).call(this, props));
 	  }
 	
 	  _createClass(User, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      if (this.currentUser.id !== parseInt(this.props.params.userId)) {
+	      if (this.props.currentUser.id !== parseInt(this.props.params.userId)) {
 	        this.props.router.push('/');
 	      }
 	    }
@@ -48187,9 +47931,9 @@
 	          _react2.default.createElement(
 	            'h1',
 	            null,
-	            this.state.user.first_name,
+	            this.props.currentUser.first_name,
 	            ' ',
-	            this.state.user.last_name
+	            this.props.currentUser.last_name
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -48204,7 +47948,7 @@
 	            'span',
 	            null,
 	            'Email: ',
-	            this.state.user.email
+	            this.props.currentUser.email
 	          ),
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement('br', null),
@@ -48212,7 +47956,7 @@
 	            'span',
 	            null,
 	            'Username: ',
-	            this.state.user.username
+	            this.props.currentUser.username
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -48234,7 +47978,127 @@
 	exports.default = User;
 
 /***/ },
-/* 293 */
+/* 293 */,
+/* 294 */,
+/* 295 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _lodash = __webpack_require__(203);
+	
+	var _group_actions = __webpack_require__(296);
+	
+	var _nullGroups = Object.freeze({
+	  groups: {},
+	  errors: []
+	});
+	
+	var GroupReducer = function GroupReducer() {
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullGroups;
+	  var action = arguments[1];
+	
+	  Object.freeze(state);
+	  switch (action.type) {
+	    case _group_actions.RECEIVE_GROUPS:
+	      var groups = action.groups;
+	      return (0, _lodash.merge)({}, _nullGroups, { groups: groups });
+	    case _group_actions.RECEIVE_GROUP_ERRORS:
+	      var errors = action.errors;
+	      return (0, _lodash.merge)({}, _nullGroups, { errors: errors });
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = GroupReducer;
+
+/***/ },
+/* 296 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.receiveGroupErrors = exports.receiveGroups = exports.ADD_USER_TO_GROUP = exports.RECEIVE_GROUP_ERRORS = exports.RECEIVE_GROUPS = undefined;
+	exports.fetchGroups = fetchGroups;
+	exports.addUserToGroup = addUserToGroup;
+	
+	var _group_api_util = __webpack_require__(297);
+	
+	var APIUtil = _interopRequireWildcard(_group_api_util);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	// constants
+	var RECEIVE_GROUPS = exports.RECEIVE_GROUPS = "RECEIVE_GROUPS";
+	var RECEIVE_GROUP_ERRORS = exports.RECEIVE_GROUP_ERRORS = "RECEIVE_GROUP_ERRORS";
+	var ADD_USER_TO_GROUP = exports.ADD_USER_TO_GROUP = "ADD_USER_TO_GROUP";
+	
+	// action creators
+	var receiveGroups = exports.receiveGroups = function receiveGroups(groups) {
+	  return {
+	    type: RECEIVE_GROUPS,
+	    groups: groups
+	  };
+	};
+	
+	var receiveGroupErrors = exports.receiveGroupErrors = function receiveGroupErrors(errors) {
+	  return {
+	    type: RECEIVE_GROUP_ERRORS,
+	    errors: errors
+	  };
+	};
+	
+	// thunk creators
+	
+	function fetchGroups() {
+	  return function (dispatch) {
+	    return APIUtil.fetchGroups().then(function (groups) {
+	      return dispatch(receiveGroups(groups));
+	    }, function (err) {
+	      return dispatch(receiveGroupErrors(err));
+	    });
+	  };
+	}
+	
+	function addUserToGroup(groupId) {
+	  return function (dispatch) {
+	    return APIUtil.addUserToGroup(groupId);
+	  };
+	}
+
+/***/ },
+/* 297 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var fetchGroups = exports.fetchGroups = function fetchGroups() {
+	  return $.ajax({
+	    method: "GET",
+	    url: "api/groups"
+	  });
+	};
+	
+	var addUserToGroup = exports.addUserToGroup = function addUserToGroup(groupId) {
+	  return $.ajax({
+	    method: "POST",
+	    url: "api/groups/" + groupId + "/join"
+	  });
+	};
+
+/***/ },
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48245,9 +48109,159 @@
 	
 	var _reactRedux = __webpack_require__(207);
 	
-	var _front_page = __webpack_require__(294);
+	var _group_page = __webpack_require__(299);
 	
-	var _front_page2 = _interopRequireDefault(_front_page);
+	var _group_page2 = _interopRequireDefault(_group_page);
+	
+	var _selectors = __webpack_require__(300);
+	
+	var _group_actions = __webpack_require__(296);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state, ownProps) {
+	  var group = (0, _selectors.selectGroup)(state.groups.groups, ownProps.params.groupId);
+	  return {
+	    group: group
+	  };
+	};
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return {
+	    addUserToGroup: function addUserToGroup(groupId) {
+	      return dispatch((0, _group_actions.addUserToGroup)(groupId));
+	    }
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_group_page2.default);
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var GroupPage = function (_React$Component) {
+	  _inherits(GroupPage, _React$Component);
+	
+	  function GroupPage(props) {
+	    _classCallCheck(this, GroupPage);
+	
+	    var _this = _possibleConstructorReturn(this, (GroupPage.__proto__ || Object.getPrototypeOf(GroupPage)).call(this, props));
+	
+	    _this.addUserToGroup = _this.addUserToGroup.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(GroupPage, [{
+	    key: 'addUserToGroup',
+	    value: function addUserToGroup() {
+	      this.props.addUserToGroup(this.props.group.id);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var groupName = void 0;
+	      if (this.props.group) {
+	        groupName = this.props.group.name;
+	      }
+	
+	      return _react2.default.createElement(
+	        'section',
+	        { className: 'group-page group' },
+	        _react2.default.createElement(
+	          'header',
+	          { className: 'group-header' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'group-name' },
+	            groupName
+	          ),
+	          _react2.default.createElement(
+	            'button',
+	            { className: 'group-join-button', onClick: this.addUserToGroup },
+	            'Join Us!'
+	          )
+	        ),
+	        _react2.default.createElement('aside', { className: 'group-aside' }),
+	        _react2.default.createElement(
+	          'section',
+	          { className: 'group-content' },
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'group-description' },
+	            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	          )
+	        ),
+	        _react2.default.createElement('section', { className: 'group-upcoming' }),
+	        _react2.default.createElement('section', { className: 'group-past' })
+	      );
+	    }
+	  }]);
+	
+	  return GroupPage;
+	}(_react2.default.Component);
+	
+	exports.default = GroupPage;
+
+/***/ },
+/* 300 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var selectGroup = exports.selectGroup = function selectGroup(groups, id) {
+	  var group = void 0;
+	  for (var key in groups) {
+	    if (key === id) {
+	      group = groups[key];
+	    }
+	  }
+	  return group;
+	};
+
+/***/ },
+/* 301 */,
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _home = __webpack_require__(303);
+	
+	var _home2 = _interopRequireDefault(_home);
+	
+	var _session_actions = __webpack_require__(204);
+	
+	var _group_actions = __webpack_require__(296);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -48257,10 +48271,259 @@
 	  };
 	};
 	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(_front_page2.default);
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return {
+	    logout: function logout() {
+	      return dispatch((0, _session_actions.logout)());
+	    },
+	    fetchGroups: function fetchGroups() {
+	      return dispatch((0, _group_actions.fetchGroups)());
+	    }
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_home2.default);
 
 /***/ },
-/* 294 */
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _reactRouter = __webpack_require__(216);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Home = function (_React$Component) {
+	  _inherits(Home, _React$Component);
+	
+	  function Home(props) {
+	    _classCallCheck(this, Home);
+	
+	    var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+	
+	    _this.state = {
+	      display: "front-invisible",
+	      groupCalendar: "calendar",
+	      userId: _this.props.currentUser.id
+	    };
+	    _this.toggleProfileDrop = _this.toggleProfileDrop.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Home, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      this.props.fetchGroups();
+	    }
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {
+	      if (this.props.currentUser === null) {
+	        this.props.router.push('/welcome');
+	      }
+	    }
+	  }, {
+	    key: 'toggleProfileDrop',
+	    value: function toggleProfileDrop() {
+	      if (this.state.display === "front-invisible") {
+	        this.setState({ display: 'front-visible' });
+	      } else {
+	        this.setState({ display: 'front-invisible' });
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var profileClass = "front-header-profile-list " + this.state.display;
+	
+	      return _react2.default.createElement(
+	        'section',
+	        { className: 'front-section' },
+	        _react2.default.createElement(
+	          'header',
+	          { className: 'front-header' },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'front-header-heading-link front-header-child' },
+	            'Create a LinkUp'
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/', className: 'front-header-heading-logo' },
+	            'LinkUp'
+	          ),
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'front-header-list' },
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/front/messages', className: 'front-header-nav-message' },
+	                _react2.default.createElement('img', { src: window.messageIcon })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'button',
+	                { className: 'front-header-nav-notification' },
+	                _react2.default.createElement('img', { src: window.notificationIcon })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'button',
+	                { onClick: this.toggleProfileDrop, className: 'front-header-nav-profile' },
+	                _react2.default.createElement('img', { src: window.profileIcon }),
+	                _react2.default.createElement(
+	                  'ul',
+	                  { className: profileClass },
+	                  _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/users/' + this.state.userId },
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Profile'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/' },
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      'Settings'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    { onClick: this.props.logout },
+	                    'Log Out'
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        this.props.children,
+	        _react2.default.createElement(
+	          'footer',
+	          { className: 'welcome-footer' },
+	          _react2.default.createElement(
+	            'section',
+	            { className: 'welcome-footer-section' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'welcome-footer-section-top' },
+	              _react2.default.createElement(
+	                'pre',
+	                { className: 'welcome-footer-startgroup' },
+	                'Start a LinkUp Group'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/welcome/login', className: 'welcome-footer-section-login' },
+	                'Log in'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'welcome-footer-section-bottom' },
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Home'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'About Us'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Contact'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Location'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'Terms'
+	              ),
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '#', className: 'welcome-footer-section-login' },
+	                'API'
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Home;
+	}(_react2.default.Component);
+	
+	exports.default = Home;
+
+/***/ },
+/* 304 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _home_page = __webpack_require__(305);
+	
+	var _home_page2 = _interopRequireDefault(_home_page);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    currentUser: state.session.currentUser
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(_home_page2.default);
+
+/***/ },
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48285,13 +48548,13 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var FrontPage = function (_React$Component) {
-	  _inherits(FrontPage, _React$Component);
+	var HomePage = function (_React$Component) {
+	  _inherits(HomePage, _React$Component);
 	
-	  function FrontPage(props) {
-	    _classCallCheck(this, FrontPage);
+	  function HomePage(props) {
+	    _classCallCheck(this, HomePage);
 	
-	    var _this = _possibleConstructorReturn(this, (FrontPage.__proto__ || Object.getPrototypeOf(FrontPage)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this, props));
 	
 	    _this.state = {
 	      groupCalendar: "calendar"
@@ -48301,7 +48564,7 @@
 	    return _this;
 	  }
 	
-	  _createClass(FrontPage, [{
+	  _createClass(HomePage, [{
 	    key: 'toggleGroup',
 	    value: function toggleGroup() {
 	      this.setState({ groupCalendar: "group" });
@@ -48617,259 +48880,10 @@
 	    }
 	  }]);
 	
-	  return FrontPage;
+	  return HomePage;
 	}(_react2.default.Component);
 	
-	exports.default = FrontPage;
-
-/***/ },
-/* 295 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _lodash = __webpack_require__(203);
-	
-	var _group_actions = __webpack_require__(296);
-	
-	var _nullGroups = Object.freeze({
-	  groups: {},
-	  errors: []
-	});
-	
-	var GroupReducer = function GroupReducer() {
-	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullGroups;
-	  var action = arguments[1];
-	
-	  Object.freeze(state);
-	  switch (action.type) {
-	    case _group_actions.RECEIVE_GROUPS:
-	      var groups = action.groups;
-	      return (0, _lodash.merge)({}, _nullGroups, { groups: groups });
-	    case _group_actions.RECEIVE_GROUP_ERRORS:
-	      var errors = action.errors;
-	      return (0, _lodash.merge)({}, _nullGroups, { errors: errors });
-	    default:
-	      return state;
-	  }
-	};
-	
-	exports.default = GroupReducer;
-
-/***/ },
-/* 296 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.receiveGroupErrors = exports.receiveGroups = exports.ADD_USER_TO_GROUP = exports.RECEIVE_GROUP_ERRORS = exports.RECEIVE_GROUPS = undefined;
-	exports.fetchGroups = fetchGroups;
-	
-	var _group_api_util = __webpack_require__(297);
-	
-	var APIUtil = _interopRequireWildcard(_group_api_util);
-	
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-	
-	// constants
-	var RECEIVE_GROUPS = exports.RECEIVE_GROUPS = "RECEIVE_GROUPS";
-	var RECEIVE_GROUP_ERRORS = exports.RECEIVE_GROUP_ERRORS = "RECEIVE_GROUP_ERRORS";
-	var ADD_USER_TO_GROUP = exports.ADD_USER_TO_GROUP = "ADD_USER_TO_GROUP";
-	
-	// action creators
-	var receiveGroups = exports.receiveGroups = function receiveGroups(groups) {
-	  return {
-	    type: RECEIVE_GROUPS,
-	    groups: groups
-	  };
-	};
-	
-	var receiveGroupErrors = exports.receiveGroupErrors = function receiveGroupErrors(errors) {
-	  return {
-	    type: RECEIVE_GROUP_ERRORS,
-	    errors: errors
-	  };
-	};
-	
-	// thunk creators
-	
-	function fetchGroups() {
-	  return function (dispatch) {
-	    return APIUtil.fetchGroups().then(function (groups) {
-	      return dispatch(receiveGroups(groups));
-	    }, function (err) {
-	      return dispatch(receiveGroupErrors(err));
-	    });
-	  };
-	}
-
-/***/ },
-/* 297 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var fetchGroups = exports.fetchGroups = function fetchGroups() {
-	  return $.ajax({
-	    method: "GET",
-	    url: "api/groups"
-	  });
-	};
-	
-	var addUserToGroup = exports.addUserToGroup = function addUserToGroup(groupId) {
-	  return $.ajax({
-	    method: "POST",
-	    url: "api/groups/" + groupId + "/join"
-	  });
-	};
-
-/***/ },
-/* 298 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _reactRedux = __webpack_require__(207);
-	
-	var _group_page = __webpack_require__(299);
-	
-	var _group_page2 = _interopRequireDefault(_group_page);
-	
-	var _selectors = __webpack_require__(300);
-	
-	var _group_api_util = __webpack_require__(297);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var mapStateToProps = function mapStateToProps(state, ownProps) {
-	  var group = (0, _selectors.selectGroup)(state.groups.groups, ownProps.params.groupId);
-	  return {
-	    group: group
-	  };
-	};
-	
-	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	  return {
-	    addUserToGroup: _group_api_util.addUserToGroup
-	  };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_group_page2.default);
-
-/***/ },
-/* 299 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var GroupPage = function (_React$Component) {
-	  _inherits(GroupPage, _React$Component);
-	
-	  function GroupPage(props) {
-	    _classCallCheck(this, GroupPage);
-	
-	    var _this = _possibleConstructorReturn(this, (GroupPage.__proto__ || Object.getPrototypeOf(GroupPage)).call(this, props));
-	
-	    _this.addUserToGroup = _this.addUserToGroup.bind(_this);
-	    return _this;
-	  }
-	
-	  _createClass(GroupPage, [{
-	    key: 'addUserToGroup',
-	    value: function addUserToGroup() {
-	      this.props.addUserToGroup(this.props.group.id);
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'section',
-	        { className: 'group-page group' },
-	        _react2.default.createElement(
-	          'header',
-	          { className: 'group-header' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'group-name' },
-	            'App Academy'
-	          ),
-	          _react2.default.createElement(
-	            'button',
-	            { className: 'group-join-button', onClick: this.addUserToGroup },
-	            'Join Us!'
-	          )
-	        ),
-	        _react2.default.createElement('aside', { className: 'group-aside' }),
-	        _react2.default.createElement(
-	          'section',
-	          { className: 'group-content' },
-	          _react2.default.createElement(
-	            'p',
-	            { className: 'group-description' },
-	            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	          )
-	        ),
-	        _react2.default.createElement('section', { className: 'group-upcoming' }),
-	        _react2.default.createElement('section', { className: 'group-past' })
-	      );
-	    }
-	  }]);
-	
-	  return GroupPage;
-	}(_react2.default.Component);
-	
-	exports.default = GroupPage;
-
-/***/ },
-/* 300 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var selectGroup = exports.selectGroup = function selectGroup(groups, id) {
-	  var group = void 0;
-	  for (var key in groups) {
-	    if (key === id) {
-	      group = groups[key];
-	    }
-	  }
-	  return group;
-	};
+	exports.default = HomePage;
 
 /***/ }
 /******/ ]);

@@ -5,8 +5,8 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 node_modules/
-bundle.js
-bundle.js.map
+app/assets/javascripts/bundle.js
+app/assets/javascripts/bundle.js.map
 npm-debug.log
 .DS_Store
 

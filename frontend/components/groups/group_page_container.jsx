@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import GroupPage from './group_page';
 import { selectGroup } from '../../reducers/selectors';
-import { addUserToGroup } from '../../util/group_api_util';
+import { addUserToGroup } from '../../actions/group_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addUserToGroup
+  addUserToGroup: (groupId) => dispatch(addUserToGroup(groupId))
 });
 
 

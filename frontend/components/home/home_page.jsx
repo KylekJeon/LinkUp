@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-class FrontPage extends React.Component {
+class HomePage extends React.Component {
 
   constructor(props){
     super(props);
@@ -115,4 +115,4 @@ class FrontPage extends React.Component {
   }
 }
 
-export default FrontPage;
+export default HomePage;

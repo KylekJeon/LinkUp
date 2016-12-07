@@ -17,6 +17,9 @@ export const receiveGroupErrors = (errors) => ({
   errors
 });
 
+
+
+
 // thunk creators
 
 export function fetchGroups() {
@@ -25,5 +28,12 @@ export function fetchGroups() {
       groups => dispatch(receiveGroups(groups)),
       err => dispatch(receiveGroupErrors(err))
     );
+  };
+}
+
+
+export function addUserToGroup(groupId) {
+  return (dispatch) => {
+    return APIUtil.addUserToGroup(groupId);
   };
 }

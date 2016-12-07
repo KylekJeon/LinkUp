@@ -11,10 +11,15 @@ class GroupPage extends React.Component {
   }
 
   render(){
+    let groupName;
+    if(this.props.group){
+      groupName = this.props.group.name;
+    }
+
     return(
       <section className='group-page group'>
         <header className='group-header'>
-          <div className='group-name'>App Academy</div>
+          <div className='group-name'>{groupName}</div>
           <button className='group-join-button' onClick={this.addUserToGroup}>Join Us!</button>
         </header>
         <aside className='group-aside'>

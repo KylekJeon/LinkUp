@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import FrontPage from './front_page';
+import HomePage from './home_page';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser
@@ -7,4 +7,4 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps
-)(FrontPage);
+)(HomePage);

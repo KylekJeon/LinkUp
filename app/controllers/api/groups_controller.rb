@@ -20,11 +20,12 @@ class Api::GroupsController < ApplicationController
   end
 
   def join
-    debugger
     @new_membership = current_user.memberships.new(group_id: params[:id])
-    debugger
-    @new_membership.save
-    render json: ["successfully joined group"]
+    if @new_membership.save
+      render json: ["successfully joined group"]
+    else
+      render json: ["unsuccessful in joining group"]
+    end
   end
 
 
