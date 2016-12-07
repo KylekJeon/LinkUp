@@ -39864,6 +39864,10 @@
 	
 	var _front_page_container2 = _interopRequireDefault(_front_page_container);
 	
+	var _group_page_container = __webpack_require__(298);
+	
+	var _group_page_container2 = _interopRequireDefault(_group_page_container);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Root = function Root(_ref) {
@@ -39905,7 +39909,8 @@
 	          _reactRouter.Route,
 	          { path: 'front', component: _front_container2.default, onEnter: _ensureLoggedIn },
 	          _react2.default.createElement(_reactRouter.IndexRoute, { component: _front_page_container2.default }),
-	          _react2.default.createElement(_reactRouter.Route, { path: 'users/:userId', component: _users_container2.default })
+	          _react2.default.createElement(_reactRouter.Route, { path: 'users/:userId', component: _users_container2.default }),
+	          _react2.default.createElement(_reactRouter.Route, { path: 'groups/:groupId', component: _group_page_container2.default })
 	        )
 	      )
 	    )
@@ -48664,7 +48669,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.receiveGroupErrors = exports.receiveGroups = exports.RECEIVE_GROUP_ERRORS = exports.RECEIVE_GROUPS = undefined;
+	exports.receiveGroupErrors = exports.receiveGroups = exports.ADD_USER_TO_GROUP = exports.RECEIVE_GROUP_ERRORS = exports.RECEIVE_GROUPS = undefined;
 	exports.fetchGroups = fetchGroups;
 	
 	var _group_api_util = __webpack_require__(297);
@@ -48676,6 +48681,7 @@
 	// constants
 	var RECEIVE_GROUPS = exports.RECEIVE_GROUPS = "RECEIVE_GROUPS";
 	var RECEIVE_GROUP_ERRORS = exports.RECEIVE_GROUP_ERRORS = "RECEIVE_GROUP_ERRORS";
+	var ADD_USER_TO_GROUP = exports.ADD_USER_TO_GROUP = "ADD_USER_TO_GROUP";
 	
 	// action creators
 	var receiveGroups = exports.receiveGroups = function receiveGroups(groups) {
@@ -48718,6 +48724,151 @@
 	    method: "GET",
 	    url: "api/groups"
 	  });
+	};
+	
+	var addUserToGroup = exports.addUserToGroup = function addUserToGroup(groupId) {
+	  return $.ajax({
+	    method: "POST",
+	    url: "api/groups/" + groupId + "/join"
+	  });
+	};
+
+/***/ },
+/* 298 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _group_page = __webpack_require__(299);
+	
+	var _group_page2 = _interopRequireDefault(_group_page);
+	
+	var _selectors = __webpack_require__(300);
+	
+	var _group_api_util = __webpack_require__(297);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state, ownProps) {
+	  var group = (0, _selectors.selectGroup)(state.groups.groups, ownProps.params.groupId);
+	  return {
+	    group: group
+	  };
+	};
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return {
+	    addUserToGroup: _group_api_util.addUserToGroup
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_group_page2.default);
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var GroupPage = function (_React$Component) {
+	  _inherits(GroupPage, _React$Component);
+	
+	  function GroupPage(props) {
+	    _classCallCheck(this, GroupPage);
+	
+	    var _this = _possibleConstructorReturn(this, (GroupPage.__proto__ || Object.getPrototypeOf(GroupPage)).call(this, props));
+	
+	    _this.addUserToGroup = _this.addUserToGroup.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(GroupPage, [{
+	    key: 'addUserToGroup',
+	    value: function addUserToGroup() {
+	      this.props.addUserToGroup(this.props.group.id);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'section',
+	        { className: 'group-page group' },
+	        _react2.default.createElement(
+	          'header',
+	          { className: 'group-header' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'group-name' },
+	            'App Academy'
+	          ),
+	          _react2.default.createElement(
+	            'button',
+	            { className: 'group-join-button', onClick: this.addUserToGroup },
+	            'Join Us!'
+	          )
+	        ),
+	        _react2.default.createElement('aside', { className: 'group-aside' }),
+	        _react2.default.createElement(
+	          'section',
+	          { className: 'group-content' },
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'group-description' },
+	            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	          )
+	        ),
+	        _react2.default.createElement('section', { className: 'group-upcoming' }),
+	        _react2.default.createElement('section', { className: 'group-past' })
+	      );
+	    }
+	  }]);
+	
+	  return GroupPage;
+	}(_react2.default.Component);
+	
+	exports.default = GroupPage;
+
+/***/ },
+/* 300 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var selectGroup = exports.selectGroup = function selectGroup(groups, id) {
+	  var group = void 0;
+	  for (var key in groups) {
+	    if (key === id) {
+	      group = groups[key];
+	    }
+	  }
+	  return group;
 	};
 
 /***/ }

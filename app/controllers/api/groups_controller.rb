@@ -19,6 +19,18 @@ class Api::GroupsController < ApplicationController
     end
   end
 
+  def join
+    debugger
+    @new_membership = current_user.memberships.new(group_id: params[:id])
+    debugger
+    @new_membership.save
+    render json: ["successfully joined group"]
+  end
+
+
+
+
+
   private
   def group_params
     params.permit(:group).require(:name, :description)

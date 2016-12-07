@@ -1,0 +1,83 @@
+.group-page {
+  height: 1000px;
+  width: 950px;
+  background: transparent;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.group-header {
+  width: 950px;
+  background: red;
+  height: 200px;
+  position: relative;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.group-name {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  font-family: "Roboto", sans-serif;
+}
+
+.group-join-button {
+  width: 90px;
+  height: 35px;
+  position: absolute;
+  background: blue;
+  color: white;
+  text-align: center;
+  right: 10px;
+  bottom: 10px;
+}
+
+.group-aside {
+  width: 205px;
+  min-height: 500px;
+  background: red;
+  margin-top: 25px;
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.group-content {
+  width: 710px;
+  min-height: 300px;
+  background: red;
+  float: right;
+  margin-top: 25px;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.group-description {
+  color: white;
+  font-family: sans-serif;
+}
+
+.group-upcoming {
+  background: red;
+  width: 710px;
+  min-height: 200px;
+  float: right;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.group-past {
+  background: red;
+  width: 710px;
+  min-height: 200px;
+  float: right;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

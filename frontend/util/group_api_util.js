@@ -5,3 +5,10 @@ export const fetchGroups = () => (
     url: "api/groups"
   })
 );
+
+export const addUserToGroup = (groupId) => (
+  $.ajax({
+    method: "POST",
+    url: `api/groups/${groupId}/join`
+  })
+);

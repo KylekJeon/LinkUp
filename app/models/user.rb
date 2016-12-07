@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }, allow_nil: true
   attr_reader :password
 
+  has_many :memberships
+  has_many :groups, through: :memberships, source: :group
+
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end

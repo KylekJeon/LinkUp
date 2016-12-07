@@ -3,6 +3,7 @@ import * as APIUtil from './../util/group_api_util';
 // constants
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
 export const RECEIVE_GROUP_ERRORS = "RECEIVE_GROUP_ERRORS";
+export const ADD_USER_TO_GROUP = "ADD_USER_TO_GROUP";
 
 
 // action creators
