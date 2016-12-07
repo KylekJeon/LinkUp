@@ -17,7 +17,7 @@ const WelcomePage = (props) => (
       <section className='explore-first-row'>
         <label>
           <Link to='/' className='welcome-pic-links'>
-            <img className='pic-1 welcome-pic' src={window.sportsImage} />
+            <img className='pic-1 welcome-pic' src={window.assets.sportsImage} />
           </Link>
           <pre>
             Sports
@@ -25,7 +25,7 @@ const WelcomePage = (props) => (
         </label>
         <label>
           <Link to='/' className='welcome-pic-links'>
-            <img className='pic-2 welcome-pic' src={window.musicImage} />
+            <img className='pic-2 welcome-pic' src={window.assets.musicImage} />
           </Link>
           <pre>
             Music
@@ -33,7 +33,7 @@ const WelcomePage = (props) => (
         </label>
         <label>
           <Link to='/' className='welcome-pic-links'>
-            <img className='pic-3 welcome-pic' src={window.healthImage} />
+            <img className='pic-3 welcome-pic' src={window.assets.healthImage} />
           </Link>
           <pre>
             Health & Fitness
@@ -41,7 +41,7 @@ const WelcomePage = (props) => (
         </label>
         <label>
           <Link to='/' className='welcome-pic-links'>
-            <img className='pic-4 welcome-pic' src={window.outdoorImage} />
+            <img className='pic-4 welcome-pic' src={window.assets.outdoorImage} />
           </Link>
           <pre>
             Outdoor Adventures
@@ -51,7 +51,7 @@ const WelcomePage = (props) => (
       <section className='explore-second-row'>
         <label>
           <Link to='/' className='welcome-pic-links'>
-            <img className='pic-5 welcome-pic' src={window.artsImage} />
+            <img className='pic-5 welcome-pic' src={window.assets.artsImage} />
           </Link>
           <pre>
             Arts
@@ -59,7 +59,7 @@ const WelcomePage = (props) => (
         </label>
         <label>
           <Link to='/' className='welcome-pic-links'>
-            <img className='pic-6 welcome-pic' src={window.socialImage} />
+            <img className='pic-6 welcome-pic' src={window.assets.socialImage} />
           </Link>
           <pre>
             Social
@@ -67,7 +67,7 @@ const WelcomePage = (props) => (
         </label>
         <label>
           <Link to='/' className='welcome-pic-links'>
-            <img className='pic-7 welcome-pic' src={window.businessImage} />
+            <img className='pic-7 welcome-pic' src={window.assets.businessImage} />
           </Link>
           <pre>
             Career & Business
@@ -75,7 +75,7 @@ const WelcomePage = (props) => (
         </label>
         <label>
           <Link to='/' className='welcome-pic-links'>
-            <img className='pic-8 welcome-pic' src={window.foodImage} />
+            <img className='pic-8 welcome-pic' src={window.assets.foodImage} />
           </Link>
           <pre>
             Food & Drinks

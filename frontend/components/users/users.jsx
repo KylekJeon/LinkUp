@@ -19,7 +19,7 @@ class User extends React.Component {
           <h1>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
         </div>
         <div className='profile-picture'>
-          <img src={window.profilePicture}/>
+          <img src={window.assets.profileAvatar}/>
         </div>
         <div className='profile-page-bio'>
           <span>Email: {this.props.currentUser.email}</span><br/><br/>

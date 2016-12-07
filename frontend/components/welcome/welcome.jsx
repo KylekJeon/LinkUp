@@ -17,7 +17,7 @@ class Welcome extends React.Component {
   loginGuest(e) {
     e.preventDefault();
     const user = {
-      username: "Guest",
+      username: "guest",
       password: "guest123"
     };
     this.props.login(user).then(() => this.redirect());
