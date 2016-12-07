@@ -22586,6 +22586,10 @@
 	
 	var _redux = __webpack_require__(179);
 	
+	var _group_reducer = __webpack_require__(295);
+	
+	var _group_reducer2 = _interopRequireDefault(_group_reducer);
+	
 	var _session_reducer = __webpack_require__(202);
 	
 	var _session_reducer2 = _interopRequireDefault(_session_reducer);
@@ -22593,7 +22597,8 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var rootReducer = (0, _redux.combineReducers)({
-	  session: _session_reducer2.default
+	  session: _session_reducer2.default,
+	  groups: _group_reducer2.default
 	});
 	
 	exports.default = rootReducer;
@@ -22626,7 +22631,7 @@
 	    case _session_actions.RECEIVE_CURRENT_USER:
 	      var currentUser = action.currentUser;
 	      return (0, _lodash.merge)({}, _nullUser, { currentUser: currentUser });
-	    case _session_actions.RECEIVE_ERRORS:
+	    case _session_actions.RECEIVE_SESSION_ERRORS:
 	      var errors = action.errors;
 	      return (0, _lodash.merge)({}, _nullUser, { errors: errors });
 	    default:
@@ -39717,7 +39722,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.receiveErrors = exports.receiveCurrentUser = exports.RECEIVE_ERRORS = exports.RECEIVE_CURRENT_USER = undefined;
+	exports.receiveSessionErrors = exports.receiveCurrentUser = exports.RECEIVE_SESSION_ERRORS = exports.RECEIVE_CURRENT_USER = undefined;
 	exports.login = login;
 	exports.signup = signup;
 	exports.logout = logout;
@@ -39730,7 +39735,7 @@
 	
 	// constants
 	var RECEIVE_CURRENT_USER = exports.RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
-	var RECEIVE_ERRORS = exports.RECEIVE_ERRORS = "RECEIVE_ERRORS";
+	var RECEIVE_SESSION_ERRORS = exports.RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 	
 	// action creators
 	var receiveCurrentUser = exports.receiveCurrentUser = function receiveCurrentUser(currentUser) {
@@ -39740,9 +39745,9 @@
 	  };
 	};
 	
-	var receiveErrors = exports.receiveErrors = function receiveErrors(errors) {
+	var receiveSessionErrors = exports.receiveSessionErrors = function receiveSessionErrors(errors) {
 	  return {
-	    type: RECEIVE_ERRORS,
+	    type: RECEIVE_SESSION_ERRORS,
 	    errors: errors
 	  };
 	};
@@ -39754,7 +39759,7 @@
 	    return APIUtil.login(user).then(function (user) {
 	      return dispatch(receiveCurrentUser(user));
 	    }, function (err) {
-	      return dispatch(receiveErrors(err.responseJSON));
+	      return dispatch(receiveSessionErrors(err.responseJSON));
 	    });
 	  };
 	}
@@ -39764,7 +39769,7 @@
 	    return APIUtil.signup(user).then(function (user) {
 	      return dispatch(receiveCurrentUser(user));
 	    }, function (err) {
-	      return dispatch(receiveErrors(err.responseJSON));
+	      return dispatch(receiveSessionErrors(err.responseJSON));
 	    });
 	  };
 	}
@@ -47296,6 +47301,8 @@
 	
 	var _session_actions = __webpack_require__(204);
 	
+	var _group_actions = __webpack_require__(296);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var mapStateToProps = function mapStateToProps(state) {
@@ -47305,9 +47312,14 @@
 	};
 	
 	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	  return { logout: function logout() {
+	  return {
+	    logout: function logout() {
 	      return dispatch((0, _session_actions.logout)());
-	    } };
+	    },
+	    fetchGroups: function fetchGroups() {
+	      return dispatch((0, _group_actions.fetchGroups)());
+	    }
+	  };
 	};
 	
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_front2.default);
@@ -47358,6 +47370,11 @@
 	  }
 	
 	  _createClass(Front, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.props.fetchGroups();
+	    }
+	  }, {
 	    key: 'componentDidUpdate',
 	    value: function componentDidUpdate() {
 	      if (this.props.currentUser === null) {
@@ -48599,6 +48616,109 @@
 	}(_react2.default.Component);
 	
 	exports.default = FrontPage;
+
+/***/ },
+/* 295 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _lodash = __webpack_require__(203);
+	
+	var _group_actions = __webpack_require__(296);
+	
+	var _nullGroups = Object.freeze({
+	  groups: {},
+	  errors: []
+	});
+	
+	var GroupReducer = function GroupReducer() {
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullGroups;
+	  var action = arguments[1];
+	
+	  Object.freeze(state);
+	  switch (action.type) {
+	    case _group_actions.RECEIVE_GROUPS:
+	      var groups = action.groups;
+	      return (0, _lodash.merge)({}, _nullGroups, { groups: groups });
+	    case _group_actions.RECEIVE_GROUP_ERRORS:
+	      var errors = action.errors;
+	      return (0, _lodash.merge)({}, _nullGroups, { errors: errors });
+	    default:
+	      return state;
+	  }
+	};
+	
+	exports.default = GroupReducer;
+
+/***/ },
+/* 296 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.receiveGroupErrors = exports.receiveGroups = exports.RECEIVE_GROUP_ERRORS = exports.RECEIVE_GROUPS = undefined;
+	exports.fetchGroups = fetchGroups;
+	
+	var _group_api_util = __webpack_require__(297);
+	
+	var APIUtil = _interopRequireWildcard(_group_api_util);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	// constants
+	var RECEIVE_GROUPS = exports.RECEIVE_GROUPS = "RECEIVE_GROUPS";
+	var RECEIVE_GROUP_ERRORS = exports.RECEIVE_GROUP_ERRORS = "RECEIVE_GROUP_ERRORS";
+	
+	// action creators
+	var receiveGroups = exports.receiveGroups = function receiveGroups(groups) {
+	  return {
+	    type: RECEIVE_GROUPS,
+	    groups: groups
+	  };
+	};
+	
+	var receiveGroupErrors = exports.receiveGroupErrors = function receiveGroupErrors(errors) {
+	  return {
+	    type: RECEIVE_GROUP_ERRORS,
+	    errors: errors
+	  };
+	};
+	
+	// thunk creators
+	
+	function fetchGroups() {
+	  return function (dispatch) {
+	    return APIUtil.fetchGroups().then(function (groups) {
+	      return dispatch(receiveGroups(groups));
+	    }, function (err) {
+	      return dispatch(receiveGroupErrors(err));
+	    });
+	  };
+	}
+
+/***/ },
+/* 297 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var fetchGroups = exports.fetchGroups = function fetchGroups() {
+	  return $.ajax({
+	    method: "GET",
+	    url: "api/groups"
+	  });
+	};
 
 /***/ }
 /******/ ]);

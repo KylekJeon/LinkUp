@@ -13,6 +13,10 @@ class Front extends React.Component {
     this.toggleProfileDrop = this.toggleProfileDrop.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchGroups();
+  }
+
   componentDidUpdate(){
     if(this.props.currentUser === null){
       this.props.router.push('/welcome');

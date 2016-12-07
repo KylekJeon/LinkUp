@@ -11,7 +11,7 @@
 
 class Group < ActiveRecord::Base
   validates :name, :description, presence: true;
-  validates :description, length: { minimum: 200 }
-  
+  validates :description, length: { minimum: 10 }
+
 
 end
