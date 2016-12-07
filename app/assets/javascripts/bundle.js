@@ -39839,23 +39839,23 @@
 	
 	var _front_container2 = _interopRequireDefault(_front_container);
 	
-	var _welcome_page = __webpack_require__(288);
+	var _welcome_page = __webpack_require__(286);
 	
 	var _welcome_page2 = _interopRequireDefault(_welcome_page);
 	
-	var _login_form_container = __webpack_require__(289);
+	var _login_form_container = __webpack_require__(287);
 	
 	var _login_form_container2 = _interopRequireDefault(_login_form_container);
 	
-	var _signup_form_container = __webpack_require__(291);
+	var _signup_form_container = __webpack_require__(289);
 	
 	var _signup_form_container2 = _interopRequireDefault(_signup_form_container);
 	
-	var _users_container = __webpack_require__(293);
+	var _users_container = __webpack_require__(291);
 	
 	var _users_container2 = _interopRequireDefault(_users_container);
 	
-	var _front_page_container = __webpack_require__(298);
+	var _front_page_container = __webpack_require__(293);
 	
 	var _front_page_container2 = _interopRequireDefault(_front_page_container);
 	
@@ -47520,9 +47520,7 @@
 	exports.default = Front;
 
 /***/ },
-/* 286 */,
-/* 287 */,
-/* 288 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47691,7 +47689,7 @@
 	exports.default = WelcomePage;
 
 /***/ },
-/* 289 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47702,7 +47700,7 @@
 	
 	var _reactRedux = __webpack_require__(207);
 	
-	var _login_form = __webpack_require__(290);
+	var _login_form = __webpack_require__(288);
 	
 	var _login_form2 = _interopRequireDefault(_login_form);
 	
@@ -47728,7 +47726,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_login_form2.default);
 
 /***/ },
-/* 290 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47872,7 +47870,7 @@
 	exports.default = LoginForm;
 
 /***/ },
-/* 291 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47883,7 +47881,7 @@
 	
 	var _reactRedux = __webpack_require__(207);
 	
-	var _signup_form = __webpack_require__(292);
+	var _signup_form = __webpack_require__(290);
 	
 	var _signup_form2 = _interopRequireDefault(_signup_form);
 	
@@ -47909,7 +47907,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_signup_form2.default);
 
 /***/ },
-/* 292 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48084,7 +48082,7 @@
 	exports.default = SignUpForm;
 
 /***/ },
-/* 293 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48095,7 +48093,7 @@
 	
 	var _reactRedux = __webpack_require__(207);
 	
-	var _users = __webpack_require__(294);
+	var _users = __webpack_require__(292);
 	
 	var _users2 = _interopRequireDefault(_users);
 	
@@ -48110,7 +48108,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(_users2.default);
 
 /***/ },
-/* 294 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48214,9 +48212,33 @@
 	exports.default = User;
 
 /***/ },
-/* 295 */,
-/* 296 */,
-/* 297 */
+/* 293 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(207);
+	
+	var _front_page = __webpack_require__(294);
+	
+	var _front_page2 = _interopRequireDefault(_front_page);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    currentUser: state.session.currentUser
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(_front_page2.default);
+
+/***/ },
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48577,32 +48599,6 @@
 	}(_react2.default.Component);
 	
 	exports.default = FrontPage;
-
-/***/ },
-/* 298 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _reactRedux = __webpack_require__(207);
-	
-	var _front_page = __webpack_require__(297);
-	
-	var _front_page2 = _interopRequireDefault(_front_page);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    currentUser: state.session.currentUser
-	  };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(_front_page2.default);
 
 /***/ }
 /******/ ]);
