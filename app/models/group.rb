@@ -14,7 +14,7 @@ class Group < ActiveRecord::Base
   validates :description, length: { minimum: 10 }
 
   has_many :memberships
-  has_many :users, through: :memberships, source: :users
+  has_many :users, through: :memberships, source: :user
 
 
 end

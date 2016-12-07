@@ -6,23 +6,37 @@ class GroupPage extends React.Component {
     this.addUserToGroup = this.addUserToGroup.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchGroup(this.props.params.groupId);
+    this.props.fetchUsersForGroup(this.props.params.groupId);
+  }
+
   addUserToGroup() {
     this.props.addUserToGroup(this.props.group.id);
   }
 
   render(){
     let groupName;
+    let userList;
     if(this.props.group){
       groupName = this.props.group.name;
+    }
+    if(this.props.users[0]){
+      userList = this.props.users.map( (user) => (
+        <li key={user.id}>{user.username}</li>
+      ));
     }
 
     return(
       <section className='group-page group'>
         <header className='group-header'>
-          <div className='group-name'>{this.props.group.name}</div>
+          <div className='group-name'>{groupName}</div>
           <button className='group-join-button' onClick={this.addUserToGroup}>Join Us!</button>
         </header>
         <aside className='group-aside'>
+          <ul className='group-users-list'>
+            {userList}
+          </ul>
         </aside>
         <section className='group-content'>
           <p className='group-description'>

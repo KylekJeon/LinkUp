@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import GroupPage from './group_page';
 import { selectGroup } from '../../reducers/selectors';
-import { addUserToGroup } from '../../actions/group_actions';
+import { fetchUsersForGroup, addUserToGroup, fetchGroup } from '../../actions/group_actions';
 
 
-const mapStateToProps = (state, ownProps) => {
-  const group = selectGroup(state.groups.groups, ownProps.params.groupId);
-  return ({
-    group
-  });
-};
+const mapStateToProps = (state, ownProps) => ({
+  users: state.groups.users,
+  group: state.groups.currentGroup
+});
 
 const mapDispatchToProps = (dispatch) => ({
-  addUserToGroup: (groupId) => dispatch(addUserToGroup(groupId))
+  addUserToGroup: (groupId) => dispatch(addUserToGroup(groupId)),
+  fetchUsersForGroup: (groupId) => dispatch(fetchUsersForGroup(groupId)),
+  fetchGroup: (groupId) => dispatch(fetchGroup(groupId))
 });
 
 

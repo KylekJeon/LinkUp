@@ -7,6 +7,7 @@ class Api::GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    render :show
   end
 
   def create
@@ -20,16 +21,20 @@ class Api::GroupsController < ApplicationController
   end
 
   def join
-    @new_membership = current_user.memberships.new(group_id: params[:id])
+    group_id = params[:id].to_i
+    @new_membership = current_user.memberships.new(group_id: group_id)
     if @new_membership.save
-      render json: ["successfully joined group"]
+      @users = Group.find(group_id).users
+      render json: @users
     else
       render json: ["unsuccessful in joining group"]
     end
   end
 
-
-
+  def fetch
+    @users = Group.find(params[:group_id]).users
+    render json: @users
+  end
 
 
   private
