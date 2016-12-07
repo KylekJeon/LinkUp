@@ -19,7 +19,7 @@ class GroupPage extends React.Component {
     return(
       <section className='group-page group'>
         <header className='group-header'>
-          <div className='group-name'>{groupName}</div>
+          <div className='group-name'>{this.props.group.name}</div>
           <button className='group-join-button' onClick={this.addUserToGroup}>Join Us!</button>
         </header>
         <aside className='group-aside'>
