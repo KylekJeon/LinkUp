@@ -361,7 +361,6 @@ Membership.create(user_id: 12, group_id: 9)
 
 Event.create(name: Faker::StarWars.quote, event_time: Faker::Time.backward(14), location: Faker::Address.street_name, description: Faker::ChuckNorris.fact, group_id: 9)
 Event.create(name: Faker::StarWars.quote, event_time: Faker::Time.backward(14), location: Faker::Address.street_name, description: Faker::ChuckNorris.fact, group_id: 9)
-Event.create(name: Faker::StarWars.quote, event_time: Faker::Time.backward(14), location: Faker::Address.street_name, description: Faker::ChuckNorris.fact, group_id: 9)
 Event.create(name: Faker::StarWars.quote, event_time: Faker::Time.forward(60), location: Faker::Address.street_name, description: Faker::ChuckNorris.fact, group_id: 9)
 Event.create(name: Faker::StarWars.quote, event_time: Faker::Time.forward(60), location: Faker::Address.street_name, description: Faker::ChuckNorris.fact, group_id: 9)
 Event.create(name: Faker::StarWars.quote, event_time: Faker::Time.forward(60), location: Faker::Address.street_name, description: Faker::ChuckNorris.fact, group_id: 9)
