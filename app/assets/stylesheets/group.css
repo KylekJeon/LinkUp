@@ -8,13 +8,20 @@
 
 .group-header {
   width: 950px;
-  background: red;
+  background: #29a599;
   height: 200px;
   position: relative;
   padding: 5px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
   border-radius: 5px;
+  font-family: "Courgette", arial;
+  text-align: center;
+}
+
+.group-header-background {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .group-name {
@@ -28,11 +35,12 @@
   width: 90px;
   height: 35px;
   position: absolute;
-  background: blue;
+  background: #3fe0d0;
   color: white;
   text-align: center;
   right: 10px;
   bottom: 10px;
+  border-radius: 5px;
 }
 
 .group-aside {
@@ -41,21 +49,37 @@
   background: red;
   margin-top: 25px;
   float: left;
-  border: 1px solid #ccc;
   border-radius: 5px;
+  background: #29a599;
+}
+
+.group-users-list {
+  padding: 5px;
+  color: white;
+}
+
+.group-users-list li {
+  width: 180px;
+  border-bottom: 1px solid #049287;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2px;
+  text-transform: capitalize;
+  font-family: arial;
+  border-top: 1px solid #049287;
+  margin-top: 10px;
 }
 
 .group-content {
   width: 710px;
   min-height: 300px;
-  background: red;
   float: right;
   margin-top: 25px;
   padding: 15px;
   box-sizing: border-box;
   margin-bottom: 25px;
-  border: 1px solid #ccc;
   border-radius: 5px;
+  background: #29a599;
 }
 
 .group-description {
@@ -64,20 +88,18 @@
 }
 
 .group-upcoming {
-  background: red;
+  background: #29a599;
   width: 710px;
   min-height: 200px;
   float: right;
   margin-bottom: 25px;
-  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .group-past {
-  background: red;
+  background: #29a599;
   width: 710px;
   min-height: 200px;
   float: right;
-  border: 1px solid #ccc;
   border-radius: 5px;
 }
