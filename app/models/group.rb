@@ -11,10 +11,11 @@
 
 class Group < ActiveRecord::Base
   validates :name, :description, presence: true;
-  validates :description, length: { minimum: 10 }
+  validates :description, length: { minimum: 30 }
 
   has_many :memberships
   has_many :users, through: :memberships, source: :user
+  has_many :events
 
 
 end

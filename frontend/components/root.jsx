@@ -10,6 +10,8 @@ import LoginFormContainer from './session/login_form_container';
 import SignUpFormContainer from './session/signup_form_container';
 import UsersContainer from './users/users_container';
 import GroupPageContainer from './groups/group_page_container';
+import GroupPageContentContainer from './groups/group_page_content_container';
+import EventPageContainer from './events/event_page_container';
 
 
 const Root = ({ store }) => {
@@ -41,7 +43,10 @@ const Root = ({ store }) => {
           <Route path='home' component={ HomeContainer } onEnter={_ensureLoggedIn}>
             <IndexRoute component={ HomePageContainer } />
             <Route path='/users/:userId' component={ UsersContainer }/>
-            <Route path='/groups/:groupId' component={ GroupPageContainer }/>
+            <Route path='/groups/:groupId' component={ GroupPageContainer }>
+              <IndexRoute component={ GroupPageContentContainer } />
+              <Route path='events/:eventId' component={ EventPageContainer }/>
+            </Route>
           </Route>
         </Route>
       </Router>

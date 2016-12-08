@@ -1,4 +1,5 @@
 import React from 'react';
+import GroupPageContent from './group_page_content';
 
 class GroupPage extends React.Component {
   constructor(props){
@@ -49,16 +50,7 @@ class GroupPage extends React.Component {
             {userList}
           </ul>
         </aside>
-        <section className='group-content'>
-          <p className='group-description'>
-            {this.state.groupDescription}
-          </p>
-        </section>
-        <section className='group-upcoming'>
-
-        </section>
-        <section className='group-past'>
-        </section>
+        { this.props.children }
       </section>
     );
   }

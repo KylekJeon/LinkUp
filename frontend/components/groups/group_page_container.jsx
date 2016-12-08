@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import GroupPage from './group_page';
-import { selectGroup } from '../../reducers/selectors';
 import { fetchUsersForGroup, addUserToGroup, fetchGroup } from '../../actions/group_actions';
 
 
