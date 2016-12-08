@@ -5,7 +5,7 @@ export const RECEIVE_CURRENT_USER_EVENTS = "RECEIVE_CURRENT_USER_EVENTS";
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const RECEIVE_CURRENT_GROUP_EVENTS = "RECEIVE_CURRENT_GROUP_EVENTS";
 export const RECEIVE_EVENT_ERRORS = "RECEIVE_EVENT_ERRORS";
-
+export const RECEIVE_CURRENT_USER_GROUP_EVENTS = "RECEIVE_CURRENT_USER_GROUP_EVENTS";
 // action creators
 export const receiveEvents = (events) => ({
   type: RECEIVE_EVENTS,
@@ -20,6 +20,11 @@ export const receiveCurrentUserEvents = (events) => ({
 export const receiveCurrentGroupEvents = (events) => ({
   type: RECEIVE_CURRENT_GROUP_EVENTS,
   currentGroupEvents: events
+});
+
+export const receiveCurrentUserGroupEvents = (events) => ({
+  type: RECEIVE_CURRENT_USER_GROUP_EVENTS,
+  currentUserGroupEvents: events
 });
 
 export const receiveEventErrors = (errors) => ({
@@ -48,6 +53,14 @@ export function fetchCurrentGroupEvents(groupId) {
   return (dispatch) => {
     return APIUtil.fetchCurrentGroupEvents(groupId).then(
       events => dispatch(receiveCurrentGroupEvents(events))
+    );
+  };
+}
+
+export function fetchCurrentUserGroupEvents() {
+  return (dispatch) => {
+    return APIUtil.fetchCurrentUserGroupEvents().then(
+      events => dispatch(receiveCurrentUserGroupEvents(events))
     );
   };
 }

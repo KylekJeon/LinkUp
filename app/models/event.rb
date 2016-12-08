@@ -20,4 +20,12 @@ class Event < ActiveRecord::Base
   has_many :users, through: :rsvps, source: :user
   belongs_to :group
 
+
+  def self.find_user_groups_events(user_id)
+    groups = User.find(user_id).groups
+    groups_id = groups.map { |group| group.id }
+    events = Event.joins(:group).where("groups.id IN (?)", groups_id)
+    events
+  end
+
 end

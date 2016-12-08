@@ -26,3 +26,10 @@ export const createGroupEvent = (groupId) => (
     url: `api/groups/${groupId}/events`
   })
 );
+
+export const fetchCurrentUserGroupEvents = () => (
+  $.ajax({
+    method: "GET",
+    url: 'api/events?filter=user_groups'
+  })
+);
