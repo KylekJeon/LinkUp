@@ -7,10 +7,36 @@ class HomePage extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      groupCalendar: "calendar"
+      groupCalendar: "calendar",
+      currentUserEvents: [],
+      allEvents: []
     };
     this.toggleGroup = this.toggleGroup.bind(this);
     this.toggleCalendar = this.toggleCalendar.bind(this);
+    this.fetchAllEvents = this.fetchAllEvents.bind(this);
+    this.fetchCurrentUserEvents = this.fetchCurrentUserEvents.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.fetchUserGroups(this.props.currentUser.id);
+    this.props.fetchCurrentUserEvents(this.props.currentUser.id);
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      currentUserEvents: nextProps.currentUserEvents,
+      allEvents: nextProps.allEvents
+    });
+  }
+
+  fetchAllEvents(e){
+    e.preventDefault();
+    this.props.fetchEvents();
+  }
+
+  fetchCurrentUserEvents(e){
+    e.preventDefault();
+    this.props.fetchCurrentUserEvents(this.props.currentUser.id);
   }
 
   toggleGroup() {
@@ -24,10 +50,30 @@ class HomePage extends React.Component {
   render() {
     let group = "search-bar-group ";
     let calendar = "search-bar-calendar ";
+    let Events;
     if(this.state.groupCalendar === 'calendar'){
       calendar = calendar + "search-chosen";
     } else {
       group = group + "search-chosen";
+    }
+    if(this.state.currentUserEvents[0]){
+      Events = this.state.currentUserEvents.map((event) => (
+        <li key={event.id}>
+          <div className='content-list-time'>{event.event_time}</div>
+          <span className='content-list-item content-list-first'>{event.name}</span>
+          <span className='content-list-item content-list-middle'>{event.location}</span>
+          <span className='content-list-item content-list-last'>{event.description}</span>
+        </li>
+      ));
+    } else if (this.state.allEvents[0]){
+      Events = this.state.allEvents.map((event) => (
+        <li key={event.id}>
+          <div className='content-list-time'>{event.event_time}</div>
+          <span className='content-list-item content-list-first'>{event.name}</span>
+          <span className='content-list-item content-list-middle'>{event.location}</span>
+          <span className='content-list-item content-list-last'>{event.description}</span>
+        </li>
+      ));
     }
 
     return (
@@ -58,55 +104,13 @@ class HomePage extends React.Component {
             <button onClick={this.toggleGroup} className={group}>Groups</button>
           </form>
           <div className='content-main-list-day'>
-            <h4>THURSDAY, DECEMBER 22</h4>
             <ul className='content-main-list group'>
-              <li>
-                <div className='content-list-time'>7:00PM</div>
-                <span className='content-list-item content-list-first'>Happy Birthday To Me</span>
-                <span className='content-list-item content-list-middle'>Birthday Party? Nah, App Academy Man</span>
-                <span className='content-list-item content-list-last'>Everyone in class going</span>
-              </li>
-              <li>
-                <div className='content-list-time'>8:00PM</div>
-                <span className='content-list-item content-list-first'>freak out about fullstack</span>
-                <span className='content-list-item content-list-middle'>Who's staying overnight?</span>
-                <span className='content-list-item content-list-last'>Most people in class going</span>
-              </li>
-              <li>
-                <div className='content-list-time'>9:00PM</div>
-                <span className='content-list-item content-list-first'>slumber party at the app</span>
-                <span className='content-list-item content-list-middle'>I hope you brought your pillow armor</span>
-                <span className='content-list-item content-list-last'>the brave, the bold, the fearless going</span>
-              </li>
-            </ul>
-          </div>
-          <div className='content-main-list-day'>
-            <h4>THURSDAY, DECEMBER 22</h4>
-            <ul className='content-main-list group'>
-              <li>
-                <div className='content-list-time'>7:00PM</div>
-                <span className='content-list-item content-list-first'>Happy Birthday To Me</span>
-                <span className='content-list-item content-list-middle'>Birthday Party? Nah, App Academy Man</span>
-                <span className='content-list-item content-list-last'>Everyone in class going</span>
-              </li>
-              <li>
-                <div className='content-list-time'>8:15PM</div>
-                <span className='content-list-item content-list-first'>freak out about fullstack</span>
-                <span className='content-list-item content-list-middle'>Who's staying overnight?</span>
-                <span className='content-list-item content-list-last'>Most people in class going</span>
-              </li>
-              <li>
-                <div className='content-list-time'>9:00PM</div>
-                <span className='content-list-item content-list-first'>slumber party at the app</span>
-                <span className='content-list-item content-list-middle'>I hope you brought your pillow armor</span>
-                <span className='content-list-item content-list-last'>the brave, the bold, the fearless going</span>
-              </li>
+              {Events}
             </ul>
           </div>
           <ul className='content-main-list-linkups'>
-            <li><Link to='/'>All LinkUps</Link></li>
-            <li><Link to='/'>My LinkUps & Suggestions</Link></li>
-            <li><Link to='/'>My LinkUps</Link></li>
+            <li><button onClick={this.fetchAllEvents}>All LinkUps</button></li>
+            <li><button onClick={this.fetchCurrentUserEvents}>My LinkUps</button></li>
             <li><Link to='/'>I'm going</Link></li>
           </ul>
         </section>

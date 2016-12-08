@@ -13,10 +13,6 @@ class Home extends React.Component {
     this.toggleProfileDrop = this.toggleProfileDrop.bind(this);
   }
 
-  componentDidMount(){
-    this.props.fetchUserGroups(this.props.currentUser.id);
-  }
-
   componentDidUpdate(){
     if(this.props.currentUser === null){
       this.props.router.push('/welcome');

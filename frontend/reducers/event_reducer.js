@@ -14,16 +14,16 @@ const EventReducer = (state = _nullEvents , action) => {
   switch(action.type){
     case RECEIVE_EVENTS:
       const events = action.events;
-      return merge({}, state, { events });
+      return merge({}, _nullEvents, { events });
     case RECEIVE_CURRENT_GROUP_EVENTS:
       const currentGroupEvents = action.currentGroupEvents;
-      return merge({}, state, { currentGroupEvents });
+      return merge({}, _nullEvents, { currentGroupEvents });
     case RECEIVE_CURRENT_USER_EVENTS:
       const currentUserEvents = action.currentUserEvents;
-      return merge({}, state, { currentUserEvents });
+      return merge({}, _nullEvents, { currentUserEvents });
     case RECEIVE_EVENT_ERRORS:
       const errors = action.errors;
-      return merge({}, state, { errors });
+      return merge({}, _nullEvents, { errors });
     default:
       return state;
   }

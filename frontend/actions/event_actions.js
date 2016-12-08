@@ -8,17 +8,17 @@ export const RECEIVE_EVENT_ERRORS = "RECEIVE_EVENT_ERRORS";
 
 // action creators
 export const receiveEvents = (events) => ({
-  type: RECEIVE_GROUPS,
+  type: RECEIVE_EVENTS,
   events
 });
 
 export const receiveCurrentUserEvents = (events) => ({
-  type: RECEIVE_GROUP_ERRORS,
+  type: RECEIVE_CURRENT_USER_EVENTS,
   currentUserEvents: events
 });
 
 export const receiveCurrentGroupEvents = (events) => ({
-  type: RECEIVE_GROUP_USERS,
+  type: RECEIVE_CURRENT_GROUP_EVENTS,
   currentGroupEvents: events
 });
 

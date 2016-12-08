@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
 
   has_many :memberships
   has_many :groups, through: :memberships, source: :group
+  has_many :rsvps
+  has_many :events, through: :rsvps, source: :event
 
 
   def self.generate_session_token
