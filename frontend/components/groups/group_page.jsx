@@ -39,7 +39,7 @@ class GroupPage extends React.Component {
       <section className='group-page group'>
         <header className='group-header'>
           <div className='group-header-background'>Welcome to LinkUp, a place to connect</div>
-          <div className='group-name'>Welcome to {this.props.group.name}</div>
+          <div className='group-name'>Welcome to {this.state.groupName}</div>
           <button className='group-join-button' onClick={this.addUserToGroup}>Join Us!</button>
         </header>
         <aside className='group-aside'>
