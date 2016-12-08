@@ -24,8 +24,6 @@ const GroupReducer = (state = _nullGroups , action) => {
     case RECEIVE_GROUP_USERS:
       const users = action.users;
       return merge({}, state, { users });
-    case RECEIVE_CURRENT_GROUP_EVENTS:
-      return {};
     default:
       return state;
   }

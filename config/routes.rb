@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :events, only: [:index]
     end
     resource :session, only: [:create, :destroy]
+    resources :events, only: [:index]
     resources :groups, only: [:create, :show, :index] do
       resources :events, only: [:create, :index]
       get 'fetch'

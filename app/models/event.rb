@@ -13,8 +13,8 @@
 #
 
 class Event < ActiveRecord::Base
-  validates :name, :datetime, :location, :description, presence: true;
-  validates :description, length: { minimum: 20 }
+  validates :name, :event_time, :location, :description, presence: true;
+  validates :description, length: { minimum: 1 }
 
   has_many :rsvps
   has_many :users, through: :rsvps, source: :user
