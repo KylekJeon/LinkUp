@@ -11,6 +11,10 @@ class GroupPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
+    if(parseInt(nextProps.params.groupId) !== this.props.group.id){
+      this.props.fetchGroup(nextProps.params.groupId);
+      this.props.fetchUsersForGroup(this.props.params.groupId);
+    }
     this.setState({ groupName: nextProps.group.name, groupDescription: nextProps.group.description});
   }
 
@@ -35,7 +39,7 @@ class GroupPage extends React.Component {
       <section className='group-page group'>
         <header className='group-header'>
           <div className='group-header-background'>Welcome to LinkUp, a place to connect</div>
-          <div className='group-name'>Welcome to {this.state.groupName}</div>
+          <div className='group-name'>Welcome to {this.props.group.name}</div>
           <button className='group-join-button' onClick={this.addUserToGroup}>Join Us!</button>
         </header>
         <aside className='group-aside'>
