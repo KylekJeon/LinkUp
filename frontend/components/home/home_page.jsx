@@ -9,7 +9,9 @@ class HomePage extends React.Component {
     this.state = {
       groupCalendar: "calendar",
       currentUserEvents: [],
-      allEvents: []
+      allEvents: [],
+      currentUserGroups: [],
+      whichDisplay: "currentUserGroupEvents"
     };
     this.toggleGroup = this.toggleGroup.bind(this);
     this.toggleCalendar = this.toggleCalendar.bind(this);
@@ -19,24 +21,27 @@ class HomePage extends React.Component {
 
   componentDidMount(){
     this.props.fetchUserGroups(this.props.currentUser.id);
-    this.props.fetchCurrentUserEvents(this.props.currentUser.id);
+    this.props.fetchCurrentUserEvents();
   }
 
   componentWillReceiveProps(nextProps){
     this.setState({
       currentUserEvents: nextProps.currentUserEvents,
-      allEvents: nextProps.allEvents
+      allEvents: nextProps.allEvents,
+      currentUserGroups: nextProps.currentUserGroups
     });
   }
 
   fetchAllEvents(e){
     e.preventDefault();
     this.props.fetchEvents();
+    this.setState({ whichDisplay: "allEvents" });
   }
 
   fetchCurrentUserEvents(e){
     e.preventDefault();
     this.props.fetchCurrentUserEvents(this.props.currentUser.id);
+    this.setState({ whichDisplay: "CurrentUserEvents" });
   }
 
   toggleGroup() {
@@ -111,7 +116,7 @@ class HomePage extends React.Component {
           <ul className='content-main-list-linkups'>
             <li><button onClick={this.fetchAllEvents}>All LinkUps</button></li>
             <li><button onClick={this.fetchCurrentUserEvents}>My LinkUps</button></li>
-            <li><Link to='/'>I'm going</Link></li>
+            <li><button onClick={this.fetchCurrentUserEvents}>I'm Going!</button></li>
           </ul>
         </section>
       </section>

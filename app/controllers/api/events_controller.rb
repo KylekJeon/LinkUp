@@ -1,15 +1,14 @@
 class Api::EventsController < ApplicationController
 
+# one single route -> api/events
+# api/events?filter=user
 
+# api/events?filter=group&group_id=35
+# api/events
   def index
-    user_id = params[:user_id]
-    group_id = params[:group_id]
-    if(user_id)
-      user = User.find(user_id)
-      @events = user.events
-    elsif (group_id)
-      group = Group.find(group_id)
-      @events = group.events
+    if params[:filter] == "user"
+      @events = User.find(current_user.id).events
+    elsif params[:filter] == "group"
     else
       @events = Event.all
     end

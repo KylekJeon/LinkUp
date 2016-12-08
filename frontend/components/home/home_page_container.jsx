@@ -1,19 +1,23 @@
 import { connect } from 'react-redux';
 import HomePage from './home_page';
-import { fetchGroups, fetchUserGroups } from './../../actions/group_actions';
+import { fetchGroups } from './../../actions/group_actions';
 import { fetchCurrentUserEvents, fetchEvents } from './../../actions/event_actions';
+import { fetchUserGroups } from './../../actions/user_actions';
 
-const mapStateToProps = (state) => ({
-  currentUser: state.session.currentUser,
-  currentUserEvents: state.events.currentUserEvents,
-  allEvents: state.events.events
-});
+const mapStateToProps = (state) => {
+  return({
+    currentUser: state.session.currentUser,
+    currentUserEvents: state.events.currentUserEvents,
+    allEvents: state.events.events,
+    currentUserGroups: state.users.userGroups
+  });
+};
 
 const mapDispatchToProps = (dispatch) => ({
   fetchUserGroups:(userId) => dispatch(fetchUserGroups(userId)),
   fetchGroups: () => dispatch(fetchGroups()),
   fetchEvents: () => dispatch(fetchEvents()),
-  fetchCurrentUserEvents: (userId) => dispatch(fetchCurrentUserEvents(userId)),
+  fetchCurrentUserEvents: () => dispatch(fetchCurrentUserEvents()),
 });
 
 export default connect(

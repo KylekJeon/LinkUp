@@ -3,7 +3,7 @@ import * as APIUtil from './../util/session_api_util';
 // constants
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
-
+export const RECEIVE_CURRENT_USER_GROUPS = "RECEIVE_CURRENT_USER_GROUPS";
 
 // action creators
 export const receiveCurrentUser = (currentUser) => ({
@@ -15,6 +15,7 @@ export const receiveSessionErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
   errors
 });
+
 
 // thunk creators
 

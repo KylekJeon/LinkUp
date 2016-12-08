@@ -5,17 +5,18 @@ export const fetchEvents = () => (
   })
 );
 
-export const fetchCurrentUserEvents = (userId) => (
+export const fetchCurrentUserEvents = () => (
   $.ajax({
     method: "GET",
-    url: `api/users/${userId}/events`
+    url: 'api/events?filter=user'
   })
 );
 
 export const fetchCurrentGroupEvents = (groupId) => (
   $.ajax({
     method: "GET",
-    url: `api/groups/${groupId}/events`
+    url: 'api/events?filter=group',
+    data: { groupId }
   })
 );
 

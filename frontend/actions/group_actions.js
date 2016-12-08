@@ -47,14 +47,6 @@ export function fetchGroups() {
   };
 }
 
-export function fetchUserGroups(userId) {
-  return (dispatch) => {
-    return APIUtil.fetchUserGroups(userId).then(
-      (groups) => dispatch(receiveGroups(groups))
-    );
-  };
-}
-
 export function fetchUsersForGroup(groupId) {
   return (dispatch) => {
     return APIUtil.fetchUsersForGroup(groupId).then(

@@ -25,10 +25,3 @@ export const fetchGroup = (groupId) => (
     url: `api/groups/${groupId}`
   })
 );
-
-export const fetchUserGroups = (userId) => (
-  $.ajax({
-    method: "GET",
-    url: `api/users/${userId}/groups`
-  })
-);

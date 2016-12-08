@@ -36,9 +36,9 @@ export function fetchEvents() {
   };
 }
 
-export function fetchCurrentUserEvents(userId) {
+export function fetchCurrentUserEvents() {
   return(dispatch) => {
-    return APIUtil.fetchCurrentUserEvents(userId).then(
+    return APIUtil.fetchCurrentUserEvents().then(
       events => dispatch(receiveCurrentUserEvents(events))
     );
   };

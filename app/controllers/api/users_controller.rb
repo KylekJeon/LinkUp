@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
 
   def groups
     @groups = User.find(params[:user_id]).groups
-    render 'api/groups/index'
+    render json: @groups
   end
 
 
