@@ -6,6 +6,7 @@ class Api::EventsController < ApplicationController
     elsif params[:filter] == "user_groups"
       @events = Event.find_user_groups_events(current_user.id)
     elsif params[:filter] == "group"
+      @events = Group.find(params[:groupId]).events
     else
       @events = Event.all
     end
