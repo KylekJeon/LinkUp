@@ -7,7 +7,10 @@ Rails.application.routes.draw do
       get 'groups'
     end
     resource :session, only: [:create, :destroy]
-    resources :events, only: [:index]
+    resources :events, only: [:index, :show] do
+      post 'rsvp'
+      get 'fetch'
+    end
     resources :groups, only: [:create, :show, :index] do
       resources :events, only: [:create]
       get 'fetch'

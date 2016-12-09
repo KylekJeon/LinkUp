@@ -1,0 +1,56 @@
+.event-page-container {
+  width: 715px;
+  background: rgba(41, 165, 153, .5);
+  height: minimum: 700px;
+  float: right;
+  margin-top: 25px;
+  border-radius: 5px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-family: "Bree Serif", arial;
+}
+
+.event-page-container h1 {
+  font-size: 26px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+.event-page-date {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(41, 165, 153, .8);
+  border-top: 1px solid rgba(41, 165, 153, .8);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.event-page-time {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(41, 165, 153, .8);
+  border-top: 1px solid rgba(41, 165, 153, .8);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.event-page-location {
+  border-bottom: 1px solid rgba(41, 165, 153, .8);
+  border-top: 1px solid rgba(41, 165, 153, .8);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.event-page-description span {
+  display: block;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.event-page-description p {
+  font-size: 16px;
+  font-family: arial;
+w}

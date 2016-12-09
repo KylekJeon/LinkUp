@@ -102,7 +102,7 @@ class HomePage extends React.Component {
     const Events = groupedEvents.map((events, idx) => {
       let lis = events.map((event) => (
         <li key={event.id} className="front-page-event-item">
-          <Link to='/' className='front-page-event-link'>Event: {event.name}</Link>
+          <Link to={`/groups/${event.groupId}/events/${event.id}`} className='front-page-event-link'>Event: {event.name}</Link>
           <Link to={`/groups/${event.groupId}`} className='front-page-group-link'>Hosted by: {event.groupName}</Link>
           <span>Location: {event.location}</span>
           <span>Time: {event.timeOfDay}</span>

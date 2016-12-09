@@ -25,6 +25,7 @@
 }
 
 .group-name {
+  display: block;
   text-align: center;
   color: white;
   font-size: 36px;

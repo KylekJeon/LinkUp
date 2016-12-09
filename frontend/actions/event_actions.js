@@ -6,6 +6,10 @@ export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const RECEIVE_CURRENT_GROUP_EVENTS = "RECEIVE_CURRENT_GROUP_EVENTS";
 export const RECEIVE_EVENT_ERRORS = "RECEIVE_EVENT_ERRORS";
 export const RECEIVE_CURRENT_USER_GROUP_EVENTS = "RECEIVE_CURRENT_USER_GROUP_EVENTS";
+export const RECEIVE_CURRENT_EVENT = "RECEIVE_CURRENT_EVENT";
+export const RECEIVE_CURRENT_EVENT_USERS = "RECEIVE_CURRENT_EVENT_USERS";
+
+
 // action creators
 export const receiveEvents = (events) => ({
   type: RECEIVE_EVENTS,
@@ -32,11 +36,29 @@ export const receiveEventErrors = (errors) => ({
   errors
 });
 
+export const receiveCurrentEvent = (currentEvent) => ({
+  type: RECEIVE_CURRENT_EVENT,
+  currentEvent
+});
+
+export const receiveCurrentEventUsers = (currentEventUsers) => ({
+  type: RECEIVE_CURRENT_EVENT_USERS,
+  currentEventUsers
+});
+
 // thunk creators
 export function fetchEvents() {
   return (dispatch) => {
     return APIUtil.fetchEvents().then(
       events => dispatch(receiveEvents(events))
+    );
+  };
+}
+
+export function fetchCurrentEvent(eventId) {
+  return (dispatch) => {
+    return APIUtil.fetchCurrentEvent(eventId).then(
+      currentEvent => dispatch(receiveCurrentEvent(currentEvent))
     );
   };
 }
@@ -61,6 +83,22 @@ export function fetchCurrentUserGroupEvents() {
   return (dispatch) => {
     return APIUtil.fetchCurrentUserGroupEvents().then(
       events => dispatch(receiveCurrentUserGroupEvents(events))
+    );
+  };
+}
+
+export function fetchCurrentEventUsers(eventId) {
+  return (dispatch) => {
+    return APIUtil.fetchCurrentEventUsers(eventId).then(
+      users => dispatch(receiveCurrentEventUsers(users))
+    );
+  };
+}
+
+export function addUserToEvent(eventId) {
+  return (dispatch) => {
+    return APIUtil.addUserToEvent(eventId).then(
+      users => dispatch(receiveCurrentEventUsers(users))
     );
   };
 }

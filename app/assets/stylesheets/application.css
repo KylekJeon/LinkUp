@@ -17,4 +17,6 @@
  *= require signup
  *= require login
  *= require front
+ *= require group
+ *= require event
  */

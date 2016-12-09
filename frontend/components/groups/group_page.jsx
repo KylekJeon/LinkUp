@@ -1,5 +1,6 @@
 import React from 'react';
 import GroupPageContent from './group_page_content';
+import { Link } from 'react-router';
 
 class GroupPage extends React.Component {
   constructor(props){
@@ -40,7 +41,7 @@ class GroupPage extends React.Component {
       <section className='group-page group'>
         <header className='group-header'>
           <div className='group-header-background'>Welcome to LinkUp, a place to connect</div>
-          <div className='group-name'>Welcome to {this.state.groupName}</div>
+          <Link to={`/groups/${this.props.params.groupId}`} className='group-name'>Welcome to {this.state.groupName}</Link>
           <button className='group-join-button' onClick={this.addUserToGroup}>Join Us!</button>
         </header>
         <aside className='group-aside'>

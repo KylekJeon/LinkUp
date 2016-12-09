@@ -33,3 +33,24 @@ export const fetchCurrentUserGroupEvents = () => (
     url: 'api/events?filter=user_groups'
   })
 );
+
+export const fetchCurrentEvent = (eventId) => (
+  $.ajax({
+    method: "GET",
+    url: `api/events/${eventId}`,
+  })
+);
+
+export const fetchCurrentEventUsers = (eventId) => (
+  $.ajax({
+    method: "GET",
+    url: `api/events/${eventId}/fetch`
+  })
+);
+
+export const addUserToEvent = (eventId) => (
+  $.ajax({
+    method: "POST",
+    url: `api/events/${eventId}/rsvp`
+  })
+);

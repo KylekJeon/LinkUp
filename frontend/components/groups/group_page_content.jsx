@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class GroupPageContent extends React.Component{
   constructor(props){
@@ -10,8 +11,8 @@ class GroupPageContent extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
-    if(this.props.currentGroup.id !== nextProps.currentGroup.id){
-      nextProps.fetchCurrentGroupEvents(this.props.currentGroupId);
+    if(this.props.currentGroupId !== nextProps.currentGroupId){
+      nextProps.fetchCurrentGroupEvents(nextProps.currentGroupId);
     }
   }
 
@@ -53,7 +54,7 @@ class GroupPageContent extends React.Component{
       upcomingEventList = upcomingEvents.map((events, idx) => {
         let lis = events.map((event) => (
           <li key={event.id} className="group-page-event-item">
-            <a href="#">Event: {event.name}</a>
+            <Link to={`/groups/${event.groupId}/events/${event.id}`} >Event: {event.name}</Link>
             <span>Location: {event.location}</span>
             <span>Time: {event.timeOfDay}</span>
             <p>About: {event.description}</p>
@@ -70,7 +71,7 @@ class GroupPageContent extends React.Component{
       pastEventList = pastEvents.map((events, idx) => {
         let lis = events.map((event) => (
           <li key={event.id} className="group-page-event-item group-page-event-item-past">
-            <a href="#">Event: {event.name}</a>
+            <Link to={`/groups/${event.groupId}/events/${event.id}`} >Event: {event.name}</Link>
             <span>Location: {event.location}</span>
             <span>Time: {event.timeOfDay}</span>
             <p>About: {event.description}</p>
