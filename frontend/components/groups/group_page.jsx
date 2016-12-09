@@ -7,11 +7,9 @@ class GroupPage extends React.Component {
     super(props);
     this.state = {
       groupName: "",
-      groupDescription: "",
-      welcomeSign: <div className='group-welcome-sign'>Welcome Back!</div>,
+      groupDescription: ""
     };
     this.addUserToGroup = this.addUserToGroup.bind(this);
-    this.changeWelcomeSign = this.changeWelcomeSign.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -25,7 +23,6 @@ class GroupPage extends React.Component {
   componentDidMount(){
     this.props.fetchGroup(this.props.params.groupId);
     this.props.fetchUsersForGroup(this.props.params.groupId);
-    window.setTimeout(this.changeWelcomeSign, 3000);
   }
 
 
@@ -33,15 +30,10 @@ class GroupPage extends React.Component {
     this.props.addUserToGroup(this.props.group.id);
   }
 
-  changeWelcomeSign(){
-    this.setState({ welcomeSign: "" });
-  }
-
   render(){
     let userList;
     let userIdList;
     let joinButton;
-    let welcomeSign;
 
     if(this.props.users[0]){
       userList = this.props.users.map( (user) => (
@@ -57,7 +49,6 @@ class GroupPage extends React.Component {
 
     return(
       <section className='group-page group'>
-        {this.state.welcomeSign}
         <header className='group-header'>
           <div className='group-header-background'>Welcome to LinkUp, a place to connect</div>
           <Link to={`/groups/${this.props.params.groupId}`} className='group-name'>Welcome to {this.state.groupName}</Link>
