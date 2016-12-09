@@ -5,12 +5,31 @@
   float: right;
   margin-top: 25px;
   border-radius: 5px;
-  padding: 15px;
   box-sizing: border-box;
   font-family: "Bree Serif", arial;
+  position: relative;
 }
 
-.event-page-container h1 {
+.event-page-container:after {
+  content: "",
+  display: block;
+  position: absolute;
+  width: 1px;
+  background: rgba(41, 165, 153, .8);
+  right: 205px;
+  top: 0;
+  bottom: 0;
+}
+
+.event-page-content {
+  width: 509px;
+  float: left;
+  box-sizing: border-box;
+  padding: 20px;
+  padding-right: 10px;
+}
+
+.event-page-content h1 {
   font-size: 26px;
   text-transform: capitalize;
   margin-bottom: 30px;
@@ -53,4 +72,58 @@
 .event-page-description p {
   font-size: 16px;
   font-family: arial;
-w}
+}
+
+.event-page-users {
+  width: 205px;
+  float: right;
+  box-sizing: border-box;
+  min-height: 350px;
+  padding: 10px;
+  position: relative;
+}
+
+.event-page-rsvp {
+  padding: 10px;
+  border-bottom: 1px solid rgba(41, 165, 153, .8);
+}
+
+.event-rsvp-question {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.event-rsvp-button {
+  display: block;
+  margin: 0 auto;
+  width: 90px;
+  background: #29a599;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+
+.event-page-user-list {
+  width: 185px;
+  box-sizing: border-box;
+  padding: 5px;
+  text-align: center;
+}
+
+.event-page-user-list-items {
+  border-top: 1px solid rgba(41, 165, 153, .8);
+  padding: 5px;
+  text-align: left;
+}
+
+.event-page-user-list-items:last-child {
+  border-bottom: 1px solid rgba(41, 165, 153, .8);
+}
+
+.event-page-user-list-items:first-child {
+  margin-top: 10px;
+}
