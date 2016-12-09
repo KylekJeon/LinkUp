@@ -1,7 +1,7 @@
 .event-page-container {
   width: 715px;
   background: rgba(41, 165, 153, .5);
-  height: minimum: 700px;
+  min-height: 700px;
   float: right;
   margin-top: 25px;
   border-radius: 5px;
