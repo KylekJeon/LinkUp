@@ -389,10 +389,20 @@
   margin-bottom: 25px;
 }
 
-.front-page-event-item a {
+.front-page-event-link {
   display: block;
   margin-bottom: 10px;
   font-size: 22px;
+  font-weight: bolder;
+  padding-bottom: 5px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.front-page-group-link {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
   font-weight: bolder;
   padding-bottom: 5px;
   cursor: pointer;
