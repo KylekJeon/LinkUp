@@ -10,7 +10,7 @@ class Api::EventsController < ApplicationController
     else
       @events = Event.all
     end
-    render json: @events
+    render :index
   end
 
   def show

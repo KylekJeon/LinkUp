@@ -16,12 +16,65 @@ class GroupPageContent extends React.Component{
   }
 
   render() {
+    let upcomingEvents = [];
+    let pastEvents = [];
+    let sortedEvents;
+    let upcomingEventList;
+    let pastEventList;
 
-    let eventList;
     if(this.props.currentGroupEvents){
-      eventList = this.props.currentGroupEvents.map( (event) => (
-        <li key={event.id}>{event.name}</li>
-      ));
+      sortedEvents = this.props.currentGroupEvents.sort(
+        function(a,b){
+          if(a.time < b.time) return -1;
+          else if(a.time > b.time) return 1;
+          else return 0;}
+        );
+
+      sortedEvents.forEach( (event) => {
+        if(event.time <= new Date().getTime()){
+          if (pastEvents[0] === undefined){
+            pastEvents.unshift([event]);
+          } else if (pastEvents[0][0].sameDay === event.sameDay) {
+            pastEvents[0].unshift(event);
+          } else {
+            pastEvents.unshift([event]);
+          }
+        } else {
+          if (upcomingEvents[0] === undefined){
+            upcomingEvents.push([event]);
+          } else if (upcomingEvents[upcomingEvents.length-1][0].sameDay === event.sameDay) {
+            upcomingEvents[upcomingEvents.length-1].push(event);
+          } else {
+            upcomingEvents.push([event]);
+          }
+        }
+      });
+
+      upcomingEventList = upcomingEvents.map((events, idx) => {
+        let lis = events.map((event) => (
+          <li key={event.id} className="group-page-event-item">
+            {event.datetime}, {event.name}, {event.description}
+          </li>
+        ));
+        return (
+          <ul key={idx} className="group-page-event-list">
+            {lis}
+          </ul>
+        );
+      });
+
+      pastEventList = pastEvents.map((events, idx) => {
+        let lis = events.map((event) => (
+          <li key={event.id + 5} className="group-page-event-item">
+            {event.datetime}, {event.name}, {event.description}
+          </li>
+        ));
+        return (
+          <ul key={idx + upcomingEventList.length} className="group-page-event-list">
+            {lis}
+          </ul>
+        );
+      });
     }
 
     return(
@@ -32,11 +85,10 @@ class GroupPageContent extends React.Component{
           </p>
         </section>
         <section className='group-upcoming'>
-          <ul>
-            {eventList}
-          </ul>
+          {upcomingEventList}
         </section>
         <section className='group-past'>
+          {pastEventList}
         </section>
       </section>
     );
