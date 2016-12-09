@@ -77,7 +77,7 @@
   margin-top: 25px;
   padding: 15px;
   box-sizing: border-box;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   border-radius: 5px;
   background: #29a599;
 }
@@ -87,8 +87,9 @@
   font-family: sans-serif;
 }
 
-.group-upcoming {
-  background: #29a599;
+.group-event-box {
+  padding: 10px;
+  box-sizing: border-box;
   width: 710px;
   min-height: 200px;
   float: right;
@@ -96,11 +97,59 @@
   border-radius: 5px;
 }
 
-.group-past {
-  background: #29a599;
-  width: 710px;
-  min-height: 200px;
-  float: right;
+.group-event-box h1 {
+  font-family: "Bree Serif", arial;
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+.group-page-upcoming-list h1{
+  font-size: 14px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.group-page-upcoming-list:first-of-type h1 {
+  margin-top: 10px;
+}
+
+.group-page-past-list h1 {
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.group-page-event-item {
+  background-color: rgba(41, 165, 153, .5);
   border-radius: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-family: arial;
+  padding: 15px;
+}
+
+.group-page-event-item-past {
+    background-color: rgba(41, 165, 153, .2);
+}
+
+.group-page-event-item a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.group-page-event-item span {
+  display: block;
+  font-size: 14px;
+  font-family: "Bree Serif", arial;
+  padding-bottom: 10px;
+}
+
+.group-page-event-item p {
+  display: block;
+  font-size: 16px;
+  font-family: "Bree Serif", arial;
 }

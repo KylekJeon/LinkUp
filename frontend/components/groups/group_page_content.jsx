@@ -53,11 +53,14 @@ class GroupPageContent extends React.Component{
       upcomingEventList = upcomingEvents.map((events, idx) => {
         let lis = events.map((event) => (
           <li key={event.id} className="group-page-event-item">
-            {event.datetime}, {event.name}, {event.description}
+            <a href="#">Event: {event.name}</a>
+            <span>Location:{event.location}</span>
+            <p>About: {event.description}</p>
           </li>
         ));
         return (
-          <ul key={idx} className="group-page-event-list">
+          <ul key={idx} className="group-page-upcoming-list">
+            <h1>{events[0].datetime}</h1>
             {lis}
           </ul>
         );
@@ -65,12 +68,15 @@ class GroupPageContent extends React.Component{
 
       pastEventList = pastEvents.map((events, idx) => {
         let lis = events.map((event) => (
-          <li key={event.id + 5} className="group-page-event-item">
-            {event.datetime}, {event.name}, {event.description}
+          <li key={event.id} className="group-page-event-item group-page-event-item-past">
+            <a href="#">Event: {event.name}</a>
+            <span>Location:{event.location}</span>
+            <p>About: {event.description}</p>
           </li>
         ));
         return (
-          <ul key={idx + upcomingEventList.length} className="group-page-event-list">
+          <ul key={idx} className="group-page-past-list">
+            <h1>{events[0].datetime}</h1>
             {lis}
           </ul>
         );
@@ -84,10 +90,12 @@ class GroupPageContent extends React.Component{
             {this.props.currentGroup.description}
           </p>
         </section>
-        <section className='group-upcoming'>
+        <section className='group-event-box'>
+          <h1>Upcoming Events</h1>
           {upcomingEventList}
         </section>
-        <section className='group-past'>
+        <section className='group-event-box'>
+          <h1>Past Events</h1>
           {pastEventList}
         </section>
       </section>
