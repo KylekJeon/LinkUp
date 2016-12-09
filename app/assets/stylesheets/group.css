@@ -126,10 +126,12 @@
   margin-bottom: 20px;
   font-family: arial;
   padding: 15px;
+  border: 1px solid rgba(41, 165, 153, 1);
 }
 
 .group-page-event-item-past {
-    background-color: rgba(41, 165, 153, .2);
+  background-color: rgba(41, 165, 153, .2);
+  border: 1px solid rgba(41, 165, 153, .7);
 }
 
 .group-page-event-item a {
@@ -139,6 +141,7 @@
   font-weight: bolder;
   padding-bottom: 5px;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .group-page-event-item span {

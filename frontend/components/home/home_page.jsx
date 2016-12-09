@@ -78,14 +78,44 @@ class HomePage extends React.Component {
       whichEventDisplay = this.state.currentUserEvents;
     }
 
-    const Events = whichEventDisplay.map((event) => (
-      <li key={event.id}>
-        <div className='content-list-time'>{event.event_time}</div>
-        <span className='content-list-item content-list-first'>{event.name}</span>
-        <span className='content-list-item content-list-middle'>{event.location}</span>
-        <span className='content-list-item content-list-last'>{event.description}</span>
-      </li>
-    ));
+    whichEventDisplay = whichEventDisplay.sort(
+      function(a,b){
+        if(a.time < b.time) return -1;
+        else if(a.time > b.time) return 1;
+        else return 0;}
+      );
+
+    const groupedEvents = [];
+
+    whichEventDisplay.forEach( (event) => {
+      if(event.time >= new Date().getTime()){
+        if(groupedEvents[0] === undefined){
+          groupedEvents.push([event]);
+        } else if (groupedEvents[groupedEvents.length-1][0].sameDay === event.sameDay){
+          groupedEvents[groupedEvents.length-1].push(event);
+        } else {
+          groupedEvents.push([event]);
+        }
+      }
+    });
+
+    const Events = groupedEvents.map((events, idx) => {
+      let lis = events.map((event) => (
+        <li key={event.id} className="front-page-event-item">
+          <a href="#">Event: {event.name}</a>
+          <span>Location: {event.location}</span>
+          <span>Time: {event.timeOfDay}</span>
+          <p>About: {event.description}</p>
+        </li>
+      ));
+      return (
+        <ul key={events[0].id} className="front-page-event-list">
+          <h1>{events[0].datetime}</h1>
+          {lis}
+        </ul>
+      );
+    });
+
 
     return (
       <section>
@@ -115,9 +145,7 @@ class HomePage extends React.Component {
             <button onClick={this.toggleGroup} className={group}>Groups</button>
           </form>
           <div className='content-main-list-day'>
-            <ul className='content-main-list group'>
-              {Events}
-            </ul>
+            {Events}
           </div>
           <ul className='content-main-list-linkups'>
             <li><button onClick={this.fetchAllEvents}>All LinkUps</button></li>

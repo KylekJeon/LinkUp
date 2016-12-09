@@ -54,7 +54,8 @@ class GroupPageContent extends React.Component{
         let lis = events.map((event) => (
           <li key={event.id} className="group-page-event-item">
             <a href="#">Event: {event.name}</a>
-            <span>Location:{event.location}</span>
+            <span>Location: {event.location}</span>
+            <span>Time: {event.timeOfDay}</span>
             <p>About: {event.description}</p>
           </li>
         ));
@@ -70,7 +71,8 @@ class GroupPageContent extends React.Component{
         let lis = events.map((event) => (
           <li key={event.id} className="group-page-event-item group-page-event-item-past">
             <a href="#">Event: {event.name}</a>
-            <span>Location:{event.location}</span>
+            <span>Location: {event.location}</span>
+            <span>Time: {event.timeOfDay}</span>
             <p>About: {event.description}</p>
           </li>
         ));
