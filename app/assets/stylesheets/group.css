@@ -57,13 +57,14 @@
 .group-users-list {
   padding: 5px;
   color: white;
+  text-align: center;
 }
 
 .group-users-list li {
   width: 180px;
   border-bottom: 1px solid #049287;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   padding: 2px;
   text-transform: capitalize;
   font-family: arial;
@@ -152,8 +153,20 @@
   padding-bottom: 10px;
 }
 
-.group-page-event-item p {
+
+
+.group-page-event-paragraphs p {
   display: block;
   font-size: 16px;
   font-family: "Bree Serif", arial;
+  margin-bottom: 15px;
+}
+
+.group-page-event-paragraphs p:first-child {
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.group-page-description p:first-child {
+  font-size: 26px;
 }

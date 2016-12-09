@@ -11,7 +11,7 @@
 }
 
 .event-page-container:after {
-  content: "",
+  content: ""
   display: block;
   position: absolute;
   width: 1px;
@@ -67,6 +67,8 @@
   font-size: 24px;
   margin-top: 30px;
   margin-bottom: 30px;
+  border-bottom: 1px solid black;
+  text-align: center;
 }
 
 .event-page-description p {
@@ -126,4 +128,11 @@
 
 .event-page-user-list-items:first-child {
   margin-top: 10px;
+}
+
+.event-page-description p {
+  display: block;
+  font-size: 16px;
+  font-family: "Bree Serif", arial;
+  margin-bottom: 15px;
 }

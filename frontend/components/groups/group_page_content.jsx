@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { createParagraphs } from './../../util/text_style_util';
 
 class GroupPageContent extends React.Component{
   constructor(props){
@@ -57,7 +58,9 @@ class GroupPageContent extends React.Component{
             <Link to={`/groups/${event.groupId}/events/${event.id}`} >Event: {event.name}</Link>
             <span>Location: {event.location}</span>
             <span>Time: {event.timeOfDay}</span>
-            <p>About: {event.description}</p>
+            <div className='group-page-event-paragraphs'>
+            <p>What We're Doing</p>
+            {createParagraphs(event.description)}</div>
           </li>
         ));
         return (
@@ -74,7 +77,9 @@ class GroupPageContent extends React.Component{
             <Link to={`/groups/${event.groupId}/events/${event.id}`} >Event: {event.name}</Link>
             <span>Location: {event.location}</span>
             <span>Time: {event.timeOfDay}</span>
-            <p>About: {event.description}</p>
+            <div className='group-page-event-paragraphs'>
+            <p>What We're Doing</p>
+            {createParagraphs(event.description)}</div>
           </li>
         ));
         return (
@@ -89,9 +94,8 @@ class GroupPageContent extends React.Component{
     return(
       <section className='group-content'>
         <section className='group-description-content'>
-          <p className='group-description'>
-            {this.props.currentGroup.description}
-          </p>
+            <div className='group-page-event-paragraphs group-page-description'>
+            <p>Who We Are</p> {createParagraphs(this.props.currentGroup.description)}</div>
         </section>
         <section className='group-event-box'>
           <h1>Upcoming Events</h1>

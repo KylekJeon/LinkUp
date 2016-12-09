@@ -1,4 +1,5 @@
 import React from 'react';
+import { createParagraphs } from './../../util/text_style_util';
 
 class EventPage extends React.Component {
   constructor(props){
@@ -43,8 +44,8 @@ class EventPage extends React.Component {
           </div>
           <div className='event-page-location'>Location: {this.props.currentEvent.location}</div>
           <div className='event-page-description'>
-            <span>What's happening:</span>
-            <p>{this.props.currentEvent.description}</p>
+            <span>What We're Doing</span>
+            {createParagraphs(this.props.currentEvent.description)}
           </div>
         </section>
         <section className='event-page-users group'>
