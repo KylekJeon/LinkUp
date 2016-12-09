@@ -14,16 +14,16 @@ const GroupReducer = (state = _nullGroups , action) => {
   switch(action.type){
     case RECEIVE_GROUPS:
       const groups = action.groups;
-      return merge({}, state, { groups });
+      return Object.assign({}, state, { groups });
     case RECEIVE_CURRENT_GROUP:
       const currentGroup = action.group;
-      return merge({}, state, { currentGroup });
+      return Object.assign({}, state, { currentGroup });
     case RECEIVE_GROUP_ERRORS:
       const errors = action.errors;
-      return merge({}, state, { errors });
+      return Object.assign({}, state, { errors });
     case RECEIVE_GROUP_USERS:
       const users = action.users;
-      return merge({}, state, { users });
+      return Object.assign({}, state, { users });
     default:
       return state;
   }

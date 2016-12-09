@@ -51,6 +51,13 @@ export const fetchCurrentEventUsers = (eventId) => (
 export const addUserToEvent = (eventId) => (
   $.ajax({
     method: "POST",
-    url: `api/events/${eventId}/rsvp`
+    url: `api/events/${eventId}/rsvp?filter=add`
+  })
+);
+
+export const removeUserFromEvent = (eventId) => (
+  $.ajax({
+    method: "POST",
+    url: `api/events/${eventId}/rsvp?filter=remove`
   })
 );

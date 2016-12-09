@@ -59,7 +59,7 @@ class GroupPageContent extends React.Component{
             <span>Location: {event.location}</span>
             <span>Time: {event.timeOfDay}</span>
             <div className='group-page-event-paragraphs'>
-            <p>What We're Doing</p>
+            <p key={-1}>What We're Doing</p>
             {createParagraphs(event.description)}</div>
           </li>
         ));
@@ -78,7 +78,7 @@ class GroupPageContent extends React.Component{
             <span>Location: {event.location}</span>
             <span>Time: {event.timeOfDay}</span>
             <div className='group-page-event-paragraphs'>
-            <p>What We're Doing</p>
+            <p key={-1}>What We're Doing</p>
             {createParagraphs(event.description)}</div>
           </li>
         ));
@@ -95,7 +95,7 @@ class GroupPageContent extends React.Component{
       <section className='group-content'>
         <section className='group-description-content'>
             <div className='group-page-event-paragraphs group-page-description'>
-            <p>Who We Are</p> {createParagraphs(this.props.currentGroup.description)}</div>
+            <p key={-1}>Who We Are</p> {createParagraphs(this.props.currentGroup.description)}</div>
         </section>
         <section className='group-event-box'>
           <h1>Upcoming Events</h1>

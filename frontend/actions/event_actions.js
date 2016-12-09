@@ -98,7 +98,17 @@ export function fetchCurrentEventUsers(eventId) {
 export function addUserToEvent(eventId) {
   return (dispatch) => {
     return APIUtil.addUserToEvent(eventId).then(
-      users => dispatch(receiveCurrentEventUsers(users))
+      users => dispatch(receiveCurrentEventUsers(users)),
+      errors => dispatch(receiveEventErrors(errors.responseJSON))
+    );
+  };
+}
+
+export function removeUserFromEvent(eventId) {
+  return dispatch => {
+    return APIUtil.removeUserFromEvent(eventId).then(
+      users => dispatch(receiveCurrentEventUsers(users)),
+      errors => dispatch(receiveEventErrors(errors.responseJson))
     );
   };
 }

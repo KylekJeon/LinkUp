@@ -11,10 +11,10 @@ const userReducer = (state = _nullUser , action) => {
   switch(action.type){
     case RECEIVE_USER_GROUPS:
       const userGroups = action.userGroups;
-      return merge({}, _nullUser, { userGroups });
+      return Object.assign({}, _nullUser, { userGroups });
     case RECEIVE_USER_ERRORS:
       const errors = action.errors;
-      return merge({}, _nullUser, { errors });
+      return Object.assign({}, _nullUser, { errors });
     default:
       return state;
   }

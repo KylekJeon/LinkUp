@@ -5,6 +5,7 @@ class EventPage extends React.Component {
   constructor(props){
     super(props);
     this.addUserToEvent = this.addUserToEvent.bind(this);
+    this.removeUserFromEvent = this.removeUserFromEvent.bind(this);
   }
 
   componentDidMount(){
@@ -25,12 +26,34 @@ class EventPage extends React.Component {
     this.props.addUserToEvent(this.props.currentEventId);
   }
 
+  removeUserFromEvent(e){
+    e.preventDefault();
+    this.props.removeUserFromEvent(this.props.currentEventId);
+  }
+
   render(){
     let userList;
+    let userIdList;
+    let rsvp;
     if(this.props.currentEventUsers.length > 0){
       userList = this.props.currentEventUsers.map ((user) => (
         <li key={user.id} className="event-page-user-list-items">{user.first_name} {user.last_name}</li>
       ));
+      userIdList = this.props.currentEventUsers.map((user) => (
+        parseInt(user.id)
+      ));
+      if(!userIdList.includes(this.props.currentUser.id)){
+        rsvp = <div className='event-page-rsvp'>
+               <span className='event-rsvp-question'>Interested?</span>
+               <button className='event-rsvp-button' onClick={this.addUserToEvent}>RSVP!</button>
+               </div>;
+      } else {
+        rsvp = <div className='event-page-rsvp'>
+               <span className='event-rsvp-question'>Your RSVP: Yes</span>
+               <button className='event-rsvp-button' onClick={this.removeUserFromEvent}>Unattend</button>
+               </div>;
+      }
+
     }
 
 
@@ -49,10 +72,7 @@ class EventPage extends React.Component {
           </div>
         </section>
         <section className='event-page-users group'>
-          <div className='event-page-rsvp'>
-            <span className='event-rsvp-question'>Interested?</span>
-            <button className='event-rsvp-button' onClick={this.addUserToEvent}>RSVP!</button>
-          </div>
+          {rsvp}
           <ul className='event-page-user-list'>
             Attending:
             {userList}

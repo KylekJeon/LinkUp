@@ -17,6 +17,10 @@ class SignUpForm extends React.Component{
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentDidMount(){
+    this.props.clearError();
+  }
+
   update(property) {
       return e => this.setState({ [property]: e.target.value });
   }
@@ -32,19 +36,20 @@ class SignUpForm extends React.Component{
   }
 
   renderErrors() {
-		return(
-			<ul className='signup-error'>
-				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
+    if(this.props.errors){
+      return(
+        <ul className='signup-error'>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
 	}
 
   render(){
-    const errors = this.props.errors;
 
     return (
       <section className='signup-page'>

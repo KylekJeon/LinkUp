@@ -7,9 +7,11 @@ class GroupPage extends React.Component {
     super(props);
     this.state = {
       groupName: "",
-      groupDescription: ""
+      groupDescription: "",
+      welcomeSign: <div className='group-welcome-sign'>Welcome Back!</div>,
     };
     this.addUserToGroup = this.addUserToGroup.bind(this);
+    this.changeWelcomeSign = this.changeWelcomeSign.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -23,26 +25,43 @@ class GroupPage extends React.Component {
   componentDidMount(){
     this.props.fetchGroup(this.props.params.groupId);
     this.props.fetchUsersForGroup(this.props.params.groupId);
+    window.setTimeout(this.changeWelcomeSign, 3000);
   }
+
 
   addUserToGroup() {
     this.props.addUserToGroup(this.props.group.id);
   }
 
+  changeWelcomeSign(){
+    this.setState({ welcomeSign: "" });
+  }
+
   render(){
     let userList;
+    let userIdList;
+    let joinButton;
+    let welcomeSign;
+
     if(this.props.users[0]){
       userList = this.props.users.map( (user) => (
         <li key={user.id}>{user.username}</li>
       ));
+      userIdList = this.props.users.map( (user) => (
+        parseInt(user.id)
+      ));
+      if(!userIdList.includes(this.props.currentUser.id)){
+        joinButton = <button className='group-join-button' onClick={this.addUserToGroup}>Join Us!</button>;
+      }
     }
 
     return(
       <section className='group-page group'>
+        {this.state.welcomeSign}
         <header className='group-header'>
           <div className='group-header-background'>Welcome to LinkUp, a place to connect</div>
           <Link to={`/groups/${this.props.params.groupId}`} className='group-name'>Welcome to {this.state.groupName}</Link>
-          <button className='group-join-button' onClick={this.addUserToGroup}>Join Us!</button>
+          {joinButton}
         </header>
         <aside className='group-aside'>
           <ul className='group-users-list'>

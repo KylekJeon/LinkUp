@@ -5,7 +5,9 @@ import { fetchUsersForGroup, addUserToGroup, fetchGroup } from '../../actions/gr
 
 const mapStateToProps = (state, ownProps) => ({
   users: state.groups.users,
-  group: state.groups.currentGroup
+  group: state.groups.currentGroup,
+  errors: state.groups.errors,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

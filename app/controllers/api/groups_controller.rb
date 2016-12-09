@@ -13,7 +13,7 @@ class Api::GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
 
-    if @group.save
+    if @group.save!
       render 'api/group/show'
     else
       render json: @group.errors.full_messages, status: 422
@@ -23,11 +23,11 @@ class Api::GroupsController < ApplicationController
   def join
     group_id = params[:id].to_i
     @new_membership = current_user.memberships.new(group_id: group_id)
-    if @new_membership.save
+    if @new_membership.save!
       @users = Group.find(group_id).users
       render json: @users
     else
-      render json: ["unsuccessful in joining group"]
+      render json: @new_membership.errors.full_messages, status: 422
     end
   end
 

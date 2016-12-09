@@ -20,13 +20,20 @@ class Api::EventsController < ApplicationController
 
   def rsvp
     event_id = params[:event_id]
-    @new_rsvp = current_user.rsvps.new(event_id: event_id)
-
-    if @new_rsvp.save
-      @users = Event.find(event_id).users
-      render json: @users
-    else
-      render json: ["Could not join event"]
+    if(params[:filter] == "add")
+      @new_rsvp = current_user.rsvps.new(event_id: event_id)
+      if @new_rsvp.save!
+        @users = Event.find(event_id).users
+        render json: @users
+      else
+        render json: @new_rsvp.errors.full_messages, status: 422
+      end
+    elsif(params[:filter] == "remove")
+      @rsvp = Rsvp.where("event_id = ? AND user_id = ?", event_id, current_user.id)
+      if Rsvp.destroy(@rsvp)
+        @users = Event.find(event_id).users
+        render json: @users
+      end
     end
   end
 

@@ -4,7 +4,21 @@
   background: transparent;
   margin: 0 auto;
   padding-top: 25px;
+  position: relative;
 }
+
+.group-welcome-sign {
+  display: block;
+  background: transparent;
+  font-size: 40px;
+  position: absolute;
+  top: 150px;
+  left: 37%;
+  z-index: 5;
+  color: #0520E4;
+  font-family: "Pacifico", arial;
+}
+
 
 .group-header {
   width: 950px;

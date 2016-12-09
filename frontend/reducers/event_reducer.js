@@ -17,25 +17,25 @@ const EventReducer = (state = _nullEvents , action) => {
   switch(action.type){
     case RECEIVE_EVENTS:
       const events = action.events;
-      return merge({}, _nullEvents, { events });
+      return Object.assign({}, _nullEvents, { events });
     case RECEIVE_CURRENT_GROUP_EVENTS:
       const currentGroupEvents = action.currentGroupEvents;
-      return merge({}, _nullEvents, { currentGroupEvents });
+      return Object.assign({}, _nullEvents, { currentGroupEvents });
     case RECEIVE_CURRENT_USER_EVENTS:
       const currentUserEvents = action.currentUserEvents;
-      return merge({}, _nullEvents, { currentUserEvents });
+      return Object.assign({}, _nullEvents, { currentUserEvents });
     case RECEIVE_CURRENT_USER_GROUP_EVENTS:
       const currentUserGroupEvents = action.currentUserGroupEvents;
-      return merge({}, _nullEvents, { currentUserGroupEvents });
+      return Object.assign({}, _nullEvents, { currentUserGroupEvents });
     case RECEIVE_CURRENT_EVENT:
       const currentEvent = action.currentEvent;
-      return merge({}, _nullEvents, { currentEvent });
+      return Object.assign({}, _nullEvents, { currentEvent });
     case RECEIVE_CURRENT_EVENT_USERS:
       const currentEventUsers = action.currentEventUsers;
-      return merge({}, state, { currentEventUsers });
+      return Object.assign({}, state, { currentEventUsers });
     case RECEIVE_EVENT_ERRORS:
       const errors = action.errors;
-      return merge({}, _nullEvents, { errors });
+      return Object.assign({}, state, { errors });
     default:
       return state;
   }

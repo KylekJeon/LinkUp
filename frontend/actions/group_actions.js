@@ -58,7 +58,8 @@ export function fetchUsersForGroup(groupId) {
 export function addUserToGroup(groupId) {
   return (dispatch) => {
     return APIUtil.addUserToGroup(groupId).then(
-      users => dispatch(receiveGroupUsers(users))
+      users => dispatch(receiveGroupUsers(users)),
+      errors => dispatch(receiveGroupErrors(errors.responseJSON))
     );
   };
 }
