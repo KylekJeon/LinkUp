@@ -26,6 +26,15 @@ class User < ActiveRecord::Base
   has_many :events, through: :rsvps, source: :event
 
 
+  has_attached_file :profile_photo, styles: {
+    big: "600x600>",
+    small: "50x50#"
+  }
+  validates_attachment_content_type(
+    :profile_photo,
+    content_type: /\Aimage\/.*\Z/
+  )
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end

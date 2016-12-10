@@ -27,6 +27,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'paperclip'
+gem 'aws-sdk'
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
