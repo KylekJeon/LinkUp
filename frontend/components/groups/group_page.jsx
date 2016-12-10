@@ -1,5 +1,4 @@
 import React from 'react';
-import GroupPageContent from './group_page_content';
 import { Link } from 'react-router';
 
 class GroupPage extends React.Component {
@@ -50,11 +49,14 @@ class GroupPage extends React.Component {
     return(
       <section className='group-page group'>
         <header className='group-header'>
+          <Link className='group-calendar-button' to={`/groups/${this.props.params.groupId}/calendar`}>
+            Calendar
+          </Link>
           <div className='group-header-background'>Welcome to LinkUp, a place to connect</div>
           <Link to={`/groups/${this.props.params.groupId}`} className='group-name'>Welcome to {this.state.groupName}</Link>
           {joinButton}
         </header>
-        <aside className='group-aside'>
+        <aside className='group-aside-container'>
           <ul className='group-users-list'>
             Current Members:
             <div/>

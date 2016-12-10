@@ -12,6 +12,7 @@ import UsersContainer from './users/users_container';
 import GroupPageContainer from './groups/group_page_container';
 import GroupPageContentContainer from './groups/group_page_content_container';
 import EventPageContainer from './events/event_page_container';
+import CalendarContainer from './groups/calendar_container';
 
 
 const Root = ({ store }) => {
@@ -45,6 +46,7 @@ const Root = ({ store }) => {
             <Route path='/users/:userId' component={ UsersContainer }/>
             <Route path='/groups/:groupId' component={ GroupPageContainer }>
               <IndexRoute component={ GroupPageContentContainer } />
+              <Route path='/groups/:groupId/calendar' component={ CalendarContainer } />
               <Route path='events/:eventId' component={ EventPageContainer }/>
             </Route>
           </Route>
