@@ -22,7 +22,7 @@
 
 .group-header {
   width: 950px;
-  background: #29a599;
+  background: rgba(41, 165, 153, .8);
   height: 200px;
   position: relative;
   padding: 5px;
@@ -50,7 +50,7 @@
   width: 90px;
   height: 35px;
   position: absolute;
-  background: #3fe0d0;
+  background: rgba(243, 216, 111, .9);
   color: white;
   text-align: center;
   right: 10px;
@@ -68,7 +68,7 @@
   right: 10px;
   top: 10px;
   border-radius: 5px;
-  background: rgba(190, 12, 24, 1);
+  background: rgba(243, 216, 111, .9);
   color: white;
 }
 
@@ -78,7 +78,7 @@
   margin-top: 25px;
   float: left;
   border-radius: 5px;
-  background: rgba(243, 216, 111, .8);
+  background: rgba(41, 165, 153, .8);
   box-sizing: border-box;
 }
 
@@ -86,14 +86,14 @@
 
 .group-users-list {
   padding: 5px;
-  color: black;
+  color: white;
   text-align: center;
   font-family: "Bree Serif", arial;
 }
 
 .group-users-list li {
   width: 180px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   margin: 0 auto;
   text-align: left;
   padding: 2px;
@@ -110,8 +110,8 @@
   box-sizing: border-box;
   margin-bottom: 10px;
   border-radius: 5px;
-  background: rgba(190, 12, 24, .8);
-  color: #f8f7f6;
+  background: rgba(243, 216, 111, .9);
+  color: black;
 }
 
 .group-description {
@@ -127,19 +127,47 @@
   float: right;
   margin-bottom: 25px;
   border-radius: 5px;
+  color: white;
 }
 
-.group-event-box h1 {
+.group-event-box-header {
   font-family: "Bree Serif", arial;
   font-weight: bold;
   font-size: 26px;
   margin-bottom: 25px;
+  width: 230px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  background: rgba(41, 165, 153, .8);
+  color: white;
+}
+
+.group-event-box-past-header {
+  font-family: "Bree Serif", arial;
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 25px;
+  width: 230px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  background: rgba(41, 165, 153, .8);
+  color: white;
 }
 
 .group-page-upcoming-list h1{
   font-size: 14px;
   margin-top: 25px;
   margin-bottom: 20px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  background: rgba(41, 165, 153, .8);
 }
 
 .group-page-upcoming-list:first-of-type h1 {
@@ -147,23 +175,32 @@
 }
 
 .group-page-past-list h1 {
+  font-size: 14px;
   margin-top: 25px;
   margin-bottom: 20px;
-  font-size: 14px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  background: rgba(41, 165, 153, .8);
+  color: white;
 }
 
 .group-page-event-item {
-  background-color: rgba(243, 216, 111, .6);
+  background-color: rgba(41, 165, 153, .8);
   border-radius: 5px;
   margin-bottom: 20px;
   font-family: arial;
   padding: 15px;
-  border: 1px solid rgba(243, 216, 111, .9);
+  border: 1px solid rgba(41, 165, 153, .9);
+  box-sizing: border-box;
 }
 
 .group-page-event-item-past {
-  background-color: rgba(190, 12, 24, .6);
-  border: 1px solid rgba(190, 12, 24, .9);
+  background-color: rgba(41, 165, 153, .8);
+  border: 1px solid rgba(41, 165, 153, 1);
+  color: black;
 }
 
 .group-page-event-item a {
@@ -184,7 +221,6 @@
 }
 
 
-
 .group-page-event-paragraphs p {
   display: block;
   font-size: 16px;
@@ -193,12 +229,20 @@
 }
 
 .group-page-event-paragraphs p:first-child {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid black;
   text-align: center;
 }
 
 .group-page-description p:first-child {
   font-size: 26px;
+}
+
+.group-page-event-item-content {
+  width: 660px;
+  background: rgba(255, 255, 255, .6);
+  padding: 10px;
+  box-sizing: border-box;
+  color: black;
 }
 
 #calendar {
@@ -266,4 +310,8 @@ tr:first-child > td:nth-child(7n) > .fc-day-grid-event:first-child:hover {
 
 .fc-content {
   word-wrap: break-word;
+}
+
+.group-page-upcoming-list p:first-of-type {
+  border-bottom: 1px solid white;
 }

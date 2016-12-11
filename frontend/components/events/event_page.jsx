@@ -58,25 +58,27 @@ class EventPage extends React.Component {
 
 
     return(
-      <section className='event-page-container group'>
-        <section className='event-page-content'>
-          <h1>Coming Soon: {this.props.currentEvent.title}</h1>
-          <div className='event-page-date-time'>
-            <span className='event-page-date'>Date: {this.props.currentEvent.datetime}</span>
-            <span className='event-page-time'>Time:   {this.props.currentEvent.timeOfDay}</span>
-          </div>
-          <div className='event-page-location'>Location: {this.props.currentEvent.location}</div>
-          <div className='event-page-description'>
-            <span>What We're Doing</span>
-            {createParagraphs(this.props.currentEvent.description)}
-          </div>
-        </section>
-        <section className='event-page-users group'>
-          {rsvp}
-          <ul className='event-page-user-list'>
-            Attending:
-            {userList}
-          </ul>
+      <section className='event-page'>
+        <section className='event-page-container group'>
+          <section className='event-page-content'>
+            <h1>Coming Soon: {this.props.currentEvent.name}</h1>
+            <div className='event-page-date-time'>
+              <span className='event-page-date'>Date: {this.props.currentEvent.datetime}</span>
+              <span className='event-page-time'>Time:   {this.props.currentEvent.timeOfDay}</span>
+            </div>
+            <div className='event-page-location'>Location: {this.props.currentEvent.location}</div>
+            <div className='event-page-description'>
+              <span>What We're Doing</span>
+              {createParagraphs(this.props.currentEvent.description)}
+            </div>
+          </section>
+          <section className='event-page-users group'>
+            {rsvp}
+            <ul className='event-page-user-list'>
+              Attending:
+              {userList}
+            </ul>
+          </section>
         </section>
       </section>
     );

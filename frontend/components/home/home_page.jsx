@@ -111,7 +111,7 @@ class HomePage extends React.Component {
       ));
       return (
         <ul key={events[0].id} className="front-page-event-list">
-          <h1>{events[0].datetime}</h1>
+          <h1 className='front-page-event-list-header'>{events[0].datetime}</h1>
           {lis}
         </ul>
       );

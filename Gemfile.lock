@@ -117,7 +117,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-    paperclip (5.1.0)
+    paperclip (5.0.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
@@ -202,7 +202,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  aws-sdk
+  aws-sdk (>= 2.0)
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
@@ -215,7 +215,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   momentjs-rails
-  paperclip
+  paperclip (~> 5.0.0.beta1)
   pg (~> 0.18)
   pry-rails
   puma (~> 3.0)

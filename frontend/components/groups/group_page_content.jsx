@@ -55,12 +55,14 @@ class GroupPageContent extends React.Component{
       upcomingEventList = upcomingEvents.map((events, idx) => {
         let lis = events.map((event) => (
           <li key={event.id} className="group-page-event-item">
-            <Link to={`/groups/${event.groupId}/events/${event.id}`} >Event: {event.title}</Link>
-            <span>Location: {event.location}</span>
-            <span>Time: {event.timeOfDay}</span>
-            <div className='group-page-event-paragraphs'>
-            <p key={-1}>What We're Doing</p>
-            {createParagraphs(event.description)}</div>
+            <div className='group-page-event-item-content'>
+              <Link to={`/groups/${event.groupId}/events/${event.id}`} >Event: {event.title}</Link>
+              <span>Location: {event.location}</span>
+              <span>Time: {event.timeOfDay}</span>
+              <div className='group-page-event-paragraphs'>
+              <p key={-1}>What We're Doing</p>
+              {createParagraphs(event.description)}</div>
+            </div>
           </li>
         ));
         return (
@@ -74,12 +76,14 @@ class GroupPageContent extends React.Component{
       pastEventList = pastEvents.map((events, idx) => {
         let lis = events.map((event) => (
           <li key={event.id} className="group-page-event-item group-page-event-item-past">
-            <Link to={`/groups/${event.groupId}/events/${event.id}`} >Event: {event.title}</Link>
-            <span>Location: {event.location}</span>
-            <span>Time: {event.timeOfDay}</span>
-            <div className='group-page-event-paragraphs'>
-            <p key={-1}>What We're Doing</p>
-            {createParagraphs(event.description)}</div>
+            <div className='group-page-event-item-content'>
+              <Link to={`/groups/${event.groupId}/events/${event.id}`} >Event: {event.title}</Link>
+              <span>Location: {event.location}</span>
+              <span>Time: {event.timeOfDay}</span>
+              <div className='group-page-event-paragraphs'>
+              <p key={-1}>What We're Doing</p>
+              {createParagraphs(event.description)}</div>
+            </div>
           </li>
         ));
         return (
@@ -99,11 +103,11 @@ class GroupPageContent extends React.Component{
             </div>
         </section>
         <section className='group-event-box'>
-          <h1>Upcoming Events</h1>
+          <h1 className='group-event-box-header'>Upcoming Events</h1>
           {upcomingEventList}
         </section>
         <section className='group-event-box'>
-          <h1>Past Events</h1>
+          <h1 className='group-event-box-past-header'>Past Events</h1>
           {pastEventList}
         </section>
       </section>

@@ -1,12 +1,21 @@
-.event-page-container {
+.event-page {
   width: 715px;
-  background: rgba(41, 165, 153, .5);
+  background: rgba(243, 216, 111, .8);
   min-height: 700px;
   float: right;
   margin-top: 25px;
   border-radius: 5px;
   box-sizing: border-box;
   font-family: "Bree Serif", arial;
+  position: relative;
+  padding: 20px;
+}
+
+.event-page-container {
+  width: 675px;
+  min-height: 660px;
+  background: rgba(255, 255, 255, .6);
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -15,14 +24,14 @@
   display: block;
   position: absolute;
   width: 1px;
-  background: rgba(41, 165, 153, .8);
+  background: black;
   right: 205px;
   top: 0;
   bottom: 0;
 }
 
 .event-page-content {
-  width: 509px;
+  width: 469px;
   float: left;
   box-sizing: border-box;
   padding: 20px;
@@ -39,8 +48,8 @@
   display: block;
   font-size: 18px;
   margin-bottom: 10px;
-  border-bottom: 1px solid rgba(41, 165, 153, .8);
-  border-top: 1px solid rgba(41, 165, 153, .8);
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -49,15 +58,15 @@
   display: block;
   font-size: 16px;
   margin-bottom: 10px;
-  border-bottom: 1px solid rgba(41, 165, 153, .8);
-  border-top: 1px solid rgba(41, 165, 153, .8);
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
 .event-page-location {
-  border-bottom: 1px solid rgba(41, 165, 153, .8);
-  border-top: 1px solid rgba(41, 165, 153, .8);
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -87,7 +96,7 @@
 
 .event-page-rsvp {
   padding: 10px;
-  border-bottom: 1px solid rgba(41, 165, 153, .8);
+  border-bottom: 1px solid black;
 }
 
 .event-rsvp-question {
@@ -117,13 +126,13 @@
 }
 
 .event-page-user-list-items {
-  border-top: 1px solid rgba(41, 165, 153, .8);
+  border-top: 1px solid black;
   padding: 5px;
   text-align: left;
 }
 
 .event-page-user-list-items:last-child {
-  border-bottom: 1px solid rgba(41, 165, 153, .8);
+  border-bottom: 1px solid black;
 }
 
 .event-page-user-list-items:first-child {

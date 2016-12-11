@@ -2,15 +2,19 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  first_name      :string           not null
-#  last_name       :string           not null
+#  id                         :integer          not null, primary key
+#  username                   :string           not null
+#  email                      :string           not null
+#  password_digest            :string           not null
+#  session_token              :string           not null
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  first_name                 :string           not null
+#  last_name                  :string           not null
+#  profile_photo_file_name    :string
+#  profile_photo_content_type :string
+#  profile_photo_file_size    :integer
+#  profile_photo_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
@@ -26,14 +30,8 @@ class User < ActiveRecord::Base
   has_many :events, through: :rsvps, source: :event
 
 
-  has_attached_file :profile_photo, styles: {
-    big: "600x600>",
-    small: "50x50#"
-  }
-  validates_attachment_content_type(
-    :profile_photo,
-    content_type: /\Aimage\/.*\Z/
-  )
+  has_attached_file :profile_photo, default_url: "profile_avatar.jpg"
+  validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\Z/
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
