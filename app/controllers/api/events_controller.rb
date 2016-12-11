@@ -24,7 +24,7 @@ class Api::EventsController < ApplicationController
       @new_rsvp = current_user.rsvps.new(event_id: event_id)
       if @new_rsvp.save!
         @users = Event.find(event_id).users
-        render json: @users
+        render 'api/users/index'
       else
         render json: @new_rsvp.errors.full_messages, status: 422
       end
@@ -32,14 +32,14 @@ class Api::EventsController < ApplicationController
       @rsvp = Rsvp.where("event_id = ? AND user_id = ?", event_id, current_user.id)
       if Rsvp.destroy(@rsvp)
         @users = Event.find(event_id).users
-        render json: @users
+        render 'api/users/index'
       end
     end
   end
 
   def fetch
     @users = Event.find(params[:event_id]).users
-    render json: @users
+    render 'api/users/index'
   end
 
 

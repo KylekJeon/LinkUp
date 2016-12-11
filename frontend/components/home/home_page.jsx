@@ -12,7 +12,8 @@ class HomePage extends React.Component {
       allEvents: [],
       currentUserGroups: [],
       currentUserGroupEvents: [],
-      whichDisplay: "currentUserGroupEvents"
+      whichDisplay: "currentUserGroupEvents",
+      query: ""
     };
     this.toggleGroup = this.toggleGroup.bind(this);
     this.toggleCalendar = this.toggleCalendar.bind(this);
@@ -32,6 +33,16 @@ class HomePage extends React.Component {
       currentUserGroups: nextProps.currentUserGroups,
       currentUserGroupEvents: nextProps.currentUserGroupEvents
     });
+  }
+
+  handleSearch(e){
+    e.preventDefault();
+    this.setState({ query: e.currentTarget.value });
+  }
+
+  handleSearchSubmit(e){
+    e.preventDefault();
+    this.props.router.push(`/home/search/${this.state.query}`);
   }
 
   fetchAllEvents(e) {
@@ -142,7 +153,7 @@ class HomePage extends React.Component {
         </section>
         <section className='content-main group'>
           <form className='search-bar group'>
-            <input className='search-bar-input' type='text' placeholder="All LinkUps"/>
+            <input className='search-bar-input' type='text' value={this.state.query} onChange={this.handleSearch}/>
             <p> Within 5 miles of New York </p>
             <button onClick={this.toggleCalendar} className={calendar}>Calendar</button>
             <button onClick={this.toggleGroup} className={group}>Groups</button>

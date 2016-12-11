@@ -26,7 +26,7 @@ class Api::GroupsController < ApplicationController
     @new_membership = current_user.memberships.new(group_id: group_id)
     if @new_membership.save!
       @users = Group.find(group_id).users
-      render json: @users
+      render 'api/users/index'
     else
       render json: @new_membership.errors.full_messages, status: 422
     end
@@ -34,7 +34,7 @@ class Api::GroupsController < ApplicationController
 
   def fetch
     @users = Group.find(params[:group_id]).users
-    render json: @users
+    render 'api/users/index'
   end
 
 

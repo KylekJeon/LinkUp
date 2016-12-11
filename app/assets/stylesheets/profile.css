@@ -21,10 +21,12 @@
 
 .profile-page-name {
   width: 550px;
-  padding: 20px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid black;
+  padding: 10px;
   float: left;
+  background: rgba(41, 165, 153, .8);
+  border-radius: 5px;
+  color: white;
+
 }
 
 .profile-page-name h1 {
@@ -83,9 +85,13 @@
 .profile-page-bio {
   float: left;
   width: 550px;
-  height: 130px;
+  min-height: 100px;
   padding: 20px;
-  border-bottom: 1px solid black;
+  background: rgba(41, 165, 153, .8);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .profile-page-bio span {
@@ -95,15 +101,56 @@
 }
 
 .profile-page-groups {
-  float: left;
   width: 550px;
-  height: 300px;
-  border-bottom: 1px solid black;
+  background: rgba(41, 165, 153, .8);
+  min-height: 250px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  float: left;
 }
 
-.profile-page-groups h3 {
-  font-family: arial;
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 30px;
+.profile-page-groups > h3 {
+  font-family: "Lato", arial;
+  color: rgba(243, 216, 111, 1);
+  font-size: 20px;
+}
+
+.profile-page-group-list {
+  width: 510px;
+  min-height: 70px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  float: left;
+}
+
+.profile-page-group-item-container {
+  width: 130px;
+  height: 70px;
+  background: rgba(243, 216, 111, .7);
+  padding: 15px;
+  border-radius: 5px;
+  float: left;
+  margin-left: 50px;
+}
+
+.profile-page-group-item-container:first-of-type {
+  margin-left: 0;
+}
+
+.profile-page-group-item {
+  width: 100px;
+  height: 40px;
+  background: rgba(255, 255, 255, .6);
+  padding: 10px;
+  text-align: center;
+  font-family: "Lato", arial;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class User extends React.Component {
   constructor(props){
@@ -16,6 +17,7 @@ class User extends React.Component {
     if(this.props.currentUser.id !== parseInt(this.props.params.userId)){
       this.props.router.push('/');
     }
+    this.props.fetchGroups("user");
   }
 
   updateFiles(e){
@@ -50,6 +52,29 @@ class User extends React.Component {
       }
     }
 
+    let userGroups;
+    let userGroupsThrees = [];
+    let userGroupList = [];
+    if(this.props.currentUserGroups.length !== 0){
+      userGroups = this.props.currentUserGroups.map((group) => (
+        <div className='profile-page-group-item-container'>
+        <li className='profile-page-group-item' key={group.id}><Link key={group.id} to={`/groups/${group.id}`}>{group.name}</Link></li></div>
+      ));
+      for(let i = 0; i < userGroups.length; i++){
+        if(i % 3 === 0){
+          userGroupsThrees[i/3] = [];
+          userGroupsThrees[i/3].push(userGroups[i]);
+        } else {
+          userGroupsThrees[Math.floor(i/3)].push(userGroups[i]);
+        }
+      }
+      for(let j = 0; j < userGroupsThrees.length; j++){
+        const liList = userGroupsThrees[j];
+        const ul = <ul key={j} className='profile-page-group-list group'>{liList}</ul>;
+        userGroupList.push(ul);
+      }
+    }
+
     return(
       <section className='profile-page'>
         <section className='profile-page-container group'>
@@ -68,10 +93,12 @@ class User extends React.Component {
           </div>
           <div className='profile-page-bio'>
             <span>Email: {this.props.currentUser.email}</span><br/><br/>
-            <span>Username: {this.props.currentUser.username}</span>
+            <span>Username: {this.props.currentUser.username}</span><br/><br/>
+            <span>You've Been a Member Since: {this.props.currentUser.created_at}</span>
           </div>
           <div className='profile-page-groups'>
-            <h3>Member of these LinkUps</h3>
+            <h3>Your LinkUps</h3>
+            {userGroupList}
           </div>
         </section>
       </section>
