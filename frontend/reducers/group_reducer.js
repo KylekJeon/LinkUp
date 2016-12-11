@@ -3,7 +3,7 @@ import { RECEIVE_GROUPS, RECEIVE_GROUP_ERRORS, RECEIVE_GROUP_USERS, RECEIVE_CURR
 
 
 const _nullGroups = Object.freeze({
-  groups: {},
+  groups: [],
   users: [],
   errors: [],
   currentGroup: {}

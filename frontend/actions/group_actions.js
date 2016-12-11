@@ -38,9 +38,9 @@ export function fetchGroup(groupId) {
   };
 }
 
-export function fetchGroups() {
+export function fetchGroups(filter) {
   return (dispatch) => {
-    return APIUtil.fetchGroups().then(
+    return APIUtil.fetchGroups(filter).then(
       groups => dispatch(receiveGroups(groups)),
       err => dispatch(receiveGroupErrors(err))
     );

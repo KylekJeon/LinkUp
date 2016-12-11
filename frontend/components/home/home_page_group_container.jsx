@@ -7,17 +7,12 @@ import { fetchUserGroups } from './../../actions/user_actions';
 const mapStateToProps = (state) => {
   return({
     currentUser: state.session.currentUser,
-    currentUserEvents: state.events.currentUserEvents,
-    allEvents: state.events.events,
-    currentUserGroupEvents: state.events.currentUserGroupEvents
+    HomePageGroups: state.groups.groups
   });
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchGroups: () => dispatch(fetchGroups()),
-  fetchEvents: () => dispatch(fetchEvents()),
-  fetchCurrentUserEvents: () => dispatch(fetchCurrentUserEvents()),
-  fetchCurrentUserGroupEvents: () => dispatch(fetchCurrentUserGroupEvents())
+  fetchGroups: (filter) => dispatch(fetchGroups(filter)),
 });
 
 export default connect(

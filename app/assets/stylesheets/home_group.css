@@ -1,0 +1,50 @@
+.content-user-groups {
+  width: 950px;
+  background: rgba(41, 165, 153, .8);
+  min-height: 500px;
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.content-user-groups > h1 {
+  color: rgba(243, 216, 111, 1);
+  font-family: "Lato", arial;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+
+.content-user-group-list {
+  width: 910px;
+  min-height: 120px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-user-group-item-container {
+  width: 240px;
+  height: 120px;
+  background: rgba(243, 216, 111, .7);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.content-user-group-item {
+  width: 220px;
+  height: 100px;
+  background: rgba(255, 255, 255, .6);
+  padding: 10px;
+  text-align: center;
+  font-family: "Lato", arial;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

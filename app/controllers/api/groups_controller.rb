@@ -2,7 +2,8 @@ class Api::GroupsController < ApplicationController
 
 
   def index
-    @groups = Group.all
+    @groups = current_user.groups
+    render json: @groups
   end
 
   def show

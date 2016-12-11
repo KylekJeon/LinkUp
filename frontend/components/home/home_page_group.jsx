@@ -6,110 +6,41 @@ class HomePageGroups extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      currentUserEvents: [],
-      allEvents: [],
-      currentUserGroups: [],
-      currentUserGroupEvents: [],
-      whichDisplay: "currentUserGroupEvents"
-    };
-    this.fetchAllEvents = this.fetchAllEvents.bind(this);
-    this.fetchCurrentUserEvents = this.fetchCurrentUserEvents.bind(this);
-    this.fetchCurrentUserGroupEvents = this.fetchCurrentUserGroupEvents.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchCurrentUserGroupEvents();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      currentUserEvents: nextProps.currentUserEvents,
-      allEvents: nextProps.allEvents,
-      currentUserGroups: nextProps.currentUserGroups,
-      currentUserGroupEvents: nextProps.currentUserGroupEvents
-    });
-  }
-
-  fetchAllEvents(e) {
-    e.preventDefault();
-    this.props.fetchEvents();
-    this.setState({ whichDisplay: "allEvents" });
-  }
-
-  fetchCurrentUserEvents(e) {
-    e.preventDefault();
-    this.props.fetchCurrentUserEvents();
-    this.setState({ whichDisplay: "currentUserEvents" });
-  }
-
-  fetchCurrentUserGroupEvents(e) {
-    e.preventDefault();
-    this.props.fetchCurrentUserGroupEvents();
-    this.setState({ whichDisplay: "currentUserGroupEvents"});
+    this.props.fetchGroups("user");
   }
 
   render() {
-
-    let whichEventDisplay;
-    if (this.state.whichDisplay === "currentUserGroupEvents") {
-      whichEventDisplay = this.state.currentUserGroupEvents;
-    } else if (this.state.whichDisplay === "allEvents") {
-      whichEventDisplay = this.state.allEvents;
-    } else if (this.state.whichDisplay === "currentUserEvents") {
-      whichEventDisplay = this.state.currentUserEvents;
-    }
-
-    whichEventDisplay = whichEventDisplay.sort(
-      function(a,b){
-        if(a.time < b.time) return -1;
-        else if(a.time > b.time) return 1;
-        else return 0;}
-      );
-
-    const groupedEvents = [];
-
-    whichEventDisplay.forEach( (event) => {
-      if(event.time >= new Date().getTime()){
-        if(groupedEvents[0] === undefined){
-          groupedEvents.push([event]);
-        } else if (groupedEvents[groupedEvents.length-1][0].sameDay === event.sameDay){
-          groupedEvents[groupedEvents.length-1].push(event);
+    let userGroups;
+    let userGroupsThrees = [];
+    let userGroupList = [];
+    if(this.props.HomePageGroups.length !== 0){
+      userGroups = this.props.HomePageGroups.map((group) => (
+        <div className='content-user-group-item-container'>
+        <li className='content-user-group-item' key={group.id}><Link key={group.id} to={`/groups/${group.id}`}>{group.name}</Link></li></div>
+      ));
+      for(let i = 0; i < userGroups.length; i++){
+        if(i % 3 === 0){
+          userGroupsThrees[i/3] = [];
+          userGroupsThrees[i/3].push(userGroups[i]);
         } else {
-          groupedEvents.push([event]);
+          userGroupsThrees[Math.floor(i/3)].push(userGroups[i]);
         }
       }
-    });
+      for(let j = 0; j < userGroupsThrees.length; j++){
+        const liList = userGroupsThrees[j];
+        const ul = <ul key={j} className='content-user-group-list'>{liList}</ul>;
+        userGroupList.push(ul);
+      }
 
-    const Events = groupedEvents.map((events, idx) => {
-      let lis = events.map((event) => (
-        <li key={event.id} className="front-page-event-item">
-          <Link to={`/groups/${event.groupId}/events/${event.id}`} className='front-page-event-link'>Event: {event.title}</Link>
-          <Link to={`/groups/${event.groupId}`} className='front-page-group-link'>Hosted by: {event.groupName}</Link>
-          <span>Location: {event.location}</span>
-          <span>Time: {event.timeOfDay}</span>
-          <p>About: {event.description}</p>
-        </li>
-      ));
-      return (
-        <ul key={events[0].id} className="front-page-event-list">
-          <h1 className='front-page-event-list-header'>{events[0].datetime}</h1>
-          {lis}
-        </ul>
-      );
-    });
-
+    }
 
     return (
-      <section>
-        <div className='content-main-list-day'>
-          {Events}
-        </div>
-        <ul className='content-main-list-linkups'>
-          <li><button onClick={this.fetchAllEvents}>All LinkUps</button></li>
-          <li><button onClick={this.fetchCurrentUserGroupEvents}>My LinkUps</button></li>
-          <li><button onClick={this.fetchCurrentUserEvents}>I'm Going!</button></li>
-        </ul>
+      <section className='content-user-groups'>
+        <h1>Your LinkUps</h1>
+        {userGroupList}
       </section>
     );
   }
