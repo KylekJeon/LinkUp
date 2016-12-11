@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-class HomePageGroups extends React.Component {
+class HomePageSearch extends React.Component {
 
   constructor(props){
     super(props);
@@ -31,7 +31,7 @@ class HomePageGroups extends React.Component {
       }
       for(let j = 0; j < userGroupsThrees.length; j++){
         const liList = userGroupsThrees[j];
-        const ul = <ul key={j} className='content-user-group-list group'>{liList}</ul>;
+        const ul = <ul key={j} className='content-user-group-list'>{liList}</ul>;
         userGroupList.push(ul);
       }
 
@@ -46,4 +46,4 @@ class HomePageGroups extends React.Component {
   }
 }
 
-export default HomePageGroups;
+export default HomePageSearch;

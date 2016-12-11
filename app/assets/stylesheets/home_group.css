@@ -23,8 +23,6 @@
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 30px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .content-user-group-item-container {
@@ -33,6 +31,12 @@
   background: rgba(243, 216, 111, .7);
   padding: 10px;
   border-radius: 5px;
+  float: left;
+  margin-left: 85px;
+}
+
+.content-user-group-item-container:first-of-type {
+  margin-left: 0;
 }
 
 .content-user-group-item {
