@@ -13,13 +13,19 @@ class HomePage extends React.Component {
       currentUserGroups: [],
       currentUserGroupEvents: [],
       whichDisplay: "currentUserGroupEvents",
-      query: ""
+      query: "",
+      city: "New York",
+      citySelector: false
     };
     this.toggleGroup = this.toggleGroup.bind(this);
     this.toggleCalendar = this.toggleCalendar.bind(this);
     this.fetchAllEvents = this.fetchAllEvents.bind(this);
     this.fetchCurrentUserEvents = this.fetchCurrentUserEvents.bind(this);
     this.fetchCurrentUserGroupEvents = this.fetchCurrentUserGroupEvents.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+    this.showCities = this.showCities.bind(this);
+    this.changeCities = this.changeCities.bind(this);
   }
 
   componentDidMount() {
@@ -42,7 +48,24 @@ class HomePage extends React.Component {
 
   handleSearchSubmit(e){
     e.preventDefault();
-    this.props.router.push(`/home/search/${this.state.query}`);
+    if(this.state.query === ""){
+      this.props.router.push(`/home/search/all`);
+    } else {
+      this.props.router.push(`/home/search/${this.state.query}`);
+    }
+  }
+
+  showCities(e){
+    e.preventDefault();
+    if(this.state.citySelector){
+      this.setState({ citySelector: false });
+    } else {
+      this.setState({ citySelector: true });
+    }
+  }
+
+  changeCities(city){
+    return (e) => this.setState({ city: city });
   }
 
   fetchAllEvents(e) {
@@ -130,6 +153,12 @@ class HomePage extends React.Component {
       );
     });
 
+    let cityClass = "city-selector-dropdown ";
+    if(this.state.citySelector){
+      cityClass = cityClass + " city-active";
+    }
+
+
 
     return (
       <section>
@@ -154,7 +183,16 @@ class HomePage extends React.Component {
         <section className='content-main group'>
           <form className='search-bar group'>
             <input className='search-bar-input' type='text' value={this.state.query} onChange={this.handleSearch}/>
-            <p> Within 5 miles of New York </p>
+            <button className='search-button' onClick={this.handleSearchSubmit}>Search LinkUps</button>
+            <span>Change City</span>
+            <button onClick={this.showCities} className='search-bar-city-selector'>
+              {this.state.city}
+              <ul className={cityClass} >
+                <li onClick={this.changeCities("New York")} key={1} >New York</li>
+                <li onClick={this.changeCities("Boston")} key={2} >Boston</li>
+                <li onClick={this.changeCities("Philadelphia")} key={3} >Philadelphia</li>
+              </ul>
+            </button>
             <button onClick={this.toggleCalendar} className={calendar}>Calendar</button>
             <button onClick={this.toggleGroup} className={group}>Groups</button>
           </form>

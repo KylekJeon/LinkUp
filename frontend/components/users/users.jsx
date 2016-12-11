@@ -57,7 +57,7 @@ class User extends React.Component {
     let userGroupList = [];
     if(this.props.currentUserGroups.length !== 0){
       userGroups = this.props.currentUserGroups.map((group) => (
-        <div className='profile-page-group-item-container'>
+        <div key={group.id} className='profile-page-group-item-container'>
         <li className='profile-page-group-item' key={group.id}><Link key={group.id} to={`/groups/${group.id}`}>{group.name}</Link></li></div>
       ));
       for(let i = 0; i < userGroups.length; i++){

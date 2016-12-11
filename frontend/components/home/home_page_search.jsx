@@ -9,16 +9,22 @@ class HomePageSearch extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchGroups("user");
+    this.props.fetchGroups(this.props.params.searchQuery);
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(this.props.params.searchQuery !== nextProps.params.searchQuery){
+      this.props.fetchGroups(nextProps.params.searchQuery);
+    }
   }
 
   render() {
     let userGroups;
     let userGroupsThrees = [];
     let userGroupList = [];
-    if(this.props.HomePageGroups.length !== 0){
-      userGroups = this.props.HomePageGroups.map((group) => (
-        <div className='content-user-group-item-container'>
+    if(this.props.SearchGroups.length !== 0){
+      userGroups = this.props.SearchGroups.map((group) => (
+        <div key={group.id} className='content-user-group-item-container'>
         <li className='content-user-group-item' key={group.id}><Link key={group.id} to={`/groups/${group.id}`}>{group.name}</Link></li></div>
       ));
       for(let i = 0; i < userGroups.length; i++){

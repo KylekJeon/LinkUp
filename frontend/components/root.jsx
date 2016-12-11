@@ -13,6 +13,7 @@ import HomeContainer from './home/home_container';
 import HomePageContainer from './home/home_page_container';
 import HomePageEventContainer from './home/home_page_event_container';
 import HomePageGroupContainer from './home/home_page_group_container';
+import HomePageSearchContainer from './home/home_page_search_container';
 
 import UsersContainer from './users/users_container';
 
@@ -20,6 +21,7 @@ import GroupPageContainer from './groups/group_page_container';
 import GroupPageContentContainer from './groups/group_page_content_container';
 import EventPageContainer from './events/event_page_container';
 import CalendarContainer from './groups/calendar_container';
+
 
 const Root = ({ store }) => {
 
@@ -52,6 +54,7 @@ const Root = ({ store }) => {
             <Route path='/home/events' component={ HomePageContainer }>
               <IndexRoute component={ HomePageEventContainer }/>
               <Route path='/home/groups' component={ HomePageGroupContainer }/>
+              <Route path='/home/search/:searchQuery' component={ HomePageSearchContainer }/>
             </Route>
             <Route path='/users/:userId' component={ UsersContainer }/>
             <Route path='/groups/:groupId' component={ GroupPageContainer }>

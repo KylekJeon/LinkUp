@@ -215,6 +215,13 @@
   border-radius: 5px;
 }
 
+.search-bar span {
+  margin-left: 10px;
+  color: white;
+  font-size: 18px;
+  font-family: "Lato", arial;
+}
+
 .search-bar-input {
   width: 250px;
   background: white;
@@ -226,12 +233,64 @@
   border-radius: 5px;
 }
 
-.search-bar p {
-  width: 200px;
+.search-bar span {
   float: left;
-  margin-left: 30px;
-  margin-top: 10px;
-  font-family: arial;
+  height: 40px;
+  vertical-align: middle;
+  margin-top: 7px;
+}
+
+.search-button {
+  width: 120px;
+  height: 40px;
+  margin-left: 10px;
+  background: rgba(41, 165, 153, .8);
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  float: left;
+}
+
+.search-bar-city-selector {
+  float: left;
+  height: 40px;
+  min-width: 140px;
+  margin-left: 12px;
+  padding: 10px;
+  font-size: 18px;
+  background: rgba(41, 165, 153, .8);
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+}
+
+.search-bar-city-selector:hover {
+    background: rgba(41, 165, 153, 1);
+}
+
+.city-selector-dropdown {
+  min-height: 100px;
+  min-width: 140px;
+  background: rgba(243, 216, 111, .9);
+  position: absolute;
+  border-radius: 5px;
+  left: 0;
+  top: 60px;
+  padding: 10px;
+  display: none;
+}
+
+.city-selector-dropdown li {
+  padding: 10px;
+  background: rgba(41, 165, 153, .8);
+  height: 40px;
+  margin-bottom: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+.city-active {
+  display: block;
 }
 
 .search-bar-group {

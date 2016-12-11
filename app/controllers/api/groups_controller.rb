@@ -2,8 +2,16 @@ class Api::GroupsController < ApplicationController
 
 
   def index
-    @groups = current_user.groups
-    render json: @groups
+
+    if(params[:filter] == "user")
+      @groups = current_user.groups
+    elsif(params[:filter] == "all")
+      @groups = Group.all
+    elsif(params[:filter])
+      @groups = Group.search_group(params[:filter])
+    end
+
+      render json: @groups
   end
 
   def show
