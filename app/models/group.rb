@@ -10,6 +10,8 @@
 #
 
 class Group < ActiveRecord::Base
+  include PgSearch
+
   validates :name, :description, presence: true;
   validates :description, length: { minimum: 1 }
 
@@ -17,5 +19,8 @@ class Group < ActiveRecord::Base
   has_many :users, through: :memberships, source: :user
   has_many :events
 
+  pg_search_scope :search_group, against: [:name, :description], using: {
+    tsearch: {prefix: true, dictionary: "english", any_word: true}
+  }
 
 end
