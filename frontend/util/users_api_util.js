@@ -11,3 +11,13 @@ export const fetchUserGroups = (id) => (
     url: `api/users/${id}/groups`
   })
 );
+
+export const updateUserProfilePhoto = (id, formData) => (
+  $.ajax({
+    method: "PATCH",
+    url: `api/users/${id}`,
+    contentType: false,
+    processData: false,
+    data: formData
+  })
+);  

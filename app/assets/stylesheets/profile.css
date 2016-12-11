@@ -1,18 +1,29 @@
-.profile-page-container {
+.profile-page {
   width: 950px;
   min-height: 650px;
   border: 1px solid #eee;
   border-radius: 5px;
-  background: white;
+  background: rgba(41, 165, 153, .8);
+  margin: 25px auto;
+  padding: 15px;
+}
+
+.profile-page-container {
+  width: 870px;
+  min-height: 570px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background: rgba(255,255,255, .6);
   margin: 25px auto;
   padding: 25px;
+  box-sizing: border-box;
 }
 
 .profile-page-name {
-  width: 650px;
+  width: 550px;
   padding: 20px;
   padding-bottom: 5px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid black;
   float: left;
 }
 
@@ -24,19 +35,57 @@
   display: inline;
 }
 
-.profile-picture {
+.profile-picture-container {
   width: 240px;
   height: 240px;
   float: right;
-
+  background: rgba(41, 165, 153, .8);
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 5px;
 }
+
+.profile-change {
+  width: 240px;
+  float: right;
+  position: absolute;
+  bottom: -125px;
+  left: 0;
+  background: rgba(41, 165, 153, .8);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.profile-change span {
+  display: block;
+  margin-bottom: 10px;
+  background: rgba(255,255,255, .6);
+  padding: 5px;
+  text-align: center;
+  font-family: "Bree Serif", arial;
+  border-radius: 5px;
+}
+
+.profile-submit {
+  display: block;
+  width: 120px;
+  padding: 5px;
+  background: rgba(255,255,255, .6);
+  border-radius: 5px;
+  font-family: "Bree Serif", arial;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
 
 .profile-page-bio {
   float: left;
-  width: 650px;
-  height: 170px;
+  width: 550px;
+  height: 130px;
   padding: 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid black;
 }
 
 .profile-page-bio span {
@@ -49,7 +98,7 @@
   float: left;
   width: 550px;
   height: 300px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid black;
 }
 
 .profile-page-groups h3 {

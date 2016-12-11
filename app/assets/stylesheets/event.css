@@ -17,6 +17,7 @@
   background: rgba(255, 255, 255, .6);
   box-sizing: border-box;
   position: relative;
+  border-radius: 5px;
 }
 
 .event-page-container:after {
@@ -49,7 +50,6 @@
   font-size: 18px;
   margin-bottom: 10px;
   border-bottom: 1px solid black;
-  border-top: 1px solid black;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -59,14 +59,12 @@
   font-size: 16px;
   margin-bottom: 10px;
   border-bottom: 1px solid black;
-  border-top: 1px solid black;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
 .event-page-location {
   border-bottom: 1px solid black;
-  border-top: 1px solid black;
   padding-top: 5px;
   padding-bottom: 5px;
 }

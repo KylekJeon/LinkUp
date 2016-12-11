@@ -6,8 +6,10 @@ class User extends React.Component {
     this.updateFiles = this.updateFiles.bind(this);
     this.state = {
       imageFile: null,
-      imageUrl: ""
+      imageUrl: "",
+      uploaded: false
     };
+    this.updateProfilePhoto = this.updateProfilePhoto.bind(this);
   }
 
   componentDidMount(){
@@ -29,37 +31,49 @@ class User extends React.Component {
   }
 
   updateProfilePhoto(e){
-    e.preventDefault();    
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("user[profile_photo]", this.state.imageFile);
+    this.props.updateUserProfilePhoto(this.props.currentUser.id, formData);
+    this.setState({ imageFile: null, imageUrl: ""});
   }
 
   render(){
     let profilePhoto;
     let profileSubmit;
     if(this.state.imageUrl === ""){
-      profilePhoto = <img src={this.props.currentUser.image_url}/>;
+      profilePhoto = <img src={this.props.currentUserImage}/>;
     } else {
       profilePhoto = <img src={this.state.imageUrl}/>;
-      profileSubmit = <button onClick={this.updateProfilePhoto}>Update your profile photo!</button>;
+      if (parseInt(this.props.routeParams.userId) === this.props.currentUser.id){
+        profileSubmit = <button className="profile-submit" onClick={this.updateProfilePhoto}>Upload Photo</button>;
+      }
     }
 
-
-    debugger
     return(
-      <section className='profile-page-container group'>
-        <div className='profile-page-name'>
-          <h1>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
-        </div>
-        <div className='profile-picture'>
-          {profilePhoto}
-          {profileSubmit}
-        </div>
-        <div className='profile-page-bio'>
-          <span>Email: {this.props.currentUser.email}</span><br/><br/>
-          <span>Username: {this.props.currentUser.username}</span>
-        </div>
-        <div className='profile-page-groups'>
-          <h3>Member of these LinkUps</h3>
-        </div>
+      <section className='profile-page'>
+        <section className='profile-page-container group'>
+          <div className='profile-page-name'>
+            <h1>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
+          </div>
+          <div className='profile-picture'>
+            <div className='profile-picture-container'>
+              {profilePhoto}
+              <div className='profile-change'>
+                <span>Change Your Picture</span>
+                <input type='file' onChange={this.updateFiles} />
+                {profileSubmit}
+              </div>
+            </div>
+          </div>
+          <div className='profile-page-bio'>
+            <span>Email: {this.props.currentUser.email}</span><br/><br/>
+            <span>Username: {this.props.currentUser.username}</span>
+          </div>
+          <div className='profile-page-groups'>
+            <h3>Member of these LinkUps</h3>
+          </div>
+        </section>
       </section>
     );
   }
