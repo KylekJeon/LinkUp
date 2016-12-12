@@ -21,6 +21,7 @@ import GroupPageContainer from './groups/group_page_container';
 import GroupPageContentContainer from './groups/group_page_content_container';
 import EventPageContainer from './events/event_page_container';
 import CalendarContainer from './groups/calendar_container';
+import LinkUpFormContainer from './groups/linkUpFormContainer';
 
 
 const Root = ({ store }) => {
@@ -56,6 +57,7 @@ const Root = ({ store }) => {
               <Route path='/home/groups' component={ HomePageGroupContainer }/>
               <Route path='/home/search/:searchQuery' component={ HomePageSearchContainer }/>
             </Route>
+            <Route path='/home/linkup' component={ LinkUpFormContainer }/>
             <Route path='/users/:userId' component={ UsersContainer }/>
             <Route path='/groups/:groupId' component={ GroupPageContainer }>
               <IndexRoute component={ GroupPageContentContainer } />

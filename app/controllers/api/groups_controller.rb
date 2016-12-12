@@ -21,9 +21,10 @@ class Api::GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-
-    if @group.save!
-      render 'api/group/show'
+    if @group.save
+      Admin.create(group_id: @group.id, user_id: current_user.id)
+      Membership.create(group_id: @group.id, user_id: current_user.id)
+      render json: @group
     else
       render json: @group.errors.full_messages, status: 422
     end
@@ -41,14 +42,19 @@ class Api::GroupsController < ApplicationController
   end
 
   def fetch
-    @users = Group.find(params[:group_id]).users
-    render 'api/users/index'
+    if(params[:filter] == "users")
+      @users = Group.find(params[:group_id]).users
+      render 'api/users/index'
+    elsif(params[:filter] == "admins")
+      @users = Group.find(params[:group_id]).administrators
+      render 'api/users/index'
+    end
   end
 
 
   private
   def group_params
-    params.permit(:group).require(:name, :description)
+    params.require(:group).permit(:name, :description, :category)
   end
 
 end

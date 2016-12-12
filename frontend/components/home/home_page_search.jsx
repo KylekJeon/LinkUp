@@ -45,7 +45,7 @@ class HomePageSearch extends React.Component {
 
     return (
       <section className='content-user-groups'>
-        <h1>Your LinkUps</h1>
+        <h1>We've Found These LinkUps</h1>
         {userGroupList}
       </section>
     );

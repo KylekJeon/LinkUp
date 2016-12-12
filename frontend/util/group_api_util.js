@@ -15,7 +15,7 @@ export const addUserToGroup = (groupId) => (
 export const fetchUsersForGroup = (groupId) => (
   $.ajax({
       method: "GET",
-      url: `api/groups/${groupId}/fetch`
+      url: `api/groups/${groupId}/fetch?filter=users`
   })
 );
 
@@ -23,5 +23,20 @@ export const fetchGroup = (groupId) => (
   $.ajax({
     method: "GET",
     url: `api/groups/${groupId}`
+  })
+);
+
+export const createGroup = (group) => (
+  $.ajax({
+    method: "POST",
+    url: 'api/groups',
+    data: { group }
+  })
+);
+
+export const fetchCurrentGroupAdmins = (groupId) => (
+  $.ajax({
+    method: "GET",
+    url: `api/groups/${groupId}/fetch?filter=admins`
   })
 );

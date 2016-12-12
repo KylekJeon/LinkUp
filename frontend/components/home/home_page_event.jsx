@@ -105,11 +105,11 @@ class HomePageEvents extends React.Component {
         <div className='content-main-list-day'>
           {Events}
         </div>
-        <ul className='content-main-list-linkups'>
-          <li><button onClick={this.fetchAllEvents}>All LinkUps</button></li>
-          <li><button onClick={this.fetchCurrentUserGroupEvents}>My LinkUps</button></li>
-          <li><button onClick={this.fetchCurrentUserEvents}>I'm Going!</button></li>
-        </ul>
+        <div className='content-main-list-linkups'>
+          <button onClick={this.fetchAllEvents}>All LinkUps</button>
+          <button onClick={this.fetchCurrentUserGroupEvents}>My LinkUps</button>
+          <button onClick={this.fetchCurrentUserEvents}>I'm Going!</button>
+        </div>
       </section>
     );
   }

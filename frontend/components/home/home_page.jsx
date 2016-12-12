@@ -170,8 +170,8 @@ class HomePage extends React.Component {
             </div>
             <div className='content-header-next-box group'>
               <div className='content-header-nextlinkup'>
-                <h3>Event: {this.props.currentUserNextEvent.name}</h3>
-                <h5>Hosted By: {this.props.currentUserNextEvent.groupName}</h5>
+                <Link to={`/events/${this.props.currentUserNextEvent.id}`}><h3>Event: {this.props.currentUserNextEvent.name}</h3></Link>
+              <Link to={`/groups/${this.props.currentUserNextEvent.groupId}`}><h5>Hosted By: {this.props.currentUserNextEvent.groupName}</h5></Link>
               </div>
               <div className='content-header-calendar-location'>
                 <h3>Date: {this.props.currentUserNextEvent.datetime}</h3>

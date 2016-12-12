@@ -21,11 +21,20 @@
   margin-top: 25px;
 }
 
+.front-header-heading-link:hover {
+  color: #f3d86f;
+}
+
+
 .front-header-heading-logo {
   padding: 20px 5px;
   font-family: 'Pacifico', cursive;
   color: #29a599;
   font-size: 36px;
+}
+
+.front-header-heading-logo:hover {
+  color: #f3d86f;
 }
 
 .front-header-list {
@@ -74,6 +83,11 @@
   margin-left: 15px;
 }
 
+.front-header-nav-profile:hover {
+  background: #f3d86f;
+  border: 1px solid #f3d86f;
+}
+
 .content-header {
   height: 260px;
   width: 100%;
@@ -99,8 +113,10 @@
   margin-top: 30px;
   color: white;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 30px;
 }
+
+
 
 .content-header-nextlinkup {
   width: 650px;
@@ -108,27 +124,27 @@
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   float: left;
+  margin-top: 15px;
 }
 
 
-
-
-.content-header-nextlinkup > h3 {
-  font-size: 30px;
-  margin: 15px;
-  margin-left: 0;
+.content-header-nextlinkup h3 {
+  font-size: 24px;
 }
 
-.content-header-nextlinkup > h4 {
-  font-size: 22px;
-  margin: 15px;
-  margin-left: 0;
+.content-header-nextlinkup h3:hover {
+  color: rgba(243, 216, 111, .8);
 }
 
-.content-header-nextlinkup > h5 {
+
+.content-header-nextlinkup h5 {
   font-size: 16px;
   margin: 15px;
   margin-left: 0;
+}
+
+.content-header-nextlinkup h5:hover {
+  color: rgba(243, 216, 111, .8);
 }
 
 .content-header-calendar-location {
@@ -159,25 +175,36 @@
   position: absolute;
   left: -165px;
   top: 60px;
-  height: 100px;
+  height: 98px;
   width: 200px;
-  background: #eee;
-  box-shadow: 1px 1px 1px 1px #aaa;
+  background: rgba(243, 216, 111, .9);
 }
+
 
 .front-header-profile-list a {
   display: block;
   padding: 7px;
-  border-bottom: 1px solid white;
-  color: #aaa;
-  border-radius: 5px;
+  border-bottom: 1px solid black;
+  color: black;
 }
+
+.front-header-profile-list a:first-of-type {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+
+.front-header-profile-list a:hover {
+  background: rgba(41, 165, 153, .8);
+  color: white;
+}
+
 
 .front-header-profile-list:before {
   content: "";
   display: block;
   position: absolute;
-  border-bottom: 10px solid #eee;
+  border-bottom: 10px solid rgba(243, 216, 111, .7);
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   top: -10px;
@@ -187,9 +214,17 @@
 
 .front-header-profile-list > li {
   padding: 7px;
-  border-bottom: 1px solid white;
-  color: #aaa;
-  border-radius: 5px;
+  color: black;
+}
+
+.front-header-profile-list >li:last-of-type {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.front-header-profile-list > li:hover {
+  background: rgba(41, 165, 153, .8);
+  color: white;
 }
 
 .front-invisible {
@@ -254,6 +289,10 @@
   text-align: center;
   border-radius: 5px;
   float: left;
+}
+
+.search-button:hover {
+  background: rgba(41, 165, 153, 1);
 }
 
 .search-bar-city-selector {
@@ -331,10 +370,22 @@
   background: rgba(41, 165, 153, .6);
 }
 
+.search-bar-group:hover {
+  background: rgba(41, 165, 153, .8);
+}
+
+.search-bar-calendar:hover {
+  background: rgba(41, 165, 153, .8);
+}
+
 .search-chosen {
   background: rgba(4, 146, 135, .8);
   font-weight: bold;
   color: white;
+}
+
+.search-chosen:hover {
+  background: rgba(41, 165, 153, 1);
 }
 
 .content-main-list-day {
@@ -416,9 +467,10 @@
   right: 0;
   top: 116px;
   border-radius: 5px;
+  width: 260px;
 }
 
-.content-main-list-linkups li {
+.content-main-list-linkups button {
   width: 260px;
   padding: 7px 5px;
   border: 1px solid #aaa;
@@ -428,7 +480,7 @@
   color: black;
 }
 
-.content-main-list-linkups li:hover {
+.content-main-list-linkups button:hover {
   background: rgba(232, 202, 84, .9);
 }
 
@@ -436,12 +488,12 @@
   margin-left: 15px;
 }
 
-.content-main-list-linkups li:first-child {
+.content-main-list-linkups button:first-child {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-.content-main-list-linkups li:last-child {
+.content-main-list-linkups button:last-child {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom: 1px solid #aaa;
@@ -473,6 +525,10 @@
   border: 2px solid white;
   margin-bottom: 25px;
   color: black;
+}
+
+.front-page-event-item a:hover{
+  color: rgba(4, 146, 135, .8);
 }
 
 .front-page-event-link {

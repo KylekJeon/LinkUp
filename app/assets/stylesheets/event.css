@@ -116,6 +116,11 @@
   border-radius: 5px;
 }
 
+.event-rsvp-button:hover {
+  background: rgba(243, 216, 111, .8);
+  color: black;
+}
+
 .event-page-user-list {
   width: 185px;
   box-sizing: border-box;

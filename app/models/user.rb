@@ -28,7 +28,8 @@ class User < ActiveRecord::Base
   has_many :groups, through: :memberships, source: :group
   has_many :rsvps
   has_many :events, through: :rsvps, source: :event
-
+  has_many :admins
+  has_many :admin_groups, through: :admins, source: :group
 
   has_attached_file :profile_photo, default_url: "profile_avatar.jpg"
   validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\Z/

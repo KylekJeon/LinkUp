@@ -7,3 +7,12 @@ export const selectGroup = (groups, id) => {
   }
   return (group);
 };
+
+
+export const selectUserIds = (users) => {
+  let userIds;
+  userIds = users.map((user) => (
+    user.id
+  ));
+  return userIds;
+};

@@ -22,6 +22,7 @@ class GroupPage extends React.Component {
   componentDidMount(){
     this.props.fetchGroup(this.props.params.groupId);
     this.props.fetchUsersForGroup(this.props.params.groupId);
+    this.props.fetchCurrentGroupAdmins(this.props.params.groupId);
   }
 
 
@@ -33,6 +34,7 @@ class GroupPage extends React.Component {
     let userList;
     let userIdList;
     let joinButton;
+    let eventButton;
 
     if(this.props.users[0]){
       userList = this.props.users.map( (user) => (
@@ -46,9 +48,16 @@ class GroupPage extends React.Component {
       }
     }
 
+    if(this.props.currentGroupAdminIds){
+      if(this.props.currentGroupAdminIds.includes(this.props.currentUser.id)){
+        eventButton = <Link className='group-event-button' to={'/'}>Create Event</Link>;
+      }
+    }
+
     return(
       <section className='group-page group'>
         <header className='group-header'>
+          {eventButton}
           <Link className='group-calendar-button' to={`/groups/${this.props.params.groupId}/calendar`}>
             Calendar
           </Link>

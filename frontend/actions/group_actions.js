@@ -5,6 +5,7 @@ export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
 export const RECEIVE_GROUP_ERRORS = "RECEIVE_GROUP_ERRORS";
 export const RECEIVE_GROUP_USERS = "RECEIVE_GROUP_USERS";
 export const RECEIVE_CURRENT_GROUP = "RECEIVE_CURRENT_GROUP";
+export const RECEIVE_CURRENT_GROUP_ADMINS = "RECEIVE_CURRENT_GROUP_ADMINS";
 
 // action creators
 export const receiveGroups = (groups) => ({
@@ -12,10 +13,12 @@ export const receiveGroups = (groups) => ({
   groups
 });
 
-export const receiveGroupErrors = (errors) => ({
-  type: RECEIVE_GROUP_ERRORS,
-  errors
-});
+export const receiveGroupErrors = (errors) => {
+  return {
+    type: RECEIVE_GROUP_ERRORS,
+    errors
+  };
+};
 
 export const receiveGroupUsers = (users) => ({
   type: RECEIVE_GROUP_USERS,
@@ -27,6 +30,10 @@ export const receiveCurrentGroup = (group) => ({
   group
 });
 
+export const receiveCurrentGroupAdmins = (currentGroupAdmins) => ({
+  type: RECEIVE_CURRENT_GROUP_ADMINS,
+  currentGroupAdmins
+});
 
 
 // thunk creators
@@ -60,6 +67,24 @@ export function addUserToGroup(groupId) {
     return APIUtil.addUserToGroup(groupId).then(
       users => dispatch(receiveGroupUsers(users)),
       errors => dispatch(receiveGroupErrors(errors.responseJSON))
+    );
+  };
+}
+
+export function createGroup(group) {
+  return (dispatch) => {
+    return APIUtil.createGroup(group).then(
+      group => dispatch(receiveCurrentGroup(group)),
+      err => dispatch(receiveGroupErrors(err.responseJSON))
+    );
+  };
+}
+
+export function fetchCurrentGroupAdmins(groupId) {
+  return (dispatch) => {
+    return APIUtil.fetchCurrentGroupAdmins(groupId).then(
+      users => dispatch(receiveCurrentGroupAdmins(users)),
+      err => dispatch(receiveGroupErrors(err.responseJSON))
     );
   };
 }

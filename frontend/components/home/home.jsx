@@ -38,7 +38,7 @@ class Home extends React.Component {
     return(
       <section className='front-section'>
         <header className='front-header'>
-          <Link to='/' className='front-header-heading-link front-header-child'>Create a LinkUp</Link>
+          <Link to='/home/linkup' className='front-header-heading-link front-header-child'>Create a LinkUp</Link>
           <Link to='/' className='front-header-heading-logo'>LinkUp</Link>
           <ul className='front-header-list'>
             <li><Link to='/front/messages' className='front-header-nav-message'><img src={window.assets.messageIcon}/></Link></li>
@@ -58,7 +58,7 @@ class Home extends React.Component {
         <footer className='welcome-footer'>
           <section className='welcome-footer-section'>
             <div className='welcome-footer-section-top'>
-              <pre className='welcome-footer-startgroup'>Start a LinkUp Group</pre>
+              <Link to='/home/linkup' className='welcome-footer-startgroup'>Start a LinkUp Group</Link>
               <Link to='/welcome/login' className='welcome-footer-section-login'>Log in</Link>
             </div>
             <div className='welcome-footer-section-bottom'>
