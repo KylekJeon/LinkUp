@@ -30,6 +30,7 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     this.props.fetchCurrentUserGroupEvents();
+    this.props.fetchCurrentUserNextEvent();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -169,13 +170,13 @@ class HomePage extends React.Component {
             </div>
             <div className='content-header-next-box group'>
               <div className='content-header-nextlinkup'>
-                <h3>So You've Been Accepted to App Academy</h3>
-                <h4>How to be Okay With Doing Nothing but Coding With Your Life and Losing All Friends and Loved Ones for Three Months</h4>
-                <h5>Hosted by the Masochist Association of New York</h5>
+                <h3>Event: {this.props.currentUserNextEvent.name}</h3>
+                <h5>Hosted By: {this.props.currentUserNextEvent.groupName}</h5>
               </div>
               <div className='content-header-calendar-location'>
-                <h3>Date: Forever. This is your life now</h3>
-                <h3>Location: New York City</h3>
+                <h3>Date: {this.props.currentUserNextEvent.datetime}</h3>
+                <h3>Time: {this.props.currentUserNextEvent.timeOfDay}</h3>
+                <h3>Location: {this.props.currentUserNextEvent.location}</h3>
               </div>
             </div>
           </div>

@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
   has_attached_file :profile_photo, default_url: "profile_avatar.jpg"
   validates_attachment_content_type :profile_photo, content_type: /\Aimage\/.*\Z/
 
+  def self.next_event(user_id)
+    User.find(user_id).events.where("events.event_time > ?", Time.new).order(:event_time).limit(1)
+  end
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end

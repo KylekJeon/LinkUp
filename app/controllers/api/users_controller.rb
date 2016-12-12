@@ -1,6 +1,15 @@
 class Api::UsersController < ApplicationController
 
 
+  def index
+    if(params[:filter] == "next")
+      @event = User.next_event(current_user.id).first
+      render 'api/events/show'
+    else
+      render json: ["You shouldn't be here"]
+    end
+  end
+
   def show
     @user = current_user
     render :show

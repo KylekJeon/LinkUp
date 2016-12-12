@@ -140,6 +140,11 @@
 
 .content-header-calendar-location > h3 {
   font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.content-header-calendar-location > h3:first-of-type {
+  margin-top: 15px;
 }
 
 .front-header-nav-profile {

@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
 import HomePage from './home_page';
 import { fetchCurrentUserEvents, fetchEvents, fetchCurrentUserGroupEvents } from './../../actions/event_actions';
-import { fetchUserGroups } from './../../actions/user_actions';
+import { fetchUserGroups, fetchCurrentUserNextEvent } from './../../actions/user_actions';
 
 const mapStateToProps = (state) => {
   return({
     currentUser: state.session.currentUser,
     currentUserEvents: state.events.currentUserEvents,
     allEvents: state.events.events,
-    currentUserGroupEvents: state.events.currentUserGroupEvents
+    currentUserGroupEvents: state.events.currentUserGroupEvents,
+    currentUserNextEvent: state.users.currentUserNextEvent
   });
 };
 
@@ -17,6 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchCurrentUserEvents: () => dispatch(fetchCurrentUserEvents()),
   fetchCurrentUserGroupEvents: () => dispatch(fetchCurrentUserGroupEvents()),
   fetchGroups: (filter) => dispatch(fetchGroups(filter)),
+  fetchCurrentUserNextEvent: () => dispatch(fetchCurrentUserNextEvent())
 });
 
 export default connect(

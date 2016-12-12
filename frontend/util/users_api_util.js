@@ -20,4 +20,11 @@ export const updateUserProfilePhoto = (id, formData) => (
     processData: false,
     data: formData
   })
-);  
+);
+
+export const fetchCurrentUserNextEvent = () => (
+  $.ajax({
+    method: "GET",
+    url: `api/users?filter=next`
+  })
+);

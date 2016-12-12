@@ -8,7 +8,7 @@ export const RECEIVE_EVENT_ERRORS = "RECEIVE_EVENT_ERRORS";
 export const RECEIVE_CURRENT_USER_GROUP_EVENTS = "RECEIVE_CURRENT_USER_GROUP_EVENTS";
 export const RECEIVE_CURRENT_EVENT = "RECEIVE_CURRENT_EVENT";
 export const RECEIVE_CURRENT_EVENT_USERS = "RECEIVE_CURRENT_EVENT_USERS";
-
+export const RECEIVE_CURRENT_USER_NEXT_EVENT = "RECEIVE_CURRENT_USER_NEXT_EVENT";
 
 // action creators
 export const receiveEvents = (events) => ({
@@ -44,6 +44,11 @@ export const receiveCurrentEvent = (currentEvent) => ({
 export const receiveCurrentEventUsers = (currentEventUsers) => ({
   type: RECEIVE_CURRENT_EVENT_USERS,
   currentEventUsers
+});
+
+export const receiveCurrentUserNextEvent = (currentUserNextEvent) => ({
+  type: RECEIVE_CURRENT_USER_NEXT_EVENT,
+  currentUserNextEvent
 });
 
 // thunk creators
@@ -109,6 +114,15 @@ export function removeUserFromEvent(eventId) {
     return APIUtil.removeUserFromEvent(eventId).then(
       users => dispatch(receiveCurrentEventUsers(users)),
       errors => dispatch(receiveEventErrors(errors.responseJson))
+    );
+  };
+}
+
+export function fetchCurrentUserNextEvent() {
+  return dispatch => {
+    return APIUtil.fetchCurrentUserNExtEvent().then(
+      event => dispatch(receiveCurrentUserNextEvent(event)),
+      errors => dispatch(receiveEventErrors(errors.responseJSON))
     );
   };
 }
