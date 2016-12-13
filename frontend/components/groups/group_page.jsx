@@ -9,6 +9,7 @@ class GroupPage extends React.Component {
       groupDescription: ""
     };
     this.addUserToGroup = this.addUserToGroup.bind(this);
+    this.removeUserFromGroup = this.removeUserFromGroup.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -30,6 +31,10 @@ class GroupPage extends React.Component {
     this.props.addUserToGroup(this.props.group.id);
   }
 
+  removeUserFromGroup() {
+    this.props.removeUserFromGroup(this.props.group.id);
+  }
+
   render(){
     let userList;
     let userIdList;
@@ -45,12 +50,17 @@ class GroupPage extends React.Component {
       ));
       if(!userIdList.includes(this.props.currentUser.id)){
         joinButton = <button className='group-join-button' onClick={this.addUserToGroup}>Join Us!</button>;
+      } else {
+        joinButton = <button className='group-join-button' onClick={this.removeUserFromGroup}>Leave Group</button>;
       }
     }
 
     if(this.props.currentGroupAdminIds){
       if(this.props.currentGroupAdminIds.includes(this.props.currentUser.id)){
         eventButton = <Link className='group-event-button' to={'/'}>Create Event</Link>;
+        userList = this.props.users.map( (user) => (
+          <li key={user.id}>{user.username}<button onClick={this.makeAdmin}>Make Admin</button></li>
+        ));
       }
     }
 

@@ -71,7 +71,7 @@
 }
 
 .group-join-button {
-  width: 90px;
+  width: 110px;
   height: 35px;
   position: absolute;
   background: rgba(243, 216, 111, .9);
@@ -90,7 +90,7 @@
 .group-calendar-button {
   display: block;
   padding-top: 7px;
-  width: 90px;
+  width: 110px;
   height: 35px;
   position: absolute;
   text-align: center;

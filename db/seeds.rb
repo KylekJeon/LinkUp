@@ -11,7 +11,7 @@ Membership.destroy_all
 Group.destroy_all
 Event.destroy_all
 Rsvp.destroy_all
-
+Admin.destroy_all
 
 
 user1 = User.create!(username: "guest", password: "guest123", email: "dcolson@gmail.com", first_name: "Daniel", last_name: "Colson")
@@ -32,9 +32,10 @@ user15 = User.create!(username: "springsremain", password: "password", email: "s
 
 
 
-group1 = Group.create!(name: "Retirement Investor", description: "This is for current and soon to be retirees to learn about 'distribution' strategies. Will focus on generating monthly income, Preservation of capital and diversification techniques. All are welcome to discuss current allocations and generate new ideas. No solicitations or sales, just working to make the present better !")
+group1 = Group.create!(name: "Retirement Investor", description: "This is for current and soon to be retirees to learn about 'distribution' strategies. Will focus on generating monthly income, Preservation of capital and diversification techniques. All are welcome to discuss current allocations and generate new ideas. No solicitations or sales, just working to make the present better !", category: "career & business")
 
 Membership.create!(user: user1, group: group1)
+Admin.create!(user: user1, group: group1)
 Membership.create!(user: user3, group: group1)
 Membership.create!(user: user5, group: group1)
 Membership.create!(user: user7, group: group1)
@@ -69,7 +70,7 @@ group2 = Group.create!(name: "Becoming Your Best Self", description: "We are loo
 
 If you are a fitness instruction, a styliste, a hair styliste, a health care professional, a spiritual master, a yogi, a healer, we are waiting for you.
 
-If you are looking for tips to a healthier lifestyle, weight loss, fitness and nutrition, we are waiting for you. If you are looking to connect with forward, progressive thinkers, dynamic individuals, we are waiting for you.")
+If you are looking for tips to a healthier lifestyle, weight loss, fitness and nutrition, we are waiting for you. If you are looking to connect with forward, progressive thinkers, dynamic individuals, we are waiting for you.", category:"social")
 
 Membership.create!(user: user11, group: group2)
 Membership.create!(user: user13, group: group2)
@@ -116,7 +117,7 @@ Join us for our various events that include:
 
 4.  Career Matchmaking event = Events
 
-")
+", category:"career & business")
 
 
 
@@ -153,7 +154,7 @@ Rsvp.create!(user: user12, event: event15)
 
 group4 = Group.create!(name: "Fab Ladies", description: "This group is for ladies who like to go out, have fun and make new friends in NYC...Our events will include happy hour drinks, dining out, brunch, sporting events, etc.. I'm also open to any suggestions. Summer's here which is the perfect time to discover and enjoy what NYC has to offer! Looking forward to many adventures together!!
 
-PS- You must attend 1 event per month to be considered an active member.")
+PS- You must attend 1 event per month to be considered an active member.", category:"social")
 
 
 
@@ -197,12 +198,13 @@ When the weather is fine, we meet in Central Park just off Central Park West and
 
 *PLEASE NOTE: This is a fun and friendly training environment. However, given the intense physical nature of our activities, injuries will occur from time to time. THE ORGANIZERS OF THIS GROUP ARE IN NO WAY RESPONSIBLE FOR ANY INJURIES THAT MIGHT OCCUR.
 
-*RULES OF ENGAGEMENT* When sparring we adhere to the common 50%, 2/3rds strength when sparring that is common practice in many dojos and camps. If you wish to engage harder, just communicate with your partner beforehand so you both are on the same page (there are many of us who have no issues with ramping up the intensity). We are here to test each other and test ourselves, learn from each other and ultimately learn about ourselves. Strength is not just how hard you can punch, but having discipline and control as well. ")
+*RULES OF ENGAGEMENT* When sparring we adhere to the common 50%, 2/3rds strength when sparring that is common practice in many dojos and camps. If you wish to engage harder, just communicate with your partner beforehand so you both are on the same page (there are many of us who have no issues with ramping up the intensity). We are here to test each other and test ourselves, learn from each other and ultimately learn about ourselves. Strength is not just how hard you can punch, but having discipline and control as well. ", category:"sports")
 
 
 Membership.create!(user: user12, group: group5)
 Membership.create!(user: user14, group: group5)
 Membership.create!(user: user1, group: group5)
+Admin.create!(user: user1, group: group5)
 Membership.create!(user: user3, group: group5)
 Membership.create!(user: user5, group: group5)
 
@@ -234,7 +236,7 @@ group6 = Group.create!(name: "Craft Mail", description: "Hello!
 Welcome to Brooklyn Craft Mail Meet Up!
 In our activity, we make a pretty envelope and write a letter or a postcard or a card for someone. If you are interested in craft, writing letters, illustrations or chatting, just join us!
 I will be waiting for you in a coffee shop.
-Let's write a handmade letter, which is unforgettable for a recipient!")
+Let's write a handmade letter, which is unforgettable for a recipient!", category:"social")
 
 
 
@@ -276,9 +278,10 @@ Manhattan Lectures & Conversations is a group of knowledge seekers and volunteer
 
 NYC has some of the greatest minds on earth coursing through it on a daily basis, so let's take advantage of that fact and get our learn on!
 
-Additionally, we will have coffee and discussion after each lecture for those who are interested.")
+Additionally, we will have coffee and discussion after each lecture for those who are interested.", category:"arts")
 
 Membership.create!(user: user1, group: group7)
+Admin.create!(user: user1, group: group7)
 Membership.create!(user: user5, group: group7)
 Membership.create!(user: user9, group: group7)
 Membership.create!(user: user13, group: group7)
@@ -317,7 +320,7 @@ Gainfully Unemployeds seek jobs, company, events and resources. In this group, w
 
 One of this big goals of this group is to expose its members to options of things you can do with all that free time. That is to say, we might have an event which will be enjoyable in its own right but it is also a door being opened for you to do that again on your own. Whether it be a volunteer opportunity, a free movie or just a cool place in general to check we welcome your ideas. We require you to be contributor to the group and the best way to contribute is with ideas or more importantly with your presence. This group will be what you make it.
 
-So let's make it the best it can possibly be and contribute in the following ways: Forum comments: Some of you might have seen the new forums that have replaces the old message boards. We need all members to contribute Meet up Suggestions: If you have a cool place you want to check out or an idea for what to do please share it.")
+So let's make it the best it can possibly be and contribute in the following ways: Forum comments: Some of you might have seen the new forums that have replaces the old message boards. We need all members to contribute Meet up Suggestions: If you have a cool place you want to check out or an idea for what to do please share it.", category:"social")
 
 Membership.create!(user: user6, group: group8)
 Membership.create!(user: user10, group: group8)
@@ -350,7 +353,7 @@ Rsvp.create!(user: user14, event: event40)
 Rsvp.create!(user: user3, event: event40)
 
 
-group9 = Group.create!(name: "Django-NYC", description: "Django-nyc's goal is to create! a community for those interested in Django to meet, share ideas, create!, learn, and have a good time. The focus will be Django and web application design and development. Python will obviously be an underlining theme, but there are specific python groups focused on python solely and that's not us. We want to give Django the attention it deserves.")
+group9 = Group.create!(name: "Django-NYC", description: "Django-nyc's goal is to create! a community for those interested in Django to meet, share ideas, create!, learn, and have a good time. The focus will be Django and web application design and development. Python will obviously be an underlining theme, but there are specific python groups focused on python solely and that's not us. We want to give Django the attention it deserves.", category:"social")
 
 
 Membership.create!(user: user11, group: group9)
@@ -395,7 +398,7 @@ Disclaimer of Liability
 
 CLIMBING IS A DANGEROUS SPORT!
 
-Involvement in rock climbing carries a significant risk of personal injury or death. CLIMB AT YOUR OWN RISK!")
+Involvement in rock climbing carries a significant risk of personal injury or death. CLIMB AT YOUR OWN RISK!", category:"outdoor adventures")
 
 Membership.create!(user: user3, group: group10)
 Membership.create!(user: user8, group: group10)
@@ -429,13 +432,14 @@ Rsvp.create!(user: user14, event: event50)
 
 group11 = Group.create!(name: "Fat Cat Fab Lab", description: "fat cat FAB LAB is a makerspace in the West Village, Manhattan NYC. A place for learning, designing, collaborating and building.
 
-We offer traditional and digital fabrication tools, workshops and events with an emphasis on low cost open source innovation.")
+We offer traditional and digital fabrication tools, workshops and events with an emphasis on low cost open source innovation.", category:"social")
 
 Membership.create!(user: user14, group: group11)
 Membership.create!(user: user5, group: group11)
 Membership.create!(user: user10, group: group11)
 Membership.create!(user: user15, group: group11)
 Membership.create!(user: user1, group: group11)
+Admin.create!(user: user1, group: group11)
 
 event51 = Event.create!(name: Faker::StarWars.quote, event_time: Faker::Time.backward(14), location: Faker::Address.street_name, description: Faker::ChuckNorris.fact, group_id: group11.id)
 event52 = Event.create!(name: Faker::StarWars.quote, event_time: Faker::Time.backward(14), location: Faker::Address.street_name, description: Faker::ChuckNorris.fact, group_id: group11.id)
@@ -466,7 +470,7 @@ group12 = Group.create!(name: "Write. Inspire. Repeat.", description: "'Write Wh
 
 And with that, starts the 'Write, Inspire, Repeat' Workshop - a judgment-free zone where you can work for a whole hour on your novel, manuscript, poetry, etc. As storytellers, we all have gone through obstacles (procrastination, writer's block, and others), so I hope this quiet meetup can help you to continue your writing, to inspire yourself, and to maintain your perseverance.
 
-DISCLAIMER : This meetup group is intended for growing writers at any level, who are looking for inspiration, practice with their craft, and networking with other writers. I am not an experienced writer, but this will be a nurturing environment for all of us.")
+DISCLAIMER : This meetup group is intended for growing writers at any level, who are looking for inspiration, practice with their craft, and networking with other writers. I am not an experienced writer, but this will be a nurturing environment for all of us.", category:"arts")
 
 Membership.create!(user: user3, group: group12)
 Membership.create!(user: user6, group: group12)
@@ -499,8 +503,9 @@ Rsvp.create!(user: user12, event: event60)
 
 
 
-group13 = Group.create!(name: "Engineers for a Sustainable World", description: "connecting people who are passionate about sustainability with research, design, and outreach projects in NYC")
+group13 = Group.create!(name: "Engineers for a Sustainable World", description: "connecting people who are passionate about sustainability with research, design, and outreach projects in NYC", category:"career & business")
 
+Membership.create!(user: user1, group: group13)
 Membership.create!(user: user1, group: group13)
 Membership.create!(user: user4, group: group13)
 Membership.create!(user: user7, group: group13)
@@ -531,7 +536,7 @@ Rsvp.create!(user: user10, event: event65)
 
 
 
-group14 = Group.create!(name: "Free Yoga Classes", description: "This is a group for folks who are interested in teaching or attending unpaid yoga classes. Novice teachers and students are more than welcome. We can organize in homes or in public spaces. Members of this group should be interested in yoga as a spiritual practice versus as a business or financial opportunity. There are no rules except that everything stays free!")
+group14 = Group.create!(name: "Free Yoga Classes", description: "This is a group for folks who are interested in teaching or attending unpaid yoga classes. Novice teachers and students are more than welcome. We can organize in homes or in public spaces. Members of this group should be interested in yoga as a spiritual practice versus as a business or financial opportunity. There are no rules except that everything stays free!", category:"health & fitness")
 
 
 event66 = Event.create!(name: Faker::StarWars.quote, event_time: Faker::Time.backward(14), location: Faker::Address.street_name, description: Faker::ChuckNorris.fact, group_id: group14.id)
@@ -570,7 +575,7 @@ Looking forward to seeing you there
 
 Tuesdays at William O'shea Education Complex; 100 west 77th street. Between Columbus and Amsterdam.
 
-Tito Puente, Park West, Park West HS 525 50th street, ny ny. ")
+Tito Puente, Park West, Park West HS 525 50th street, ny ny. ", category:"sports")
 
 Membership.create!(user: user2, group: group15)
 Membership.create!(user: user6, group: group15)

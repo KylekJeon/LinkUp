@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get 'fetch'
       member do
         post 'join'
+        delete 'leave'
       end
     end
   end

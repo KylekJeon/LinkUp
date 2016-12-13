@@ -41,6 +41,17 @@ class Api::GroupsController < ApplicationController
     end
   end
 
+  def leave
+    group_id = params[:id].to_i
+    @membership = Group.find(group_id).memberships.where("memberships.user_id = ?", current_user.id)
+    if Membership.destroy(@membership)
+      @users = Group.find(group_id).users
+      render 'api/users/index'
+    else
+      render json: @membership.errors.full_messages, status: 422
+    end
+  end
+
   def fetch
     if(params[:filter] == "users")
       @users = Group.find(params[:group_id]).users

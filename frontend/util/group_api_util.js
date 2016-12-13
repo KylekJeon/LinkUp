@@ -12,6 +12,13 @@ export const addUserToGroup = (groupId) => (
   })
 );
 
+export const removeUserFromGroup = (groupId) => (
+  $.ajax({
+    method: "DELETE",
+    url: `api/groups/${groupId}/leave`
+  })
+);
+
 export const fetchUsersForGroup = (groupId) => (
   $.ajax({
       method: "GET",

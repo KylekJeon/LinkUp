@@ -71,6 +71,15 @@ export function addUserToGroup(groupId) {
   };
 }
 
+export function removeUserFromGroup(groupId) {
+  return (dispatch) => {
+    return APIUtil.removeUserFromGroup(groupId).then(
+      users => dispatch(receiveGroupUsers(users)),
+      err => dispatch(receiveGroupErrors(err.responseJSON))
+    );
+  };
+}
+
 export function createGroup(group) {
   return (dispatch) => {
     return APIUtil.createGroup(group).then(
