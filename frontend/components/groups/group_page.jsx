@@ -71,7 +71,7 @@ class GroupPage extends React.Component {
 
     if(this.props.currentGroupAdminIds){
       if(this.props.currentGroupAdminIds.includes(this.props.currentUser.id)){
-        eventButton = <Link className='group-event-button' to={'/'}>Create Event</Link>;
+        eventButton = <Link className='group-event-button' to={`/groups/${this.props.group.id}/event`}>Create Event</Link>;
         userList = this.props.users.map( (user) => {
           if(this.props.currentGroupAdminIds.includes(user.id)){
             return <li key={user.id}>{user.first_name} {user.last_name} Administrator</li>;

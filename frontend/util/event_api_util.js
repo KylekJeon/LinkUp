@@ -61,3 +61,11 @@ export const removeUserFromEvent = (eventId) => (
     url: `api/events/${eventId}/rsvp?filter=remove`
   })
 );
+
+export const createEvent = (event, groupId) => (
+  $.ajax({
+    method: "POST",
+    url: `api/groups/${groupId}/events`,
+    data: { event }
+  })
+);

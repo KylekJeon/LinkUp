@@ -126,3 +126,12 @@ export function fetchCurrentUserNextEvent() {
     );
   };
 }
+
+export function createEvent(event, groupId) {
+  return dispatch => {
+    return APIUtil.createEvent(event, groupId).then(
+      events => dispatch(receiveCurrentUserEvents(events)),
+      err => dispatch(receiveEventErrors(err.responseJSON))
+    );
+  };
+}

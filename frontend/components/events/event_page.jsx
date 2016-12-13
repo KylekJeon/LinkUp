@@ -42,19 +42,19 @@ class EventPage extends React.Component {
       userIdList = this.props.currentEventUsers.map((user) => (
         parseInt(user.id)
       ));
-      if(!userIdList.includes(this.props.currentUser.id)){
-        rsvp = <div className='event-page-rsvp'>
-               <span className='event-rsvp-question'>Interested?</span>
-               <button className='event-rsvp-button' onClick={this.addUserToEvent}>RSVP!</button>
-               </div>;
-      } else {
-        rsvp = <div className='event-page-rsvp'>
-               <span className='event-rsvp-question'>Your RSVP: Yes</span>
-               <button className='event-rsvp-button' onClick={this.removeUserFromEvent}>Unattend</button>
-               </div>;
-      }
-
     }
+    if(!userIdList || !userIdList.includes(this.props.currentUser.id)){
+      rsvp = <div className='event-page-rsvp'>
+            <span className='event-rsvp-question'>Interested?</span>
+            <button className='event-rsvp-button' onClick={this.addUserToEvent}>RSVP!</button>
+            </div>;
+    } else {
+      rsvp = <div className='event-page-rsvp'>
+             <span className='event-rsvp-question'>Your RSVP: Yes</span>
+             <button className='event-rsvp-button' onClick={this.removeUserFromEvent}>Unattend</button>
+             </div>;
+    }
+
 
 
     return(

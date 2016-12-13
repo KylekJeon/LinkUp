@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import linkUpForm from './linkUpForm';
+import linkUpForm from './linkup_form';
 import { createGroup } from './../../actions/group_actions';
 
 

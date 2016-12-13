@@ -1,0 +1,113 @@
+.event-form-container {
+  min-height: 500px;
+  width: 700px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background: rgba(41, 165, 153, .8);
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  float: right;
+  font-family: "Bree Serif", arial;
+}
+
+.event-form-page-header {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  font-size: 24px;
+  font-family: "Courgette", arial;
+}
+
+.event-form-form {
+  width: 660px;
+  min-height: 460px;
+  background: rgba(255, 255, 255, .6);
+  padding: 15px;
+}
+
+.event-form-text {
+  float: left;
+  width: 300px;
+}
+
+.event-form-text-label {
+  font-family: "Bree Serif", arial;
+}
+
+.event-form-errors {
+  margin-bottom: 10px;
+  color: red;
+}
+
+.event-form-name {
+  background: white;
+  width: 260px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 16px;
+}
+
+
+.event-form-description {
+  background: white;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+
+.event-form-submit {
+  width: 160px;
+  height: 40px;
+  background: rgba(41, 165, 153, .8);
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px;
+  font-family: "Bree Serif", arial;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.event-form-submit:hover {
+  background: rgba(41, 165, 153, 1);
+}
+
+.event-form-time-location {
+  float: right;
+  width: 250px;
+  height: 300px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+
+.event-form-location {
+  background: white;
+  width: 260px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 16px;
+}
+
+.event-form-time {
+  background: white;
+  width: 260px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 16px;
+}

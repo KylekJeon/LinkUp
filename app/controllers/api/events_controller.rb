@@ -44,6 +44,14 @@ class Api::EventsController < ApplicationController
 
 
   def create
+    @event = Event.new(event_params)
+    @event.group_id = params[:group_id]
+    if @event.save
+      Rsvp.create(event: @event, user: current_user)
+      render json: @event
+    else
+      render json: @event.errors_full_messages, status: 422
+    end
   end
 
 
@@ -52,7 +60,7 @@ class Api::EventsController < ApplicationController
 
   private
   def event_params
-    params.permit(:event).require(:name, :location, :event_time, :description)
+    params.require(:event).permit(:name, :location, :event_time, :description)
   end
 
 end
