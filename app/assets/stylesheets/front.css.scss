@@ -25,6 +25,10 @@
   color: #f3d86f;
 }
 
+.front-header-heading-link:active {
+  color: rgba(223, 196, 91, 1)
+}
+
 
 .front-header-heading-logo {
   padding: 20px 5px;
@@ -35,6 +39,10 @@
 
 .front-header-heading-logo:hover {
   color: #f3d86f;
+}
+
+.front-header-heading-logo:active {
+  color: rgba(223, 196, 91, 1)
 }
 
 .front-header-list {
@@ -88,6 +96,11 @@
   border: 1px solid #f3d86f;
 }
 
+.front-header-nav-profile:active {
+  background: rgba(223, 196, 91, 1);
+  border: 1px solid rgba(223, 196, 91, 1);
+}
+
 .content-header {
   height: 260px;
   width: 100%;
@@ -133,7 +146,11 @@
 }
 
 .content-header-nextlinkup h3:hover {
-  color: rgba(243, 216, 111, .8);
+  color: rgba(243, 216, 111, .7);
+}
+
+.content-header-nextlinkup h3:active {
+  color: rgba(243, 216, 111, 1);
 }
 
 
@@ -144,7 +161,11 @@
 }
 
 .content-header-nextlinkup h5:hover {
-  color: rgba(243, 216, 111, .8);
+  color: rgba(243, 216, 111, .7);
+}
+
+.content-header-nextlinkup h5:active {
+  color: rgba(243, 216, 111, 1);
 }
 
 .content-header-calendar-location {
@@ -195,8 +216,12 @@
 
 
 .front-header-profile-list a:hover {
-  background: rgba(41, 165, 153, .8);
+  background: rgba(41, 165, 153, .7);
   color: white;
+}
+
+.front-header-profile-list a:active {
+  background: rgba(41, 165, 153, 1);
 }
 
 
@@ -223,7 +248,12 @@
 }
 
 .front-header-profile-list > li:hover {
-  background: rgba(41, 165, 153, .8);
+  background: rgba(41, 165, 153, .7);
+  color: white;
+}
+
+.front-header-profile-list > li:active {
+  background: rgba(41, 165, 153, 1);
   color: white;
 }
 
@@ -293,6 +323,10 @@
 
 .search-button:hover {
   background: rgba(41, 165, 153, 1);
+}
+
+.search-button:active {
+  background: rgba(21, 145, 133, 1);
 }
 
 .search-bar-city-selector {
@@ -371,11 +405,20 @@
 }
 
 .search-bar-group:hover {
-  background: rgba(41, 165, 153, .8);
+  background: rgba(41, 165, 153, .7);
+}
+
+.search-bar-group:active {
+  background: rgba(41, 165, 153, 1);
+}
+
+
+.search-bar-calendar:hover {
+  background: rgba(41, 165, 153, .7);
 }
 
 .search-bar-calendar:hover {
-  background: rgba(41, 165, 153, .8);
+  background: rgba(41, 165, 153, 1);
 }
 
 .search-chosen {
@@ -387,6 +430,11 @@
 .search-chosen:hover {
   background: rgba(41, 165, 153, 1);
 }
+
+.search-chosen:active {
+  background: rgba(21, 145, 133, 1);
+}
+
 
 .content-main-list-day {
   width: 640px;
@@ -484,6 +532,10 @@
   background: rgba(232, 202, 84, .9);
 }
 
+.content-main-list-linkups button:active {
+  background: rgba(212, 182, 64, 1);
+}
+
 .content-main-list-linkups button {
   margin-left: 15px;
 }
@@ -528,7 +580,11 @@
 }
 
 .front-page-event-item a:hover{
-  color: rgba(4, 146, 135, .8);
+  color: rgba(4, 146, 135, .73);
+}
+
+.front-page-event-item a:active{
+  color: rgba(4, 146, 135, 1);
 }
 
 .front-page-event-link {

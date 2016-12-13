@@ -121,6 +121,10 @@
   color: black;
 }
 
+.event-rsvp-button:active {
+  background: rgba(233, 206, 100, 1);
+}
+
 .event-page-user-list {
   width: 185px;
   box-sizing: border-box;

@@ -52,3 +52,15 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.content-user-group-item-container:hover {
+  background: rgba(41, 165, 153, .7);
+}
+
+.content-user-group-item-container:active {
+  background: rgba(41, 165, 153, 1);
+}
+
+.content-user-group-item-container:active .content-user-group-item {
+  background: rgba(235, 235, 235, .9);
+}

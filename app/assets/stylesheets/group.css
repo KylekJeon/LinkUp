@@ -34,8 +34,9 @@
 
 .group-header-background {
   color: white;
-  margin-bottom: 20px;
   font-size: 20px;
+  position: absolute;
+  left: 300px;
 }
 
 .group-name {
@@ -46,10 +47,15 @@
   font-family: "Roboto", sans-serif;
   width: 400px;
   margin: 0 auto;
+  margin-top: 60px;
 }
 
 .group-name:hover {
-  color: rgba(243, 216, 111, .9);
+  color: rgba(243, 216, 111, .8);
+}
+
+.group-name:active {
+  color: rgba(233, 206, 100, 1);
 }
 
 .group-event-button {
@@ -66,8 +72,12 @@
 }
 
 .group-event-button:hover {
-  background: rgba(41, 165, 153, .8);
+  background: rgba(41, 165, 153, .7);
   color: white;
+}
+
+.group-event-button:active {
+  background: rgba(41, 165, 153, 1);
 }
 
 .group-join-button {
@@ -83,8 +93,12 @@
 }
 
 .group-join-button:hover {
-  background: rgba(41, 165, 153, .8);
+  background: rgba(41, 165, 153, .7);
   color: white;
+}
+
+.group-join-button:active {
+  background: rgba(41, 165, 153, 1);
 }
 
 .group-calendar-button {
@@ -102,8 +116,12 @@
 }
 
 .group-calendar-button:hover {
-  background: rgba(41, 165, 153, .8);
+  background: rgba(41, 165, 153, .7);
   color: white;
+}
+
+.group-calendar-button:active {
+  background: rgba(41, 165, 153, 1);
 }
 
 .group-aside-container {
@@ -289,7 +307,11 @@
 }
 
 .group-page-event-item-content a:hover {
-  color: rgba(41, 165, 153, .8);
+  color: rgba(41, 165, 153, .7);
+}
+
+.group-page-event-item-content a:active {
+  color: rgba(31, 155, 143, 1);
 }
 
 #calendar {

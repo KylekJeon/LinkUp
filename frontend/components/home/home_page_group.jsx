@@ -19,7 +19,8 @@ class HomePageGroups extends React.Component {
     if(this.props.HomePageGroups.length !== 0){
       userGroups = this.props.HomePageGroups.map((group) => (
         <div key={group.id} className='content-user-group-item-container'>
-        <li className='content-user-group-item' key={group.id}><Link key={group.id} to={`/groups/${group.id}`}>{group.name}</Link></li></div>
+        <Link className='content-user-group-item' key={group.id} to={`/groups/${group.id}`}><li key={group.id}>{group.name}</li></Link>
+        </div>
       ));
       for(let i = 0; i < userGroups.length; i++){
         if(i % 3 === 0){

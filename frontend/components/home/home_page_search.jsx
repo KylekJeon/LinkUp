@@ -25,7 +25,7 @@ class HomePageSearch extends React.Component {
     if(this.props.SearchGroups.length !== 0){
       userGroups = this.props.SearchGroups.map((group) => (
         <div key={group.id} className='content-user-group-item-container'>
-        <li className='content-user-group-item' key={group.id}><Link key={group.id} to={`/groups/${group.id}`}>{group.name}</Link></li></div>
+        <Link key={group.id} to={`/groups/${group.id}`}><li className='content-user-group-item' key={group.id}>{group.name}</li></Link></div>
       ));
       for(let i = 0; i < userGroups.length; i++){
         if(i % 3 === 0){
