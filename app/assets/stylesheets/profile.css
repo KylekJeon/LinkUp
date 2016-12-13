@@ -39,7 +39,7 @@
 
 .profile-picture-container {
   width: 240px;
-  height: 200px;
+  max-height: 200px;
   float: right;
   background: rgba(41, 165, 153, .8);
   padding: 10px;
