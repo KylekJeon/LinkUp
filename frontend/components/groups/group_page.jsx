@@ -10,6 +10,7 @@ class GroupPage extends React.Component {
     };
     this.addUserToGroup = this.addUserToGroup.bind(this);
     this.removeUserFromGroup = this.removeUserFromGroup.bind(this);
+    this.makeAdmin = this.makeAdmin.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -26,6 +27,12 @@ class GroupPage extends React.Component {
     this.props.fetchCurrentGroupAdmins(this.props.params.groupId);
   }
 
+  makeAdmin(userId) {
+    return e => {
+      e.preventDefault();
+      this.props.makeUserGroupAdmin(userId, this.props.group.id);
+    };
+  }
 
   addUserToGroup() {
     this.props.addUserToGroup(this.props.group.id);
@@ -33,6 +40,9 @@ class GroupPage extends React.Component {
 
   removeUserFromGroup() {
     this.props.removeUserFromGroup(this.props.group.id);
+    if(this.props.currentGroupAdminIds.includes(this.props.currentUser.id)){
+      this.props.deleteAdminFromGroup(this.props.group.id);
+    }
   }
 
   render(){
@@ -42,9 +52,13 @@ class GroupPage extends React.Component {
     let eventButton;
 
     if(this.props.users[0]){
-      userList = this.props.users.map( (user) => (
-        <li key={user.id}>{user.username}</li>
-      ));
+      userList = this.props.users.map( (user) => {
+        if(this.props.currentGroupAdminIds.includes(user.id)){
+          return <li key={user.id}>{user.first_name} {user.last_name} Administrator</li>;
+        } else {
+          return <li key={user.id}>{user.first_name} {user.last_name}</li>;
+        }
+      });
       userIdList = this.props.users.map( (user) => (
         parseInt(user.id)
       ));
@@ -58,9 +72,13 @@ class GroupPage extends React.Component {
     if(this.props.currentGroupAdminIds){
       if(this.props.currentGroupAdminIds.includes(this.props.currentUser.id)){
         eventButton = <Link className='group-event-button' to={'/'}>Create Event</Link>;
-        userList = this.props.users.map( (user) => (
-          <li key={user.id}>{user.username}<button onClick={this.makeAdmin}>Make Admin</button></li>
-        ));
+        userList = this.props.users.map( (user) => {
+          if(this.props.currentGroupAdminIds.includes(user.id)){
+            return <li key={user.id}>{user.first_name} {user.last_name} Administrator</li>;
+          } else {
+            return <li key={user.id}>{user.first_name} {user.last_name}<button onClick={this.makeAdmin(user.id)}>Make Admin</button></li>;
+          }
+        });
       }
     }
 

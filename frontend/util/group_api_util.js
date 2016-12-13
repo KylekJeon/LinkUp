@@ -19,6 +19,21 @@ export const removeUserFromGroup = (groupId) => (
   })
 );
 
+export const makeUserGroupAdmin = (userId, groupId) => (
+  $.ajax({
+    method: "POST",
+    url: `api/groups/${groupId}/admin`,
+    data: { userId: userId}
+  })
+);
+
+export const deleteAdminFromGroup = (groupId) => (
+  $.ajax({
+    method: "DELETE",
+    url: `api/groups/${groupId}/unadmin`
+  })
+);
+
 export const fetchUsersForGroup = (groupId) => (
   $.ajax({
       method: "GET",

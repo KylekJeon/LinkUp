@@ -97,3 +97,21 @@ export function fetchCurrentGroupAdmins(groupId) {
     );
   };
 }
+
+export function makeUserGroupAdmin(userId, groupId) {
+  return (dispatch) => {
+    return APIUtil.makeUserGroupAdmin(userId, groupId).then(
+      users => dispatch(receiveCurrentGroupAdmins(users)),
+      err => dispatch(receiveGroupErrors(err.responseJSON))
+    );
+  };
+}
+
+export function deleteAdminFromGroup(groupId){
+  return (dispatch) => {
+    return APIUtil.deleteAdminFromGroup(groupId).then(
+      users => dispatch(receiveCurrentGroupAdmins(users)),
+      err => dispatch(receiveGroupErrors(err.responseJSON))
+    );
+  };
+}

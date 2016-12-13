@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import GroupPage from './group_page';
-import { fetchUsersForGroup, addUserToGroup, fetchGroup, fetchCurrentGroupAdmins, removeUserFromGroup } from '../../actions/group_actions';
+import { fetchUsersForGroup, addUserToGroup, fetchGroup, fetchCurrentGroupAdmins, removeUserFromGroup, makeUserGroupAdmin, deleteAdminFromGroup } from '../../actions/group_actions';
 import { selectUserIds } from './../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -17,7 +17,9 @@ const mapDispatchToProps = (dispatch) => ({
   fetchUsersForGroup: (groupId) => dispatch(fetchUsersForGroup(groupId)),
   fetchGroup: (groupId) => dispatch(fetchGroup(groupId)),
   fetchCurrentGroupAdmins: (groupId) => dispatch(fetchCurrentGroupAdmins(groupId)),
-  removeUserFromGroup: (groupId) => dispatch(removeUserFromGroup(groupId))
+  removeUserFromGroup: (groupId) => dispatch(removeUserFromGroup(groupId)),
+  makeUserGroupAdmin: (userId, groupId) => dispatch(makeUserGroupAdmin(userId, groupId)),
+  deleteAdminFromGroup: (groupId) => dispatch(deleteAdminFromGroup(groupId))
 });
 
 

@@ -135,6 +135,15 @@
   margin-top: 10px;
 }
 
+.group-users-list button {
+  width: 160px;
+  color: rgba(243, 216, 111, .9);
+}
+
+.group-users-list button:hover {
+  color: rgba(255, 222, 121, 1);
+}
+
 .group-description-content {
   width: 710px;
   min-height: 300px;

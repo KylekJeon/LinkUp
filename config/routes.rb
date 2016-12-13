@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       member do
         post 'join'
         delete 'leave'
+        post 'admin'
+        delete 'unadmin'
       end
     end
   end

@@ -44,6 +44,7 @@ class Api::GroupsController < ApplicationController
   def leave
     group_id = params[:id].to_i
     @membership = Group.find(group_id).memberships.where("memberships.user_id = ?", current_user.id)
+    @admin = Group.find(group_id).admins.where("admins.user_id = ?", current_user.id)
     if Membership.destroy(@membership)
       @users = Group.find(group_id).users
       render 'api/users/index'
@@ -58,6 +59,22 @@ class Api::GroupsController < ApplicationController
       render 'api/users/index'
     elsif(params[:filter] == "admins")
       @users = Group.find(params[:group_id]).administrators
+      render 'api/users/index'
+    end
+  end
+
+  def admin
+    @admin = Group.find(params[:id]).admins.new(user_id: params[:userId])
+    if @admin.save
+      @users = Group.find(params[:id]).administrators
+      render 'api/users/index'
+    end
+  end
+
+  def unadmin
+    @admin = Group.find(params[:id]).admins.where("admins.user_id = ?", current_user.id)
+    if Admin.destroy(@admin)
+      @users = Group.find(params[:id]).administrators
       render 'api/users/index'
     end
   end

@@ -506,7 +506,7 @@ Rsvp.create!(user: user12, event: event60)
 group13 = Group.create!(name: "Engineers for a Sustainable World", description: "connecting people who are passionate about sustainability with research, design, and outreach projects in NYC", category:"career & business")
 
 Membership.create!(user: user1, group: group13)
-Membership.create!(user: user1, group: group13)
+Admin.create!(user: user1, group: group13)
 Membership.create!(user: user4, group: group13)
 Membership.create!(user: user7, group: group13)
 Membership.create!(user: user10, group: group13)
