@@ -31,6 +31,12 @@ class EventForm extends React.Component {
   }
 
   render() {
+    let errors;
+    if(this.props.errors.length > 0){
+      errors = this.props.errors.map( (error, idx) =>
+      <li key={idx}>{error}</li>
+    );
+    }
 
     return (
       <section className='event-form-page group'>
@@ -39,6 +45,7 @@ class EventForm extends React.Component {
           <form className='event-form-form group'>
             <div className='event-form-text'>
               <ul className='event-form-errors'>
+                {errors}
               </ul>
               <label className='event-form-text-label'>What's Your Event Called?
                 <br/>

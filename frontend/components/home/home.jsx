@@ -59,15 +59,9 @@ class Home extends React.Component {
           <section className='welcome-footer-section'>
             <div className='welcome-footer-section-top'>
               <Link to='/home/linkup' className='welcome-footer-startgroup'>Start a LinkUp Group</Link>
-              <Link to='/welcome/login' className='welcome-footer-section-login'>Log in</Link>
             </div>
             <div className='welcome-footer-section-bottom'>
-              <Link to='#' className='welcome-footer-section-login'>Home</Link>
-              <Link to='#' className='welcome-footer-section-login'>About Us</Link>
-              <Link to='#' className='welcome-footer-section-login'>Contact</Link>
-              <Link to='#' className='welcome-footer-section-login'>Location</Link>
-              <Link to='#' className='welcome-footer-section-login'>Terms</Link>
-              <Link to='#' className='welcome-footer-section-login'>API</Link>
+              <Link to='/' className='welcome-footer-section-login'>Home</Link>
             </div>
           </section>
         </footer>

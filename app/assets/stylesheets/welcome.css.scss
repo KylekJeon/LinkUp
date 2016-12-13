@@ -177,48 +177,13 @@
 }
 
 .explore img {
-  width: 150px;
-  height: 115px;
-  padding: 20px 50px;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 300px;
+  height: 200px;
   position: relative;
   top: 0;
   transition: top .5s;
 }
 
 .explore img:hover {
-  top: -20px;
-}
-
-.pic-1 {
-  background-image: image-url("pic1_background.jpg");
-}
-
-.pic-2 {
-  background-image: image-url("pic2_background.png");
-}
-
-.pic-3 {
-  background-image: image-url("pic3_background.jpg");
-}
-
-.pic-4 {
-  background-image: image-url("pic4_background.jpeg");
-}
-
-.pic-5 {
-  background-image: image-url("pic5_background.jpg");
-}
-
-.pic-6 {
-  background-image: image-url("pic6_background.jpg");
-}
-
-.pic-7 {
-  background-image: image-url("pic7_background.jpg");
-}
-
-.pic-8 {
-  background-image: image-url("pic8_background.jpg");
+  top: -10px;
 }

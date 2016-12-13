@@ -50,7 +50,7 @@ class Api::EventsController < ApplicationController
       Rsvp.create(event: @event, user: current_user)
       render json: @event
     else
-      render json: @event.errors_full_messages, status: 422
+      render json: @event.errors.full_messages, status: 422
     end
   end
 

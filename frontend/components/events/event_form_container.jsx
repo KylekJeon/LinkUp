@@ -6,7 +6,7 @@ import { createEvent } from './../../actions/event_actions';
 const mapStateToProps = (state) => ({
   errors: state.events.errors,
   currentGroup: state.groups.currentGroup,
-  currentUserEvents: state.users.currentUserEvents
+  currentUserEvents: state.users.currentUserEvents,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -185,15 +185,6 @@ class HomePage extends React.Component {
           <form className='search-bar group'>
             <input className='search-bar-input' type='text' value={this.state.query} onChange={this.handleSearch}/>
             <button className='search-button' onClick={this.handleSearchSubmit}>Search LinkUps</button>
-            <span>Change City</span>
-            <button onClick={this.showCities} className='search-bar-city-selector'>
-              {this.state.city}
-              <ul className={cityClass} >
-                <li onClick={this.changeCities("New York")} key={1} >New York</li>
-                <li onClick={this.changeCities("Boston")} key={2} >Boston</li>
-                <li onClick={this.changeCities("Philadelphia")} key={3} >Philadelphia</li>
-              </ul>
-            </button>
             <button onClick={this.toggleCalendar} className={calendar}>Calendar</button>
             <button onClick={this.toggleGroup} className={group}>Groups</button>
           </form>

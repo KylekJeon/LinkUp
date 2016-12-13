@@ -111,3 +111,23 @@
   padding-left: 5px;
   font-size: 16px;
 }
+
+.event-form-errors {
+  font-size: 12px;
+}
+
+.event-form-button {
+  width: 160px;
+  background: rgba(243, 216, 111, .9);
+  height: 40px;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.event-form-button:hover {
+  background: rgba(41, 165, 153, .8);
+  color: white;
+}
