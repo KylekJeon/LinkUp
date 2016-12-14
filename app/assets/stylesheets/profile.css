@@ -37,6 +37,11 @@
   display: inline;
 }
 
+.profile-photo {
+  max-width: 239px;
+  max-height: 179px;
+}
+
 .profile-picture-container {
   width: 240px;
   max-height: 200px;
@@ -45,7 +50,8 @@
   padding: 10px;
   box-sizing: border-box;
   position: relative;
-  border-radius: 5px;
+  border-radius: 5px
+  overflow: hidden;
 }
 
 .profile-change {

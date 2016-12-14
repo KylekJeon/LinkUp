@@ -44,9 +44,9 @@ class User extends React.Component {
     let profilePhoto;
     let profileSubmit;
     if(this.state.imageUrl === ""){
-      profilePhoto = <img src={this.props.currentUserImage}/>;
+      profilePhoto = <img className='profile-photo' src={this.props.currentUserImage}/>;
     } else {
-      profilePhoto = <img src={this.state.imageUrl}/>;
+      profilePhoto = <img className='profile-photo' src={this.state.imageUrl}/>;
       if (parseInt(this.props.routeParams.userId) === this.props.currentUser.id){
         profileSubmit = <button className="profile-submit" onClick={this.updateProfilePhoto}>Upload Photo</button>;
       }
