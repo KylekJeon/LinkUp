@@ -60,7 +60,7 @@ class GroupPage extends React.Component {
           groupImagePath = "url(/assets/sports_image-44cb5346c86eb174319c32780182358a89e6970144bdd7f260a92cf282e83601.jpg)";
           break;
         case "music":
-          groupImagePath = "url(/assets/music_image-9620a76b9042a3f3847e5e1df07232fdcd9cb00ed5734dcbdb0a66fefecf23e9.jpg)";
+          groupImagePath = "url(/assets/music_image-6c695b7110042e2ab06852c00fa0584f39af5301e270ebccea43d34c40b97ca2.jpg)";
           break;
         case "health & fitness":
           groupImagePath = "url(/assets/health_image-9c3c794fd38c6d02ed2c69ccdfcc4b9c5c71ca6785d3f843b9f8a9fd9c1ad75c.jpg)";
@@ -75,10 +75,10 @@ class GroupPage extends React.Component {
           groupImagePath= "url(/assets/social_image-1ebb4b235ad8ad5d58bc94c30eef7f18c48ad1084f1132a24d9cf3073d95d649.jpg)";
           break;
         case "career & business":
-          groupImagePath = "url(/assets/business_image-f6d7ca4c5bdac4cf78bb32de55177687ebfca10396fb194dc561c6ae5c05af40.jpg)";
+          groupImagePath = "url(/assets/business_image-123ccfcc3c3a027db650716e705ad156df818ff71af45e2cd2b3257f58a942fd.jpg)";
           break;
         case "food & drinks":
-          groupImagePath = "url(/assets/food_image-493b0eeaf912395152fbabedbe280d379c068038c1aac7be42ca81e2281be24b.jpg)";
+          groupImagePath = "url(/assets/food_image-244840537604b65dc971836535c911b1a52fbbdd2d0aeff188191754a3bf068e.jpg)";
           break;
       }
       const front = $(".front-section");
