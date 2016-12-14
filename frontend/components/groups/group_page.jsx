@@ -75,7 +75,7 @@ class GroupPage extends React.Component {
           groupImagePath = "url(/assets/arts_image-836b9c781f158a8b9f2275d9db41edd206a33e5fe4460e0803aedfd5563f602b.jpg)";
           break;
         case "social":
-          groupImagePath= "url(/assets/social_image-d4a666dfb3da58ce2da056548898b16a4de2fe8e8724300cee989309999b07cb.jpg)";
+          groupImagePath= "url(/assets/social_image-1ebb4b235ad8ad5d58bc94c30eef7f18c48ad1084f1132a24d9cf3073d95d649.jpg)";
           break;
         case "career & business":
           groupImagePath = "url(/assets/business_image-f6d7ca4c5bdac4cf78bb32de55177687ebfca10396fb194dc561c6ae5c05af40.jpg)";
