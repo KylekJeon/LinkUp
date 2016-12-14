@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const WelcomePage = (props) => (
   <div>
     <div className="video-wrapper">
-      <video autoPlay>
+      <video autoPlay muted>
         <source src="/assets/welcome_video-f3ca7a287df75461a1df2704ad9d8679bf70a23c45bdb3396f4d217a47df07e6.mp4" type="video/mp4"/>
       </video>
     </div>
