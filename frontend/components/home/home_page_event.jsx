@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Infinite from 'react-infinite';
 
+const PAGE = 3;
 
 class HomePageEvents extends React.Component {
 
@@ -9,6 +11,7 @@ class HomePageEvents extends React.Component {
     this.state = {
       currentUserEvents: [],
       allEvents: [],
+      numToShow: PAGE,
       currentUserGroups: [],
       currentUserGroupEvents: [],
       whichDisplay: "currentUserGroupEvents"
@@ -20,6 +23,11 @@ class HomePageEvents extends React.Component {
 
   componentDidMount() {
     this.props.fetchCurrentUserGroupEvents();
+    window.onscroll = (e) => {
+      if (pageYOffset >= (document.body.clientHeight / 2 )) {
+        this.setState({ numToShow: this.state.numToShow + PAGE });
+      }
+    };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -81,7 +89,7 @@ class HomePageEvents extends React.Component {
       }
     });
 
-    const Events = groupedEvents.map((events, idx) => {
+    const Events = groupedEvents.slice(0, this.state.numToShow).map((events, idx) => {
       let lis = events.map((event) => (
         <li key={event.id} className="front-page-event-item">
           <Link to={`/groups/${event.groupId}/events/${event.id}`} className='front-page-event-link'>Event: {event.title}</Link>

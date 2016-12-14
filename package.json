@@ -27,6 +27,7 @@
     "react-big-calendar": "^0.11.1",
     "react-dom": "^15.4.1",
     "react-gif-player": "^0.2.1",
+    "react-infinite": "^0.10.0",
     "react-native-video": "^0.9.0",
     "react-player": "^0.12.1",
     "react-redux": "^4.4.6",

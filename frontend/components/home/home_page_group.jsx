@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import Infinite from 'react-infinite'
 
 class HomePageGroups extends React.Component {
 
