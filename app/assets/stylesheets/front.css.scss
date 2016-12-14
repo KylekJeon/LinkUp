@@ -46,8 +46,7 @@
 }
 
 .front-header-list {
-  display: flex;
-  justify-content: space-between;
+  float: right;
   margin-right: 20px;
   padding-top: 5px;
   width: 155px;
@@ -56,8 +55,9 @@
 }
 
 .front-header-list > li {
-  display: inline-block;
   padding: 27px 5px;
+  position: absolute;
+  right: -20px;
 }
 
 .front-header-list img {
@@ -117,7 +117,6 @@
   overflow: hidden;
   height: 60px;
   width: 950px;
-  border-bottom: 1px solid white;
 }
 
 .content-header-text-header {
@@ -125,8 +124,10 @@
   border: 0;
   margin-top: 30px;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Fredoka One", sans-serif;
   font-size: 30px;
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
 }
 
 
@@ -134,7 +135,7 @@
 .content-header-nextlinkup {
   width: 650px;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Bree Serif", sans-serif;
   box-sizing: border-box;
   float: left;
   margin-top: 15px;
@@ -171,8 +172,9 @@
 .content-header-calendar-location {
   width: 200px;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
   float: right;
+  margin-top: 30px;
 }
 
 .content-header-calendar-location > h3 {

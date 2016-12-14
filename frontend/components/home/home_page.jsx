@@ -165,12 +165,10 @@ class HomePage extends React.Component {
       <section>
         <section className='content-header'>
           <div className='content-header-box'>
-            <div className='content-header-text'>
-              <h4 className='content-header-text-header'>YOUR NEXT MEETUP</h4>
-            </div>
             <div className='content-header-next-box group'>
               <div className='content-header-nextlinkup'>
-                <Link to={`/events/${this.props.currentUserNextEvent.id}`}><h3>Event: {this.props.currentUserNextEvent.name}</h3></Link>
+                <h4 className='content-header-text-header'>YOUR NEXT MEETUP</h4>
+                <Link to={`/groups/${this.props.currentUserNextEvent.groupId}/events/${this.props.currentUserNextEvent.id}`}><h3>Event: {this.props.currentUserNextEvent.name}</h3></Link>
               <Link to={`/groups/${this.props.currentUserNextEvent.groupId}`}><h5>Hosted By: {this.props.currentUserNextEvent.groupName}</h5></Link>
               </div>
               <div className='content-header-calendar-location'>

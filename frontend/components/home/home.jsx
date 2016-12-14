@@ -42,8 +42,6 @@ class Home extends React.Component {
           <Link to='/home/linkup' className='front-header-heading-link front-header-child'>Create a LinkUp</Link>
           <Link to='/' className='front-header-heading-logo'>LinkUp</Link>
           <ul className='front-header-list'>
-            <li><Link to='/front/messages' className='front-header-nav-message'><img src={window.assets.messageIcon}/></Link></li>
-            <li><button className='front-header-nav-notification'><img src={window.assets.notificationIcon}/></button></li>
             <li>
               <button onClick={this.toggleProfileDrop} className='front-header-nav-profile'><img src={window.assets.profileIcon}/>
                 <ul className={profileClass}>

@@ -50,7 +50,7 @@ class Explore extends React.Component {
     let exploreList;
     if(this.props.categoryGroups.length > 0){
       exploreList = this.props.categoryGroups.map((group) => (
-        <li key={group.id}><h1>{group.name}</h1>{createParagraphs(group.description)}</li>
+        <Link to='/welcome/signup'><li key={group.id}><h1>{group.name}</h1>{createParagraphs(group.description)}</li></Link>
       ));
     }
 

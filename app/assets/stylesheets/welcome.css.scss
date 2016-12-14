@@ -22,11 +22,27 @@
   margin-top: 20px;
 }
 
+.welcome-header-heading-link:hover {
+  color: rgba(243, 216, 111, 1);
+}
+
+.welcome-header-heading-link:active {
+  color: rgba(233, 206, 101, 1);
+}
+
 .welcome-header-heading-logo {
   padding: 20px 5px;
   font-family: 'Pacifico', cursive;
   color: #29a599;
   font-size: 36px;
+}
+
+.welcome-header-heading-logo:hover {
+  color: rgba(243, 216, 111, 1);
+}
+
+.welcome-header-heading-logo:active {
+  color: rgba(233, 206, 101, 1);
 }
 
 .welcome-header-list {
@@ -44,7 +60,6 @@
 .welcome-header-nav-login {
   padding: 10px;
   background-color: #29a599;
-  border: 1px solid #29a599;
   border-radius: 5px;
   color: white;
   font-family: sans-serif;
@@ -55,7 +70,6 @@
 .welcome-header-nav-signup {
   padding: 10px;
   background-color: #049287;
-  border: 1px solid #049287;
   border-radius: 5px;
   color: white;
   font-family: sans-serif;
@@ -63,10 +77,29 @@
   top: 10px;
 }
 
+.welcome-header-list a:hover {
+  background: rgba(243, 216, 111, 1);
+  color: black;
+}
+
+.welcome-header-list a:active {
+  background: rgba(233, 206, 101, 1);
+}
+
+.welcome-header-list button:hover {
+  background: rgba(243, 216, 111, 1);
+  color: black;
+}
+
+.welcome-header-list button:active {
+  background: rgba(233, 206, 101, 1);
+}
+
+
+
 .welcome-header-guest {
   padding: 10px;
   background-color: #3fe0d0;
-  border: 1px solid #3fe0d0;
   border-radius: 5px;
   color: white;
   font-family: sans-serif;

@@ -85,6 +85,16 @@
   border-radius: 5px;
 }
 
+.explore-page-list li:hover {
+  background: rgba(41, 165, 153, .7);
+  color: white;
+}
+
+.explore-page-list li:active {
+  background: rgba(41, 165, 153, 1);
+}
+
+
 .explore-page-list li h1 {
   margin-bottom: 10px;
   font-size: 20px;

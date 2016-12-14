@@ -27,7 +27,7 @@ class Welcome extends React.Component {
     return (
       <section className='welcome-section'>
         <header className='welcome-header'>
-          <Link to='/' className='welcome-header-heading-link welcome-header-child'>Create a LinkUp</Link>
+          <Link to='/welcome/signup' className='welcome-header-heading-link welcome-header-child'>Create a LinkUp</Link>
           <Link to='/' className='welcome-header-heading-logo'>LinkUp</Link>
           <ul className='welcome-header-list welcome-header-child'>
             <li><button onClick={this.loginGuest} className='welcome-header-guest'>Guest</button></li>
