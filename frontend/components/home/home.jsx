@@ -8,7 +8,8 @@ class Home extends React.Component {
     this.state = {
       display: "front-invisible",
       groupCalendar: "calendar",
-      userId: this.props.currentUser.id
+      userId: this.props.currentUser.id,
+      groupId: ""
     };
     this.toggleProfileDrop = this.toggleProfileDrop.bind(this);
   }

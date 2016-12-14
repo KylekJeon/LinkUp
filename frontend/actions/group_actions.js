@@ -6,11 +6,18 @@ export const RECEIVE_GROUP_ERRORS = "RECEIVE_GROUP_ERRORS";
 export const RECEIVE_GROUP_USERS = "RECEIVE_GROUP_USERS";
 export const RECEIVE_CURRENT_GROUP = "RECEIVE_CURRENT_GROUP";
 export const RECEIVE_CURRENT_GROUP_ADMINS = "RECEIVE_CURRENT_GROUP_ADMINS";
+export const RECEIVE_CATEGORY_GROUPS = "RECEIVE_CATEGORY_GROUPS";
+
 
 // action creators
 export const receiveGroups = (groups) => ({
   type: RECEIVE_GROUPS,
   groups
+});
+
+export const receiveCategoryGroups = (categoryGroups) => ({
+  type: RECEIVE_CATEGORY_GROUPS,
+  categoryGroups
 });
 
 export const receiveGroupErrors = (errors) => {
@@ -112,6 +119,14 @@ export function deleteAdminFromGroup(groupId){
     return APIUtil.deleteAdminFromGroup(groupId).then(
       users => dispatch(receiveCurrentGroupAdmins(users)),
       err => dispatch(receiveGroupErrors(err.responseJSON))
+    );
+  };
+}
+
+export function fetchCategoryGroups(category) {
+  return (dispatch) => {
+    return APIUtil.fetchCategoryGroups(category).then(
+      groups => dispatch(receiveCategoryGroups(groups))
     );
   };
 }

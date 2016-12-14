@@ -62,3 +62,10 @@ export const fetchCurrentGroupAdmins = (groupId) => (
     url: `api/groups/${groupId}/fetch?filter=admins`
   })
 );
+
+export const fetchCategoryGroups = (category) => (
+  $.ajax({
+    method: "GET",
+    url: `api/groups?filter=${category}` 
+  })
+);

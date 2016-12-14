@@ -1,0 +1,97 @@
+.explore-page {
+  background-image: image-url("new_york.jpg");
+  background-attachment: fixed;
+  min-height: 800px;
+  overflow: hidden;
+}
+
+.sports {
+  background-image: image-url("sports_image.jpg");
+  background-size: 100%;
+}
+
+.music {
+  background-image: image-url("music_image.jpg");
+  background-size: 100%;
+}
+
+.health {
+  background-image: image-url("health_image.jpg");
+  background-size: 100%;
+}
+
+.outdoor {
+  background-image: image-url("outdoor_image.jpg");
+  background-size: 100%;
+}
+
+.arts {
+  background-image: image-url("arts_image.jpg");
+  background-size: 100%;
+}
+
+.social {
+  background-image: image-url("social_image.jpg");
+  background-size: 100%;
+}
+
+.business {
+  background-image: image-url("business_image.jpg");
+  background-size: 100%;
+}
+
+.food {
+  background-image: image-url("food_image.jpg");
+  background-size: 100%;
+}
+
+.explore-page-header {
+  color: white;
+  font-family: "Courgette", arial;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 30px;
+  text-transform: capitalize;
+}
+
+.explore-header-category {
+  color: rgba(253, 236, 131, 1);
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.explore-page-container {
+  width: 950px;
+  min-height: 700px;
+  background: rgba(41, 165, 153, .8);
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.explore-page-list {
+  background: rgba(255, 255, 255, .6);
+  border-radius: 5px;
+  padding: 15px;
+  font-family: "Courgette", arial;
+}
+
+.explore-page-list li {
+  background: rgba(243, 216, 111, .8);
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.explore-page-list li h1 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.explore-page-list li p {
+  margin-bottom: 10px;
+  font-family: "Bree Serif", arial;
+  font-size: 14px;
+}

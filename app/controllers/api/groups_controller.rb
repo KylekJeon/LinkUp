@@ -1,12 +1,22 @@
 class Api::GroupsController < ApplicationController
-
+CATEGORIES = [
+  "sports",
+  "music",
+  "health & fitness",
+  "outdoor adventures",
+  "arts",
+  "social",
+  "career & business",
+  "food & drinks"
+]
 
   def index
-
     if(params[:filter] == "user")
       @groups = current_user.groups
     elsif(params[:filter] == "all")
       @groups = Group.all
+    elsif(CATEGORIES.include?(params[:filter].sub("_", "&")))
+      @groups = Group.where("groups.category = ?", params[:filter].sub("_", "&"))
     elsif(params[:filter])
       @groups = Group.search_group(params[:filter])
     end

@@ -8,6 +8,7 @@ import WelcomeContainer from './welcome/welcome_container';
 import WelcomePage from './welcome/welcome_page';
 import LoginFormContainer from './session/login_form_container';
 import SignUpFormContainer from './session/signup_form_container';
+import ExploreContainer from './welcome/explore_container';
 
 import HomeContainer from './home/home_container';
 import HomePageContainer from './home/home_page_container';
@@ -49,6 +50,7 @@ const Root = ({ store }) => {
             <IndexRoute component={ WelcomePage } />
             <Route path='login' component={ LoginFormContainer }/>
             <Route path='signup' component={ SignUpFormContainer }/>
+            <Route path='explore/:category' component={ ExploreContainer } />
           </Route>
           <Route path='home' component={ HomeContainer } onEnter={_ensureLoggedIn}>
             <IndexRedirect to='/home/events' />

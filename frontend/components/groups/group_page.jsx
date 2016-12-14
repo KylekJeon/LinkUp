@@ -27,6 +27,11 @@ class GroupPage extends React.Component {
     this.props.fetchCurrentGroupAdmins(this.props.params.groupId);
   }
 
+  componentWillUnmount(){
+    const front = $(".front-section");
+    front.css("background-image", "url(/assets/new_york-acac71507beee100b804470d31ad9440a8f727b2835939a04c99bca197307735.jpg)");
+  }
+
   makeAdmin(userId) {
     return e => {
       e.preventDefault();
@@ -50,6 +55,41 @@ class GroupPage extends React.Component {
     let userIdList;
     let joinButton;
     let eventButton;
+
+    if(this.props.group.name){
+      let groupImagePath;
+      switch(this.props.group.category){
+        case "sports":
+          groupImagePath = "url(/assets/sports_image-44cb5346c86eb174319c32780182358a89e6970144bdd7f260a92cf282e83601.jpg)";
+          break;
+        case "music":
+          groupImagePath = "url(/assets/music_image-9620a76b9042a3f3847e5e1df07232fdcd9cb00ed5734dcbdb0a66fefecf23e9.jpg)";
+          break;
+        case "health & fitness":
+          groupImagePath = "url(/assets/health_image-9c3c794fd38c6d02ed2c69ccdfcc4b9c5c71ca6785d3f843b9f8a9fd9c1ad75c.jpg)";
+          break;
+        case "outdoor adventures":
+          groupImagePath = "url(/assets/outdoor_image-9451eb1aa24098ccdf775c51f7e3a75367038a2a2e05d8f49d6a8a88e6535174.jpg)";
+          break;
+        case "arts":
+          groupImagePath = "url(/assets/arts_image-836b9c781f158a8b9f2275d9db41edd206a33e5fe4460e0803aedfd5563f602b.jpg)";
+          break;
+        case "social":
+          groupImagePath= "url(/assets/social_image-d4a666dfb3da58ce2da056548898b16a4de2fe8e8724300cee989309999b07cb.jpg)";
+          break;
+        case "career & business":
+          groupImagePath = "url(/assets/business_image-f6d7ca4c5bdac4cf78bb32de55177687ebfca10396fb194dc561c6ae5c05af40.jpg)";
+          break;
+        case "food & drinks":
+          groupImagePath = "url(/assets/food_image-493b0eeaf912395152fbabedbe280d379c068038c1aac7be42ca81e2281be24b.jpg)";
+          break;
+      }
+      const front = $(".front-section");
+      front.css("background-image", groupImagePath);
+      front.css("background-size", "100%");
+    }
+
+
 
     if(this.props.users[0]){
       userList = this.props.users.map( (user) => {
