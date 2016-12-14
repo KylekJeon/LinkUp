@@ -51,10 +51,7 @@ class GroupPage extends React.Component {
   }
 
   render(){
-    let userList;
-    let userIdList;
-    let joinButton;
-    let eventButton;
+
 
     if(this.props.group.name){
       let groupImagePath;
@@ -89,7 +86,11 @@ class GroupPage extends React.Component {
       front.css("background-size", "100%");
     }
 
-
+    let userList;
+    let userIdList;
+    let joinButton;
+    let eventButton;
+    let editButton;
 
     if(this.props.users[0]){
       userList = this.props.users.map( (user) => {
@@ -112,6 +113,7 @@ class GroupPage extends React.Component {
     if(this.props.currentGroupAdminIds){
       if(this.props.currentGroupAdminIds.includes(this.props.currentUser.id)){
         eventButton = <Link className='group-event-button' to={`/groups/${this.props.group.id}/event`}>Create Event</Link>;
+        editButton = <Link className='group-edit-button' to={`/groups/${this.props.group.id}/edit`}>Edit Group</Link>;
         userList = this.props.users.map( (user) => {
           if(this.props.currentGroupAdminIds.includes(user.id)){
             return <li key={user.id}>{user.first_name} {user.last_name} Administrator</li>;
@@ -126,6 +128,7 @@ class GroupPage extends React.Component {
       <section className='group-page group'>
         <header className='group-header'>
           {eventButton}
+          {editButton}
           <Link className='group-calendar-button' to={`/groups/${this.props.params.groupId}/calendar`}>
             Calendar
           </Link>

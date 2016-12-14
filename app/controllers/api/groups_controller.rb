@@ -90,6 +90,15 @@ CATEGORIES = [
   end
 
 
+  def update
+    @group = Group.find(params[:id])
+    if @group.update_attributes(group_params)
+      render json: @group
+    else
+      render json: @group.errors.full_messages, status: 422
+    end
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, :description, :category)

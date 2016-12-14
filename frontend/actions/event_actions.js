@@ -135,3 +135,12 @@ export function createEvent(event, groupId) {
     );
   };
 }
+
+export function editEvent(event, eventId) {
+  return dispatch => {
+    return APIUtil.editEvent(event, eventId).then(
+      events => dispatch(receiveCurrentUserEvents(events)),
+      err => dispatch(receiveEventErrors(err.responseJSON))
+    );
+  };
+}

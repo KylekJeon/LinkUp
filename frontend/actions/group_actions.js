@@ -130,3 +130,12 @@ export function fetchCategoryGroups(category) {
     );
   };
 }
+
+export function editGroup(groupId, group) {
+  return (dispatch) => {
+    return APIUtil.editGroup(groupId, group).then(
+      group => dispatch(receiveCurrentGroup(group)),
+      err => dispatch(receiveGroupErrors(err.responseJSON))
+    );
+  };
+}

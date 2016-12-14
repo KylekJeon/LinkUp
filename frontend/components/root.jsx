@@ -24,6 +24,9 @@ import EventPageContainer from './events/event_page_container';
 import CalendarContainer from './groups/calendar_container';
 import LinkUpFormContainer from './groups/linkup_form_container';
 import EventFormContainer from './events/event_form_container';
+import GroupEditContainer from './groups/group_edit_container';
+import EventEditContainer from './events/event_edit_container';
+
 
 const Root = ({ store }) => {
 
@@ -63,9 +66,11 @@ const Root = ({ store }) => {
             <Route path='/users/:userId' component={ UsersContainer }/>
             <Route path='/groups/:groupId' component={ GroupPageContainer }>
               <IndexRoute component={ GroupPageContentContainer } />
+              <Route path='/groups/:groupId/edit' component={ GroupEditContainer }/>
               <Route path='/groups/:groupId/calendar' component={ CalendarContainer } />
               <Route path='/groups/:groupId/event' component={ EventFormContainer } />
               <Route path='events/:eventId' component={ EventPageContainer }/>
+              <Route path='events/:eventId/edit' component={ EventEditContainer }/>
             </Route>
           </Route>
         </Route>

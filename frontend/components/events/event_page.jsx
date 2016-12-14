@@ -1,5 +1,6 @@
 import React from 'react';
 import { createParagraphs } from './../../util/text_style_util';
+import { Link } from 'react-router';
 
 class EventPage extends React.Component {
   constructor(props){
@@ -11,6 +12,7 @@ class EventPage extends React.Component {
   componentDidMount(){
     this.props.fetchCurrentEvent(this.props.currentEventId);
     this.props.fetchCurrentEventUsers(this.props.currentEventId);
+    this.props.fetchCurrentGroupAdmins(this.props.params.groupId);
   }
 
   componentWillReceiveProps(nextProps){
@@ -35,6 +37,8 @@ class EventPage extends React.Component {
     let userList;
     let userIdList;
     let rsvp;
+    let editButton;
+
     if(this.props.currentEventUsers.length > 0){
       userList = this.props.currentEventUsers.map ((user) => (
         <li key={user.id} className="event-page-user-list-items">{user.first_name} {user.last_name}</li>
@@ -55,7 +59,11 @@ class EventPage extends React.Component {
              </div>;
     }
 
-
+    if(this.props.currentGroupAdminIds.length >= 1){
+      if(this.props.currentGroupAdminIds.includes(this.props.currentUser.id)){
+        editButton = <Link className='event-edit-button' to={`/groups/${this.props.params.groupId}/events/${this.props.currentEvent.id}/edit`}>Edit Event</Link>;
+      }
+    }
 
     return(
       <section className='event-page'>
@@ -78,6 +86,7 @@ class EventPage extends React.Component {
               Attending:
               {userList}
             </ul>
+            {editButton}
           </section>
         </section>
       </section>

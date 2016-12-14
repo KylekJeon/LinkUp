@@ -80,6 +80,28 @@
   background: rgba(41, 165, 153, 1);
 }
 
+.group-edit-button {
+  background: rgba(243, 216, 111, .9);
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-top: 7px;
+  color: black;
+  position:absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.group-edit-button:hover {
+  background: rgba(41, 165, 153, .7);
+  color: white;
+}
+
+.group-edit-button:active {
+  background: rgba(41, 165, 153, 1);
+}
+
 .group-join-button {
   width: 110px;
   height: 35px;

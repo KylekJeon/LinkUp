@@ -66,6 +66,14 @@ export const fetchCurrentGroupAdmins = (groupId) => (
 export const fetchCategoryGroups = (category) => (
   $.ajax({
     method: "GET",
-    url: `api/groups?filter=${category}` 
+    url: `api/groups?filter=${category}`
+  })
+);
+
+export const editGroup = (groupId, group) => (
+  $.ajax({
+    method: "PATCH",
+    url: `api/groups/${groupId}`,
+    data: { group }
   })
 );

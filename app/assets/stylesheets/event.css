@@ -152,3 +152,25 @@
   font-family: "Bree Serif", arial;
   margin-bottom: 15px;
 }
+
+.event-edit-button {
+  width: 90px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  background: rgba(41, 165, 153, 1);
+  color: white;
+  position: absolute;
+  left: 55px;
+  bottom: 50px;
+  text-align: center;
+}
+
+.event-edit-button:hover {
+  background: rgba(243, 216, 111, .8);
+  color: black;
+}
+
+.event-edit-button:active {
+  background: rgba(233, 206, 100, 1);
+}

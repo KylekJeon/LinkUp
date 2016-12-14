@@ -62,10 +62,18 @@ export const removeUserFromEvent = (eventId) => (
   })
 );
 
-export const createEvent = (event, groupId) => (
+export const createEvent = (event, eventId) => (
   $.ajax({
     method: "POST",
     url: `api/groups/${groupId}/events`,
+    data: { event }
+  })
+);
+
+export const editEvent = (event, eventId) => (
+  $.ajax({
+    method: "PATCH",
+    url: `api/events/${eventId}`,
     data: { event }
   })
 );
