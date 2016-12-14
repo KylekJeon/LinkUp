@@ -50,8 +50,7 @@
   padding: 10px;
   box-sizing: border-box;
   position: relative;
-  border-radius: 5px
-  overflow: hidden;
+  border-radius: 5px;
 }
 
 .profile-change {
