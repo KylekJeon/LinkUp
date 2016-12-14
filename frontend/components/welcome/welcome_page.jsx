@@ -5,12 +5,9 @@ import { Link } from 'react-router';
 const WelcomePage = (props) => (
   <div>
     <div className="video-wrapper">
-      <iframe
-        className="wrapped-video"
-        src="https://www.youtube.com/embed/BvJIfDy6CVQ?wmode=transparent&autoplay=1"
-        frameBorder="0"
-        >
-      </iframe>
+      <video autoPlay>
+        <source src="/assets/welcome_video-f3ca7a287df75461a1df2704ad9d8679bf70a23c45bdb3396f4d217a47df07e6.mp4" type="video/mp4"/>
+      </video>
     </div>
     <div className='explore'>
       <h3 className='explore-header'>Explore</h3>
