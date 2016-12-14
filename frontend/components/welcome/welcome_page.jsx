@@ -6,7 +6,7 @@ const WelcomePage = (props) => (
   <div>
     <div className="video-wrapper">
       <video autoPlay muted>
-        <source src="/assets/welcome_video-f3ca7a287df75461a1df2704ad9d8679bf70a23c45bdb3396f4d217a47df07e6.mp4" type="video/mp4"/>
+        <source src="/assets/welcome_video-3f3d52cf1b7f6affc4470ab83361fa02f87a5134436bb7ca8ee337a735caece4.mp4" type="video/mp4"/>
       </video>
     </div>
     <div className='explore'>
