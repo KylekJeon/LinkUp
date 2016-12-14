@@ -24,7 +24,7 @@ class HomePageEvents extends React.Component {
   componentDidMount() {
     this.props.fetchCurrentUserGroupEvents();
     window.onscroll = (e) => {
-      if (pageYOffset >= (document.body.clientHeight / 2 )) {
+      if (pageYOffset >= (document.body.clientHeight / 3 )) {
         this.setState({ numToShow: this.state.numToShow + PAGE });
       }
     };
