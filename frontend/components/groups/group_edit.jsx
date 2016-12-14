@@ -16,12 +16,14 @@ class GroupEdit extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.editGroup(this.props.currentGroup.id, this.state);
+    this.props.editGroup(this.props.currentGroup.id, this.state).then( () => {
+      this.props.router.push(`/groups/${this.props.currentGroup.id}`);
+    });
   }
 
   componentWillReceiveProps(nextProps){
-    if (nextProps.currentGroup.name === this.state.name){
-      nextProps.router.push(`groups/${nextProps.currentGroup.id}`);
+    if(nextProps.route.path.includes("edit")){
+      this.setState({ name: nextProps.currentGroup.name, description: nextProps.currentGroup.description, category: nextProps.currentGroup.category});
     }
   }
 

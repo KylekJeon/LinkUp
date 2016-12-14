@@ -7,16 +7,28 @@ class EventEdit extends React.Component {
       name: "",
       description: "",
       location: "",
-      event_time: ""
+      time: ""
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchCurrentEvent(this.props.params.eventId);
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.route.path.includes("edit") && this.props.location.action === "PUSH"){
+      this.setState({ name: nextProps.currentEvent.name, description: nextProps.currentEvent.description, location: nextProps.currentEvent.location, time: nextProps.currentEvent.event_time.slice(0, nextProps.currentEvent.event_time.length - 1)});
+    }
+  }
+
+
   handleSubmit(e){
     e.preventDefault();
-    this.props.editEvent(this.state, this.props.routeParams.eventId).then( action => this.props.router.push(`/groups/${this.props.currentGroup.id}/events/${action.currentUserEvents.id}/`));
+    this.props.editEvent(this.state, this.props.routeParams.eventId).then( () => this.props.router.push(`/groups/${this.props.params.groupId}/events/${this.props.params.eventId}/`));
   }
+
 
 
   update(prop){

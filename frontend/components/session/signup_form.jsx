@@ -8,8 +8,7 @@ class SignUpForm extends React.Component{
       email: "",
       password: "",
       first_name: "",
-      last_name: "",
-      confirm_email: ""
+      last_name: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirect = this.redirect.bind(this);
@@ -67,10 +66,6 @@ class SignUpForm extends React.Component{
             <label className='signup-label'>Email
               <br/>
               <input type='text' onChange={this.update("email")} value={this.state.email} />
-            </label>
-            <label className='signup-label'>Confirm Email
-              <br/>
-              <input type='text' onChange={this.update("confirm_email")} value={this.state.confirm_email} />
             </label>
             <label className='signup-label'>First Name
               <br/>
