@@ -12,6 +12,8 @@ Group.destroy_all
 Event.destroy_all
 Rsvp.destroy_all
 Admin.destroy_all
+Discussion.destroy_all
+Comment.destroy_all
 
 
 user1 = User.create!(username: "guest", password: "guest123", email: "dcolson@gmail.com", first_name: "Daniel", last_name: "Colson")
@@ -29,6 +31,7 @@ user12 = User.create!(username: "bipolarshampoo", password: "password", email: "
 user13 = User.create!(username: "jazzcorky", password: "password", email: "jazzcorky@gmail.com", first_name: "Cici", last_name: "Wen" )
 user14 = User.create!(username: "blisterhypnosis", password: "password", email: "blisterhypnosis@gmail.com", first_name: "Allie", last_name: "Harris"  )
 user15 = User.create!(username: "springsremain", password: "password", email: "springsremain@gmail.com", first_name: "Amy", last_name: "Fang"  )
+
 
 
 
@@ -604,3 +607,57 @@ Rsvp.create!(user: user2, event: event74)
 Rsvp.create!(user: user6, event: event75)
 Rsvp.create!(user: user10, event: event75)
 Rsvp.create!(user: user14, event: event75)
+
+
+group16 = Group.create!(name: "Real Estate Investors", description: "Calling all Real Estate Investors, Real Estate Professionals, Realtors, Mortgage Banker's, Attorney's, Investment Bankers, Traders, Contractor's and anyone active in the Real Estate Industry.  Are your hitting your goals you set for yourself this year?  If not, your clearly doing something wrong as right now everyone knows we are in the best time to buy, and sell real estate!
+
+New York Real Estate Investors Association (REIA) was Established in 2009.  Today the New York Real Estate Investors Association is the largest & fastest growing real estate investment community in the tri-state area!
+
+Whether you are just starting out in real estate investing and looking to learn, or are working on deal number one-hundred, the New York Real Estate Investors Association (REIA) can help you accomplish your goals all while having a ton of fun doing it. You are here because you know this is the best times to invest in real estate and you're right!
+
+New York Real Estate Investors Association (REIA) members include beginner, seasoned, full, and part-time investors, accountants and attorneys, real estate agents and brokers, contractors, mortgage lenders, property appraisers and inspectors, property managers, and renovation specialists — people looking to enjoy the many benefits of the real estate industry.
+
+We invite you to learn more about New York Real Estate Investors Association (REIA), by joining us at our next General Meeting. Guests are always welcome and RSVPing is highly encouraged. Guest fees may be applied toward membership.
+
+", category: "career & business")
+
+
+group17 = Group.create!(name: "Startup Career Network", description: "This is a group of startup and technology advocates, entrepreneurs, employees, and anyone who's interested in pursuing a career at a New York startup. Brought to you by Startup Institute, a career accelerator that combines hard skills with cultural acumen to drastically increase the impact of startup employees. Join us to move New York's startup ecosystem forward!", category: "career & business")
+
+
+
+group18 = Group.create!(name: "Grand FC: Pickup Soccer NYC", description: "Grand FC organizes Soccer year round in NYC. It's our aim to provide structured and affordable game time in a fun and sporting environment. We take organizing seriously and believe soccer has the reach to engage socially, whilst playing a positive role in the community.
+
+Pickup games occur in a fun and relaxed environment, a place to meet new players and improve your game. Our group also offers Co-Ed and Men's leagues under Group Stage Soccer. These matches are more competitive, yet played in a positive sporting environment. ", category: "sports")
+
+
+
+group19 = Group.create!(name: "Park Flag Football", description: "We play flag football weekly on most Sundays from 9:00am to 12:30pm (so you have time to watch the NFL games) in Cunningham Park located on 196th St and Union Turnpike in Queens. We have been doing this for over 7 years and want to meet people committed to showing up ready to play every time. Feel free to tell friends and have them sign up on Meetup.  We have cones and flags so all you need is cleats if that is what you prefer. GAMES WILL ALMOST ALWAYS BE PLAYED REGARDLESS OF THE WEATHER CONDITIONS i.e. rain, snow, cold, mud, ice, etc...we rarely cancel games due to weather...SNOW IS ONLY MORE OF A REASON TO PLAY!  Games are fun and competitive, all skill levels are welcome, please contact me if you have any questions.", category: "sports")
+
+
+
+group20 = Group.create!(name: "SOCIAL TENNIS MEETUP", description: "NY Social Tennis Meetup is a group for anyone interested in Tennis. Our goal is to connect tennis players to fun and competitive match play of all levels. Whether you are a beginner or advanced player, there is something for everyone. Looking forward to meeting tennis enthusiasts soon!", category: "sports")
+
+
+
+
+group21 = Group.create!(name: "", description: "", category: "")
+group22 = Group.create!(name: "", description: "", category: "")
+group23 = Group.create!(name: "", description: "", category: "")
+group24 = Group.create!(name: "", description: "", category: "")
+group25 = Group.create!(name: "", description: "", category: "")
+group26 = Group.create!(name: "", description: "", category: "")
+group27 = Group.create!(name: "", description: "", category: "")
+group28 = Group.create!(name: "", description: "", category: "")
+group29 = Group.create!(name: "", description: "", category: "")
+group30 = Group.create!(name: "", description: "", category: "")
+group31 = Group.create!(name: "", description: "", category: "")
+group32 = Group.create!(name: "", description: "", category: "")
+group33 = Group.create!(name: "", description: "", category: "")
+group34 = Group.create!(name: "", description: "", category: "")
+group35 = Group.create!(name: "", description: "", category: "")
+group36 = Group.create!(name: "", description: "", category: "")
+group37 = Group.create!(name: "", description: "", category: "")
+group38 = Group.create!(name: "", description: "", category: "")
+group39 = Group.create!(name: "", description: "", category: "")
+group40 = Group.create!(name: "", description: "", category: "")
