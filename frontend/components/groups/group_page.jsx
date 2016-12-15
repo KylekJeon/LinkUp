@@ -63,7 +63,7 @@ class GroupPage extends React.Component {
           groupImagePath = "url(/assets/music_image-6c695b7110042e2ab06852c00fa0584f39af5301e270ebccea43d34c40b97ca2.jpg)";
           break;
         case "health & fitness":
-          groupImagePath = "url(/assets/health_image-9c3c794fd38c6d02ed2c69ccdfcc4b9c5c71ca6785d3f843b9f8a9fd9c1ad75c.jpg)";
+          groupImagePath = "url(/assets/health_image-e9a72243a733629491812537f580b04e15f5cfba48103d7743b4dc86ed0b3f66.jpg)";
           break;
         case "outdoor adventures":
           groupImagePath = "url(/assets/outdoor_image-9451eb1aa24098ccdf775c51f7e3a75367038a2a2e05d8f49d6a8a88e6535174.jpg)";
