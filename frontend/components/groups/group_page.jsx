@@ -91,6 +91,7 @@ class GroupPage extends React.Component {
     let joinButton;
     let eventButton;
     let editButton;
+    let forumButton = <Link className='group-forum-button' to={`/groups/${this.props.group.id}/forum`}>Group Forum</Link>;
 
     if(this.props.users[0]){
       userList = this.props.users.map( (user) => {
@@ -129,12 +130,13 @@ class GroupPage extends React.Component {
         <header className='group-header'>
           {eventButton}
           {editButton}
+          {joinButton}
+          {forumButton}
           <Link className='group-calendar-button' to={`/groups/${this.props.params.groupId}/calendar`}>
             Calendar
           </Link>
           <div className='group-header-background'>Welcome to LinkUp, a place to connect</div>
           <Link to={`/groups/${this.props.params.groupId}`} className='group-name'>Welcome to {this.state.groupName}</Link>
-          {joinButton}
         </header>
         <aside className='group-aside-container'>
           <ul className='group-users-list'>

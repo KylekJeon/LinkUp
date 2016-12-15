@@ -19,7 +19,12 @@ Rails.application.routes.draw do
         delete 'leave'
         post 'admin'
         delete 'unadmin'
+        get 'discussion'
+        post 'create_discussion'
       end
+    end
+    resources :discussions, only: [:index, :create, :destroy] do
+      post 'comment'
     end
   end
 

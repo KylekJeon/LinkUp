@@ -7,9 +7,14 @@ export const RECEIVE_GROUP_USERS = "RECEIVE_GROUP_USERS";
 export const RECEIVE_CURRENT_GROUP = "RECEIVE_CURRENT_GROUP";
 export const RECEIVE_CURRENT_GROUP_ADMINS = "RECEIVE_CURRENT_GROUP_ADMINS";
 export const RECEIVE_CATEGORY_GROUPS = "RECEIVE_CATEGORY_GROUPS";
-
+export const RECEIVE_GROUP_DISCUSSIONS = "RECEIVE_GROUP_DISCUSSIONS";
 
 // action creators
+export const receiveGroupDiscussions = (discussions) => ({
+  type: RECEIVE_GROUP_DISCUSSIONS,
+  discussions
+});
+
 export const receiveGroups = (groups) => ({
   type: RECEIVE_GROUPS,
   groups
@@ -135,6 +140,33 @@ export function editGroup(groupId, group) {
   return (dispatch) => {
     return APIUtil.editGroup(groupId, group).then(
       group => dispatch(receiveCurrentGroup(group)),
+      err => dispatch(receiveGroupErrors(err.responseJSON))
+    );
+  };
+}
+
+export function fetchGroupDiscussions(groupId) {
+  return (dispatch) => {
+    return APIUtil.fetchGroupDiscussions(groupId).then(
+      discussions => dispatch(receiveGroupDiscussions(discussions)),
+      err => dispatch(receiveGroupErrors(err.responseJSON))
+    );
+  };
+}
+
+export function createDiscussion(groupId, discussion) {
+  return (dispatch) => {
+    return APIUtil.createDiscussion(groupId, discussion).then(
+      discussions => dispatch(receiveGroupDiscussions(discussions)),
+      err => dispatch(receiveGroupErrors(err.responseJSON))
+    );
+  };
+}
+
+export function createComment(discussionId, comment) {
+  return (dispatch) => {
+    return APIUtil.createComment(discussionId, comment).then(
+      discussions => dispatch(receiveGroupDiscussions(discussions)),
       err => dispatch(receiveGroupErrors(err.responseJSON))
     );
   };

@@ -77,3 +77,26 @@ export const editGroup = (groupId, group) => (
     data: { group }
   })
 );
+
+export const fetchGroupDiscussions = (groupId) => (
+  $.ajax({
+    method: "GET",
+    url: `api/groups/${groupId}/discussion`
+  })
+);
+
+export const createDiscussion = (groupId, discussion) => (
+  $.ajax({
+    method: "POST",
+    url: `api/groups/${groupId}/create_discussion`,
+    data: { discussion }
+  })
+);
+
+export const createComment = (discussionId, comment) => (
+  $.ajax({
+    method: "POST",
+    url: `api/discussions/${discussionId}/comment`,
+    data: { comment: comment }
+  })
+);

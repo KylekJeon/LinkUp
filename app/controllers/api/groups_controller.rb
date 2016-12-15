@@ -99,6 +99,22 @@ CATEGORIES = [
     end
   end
 
+  def discussion
+    @group = Group.find(params[:id])
+    @discussions = @group.discussions
+    render 'api/discussions/index'
+  end
+
+  def create_discussion
+    @discussion = Discussion.new(group_id: params[:id], title: params[:discussion])
+    if @discussion.save
+      @discussions = Group.find(params[:id]).discussions
+      render 'api/discussions/index'
+    else
+      render json: @discussion.errors.full_messages, status: 422
+    end
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, :description, :category)

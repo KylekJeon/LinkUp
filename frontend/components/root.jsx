@@ -26,7 +26,7 @@ import LinkUpFormContainer from './groups/linkup_form_container';
 import EventFormContainer from './events/event_form_container';
 import GroupEditContainer from './groups/group_edit_container';
 import EventEditContainer from './events/event_edit_container';
-
+import ForumContainer from './groups/forum_container';
 
 const Root = ({ store }) => {
 
@@ -69,6 +69,7 @@ const Root = ({ store }) => {
               <Route path='/groups/:groupId/edit' component={ GroupEditContainer }/>
               <Route path='/groups/:groupId/calendar' component={ CalendarContainer } />
               <Route path='/groups/:groupId/event' component={ EventFormContainer } />
+              <Route path='/groups/:groupId/forum' component={ ForumContainer } />
               <Route path='events/:eventId' component={ EventPageContainer }/>
               <Route path='events/:eventId/edit' component={ EventEditContainer }/>
             </Route>

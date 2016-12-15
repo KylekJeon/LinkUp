@@ -13,7 +13,7 @@
 class Group < ActiveRecord::Base
   include PgSearch
 
-  validates :name, :description, presence: true;
+  validates :name, :description, presence: true
   validates :description, length: { minimum: 1 }
   validates :category, inclusion: { in: ["sports", "music", "health & fitness", "outdoor adventures", "arts", "social", "career & business", "food & drinks"] }
 
@@ -22,7 +22,8 @@ class Group < ActiveRecord::Base
   has_many :events
   has_many :admins
   has_many :administrators, through: :admins, source: :user
-
+  has_many :discussions
+  
 
 
   pg_search_scope :search_group, against: [:name, :description], using: {

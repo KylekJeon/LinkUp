@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { RECEIVE_GROUPS, RECEIVE_GROUP_ERRORS, RECEIVE_GROUP_USERS, RECEIVE_CURRENT_GROUP, RECEIVE_CURRENT_GROUP_ADMINS, RECEIVE_CATEGORY_GROUPS } from './../actions/group_actions';
+import { RECEIVE_GROUPS, RECEIVE_GROUP_ERRORS, RECEIVE_GROUP_USERS, RECEIVE_CURRENT_GROUP, RECEIVE_CURRENT_GROUP_ADMINS, RECEIVE_CATEGORY_GROUPS, RECEIVE_GROUP_DISCUSSIONS } from './../actions/group_actions';
 
 
 const _nullGroups = Object.freeze({
@@ -8,7 +8,8 @@ const _nullGroups = Object.freeze({
   errors: [],
   currentGroup: {},
   currentGroupAdmins: [],
-  categoryGroups: []
+  categoryGroups: [],
+  discussions: []
 });
 
 const GroupReducer = (state = _nullGroups , action) => {
@@ -29,6 +30,9 @@ const GroupReducer = (state = _nullGroups , action) => {
     case RECEIVE_CURRENT_GROUP_ADMINS:
       const currentGroupAdmins = action.currentGroupAdmins;
       return Object.assign({}, state, { currentGroupAdmins });
+    case RECEIVE_GROUP_DISCUSSIONS:
+      const discussions = action.discussions;
+      return Object.assign({}, state, { discussions });
     case RECEIVE_GROUP_ERRORS:
       const errors = action.errors;
       return Object.assign({}, state, { errors });
