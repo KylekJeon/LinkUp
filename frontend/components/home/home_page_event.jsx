@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Infinite from 'react-infinite';
+import { createParagraphs } from './../../util/text_style_util';
 
 const PAGE = 3;
 
@@ -96,7 +97,7 @@ class HomePageEvents extends React.Component {
           <Link to={`/groups/${event.groupId}`} className='front-page-group-link'>Hosted by: {event.groupName}</Link>
           <span>Location: {event.location}</span>
           <span>Time: {event.timeOfDay}</span>
-          <p>About: {event.description}</p>
+          <p>About: {createParagraphs(event.description)}</p>
         </li>
       ));
       return (

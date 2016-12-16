@@ -1,7 +1,7 @@
 .event-page {
   width: 715px;
   background: rgba(243, 216, 111, .8);
-  min-height: 700px;
+  height: auto;
   float: right;
   margin-top: 25px;
   border-radius: 5px;
@@ -15,9 +15,9 @@
   width: 675px;
   min-height: 660px;
   background: rgba(255, 255, 255, .6);
-  box-sizing: border-box;
   position: relative;
   border-radius: 5px;
+  overflow: auto;
 }
 
 .event-page-container:after {
@@ -76,6 +76,7 @@
   margin-bottom: 30px;
   border-bottom: 1px solid black;
   text-align: center;
+  height: 100%;
 }
 
 .event-page-description p {
