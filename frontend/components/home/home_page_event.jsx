@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import Infinite from 'react-infinite';
 import { createParagraphs } from './../../util/text_style_util';
+import LoadingIcon from './loading_icon';
 
 const PAGE = 3;
 
@@ -59,7 +60,6 @@ class HomePageEvents extends React.Component {
   }
 
   render() {
-
     let whichEventDisplay;
     if (this.state.whichDisplay === "currentUserGroupEvents") {
       whichEventDisplay = this.state.currentUserGroupEvents;
@@ -109,6 +109,9 @@ class HomePageEvents extends React.Component {
     });
 
 
+    if (this.props.loading) {
+      return <section className="content-loading"><LoadingIcon /></section>;
+    }
     return (
       <section>
         <div className='content-main-list-day'>

@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
     currentUser: state.session.currentUser,
     currentUserEvents: state.events.currentUserEvents,
     allEvents: state.events.events,
-    currentUserGroupEvents: state.events.currentUserGroupEvents
+    currentUserGroupEvents: state.events.currentUserGroupEvents,
+    loading: state.loading.loading
   });
 };
 

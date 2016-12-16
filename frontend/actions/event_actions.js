@@ -9,8 +9,13 @@ export const RECEIVE_CURRENT_USER_GROUP_EVENTS = "RECEIVE_CURRENT_USER_GROUP_EVE
 export const RECEIVE_CURRENT_EVENT = "RECEIVE_CURRENT_EVENT";
 export const RECEIVE_CURRENT_EVENT_USERS = "RECEIVE_CURRENT_EVENT_USERS";
 export const RECEIVE_CURRENT_USER_NEXT_EVENT = "RECEIVE_CURRENT_USER_NEXT_EVENT";
+export const REQUEST_EVENTS = "REQUEST_EVENTS";
 
 // action creators
+export const requestEvents = () => ({
+  type: REQUEST_EVENTS
+});
+
 export const receiveEvents = (events) => ({
   type: RECEIVE_EVENTS,
   events
@@ -54,8 +59,27 @@ export const receiveCurrentUserNextEvent = (currentUserNextEvent) => ({
 // thunk creators
 export function fetchEvents() {
   return (dispatch) => {
+    dispatch(requestEvents());
     return APIUtil.fetchEvents().then(
       events => dispatch(receiveEvents(events))
+    );
+  };
+}
+
+export function fetchCurrentUserEvents() {
+  return(dispatch) => {
+    dispatch(requestEvents());
+    return APIUtil.fetchCurrentUserEvents().then(
+      events => dispatch(receiveCurrentUserEvents(events))
+    );
+  };
+}
+
+export function fetchCurrentUserGroupEvents() {
+  return (dispatch) => {
+    dispatch(requestEvents());
+    return APIUtil.fetchCurrentUserGroupEvents().then(
+      events => dispatch(receiveCurrentUserGroupEvents(events))
     );
   };
 }
@@ -68,13 +92,6 @@ export function fetchCurrentEvent(eventId) {
   };
 }
 
-export function fetchCurrentUserEvents() {
-  return(dispatch) => {
-    return APIUtil.fetchCurrentUserEvents().then(
-      events => dispatch(receiveCurrentUserEvents(events))
-    );
-  };
-}
 
 export function fetchCurrentGroupEvents(groupId) {
   return (dispatch) => {
@@ -84,13 +101,6 @@ export function fetchCurrentGroupEvents(groupId) {
   };
 }
 
-export function fetchCurrentUserGroupEvents() {
-  return (dispatch) => {
-    return APIUtil.fetchCurrentUserGroupEvents().then(
-      events => dispatch(receiveCurrentUserGroupEvents(events))
-    );
-  };
-}
 
 export function fetchCurrentEventUsers(eventId) {
   return (dispatch) => {
