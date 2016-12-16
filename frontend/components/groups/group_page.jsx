@@ -57,28 +57,28 @@ class GroupPage extends React.Component {
       let groupImagePath;
       switch(this.props.group.category){
         case "sports":
-          groupImagePath = "url(/assets/sports_image-44cb5346c86eb174319c32780182358a89e6970144bdd7f260a92cf282e83601.jpg)";
+          groupImagePath = `url(${window.assets.sportsImage})`;
           break;
         case "music":
-          groupImagePath = "url(/assets/music_image-6c695b7110042e2ab06852c00fa0584f39af5301e270ebccea43d34c40b97ca2.jpg)";
+          groupImagePath = `url(${window.assets.musicImage})`;
           break;
         case "health & fitness":
-          groupImagePath = "url(/assets/health_image-e9a72243a733629491812537f580b04e15f5cfba48103d7743b4dc86ed0b3f66.jpg)";
+          groupImagePath = `url(${window.assets.healthImage})`;
           break;
         case "outdoor adventures":
-          groupImagePath = "url(/assets/outdoor_image-9451eb1aa24098ccdf775c51f7e3a75367038a2a2e05d8f49d6a8a88e6535174.jpg)";
+          groupImagePath = `url(${window.assets.outdoorImage})`;
           break;
         case "arts":
-          groupImagePath = "url(/assets/arts_image-836b9c781f158a8b9f2275d9db41edd206a33e5fe4460e0803aedfd5563f602b.jpg)";
+          groupImagePath = `url(${window.assets.artsImage})`;
           break;
         case "social":
-          groupImagePath= "url(/assets/social_image-079fb2d1cd41baae046bd75e1baf2b3af3b6d5918cdd4523dc2e6c6b7c95736b.jpg)";
+          groupImagePath = `url(${window.assets.socialImage})`;
           break;
         case "career & business":
-          groupImagePath = "url(/assets/business_image-ed03d3b3169ce2e73e71395f257213b0e41574086df9d19fc1f5dbea28488625.jpg)";
+          groupImagePath = `url(${window.assets.businessImage})`;
           break;
         case "food & drinks":
-          groupImagePath = "url(/assets/food_image-244840537604b65dc971836535c911b1a52fbbdd2d0aeff188191754a3bf068e.jpg)";
+          groupImagePath = `url(${window.assets.foodImage})`;
           break;
       }
       const front = $(".front-section");
