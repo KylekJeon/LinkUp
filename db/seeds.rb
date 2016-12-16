@@ -1430,7 +1430,7 @@ OUR MEETUPS: Good food is meant to be shared. At each Meetup, we will dine FAMIL
 
 MEETUP FEE: To help defray the cost of paying Meetup HQ to keep the site up and running, a $1.00 Meetup fee will be collected at randomly selected events.
 
-IMPORTANT GROUP RULES: A successful group is not about how many members there are in the group. It is about the quality of members in the group! We would rather have a small group of "quality members" than a huge group of "joiners" and “lurkers” who never show up to any event.", category: "food & drinks")
+IMPORTANT GROUP RULES: A successful group is not about how many members there are in the group. It is about the quality of members in the group! We would rather have a small group of quality members than a huge group of joiners and “lurkers” who never show up to any event.", category: "food & drinks")
 
 
 
@@ -1654,15 +1654,15 @@ group24 = Group.create!(name: "Say YES to Your Life!", description: "This is a g
 
 
 
-Membership.create!(user: user10 , group: group16 )
-Membership.create!(user: user12 , group: group16 )
-Membership.create!(user: user14 , group: group16 )
-Membership.create!(user: user1 , group: group16 )
-Membership.create!(user: user3 , group: group16 )
+Membership.create!(user: user10 , group: group24 )
+Membership.create!(user: user12 , group: group24 )
+Membership.create!(user: user14 , group: group24 )
+Membership.create!(user: user1 , group: group24 )
+Membership.create!(user: user3 , group: group24 )
 
-discussion70 = Discussion.create!(group: group16 , title: Faker::ChuckNorris.fact)
-discussion71 = Discussion.create!(group: group16 , title: Faker::ChuckNorris.fact)
-discussion72 = Discussion.create!(group: group16 , title: Faker::ChuckNorris.fact)
+discussion70 = Discussion.create!(group: group24 , title: Faker::ChuckNorris.fact)
+discussion71 = Discussion.create!(group: group24 , title: Faker::ChuckNorris.fact)
+discussion72 = Discussion.create!(group: group24 , title: Faker::ChuckNorris.fact)
 
 Comment.create!(user: user10 , discussion: discussion70 , body: Faker::ChuckNorris.fact)
 Comment.create!(user: user12 , discussion: discussion70 , body: Faker::ChuckNorris.fact)
@@ -1674,22 +1674,22 @@ Comment.create!(user: user12 , discussion: discussion72 , body: Faker::ChuckNorr
 Comment.create!(user: user14 , discussion: discussion72 , body: Faker::ChuckNorris.fact)
 Comment.create!(user: user1 , discussion: discussion72 , body: Faker::ChuckNorris.fact)
 
-event116 = Event.create!(name: "Forgiveness & New Beginnings", description: "The definition of forgiveness is to give up the right to punish, to cancel a debt - make as if it never happened. Wouldn't it be nice to live your life without past regrets or grudges? Most of us do not realize that when we forgive someone, we are actually freeing ourselves. When we forgive, we extricate ourselves from the entanglement of a disturbing situation or circumstance. Join us to discuss the miraculous healing tool of true forgiveness and the possibilities it opens up.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
-event117 = Event.create!(name: "Listening as an Act of Kindness", description: "True listening, without judgment for another, is one of the simplest and yet most rare gifts in life. We define true listening as actively listening to another with the intention of hearing what is being said from the other's point of view. Join us to explore and discover how this simple act can be a catalyst for kindness to oneself and to others.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
+event116 = Event.create!(name: "Forgiveness & New Beginnings", description: "The definition of forgiveness is to give up the right to punish, to cancel a debt - make as if it never happened. Wouldn't it be nice to live your life without past regrets or grudges? Most of us do not realize that when we forgive someone, we are actually freeing ourselves. When we forgive, we extricate ourselves from the entanglement of a disturbing situation or circumstance. Join us to discuss the miraculous healing tool of true forgiveness and the possibilities it opens up.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group24.id )
+event117 = Event.create!(name: "Listening as an Act of Kindness", description: "True listening, without judgment for another, is one of the simplest and yet most rare gifts in life. We define true listening as actively listening to another with the intention of hearing what is being said from the other's point of view. Join us to explore and discover how this simple act can be a catalyst for kindness to oneself and to others.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group24.id )
 event118 = Event.create!(name: "Live Like You Were Dying", description: "... And I loved deeper, and I spoke sweeter, and I gave forgiveness I’ve been denying, and he said someday I hope you get the chance, to live like you were dyin. – Tim McGraw, Live Like You Were Dying
 
 
 Join us to explore how to get the most out of each moment, without needing a life-threatening event or dire circumstances to remind you that you are alive.
 
-Here is the link to an episode of Ariel & Shya Kane's radio show, Being Here titled Live Like Your Were Dying.  This was our inspiration for this month's meetup: ", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
+Here is the link to an episode of Ariel & Shya Kane's radio show, Being Here titled Live Like Your Were Dying.  This was our inspiration for this month's meetup: ", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group24.id )
 event119 = Event.create!(name: "Enlightenment 101", description: "When you are truly Being Here your life transforms in an instant and, practically speaking, you are enlightened. Practical Enlightenment  - Ariel & Shya Kane.
 
-Enlightenment isn't a mystical state that requires years of effort to achieve. It is a practical lifestyle that you can have right now. When you discover how to access the current moment - rather than your thoughts, judgments or ideas about how life should be - problems, anxiety, stress and worry cease to dominate your life; your past no longer dictates your present or future and you experience your own perfection. Join us and experience that enlightenment can happen to anyone, anywhere, not just for those meditating on a mountaintop - no effort required!", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
+Enlightenment isn't a mystical state that requires years of effort to achieve. It is a practical lifestyle that you can have right now. When you discover how to access the current moment - rather than your thoughts, judgments or ideas about how life should be - problems, anxiety, stress and worry cease to dominate your life; your past no longer dictates your present or future and you experience your own perfection. Join us and experience that enlightenment can happen to anyone, anywhere, not just for those meditating on a mountaintop - no effort required!", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group24.id )
 event120 = Event.create!(name: "Relationships Made EASY!", description: "It only takes an instant to transform your ability to relate. At this meetup, you will discover what is at the heart of experiencing magic in all of your relationships, especially the one with yourself. If you are interested in having life be stress-free, productive, passionate and most of all - fun! Saying YES to your life is a great way to drop those automatic, habitual complaints and discover both your own brilliance and the beauty of the current moment.
 
 Being a YES to how your life is showing up and not wishing it were different allows you to be the author of your life, rather than the victim of it.   New possibilities appear that never existed before!
 
-", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
+", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group24.id )
 
 Rsvp.create!(user: user10 , event: event116 )
 Rsvp.create!(user: user12 , event: event116 )
