@@ -16,7 +16,7 @@ Discussion.destroy_all
 Comment.destroy_all
 
 
-user1 = User.create!(username: "user1", password: "guest123", email: "dcolson@gmail.com", first_name: "Daniel", last_name: "Colson")
+user1 = User.create!(username: "guest", password: "guest123", email: "dcolson@gmail.com", first_name: "Daniel", last_name: "Colson")
 user2 = User.create!(username: "user2", password: "password", email: "treeshadow@gmail.com", first_name: "Rahul", last_name: "Doshi"  )
 user3 = User.create!(username: "user3", password: "password", email: "edibledefended@gmail.com", first_name: "Stephen", last_name: "Mauer")
 user4 = User.create!(username: "user4", password: "password", email: "volunteercapitalist@gmail.com", first_name: "Jonathan", last_name: "Slawitsky")
