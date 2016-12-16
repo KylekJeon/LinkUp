@@ -644,13 +644,21 @@
   position: relative;
 }
 
+.search-category:hover {
+  background: rgba(41, 165, 153, 1);
+}
+
+.search-category:active {
+  background: rgba(21, 145, 133, 1);
+}
+
 .home-category-list {
   position: absolute;
   width: 145px;
   background: rgba(243, 216, 111, .9);
   color: black;
   padding: 10px;
-  top: -100px;
+  top: -130px;
   right: -160px;
   border-radius: 5px;
   display: none;
@@ -662,6 +670,14 @@
   width: 125px;
   border-radius: 5px;
   margin-bottom: 5px;
+}
+
+.home-category-list-item:hover {
+  background: rgba(255, 255, 255, .8);
+}
+
+.home-category-list-item:active{
+  background: rgba(255, 255, 255, 1);
 }
 
 .category-active {
