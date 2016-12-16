@@ -1076,8 +1076,8 @@ event76 = Event.create!(name: "Soccer 7v7", description: "1) Teams divide into e
 
 5) If you arrive late pls wait until a break in the game. Inserting players in the middle of the game disrupts the flow- it's not fair to those that arrive on time.
 
-All players must RSVP w/ payment. This goes toward light rentals, field permits, equipment and fees.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
-event77 = Event.create!(name: "Indoor 5v5 Soccer ", description: "Signup your team, or join as an individual player and we'll assign you to a cracking new team - all players receive team jerseys and trophies for finalists. Post game drinks at a local bar keep things social! ", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
+All players must RSVP w/ payment. This goes toward light rentals, field permits, equipment and fees.", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group16.id )
+event77 = Event.create!(name: "Indoor 5v5 Soccer ", description: "Signup your team, or join as an individual player and we'll assign you to a cracking new team - all players receive team jerseys and trophies for finalists. Post game drinks at a local bar keep things social! ", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group16.id )
 event78 = Event.create!(name: "Soccer 7v7", description: "1) Teams divide into equal ability.
 
 2) Footwear: Turf shoes or molded cleats are best. Proper Soccer attire only.
@@ -1143,8 +1143,8 @@ Comment.create!(user: user13 , discussion: discussion51 , body: Faker::ChuckNorr
 
 
 
-event81 = Event.create!(name: "Songsalive! New York City Showcase & Open Mic", event_time: Faker::Time.forward(14), location: Faker::Address.street_name, description: "Featuring talented songwriters from around the globe, the Songsalive! Showcases are the best industry secret, a great happening all around the world. Songsalive! Showcases are a very cozy, intimate and acoustic environment where media and music industry representatives often drop by to check out the latest talent. Showcase your music and support our national and international live events and showcases presenting songwriters and artists of original music. Showcases are quality entertainment songwriter performances around the country. All members are eligible to perform at a Songsalive!", group_id: group17.id)
-event82 = Event.create!(name: "Free Webinar: How to Plan For and Have A Successful Songwriting Business", event_time: Faker::Time.forward(14), location: Faker::Address.street_name, description: "How to Plan for and Have a Successful Songwriter Business
+event81 = Event.create!(name: "Songsalive! New York City Showcase & Open Mic", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, description: "Featuring talented songwriters from around the globe, the Songsalive! Showcases are the best industry secret, a great happening all around the world. Songsalive! Showcases are a very cozy, intimate and acoustic environment where media and music industry representatives often drop by to check out the latest talent. Showcase your music and support our national and international live events and showcases presenting songwriters and artists of original music. Showcases are quality entertainment songwriter performances around the country. All members are eligible to perform at a Songsalive!", group_id: group17.id)
+event82 = Event.create!(name: "Free Webinar: How to Plan For and Have A Successful Songwriting Business", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, description: "How to Plan for and Have a Successful Songwriter Business
 
 For songwriters and composers of original music. You will learn:
 
@@ -1153,7 +1153,7 @@ For songwriters and composers of original music. You will learn:
 3. Key factors that make a successful, thriving, financially abundant and joyful songwriter business.
 
 Plus attendees will receive a special bonus at the end.", group_id: group17.id)
-event83 = Event.create!(name: "SingSong Showcase", event_time: Faker::Time.forward(14), location: Faker::Address.street_name, description: "Have a blast, come sing with your friends and family at a free open-mic night", group_id: group17.id)
+event83 = Event.create!(name: "SingSong Showcase", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, description: "Have a blast, come sing with your friends and family at a free open-mic night", group_id: group17.id)
 event84 = Event.create!(name: "Slam Poetry In Song", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, description: "Poems converted to songs, written by slam poets, performed by our members", group_id: group17.id)
 event85 = Event.create!(name: "Write, Sing, Repeat", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, description: "Come join our professional song writers as we write together as a group, and sing together as a group", group_id: group17.id)
 
@@ -1200,14 +1200,14 @@ Comment.create!(user: user14 , discussion: discussion54 , body: Faker::ChuckNorr
 
 event86 = Event.create!(name: "Open Mic at Metropolitan Room", description: "Hi Stellar Singers,
 
-In case you missed the open mic events at the original TGFK group, here is your chance to shine. Metropolitan Room (http://metropolitanroom.com/) is an established Jazz cabaret venue which has hosted many professional singers in the industry. Every second and fourth Sunday, they have an open mic for all the aspiring performers. Do not feel intimidated. Many of our group members have sung at this venue and it was totally fun.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group18.id )
+In case you missed the open mic events at the original TGFK group, here is your chance to shine. Metropolitan Room (http://metropolitanroom.com/) is an established Jazz cabaret venue which has hosted many professional singers in the industry. Every second and fourth Sunday, they have an open mic for all the aspiring performers. Do not feel intimidated. Many of our group members have sung at this venue and it was totally fun.", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group18.id )
 event87 = Event.create!(name: "After-brunch karaoke", description: "Stellar Singers!
 
 Arranged for us to get together Sunday afternoon, August 14th, for a private room event at Radio Star Karaoke.
 
 Come join us for a fun and leisurely afternoon, and enjoy a free shot to kick off the festivities. We'll have some appetizers to nibble on as well.
 
-Only RSVP if you are certain you are coming, as they are charging us for the room. We had a number of RSVPs that were no-shows, which hurt us as we had our credit cards on the line and were the ones that were inevitably charged. Please be considerate. Last minute emergencies arise, but if we find that you are consistently RSVPing and canceling/not showing up, we will eject you from the group. Apologies for sounding heavy-handed, but we feel that it is necessary to make this a point. See ya there!", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group18.id )
+Only RSVP if you are certain you are coming, as they are charging us for the room. We had a number of RSVPs that were no-shows, which hurt us as we had our credit cards on the line and were the ones that were inevitably charged. Please be considerate. Last minute emergencies arise, but if we find that you are consistently RSVPing and canceling/not showing up, we will eject you from the group. Apologies for sounding heavy-handed, but we feel that it is necessary to make this a point. See ya there!", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group18.id )
 event88 = Event.create!(name: "Karaoke Happy Hour", description: "Stellar Singers -
 
 It's settled! We're meeting at Radio Star Karaoke. This event will be held in the open lounge area of the bar, not in a private room. Feel free to bring Plus 1s or 2s because the more the merrier, literally.
@@ -1289,14 +1289,14 @@ Even if the meetup is full, please put your name on the waitlist. I will let you
 
 Please note that meetup events are strictly for members. No +1s are allowed as reservations are made in advance and spots are assigned. First time members must confirm in writing that they will attend. Individuals that are no shows are immediately banned from the group. Additionally, those who do not respond to messages will be removed from the group.
 
-Lastly, please be aware that there is the potential for an event to be outright canceled or rescheduled last minute when low enrollment falls to 1-2 due to last minute cancellations or non-enrollment. It is the responsibility of the diner to check their messages, (I message individuals in this instance), and the event page to make sure the event is running. Thanks.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group19.id )
+Lastly, please be aware that there is the potential for an event to be outright canceled or rescheduled last minute when low enrollment falls to 1-2 due to last minute cancellations or non-enrollment. It is the responsibility of the diner to check their messages, (I message individuals in this instance), and the event page to make sure the event is running. Thanks.", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group19.id )
 event92 = Event.create!(name: "Streets BK - International Food", description: "Please don't RSVP unless you are sure you can go. I notice the people who RSVP and then cancel, which is not fair to everyone else. I reserve the right to give priority to people who don't do this in the future. I'm not trying to be mean but it makes it much harder for me when people take spots and then cancel either quickly or last minute. Obviously more notice is better, but please try to only sign up (for waitlist as well) if you know you can come. Note that if you habitually cancel you will be removed from the group.
 
 Even if the meetup is full, please put your name on the waitlist. I will let you know if a spot becomes available. Also, if there are a lot of people on the waitlist, it lets me know which kind of restaurants are popular so that I may schedule more of those in the future.
 
 Please note that meetup events are strictly for members. No +1s are allowed as reservations are made in advance and spots are assigned. First time members must confirm in writing that they will attend. Individuals that are no shows are immediately banned from the group. Additionally, those who do not respond to messages will be removed from the group.
 
-Lastly, please be aware that there is the potential for an event to be outright canceled or rescheduled last minute when low enrollment falls to 1-2 due to last minute cancellations or non-enrollment. It is the responsibility of the diner to check their messages, (I message individuals in this instance), and the event page to make sure the event is running. Thanks.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group19.id )
+Lastly, please be aware that there is the potential for an event to be outright canceled or rescheduled last minute when low enrollment falls to 1-2 due to last minute cancellations or non-enrollment. It is the responsibility of the diner to check their messages, (I message individuals in this instance), and the event page to make sure the event is running. Thanks.", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group19.id )
 event93 = Event.create!(name: "Marc Forgione - American(New)", description: "Please don't RSVP unless you are sure you can go. I notice the people who RSVP and then cancel, which is not fair to everyone else. I reserve the right to give priority to people who don't do this in the future. I'm not trying to be mean but it makes it much harder for me when people take spots and then cancel either quickly or last minute. Obviously more notice is better, but please try to only sign up (for waitlist as well) if you know you can come. Note that if you habitually cancel you will be removed from the group.
 
 Even if the meetup is full, please put your name on the waitlist. I will let you know if a spot becomes available. Also, if there are a lot of people on the waitlist, it lets me know which kind of restaurants are popular so that I may schedule more of those in the future.
@@ -1374,13 +1374,13 @@ If you love stouts then you can't miss this one!  Besides plenty of dark & delic
 
 FYI Owl Farm doesn't serve food but we will be steps away from a variety of places.  And, you can bring the food back to eat in the bar.  Also, they allow dogs.
 
-Come and join us because it's going to be really tasty! ", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group20.id )
+Come and join us because it's going to be really tasty! ", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group20.id )
 event97 = Event.create!(name: "Beer & Eats @ Treadwell Park", description: "The beer and menu are solid. There's also free popcorn and pinball machines + ping pong tables in the back.
 
 Come and join us!
 
 NOTE: We will be on the main level.
-If you go downstairs it's a cigar lounge and there's a different tab for that.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group20.id )
+If you go downstairs it's a cigar lounge and there's a different tab for that.", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group20.id )
 event98 = Event.create!(name: "Drinks after work @ Albion", description: "Solid tap list come by and have a drink.
 They don't serve food but you're welcome to bring in your own edibles.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group20.id )
 event99 = Event.create!(name: "Let's Pour Ourselves Some Drinks @ Paloma Rocket", description: "Yes, you read that correctly. You buy a card in the amount of your choice and go to any tap and pull the lever. It's a self serve bar. They charge by the ounce and you can have as much or as little of any beer!
@@ -1415,3 +1415,294 @@ Rsvp.create!(user: user15 , event: event99 )
 Rsvp.create!(user: user2 , event: event100 )
 Rsvp.create!(user: user4 , event: event100 )
 Rsvp.create!(user: user6 , event: event100 )
+
+
+
+group21 = Group.create!(name: "Passport to Ethnic Eats", description: "Calling All Adventurous Foodies,
+
+Let’s travel the world using our taste buds!
+
+One of the most wonderful things about New York City is its melting pot of ethnicities and its incredible ethnic diversity identity. You can literally travel around the world in NY without even getting on a plane. Exploring different ethnic neighborhoods and sampling their delicious ethnic dishes is a must, whether you live in NYC or are just visiting. Eating in an ethnic restaurant is about more than just the food, it’s a cultural experience that gives you a literal taste of life in another land.
+
+OUR OBJECTIVES: This group is specifically meant for those who enjoy exploring the great diversity of ethnic cuisines from all around the world in a fun, relaxed atmosphere in the company of other like-minded adventurous foodies right here in the NYC and surrounding vicinities. Together we will eat our way through a cornucopia of exotic cuisines representing all corners of the globe.
+
+OUR MEETUPS: Good food is meant to be shared. At each Meetup, we will dine FAMILY-STYLE, NO EXCEPTIONS! Attendees will have a say in the selection of a variety of dishes. Final food bill, together with tax and tips will be shared among the attendees. Any drinks are separate and are the responsibility of the drinkers. Number of attendees to our events will be kept at a small number (no more than 12) to allow everyone to get to know each other.
+
+MEETUP FEE: To help defray the cost of paying Meetup HQ to keep the site up and running, a $1.00 Meetup fee will be collected at randomly selected events.
+
+IMPORTANT GROUP RULES: A successful group is not about how many members there are in the group. It is about the quality of members in the group! We would rather have a small group of "quality members" than a huge group of "joiners" and “lurkers” who never show up to any event.", category: "food & drinks")
+
+
+
+Membership.create!(user: user8 , group: group21 )
+Membership.create!(user: user10 , group: group21 )
+Membership.create!(user: user12 , group: group21 )
+Membership.create!(user: user14 , group: group21 )
+Membership.create!(user: user1 , group: group21 )
+
+discussion61 = Discussion.create!(group: group21 , title: Faker::ChuckNorris.fact)
+discussion62 = Discussion.create!(group: group21 , title: Faker::ChuckNorris.fact)
+discussion63 = Discussion.create!(group: group21 , title: Faker::ChuckNorris.fact)
+
+Comment.create!(user: user8 , discussion: discussion61 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user10 , discussion: discussion61 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user12 , discussion: discussion61 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user14 , discussion: discussion62 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user1 , discussion: discussion62 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user8 , discussion: discussion62 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user10 , discussion: discussion63 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user12 , discussion: discussion63 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user14 , discussion: discussion63 , body: Faker::ChuckNorris.fact)
+
+event101 = Event.create!(name: "Late Lunch at The Granola Bar in Greenwich", description: "Take a break from all the holiday stress and join the foodies for a midweek brunch or lunch at the Granola Bar.  This is for the newest restaurant on Greenwich Ave in Greenwich.  Deemed very healthy fair, the menu is fun and a bit eclectic.  Besides breakfast and of course granola, they have salads, sandwiches, wraps, soups, homemade smoothies etc.  I noted quite a bit of vegetarian fare and many gluten free options.  Family friendly!", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group21.id )
+event102 = Event.create!(name: "Ralph & Rich's Round 2: Is it sauce or gravy?", description: "Annie strikes again to host Round 2 at RnR!!  Affordable and local old school Italian food since 1990 in Bridgeport!  That's the iconic Ralph 'n Rich's!  The beautiful white draperies allow for a feeling of warmth and elegance.  But the food steals the show!  They are located across the street from the Barnum Museum at 815 Main St and have free parking.  Note the wide variety of pastas, meats and fish with prices to please.  Gluten free pasta available and plenty of vegetarian options noted on both the appetizer and entrée sections of the menu.", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group21.id )
+event103 = Event.create!(name: "Bread Making Class at Wave Hill Bread Bakery!", description: "Join the foodies in learning to make a delicious three grain bread. There will be a fee charged for this meet up..
+
+This is favorite food vendor!
+
+Details will follow as soon as everything is firmed up but this will be in the afternoon and we are waiting for the price (I think it's $15 per person but not certain).  We will likely head out for dinner following our bread baking lessons.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group21.id )
+event104 = Event.create!(name: "Edo Japanese and Korean Restaurant", description: "We recently were introduced to this fun locally owned Japanese and Korean restaurant.
+
+FYI, this is a BYOB place right now but they may have liquor license by the time we are there.
+
+Please bring cash if possible to make check out a little easier. ", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group21.id )
+event105 = Event.create!(name: "Kashi Sushi Lounge", description: "Sushi. Sake. Lounge.  This place is ultra hip and is actually more lounge environment than restaurant (translation = noisy!).  However, this comes highly recommended.  Let's see if Kashi gives Westport's Pink Sumo competition in the sushi category!
+
+For the young and young at heart, group decision on where to continue the party after dinner!", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group21.id )
+
+Rsvp.create!(user: user8 , event: event101 )
+Rsvp.create!(user: user10 , event: event101 )
+Rsvp.create!(user: user12 , event: event101 )
+Rsvp.create!(user: user14 , event: event102 )
+Rsvp.create!(user: user1 , event: event102 )
+Rsvp.create!(user: user8 , event: event102 )
+Rsvp.create!(user: user10 , event: event103 )
+Rsvp.create!(user: user12 , event: event103 )
+Rsvp.create!(user: user14 , event: event103 )
+Rsvp.create!(user: user1 , event: event104 )
+Rsvp.create!(user: user8 , event: event104 )
+Rsvp.create!(user: user10 , event: event104 )
+Rsvp.create!(user: user12 , event: event105 )
+Rsvp.create!(user: user14 , event: event105 )
+Rsvp.create!(user: user1 , event: event105 )
+
+
+group22 = Group.create!(name: "NEW YORK ADVENTURE CLUB", description: "UNLOCK YOUR CITY
+
+We give you insider access to the city’s best-kept secrets. But we’re so much more than a tour company.
+
+
+
+WHO WE ARE
+
+We are a community-driven club that curates the most unique experiences in town, with a focus on history and storytelling. We show you a city you never knew existed, and offer a community you can’t live without.
+
+You won’t find our special-access tours and exclusive events anywhere else. Think after-hours tours of New York City’s most celebrated spaces, themed parties in unexpected locations, and weekend excursions to incredible destinations. All of our events end with social hangouts so you can meet people who love exploring as much as you do.
+
+
+
+THE ‘CLUB’ IN NEW YORK ADVENTURE CLUB
+
+Our current community is more than 5,000 members strong and includes everyone from recent NYC transplants to lifelong residents. Whatever borough you’re from (or city or country, for that matter), we’ll make it easy for you to take full advantage of the unique places and great people this city has to offer.", category: "outdoor adventures")
+
+
+
+Membership.create!(user: user5 , group: group22 )
+Membership.create!(user: user7 , group: group22 )
+Membership.create!(user: user9 , group: group22 )
+Membership.create!(user: user11 , group: group22 )
+Membership.create!(user: user13 , group: group22 )
+
+discussion64 = Discussion.create!(group: group22 , title: Faker::ChuckNorris.fact)
+discussion65 = Discussion.create!(group: group22 , title: Faker::ChuckNorris.fact)
+discussion66 = Discussion.create!(group: group22 , title: Faker::ChuckNorris.fact)
+
+Comment.create!(user: user5 , discussion: discussion64 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user7 , discussion: discussion64 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user9 , discussion: discussion64 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user11 , discussion: discussion65 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user13 , discussion: discussion65 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user5 , discussion: discussion65 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user7 , discussion: discussion66 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user9 , discussion: discussion66 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user11 , discussion: discussion66 , body: Faker::ChuckNorris.fact)
+
+event106 = Event.create!(name: "Garment District Behind-the-Scenes Tour With A NYC Fashion Designer", description: "Join New York Adventure Club as we join NOT fashion designer Jenny Lai for a behind-the-scenes trip through Manhattan’s Garment District to see a day in the life of a NYC Fashion Designer.
+
+Our experience will take us into street level, and hidden, fabric stores, notions stores (hardware, ribbons/trimmings), and a factory in the heart of New York’s fashion world. Along each step of the way, Jenny will discuss what fashion designers are looking for when they walk into these jungles of fabric, and the complete fashion cycle from design to retail.
+
+", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group22.id )
+event107 = Event.create!(name: "The Adventure Club Behind-the-Scenes Experience @ Grand Central Terminal", description: "Join New York Adventure Club for one of the greatest adventures in New York City: an exclusive, secret, behind-the-scenes tour of Grand Central Terminal.
+
+Several New York Adventure Club members will go on the ultimate NY Adventure Club experience, which includes a visit to the glass catwalks, Operations Control Center, Situation Room, spiral staircase underneath the main information booth, M42 Substation that powers the terminal, Locomotive Simulator Room, and even the secret FDR tracks underneath the Waldorf-Astoria.
+
+While this tour is only meant for VIPs, major institutions, or specific educational groups, NY Adventure Club’s strong relationship with GCT allows us to piggy-back on an official tour.
+
+Click here to see pictures from one of our last Grand Central Terminal experiences!
+
+", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group22.id )
+event108 = Event.create!(name: "The New York Adventure Club 3 Year Anniversary Celebration @ The Secret Bar", description: "Join New York Adventure Club for our 3 Year Anniversary Celebration at a secret bar in Midtown East that has been home to our monthly happy hours since 2014!
+
+While the bar is usually only open on Tuesdays and Thursdays, we’re opening it up just for this Friday night celebration, which will also double as the Founder’s birthday party!
+
+The secret bar is inside an active military facility, and while one-day bar membership cards usually cost $10, the fee will be waived for this very special occasion. 2017 annual membership cards can be purchased for $30 (+ one free drink), which will grant you access inside the bar any Tuesday or Thursday. 100% of the money generated from membership cards and drinks goes towards supporting the troops.
+
+Full details of the secret bar including its location will be provided in the confirmation email upon RSVPing.
+
+", event_time: Faker::Time.forward(60), location:"
+Undisclosed Location", group_id: group22.id )
+event109 = Event.create!(name: "Behind-the-Scenes @ The National Arts Club & 1844 Gilded Age Tilden Mansion", description: "Join New York Adventure Club for an exclusive behind-the-scenes tour of the historic National Arts Club, a private club founded in 1898 dedicated to stimulating, fostering, and promoting public interest in the arts and to educate the American people in the fine arts.
+
+Led by the National Arts Club historian, our experience will include:
+
+* An overview of the house’s rich history and story, from its development for New York Governor Samuel Tilden in 1844, to the home of the National Arts Club in 1906.
+
+* A walkthrough of the historic rooms inside the landmarked Samuel Tilden Mansion at Gramercy Park South, such as the former library, dining room, and parlors.
+
+* A look at John LaFarge stained glass panels, Ellin and Kitson sculptures, and the famous Donald MacDonald stained glass domed library, now the clubhouse bar.
+
+* A NYAC-only look at Donald MacDonald's stained glass domed library from the second floor
+
+", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group22.id )
+event110 = Event.create!(name: " Discussions  More Join us!
+NYAC Book Club Meet Up: Sweetbitter", description: "The NY Adventure Club Book Club (ACBC) is excited to read our first fiction selection — Sweetbitter by Stephanie Danler!
+
+Please bring your reflections on the book to aid in lively and engaging discussion.
+
+**Solas Bar is cash only.
+
+***Click here if you would like to be added to the Adventure Club Book Club email list for future book selections and information.
+
+—–
+
+About the Book
+
+Twenty-two, and knowing no one, Tess leaves home to begin her adult life in New York City. Thus begins a year that is both enchanting and punishing, in a low-level job at “the best restaurant in New York City.” Grueling hours and a steep culinary learning curve awaken her to the beauty of oysters, the finest Champagnes, the appellations of Burgundy. At the same time, she opens herself to friendships—and love—set against the backdrop of dive bars and late nights.  As her appetites sharpen—for food and wine, but also for knowledge, experience, and belonging—Tess is drawn into a darkly alluring love triangle that will prove to be her most exhilarating and painful lesson of all.
+
+Stephanie Danler deftly conjures the nonstop and purely adrenalized world of the restaurant—conversations interrupted, phrases overheard, and suggestions below the surface. Evoking the infinite possibility of being young in New York with heart-stopping accuracy, Sweetbitter is ultimately about the power of what remains after disillusionment, and the wisdom that comes from experience, sweet and bitter.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group22.id )
+
+Rsvp.create!(user: user5 , event: event106 )
+Rsvp.create!(user: user7 , event: event106 )
+Rsvp.create!(user: user9 , event: event106 )
+Rsvp.create!(user: user11 , event: event107 )
+Rsvp.create!(user: user13 , event: event107 )
+Rsvp.create!(user: user5 , event: event107 )
+Rsvp.create!(user: user7 , event: event108 )
+Rsvp.create!(user: user9 , event: event108 )
+Rsvp.create!(user: user11 , event: event108 )
+Rsvp.create!(user: user13 , event: event109 )
+Rsvp.create!(user: user5 , event: event109 )
+Rsvp.create!(user: user7 , event: event109 )
+Rsvp.create!(user: user9 , event: event110 )
+Rsvp.create!(user: user11 , event: event110 )
+Rsvp.create!(user: user13 , event: event110 )
+
+group23 = Group.create!(name: "Bodhi Meditation", description: "The American Bodhi Meditation Society is a non-profit organization that teaches meditation for health and wellness.  Bodhi Meditations are 30 minute guided visualizations characterized by soothing music and beautiful imagery that assist in calming your mind, relaxing your body, and increasing your wellbeing.  There are sitting, standing and walking meditations to appeal to those seeking different levels of physical activity.", category: "health & fitness")
+
+
+
+Membership.create!(user: user15 , group: group23 )
+Membership.create!(user: user2 , group: group23 )
+Membership.create!(user: user4 , group: group23 )
+Membership.create!(user: user6 , group: group23 )
+Membership.create!(user: user8 , group: group23 )
+
+discussion67 = Discussion.create!(group: group23 , title: Faker::ChuckNorris.fact)
+discussion68 = Discussion.create!(group: group23 , title: Faker::ChuckNorris.fact)
+discussion69 = Discussion.create!(group: group23 , title: Faker::ChuckNorris.fact)
+
+Comment.create!(user: user15 , discussion: discussion67 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user2 , discussion: discussion67 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user4 , discussion: discussion67 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user6 , discussion: discussion68 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user8 , discussion: discussion68 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user15 , discussion: discussion68 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user2 , discussion: discussion69 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user4 , discussion: discussion69 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user6 , discussion: discussion69 , body: Faker::ChuckNorris.fact)
+
+event111 = Event.create!(name: "Bagua Walking Meditation Class", description: "It will energize and strengthen the body while calming the mind, and refining and purifying the spirit. The exercise will open and harmonize the meridians of the body and promote overall fitness.", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group23.id )
+event112 = Event.create!(name: "Virtual Meditation Session", description: "The regular virtual meditation practice will be at 9:30 p.m. – 10:15 p.m. Monday through Thursday, New York Time. Participants will practice Meditation of Greater Illumination Monday through Wednesday and Meditation of Purity on Thursdays. Thank you for your continued enthusiasm for Virtual Bodhi Meditation practice. Your suggestions to keep the virtual practitioners’ community live and beneficial for all are always welcome. For more information regarding virtual Bodhi Meditation or request to participate, contact Lan Ma via [masked].", event_time: Faker::Time.backward(14), location: Faker::Address.street_name, group_id: group23.id )
+event113 = Event.create!(name: "Office Zen Lunchtime Wellness Series", description: "De-stress and recharge during this hour-long session.  Practice a 30 minute guided meditation to clear the mind and loosen the body, then relax afterward to receive the benefits of your practice.  This session is specifically designed to help busy people integrate tools for relaxation into their lives.
+
+Companies such as Google and Aetna have implemented mindfulness courses with great results, with employees reporting less stress, increased clarity of mind and improved quality of life.
+
+Please wear comfortable clothes that you can easily sit or lie down, as there will be time at the end of practice to lie down and relax.  We recommend that you have a light snack up to 30 minutes before the session and then have lunch afterward.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group23.id )
+event114 = Event.create!(name: "Introduction to Bodhi Meditation
+", description: "Learn about the practice and benefits of Bodhi Meditation. Experience a 30 minute guided meditation designed to deeply relax the mind and body.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group23.id )
+event115 = Event.create!(name: "Bagua Walking Meditation Class
+", description: "It will energize and strengthen the body while calming the mind, and refining and purifying the spirit. The exercise will open and harmonize the meridians of the body and promote overall fitness.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group23.id )
+
+Rsvp.create!(user: user15 , event: event111 )
+Rsvp.create!(user: user2 , event: event111 )
+Rsvp.create!(user: user4 , event: event111 )
+Rsvp.create!(user: user6 , event: event112 )
+Rsvp.create!(user: user8 , event: event112 )
+Rsvp.create!(user: user15 , event: event112 )
+Rsvp.create!(user: user2 , event: event113 )
+Rsvp.create!(user: user4 , event: event113 )
+Rsvp.create!(user: user6 , event: event113 )
+Rsvp.create!(user: user8 , event: event114 )
+Rsvp.create!(user: user15 , event: event114 )
+Rsvp.create!(user: user2 , event: event114 )
+Rsvp.create!(user: user4 , event: event115 )
+Rsvp.create!(user: user6 , event: event115 )
+Rsvp.create!(user: user8 , event: event115 )
+
+
+group24 = Group.create!(name: "Say YES to Your Life!", description: "This is a group where you can meet like minded people who are interested in living life in each moment and Saying Yes to what ever is showing up in our lives. We have found that the more we practice living in the moment the more we are centered in ourselves no matter how life is showing up. Thanks to the teachings of Ariel and Shya Kane we have the tools to do it. Join us for our fun and lively gatherings!", category: "health & fitness")
+
+
+
+Membership.create!(user: user10 , group: group16 )
+Membership.create!(user: user12 , group: group16 )
+Membership.create!(user: user14 , group: group16 )
+Membership.create!(user: user1 , group: group16 )
+Membership.create!(user: user3 , group: group16 )
+
+discussion70 = Discussion.create!(group: group16 , title: Faker::ChuckNorris.fact)
+discussion71 = Discussion.create!(group: group16 , title: Faker::ChuckNorris.fact)
+discussion72 = Discussion.create!(group: group16 , title: Faker::ChuckNorris.fact)
+
+Comment.create!(user: user10 , discussion: discussion70 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user12 , discussion: discussion70 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user14 , discussion: discussion70 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user1 , discussion: discussion71 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user3 , discussion: discussion71 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user10 , discussion: discussion71 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user12 , discussion: discussion72 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user14 , discussion: discussion72 , body: Faker::ChuckNorris.fact)
+Comment.create!(user: user1 , discussion: discussion72 , body: Faker::ChuckNorris.fact)
+
+event116 = Event.create!(name: "Forgiveness & New Beginnings", description: "The definition of forgiveness is to give up the right to punish, to cancel a debt - make as if it never happened. Wouldn't it be nice to live your life without past regrets or grudges? Most of us do not realize that when we forgive someone, we are actually freeing ourselves. When we forgive, we extricate ourselves from the entanglement of a disturbing situation or circumstance. Join us to discuss the miraculous healing tool of true forgiveness and the possibilities it opens up.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
+event117 = Event.create!(name: "Listening as an Act of Kindness", description: "True listening, without judgment for another, is one of the simplest and yet most rare gifts in life. We define true listening as actively listening to another with the intention of hearing what is being said from the other's point of view. Join us to explore and discover how this simple act can be a catalyst for kindness to oneself and to others.", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
+event118 = Event.create!(name: "Live Like You Were Dying", description: "... And I loved deeper, and I spoke sweeter, and I gave forgiveness I’ve been denying, and he said someday I hope you get the chance, to live like you were dyin. – Tim McGraw, Live Like You Were Dying
+
+
+Join us to explore how to get the most out of each moment, without needing a life-threatening event or dire circumstances to remind you that you are alive.
+
+Here is the link to an episode of Ariel & Shya Kane's radio show, Being Here titled Live Like Your Were Dying.  This was our inspiration for this month's meetup: ", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
+event119 = Event.create!(name: "Enlightenment 101", description: "When you are truly Being Here your life transforms in an instant and, practically speaking, you are enlightened. Practical Enlightenment  - Ariel & Shya Kane.
+
+Enlightenment isn't a mystical state that requires years of effort to achieve. It is a practical lifestyle that you can have right now. When you discover how to access the current moment - rather than your thoughts, judgments or ideas about how life should be - problems, anxiety, stress and worry cease to dominate your life; your past no longer dictates your present or future and you experience your own perfection. Join us and experience that enlightenment can happen to anyone, anywhere, not just for those meditating on a mountaintop - no effort required!", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
+event120 = Event.create!(name: "Relationships Made EASY!", description: "It only takes an instant to transform your ability to relate. At this meetup, you will discover what is at the heart of experiencing magic in all of your relationships, especially the one with yourself. If you are interested in having life be stress-free, productive, passionate and most of all - fun! Saying YES to your life is a great way to drop those automatic, habitual complaints and discover both your own brilliance and the beauty of the current moment.
+
+Being a YES to how your life is showing up and not wishing it were different allows you to be the author of your life, rather than the victim of it.   New possibilities appear that never existed before!
+
+", event_time: Faker::Time.forward(60), location: Faker::Address.street_name, group_id: group16.id )
+
+Rsvp.create!(user: user10 , event: event116 )
+Rsvp.create!(user: user12 , event: event116 )
+Rsvp.create!(user: user14 , event: event116 )
+Rsvp.create!(user: user1 , event: event117 )
+Rsvp.create!(user: user3 , event: event117 )
+Rsvp.create!(user: user10 , event: event117 )
+Rsvp.create!(user: user12 , event: event118 )
+Rsvp.create!(user: user14 , event: event118 )
+Rsvp.create!(user: user1 , event: event118 )
+Rsvp.create!(user: user3 , event: event119 )
+Rsvp.create!(user: user10 , event: event119 )
+Rsvp.create!(user: user12 , event: event119 )
+Rsvp.create!(user: user14 , event: event120 )
+Rsvp.create!(user: user1 , event: event120 )
+Rsvp.create!(user: user3 , event: event120 )
