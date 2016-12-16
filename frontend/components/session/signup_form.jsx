@@ -77,7 +77,7 @@ class SignUpForm extends React.Component{
             </label>
             <label className='signup-label'>Password
               <br/>
-              <input type='text' onChange={this.update("password")} value={this.state.password} />
+              <input type='password' onChange={this.update("password")} value={this.state.password} />
             </label>
             <input className='signup-button' type='submit' onClick={this.handleSubmit} value="Sign Up" />
           </form>

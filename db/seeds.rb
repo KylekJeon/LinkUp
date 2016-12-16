@@ -16,21 +16,21 @@ Discussion.destroy_all
 Comment.destroy_all
 
 
-user1 = User.create!(username: "guest", password: "guest123", email: "dcolson@gmail.com", first_name: "Daniel", last_name: "Colson")
-user2 = User.create!(username: "treeshadow", password: "password", email: "treeshadow@gmail.com", first_name: "Rahul", last_name: "Doshi"  )
-user3 = User.create!(username: "edibledefended", password: "password", email: "edibledefended@gmail.com", first_name: "Stephen", last_name: "Mauer")
-user4 = User.create!(username: "volunteercapitalist", password: "password", email: "volunteercapitalist@gmail.com", first_name: "Jonathan", last_name: "Slawitsky")
-user5 = User.create!(username: "banjosrudhall", password: "password", email: "banjosrudhall@gmail.com", first_name: "Peter", last_name: "Tascio")
-user6 = User.create!(username: "taylorracehorse", password: "password", email: "taylorracehorse@gmail.com", first_name: "Sean", last_name: "Garner" )
-user7 = User.create!(username: "spottyvacuole", password: "password", email: "spottyvacuole@gmail.com", first_name: "Kevin", last_name: "Zhang" )
-user8 = User.create!(username: "aerobicsinvitation", password: "password", email: "aerobicsinvitation@gmail.com", first_name: "Kenneth", last_name: "Chen" )
-user9 = User.create!(username: "hydrocarbonreed", password: "password", email: "hydrocarbonreed@gmail.com", first_name: "Chris", last_name: "Shay" )
-user10 = User.create!(username: "crayongoose", password: "password", email: "crayongoose@gmail.com", first_name: "Duncan", last_name: "Beebe" )
-user11 = User.create!(username: "sunnybacon", password: "password", email: "sunnybacon@gmail.com", first_name: "Leslie", last_name: "Brown" )
-user12 = User.create!(username: "bipolarshampoo", password: "password", email: "bipolarshampoo@gmail.com", first_name: "Bethany" , last_name: "Hyland"  )
-user13 = User.create!(username: "jazzcorky", password: "password", email: "jazzcorky@gmail.com", first_name: "Cici", last_name: "Wen" )
-user14 = User.create!(username: "blisterhypnosis", password: "password", email: "blisterhypnosis@gmail.com", first_name: "Allie", last_name: "Harris"  )
-user15 = User.create!(username: "springsremain", password: "password", email: "springsremain@gmail.com", first_name: "Amy", last_name: "Fang"  )
+user1 = User.create!(username: "user1", password: "guest123", email: "dcolson@gmail.com", first_name: "Daniel", last_name: "Colson")
+user2 = User.create!(username: "user2", password: "password", email: "treeshadow@gmail.com", first_name: "Rahul", last_name: "Doshi"  )
+user3 = User.create!(username: "user3", password: "password", email: "edibledefended@gmail.com", first_name: "Stephen", last_name: "Mauer")
+user4 = User.create!(username: "user4", password: "password", email: "volunteercapitalist@gmail.com", first_name: "Jonathan", last_name: "Slawitsky")
+user5 = User.create!(username: "user5", password: "password", email: "banjosrudhall@gmail.com", first_name: "Peter", last_name: "Tascio")
+user6 = User.create!(username: "user6", password: "password", email: "taylorracehorse@gmail.com", first_name: "Sean", last_name: "Garner" )
+user7 = User.create!(username: "user7", password: "password", email: "spottyvacuole@gmail.com", first_name: "Kevin", last_name: "Zhang" )
+user8 = User.create!(username: "user8", password: "password", email: "aerobicsinvitation@gmail.com", first_name: "Kenneth", last_name: "Chen" )
+user9 = User.create!(username: "user9", password: "password", email: "hydrocarbonreed@gmail.com", first_name: "Chris", last_name: "Shay" )
+user10 = User.create!(username: "user10", password: "password", email: "crayongoose@gmail.com", first_name: "Duncan", last_name: "Beebe" )
+user11 = User.create!(username: "user11", password: "password", email: "sunnybacon@gmail.com", first_name: "Leslie", last_name: "Brown" )
+user12 = User.create!(username: "user12", password: "password", email: "bipolarshampoo@gmail.com", first_name: "Bethany" , last_name: "Hyland"  )
+user13 = User.create!(username: "user13", password: "password", email: "jazzcorky@gmail.com", first_name: "Cici", last_name: "Wen" )
+user14 = User.create!(username: "user14", password: "password", email: "blisterhypnosis@gmail.com", first_name: "Allie", last_name: "Harris"  )
+user15 = User.create!(username: "user15", password: "password", email: "springsremain@gmail.com", first_name: "Amy", last_name: "Fang"  )
 
 
 
