@@ -97,7 +97,7 @@ class HomePageEvents extends React.Component {
           <Link to={`/groups/${event.groupId}`} className='front-page-group-link'>Hosted by: {event.groupName}</Link>
           <span>Location: {event.location}</span>
           <span>Time: {event.timeOfDay}</span>
-          <p>About: {createParagraphs(event.description)}</p>
+          <span>About: {createParagraphs(event.description)}</span>
         </li>
       ));
       return (

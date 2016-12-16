@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
   errors: state.groups.errors,
   currentUser: state.session.currentUser,
   currentGroupAdmins: state.groups.currentGroupAdmins,
-  currentGroupAdminIds: selectUserIds(state.groups.currentGroupAdmins)
+  currentGroupAdminIds: selectUserIds(state.groups.currentGroupAdmins),
 });
 
 const mapDispatchToProps = (dispatch) => ({

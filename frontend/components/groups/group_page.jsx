@@ -91,7 +91,7 @@ class GroupPage extends React.Component {
     let joinButton;
     let eventButton;
     let editButton;
-    let forumButton = <Link className='group-forum-button' to={`/groups/${this.props.group.id}/forum`}>Group Forum</Link>;
+    let forumButton;
 
     if(this.props.users[0]){
       userList = this.props.users.map( (user) => {
@@ -108,6 +108,7 @@ class GroupPage extends React.Component {
         joinButton = <button className='group-join-button' onClick={this.addUserToGroup}>Join Us!</button>;
       } else {
         joinButton = <button className='group-join-button' onClick={this.removeUserFromGroup}>Leave Group</button>;
+        forumButton = <Link className='group-forum-button' to={`/groups/${this.props.group.id}/forum`}>Group Forum</Link>;
       }
     }
 
