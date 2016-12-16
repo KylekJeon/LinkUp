@@ -631,3 +631,39 @@
   background: none;
   margin-left: 100px;
 }
+
+.search-category {
+  width: 145px;
+  height: 40px;
+  margin-left: 10px;
+  background: rgba(41, 165, 153, .8);
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  float: left;
+  position: relative;
+}
+
+.home-category-list {
+  position: absolute;
+  width: 145px;
+  background: rgba(243, 216, 111, .9);
+  color: black;
+  padding: 10px;
+  top: -100px;
+  right: -160px;
+  border-radius: 5px;
+  display: none;
+}
+
+.home-category-list-item {
+  font-family: "Courgette", arial;
+  background: rgba(255, 255, 255, .6);
+  width: 125px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.category-active {
+  display: block;
+}

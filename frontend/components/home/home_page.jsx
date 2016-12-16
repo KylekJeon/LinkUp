@@ -15,7 +15,8 @@ class HomePage extends React.Component {
       whichDisplay: "currentUserGroupEvents",
       query: "",
       city: "New York",
-      citySelector: false
+      citySelector: false,
+      categoryVisible: false
     };
     this.toggleGroup = this.toggleGroup.bind(this);
     this.toggleCalendar = this.toggleCalendar.bind(this);
@@ -26,6 +27,8 @@ class HomePage extends React.Component {
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
     this.showCities = this.showCities.bind(this);
     this.changeCities = this.changeCities.bind(this);
+    this.submitCategory = this.submitCategory.bind(this);
+    this.toggleCategory = this.toggleCategory.bind(this);
   }
 
   componentDidMount() {
@@ -40,6 +43,13 @@ class HomePage extends React.Component {
       currentUserGroups: nextProps.currentUserGroups,
       currentUserGroupEvents: nextProps.currentUserGroupEvents
     });
+  }
+
+  submitCategory(category){
+    category = category.split(" ").join("_");
+    return (e) => (
+      this.props.router.push(`/home/search/${category}`)
+    );
   }
 
   handleSearch(e){
@@ -85,6 +95,14 @@ class HomePage extends React.Component {
     e.preventDefault();
     this.props.fetchCurrentUserGroupEvents();
     this.setState({ whichDisplay: "currentUserGroupEvents"});
+  }
+
+  toggleCategory(){
+    if (this.state.categoryVisible){
+      this.setState({ categoryVisible: false });
+    } else {
+      this.setState({ categoryVisible: true });
+    }
   }
 
   toggleGroup() {
@@ -159,6 +177,15 @@ class HomePage extends React.Component {
       cityClass = cityClass + " city-active";
     }
 
+    const categories = ["sports", "music", "health & fitness", "outdoor adventures", "arts", "social", "career & business", "food & drinks"];
+    const categoryList = categories.map((category, idx) => (
+      <li key={idx} className='home-category-list-item' onClick={this.submitCategory(category)}>{category}</li>
+    ));
+
+    let categoryListClass = "home-category-list ";
+    if(this.state.categoryVisible){
+      categoryListClass = categoryListClass + " category-active";
+    }
 
 
     return (
@@ -183,6 +210,11 @@ class HomePage extends React.Component {
           <form className='search-bar group'>
             <input className='search-bar-input' type='text' value={this.state.query} onChange={this.handleSearch}/>
             <button className='search-button' onClick={this.handleSearchSubmit}>Search LinkUps</button>
+            <button className='search-category' onClick={this.toggleCategory}>Search Categories
+              <ul className={categoryListClass}>
+                {categoryList}
+              </ul>
+            </button>
             <button onClick={this.toggleCalendar} className={calendar}>Calendar</button>
             <button onClick={this.toggleGroup} className={group}>Groups</button>
           </form>

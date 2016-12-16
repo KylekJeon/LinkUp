@@ -23,10 +23,10 @@ class Group < ActiveRecord::Base
   has_many :admins
   has_many :administrators, through: :admins, source: :user
   has_many :discussions
-  
 
 
-  pg_search_scope :search_group, against: [:name, :description], using: {
+
+  pg_search_scope :search_group, against: [:name, :description, :category], using: {
     tsearch: {prefix: true, dictionary: "english", any_word: true}
   }
 
