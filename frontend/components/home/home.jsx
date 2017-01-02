@@ -46,7 +46,6 @@ class Home extends React.Component {
               <button onClick={this.toggleProfileDrop} className='front-header-nav-profile'><img src={window.assets.profileIcon}/>
                 <ul className={profileClass}>
                   <Link to={`/users/${this.state.userId}`}><li>Profile</li></Link>
-                  <Link to='/'><li>Settings</li></Link>
                   <li onClick={this.props.logout}>Log Out</li>
                 </ul>
               </button>
