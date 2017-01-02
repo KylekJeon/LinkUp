@@ -12,7 +12,7 @@ Linkups are groups created by users to bring together like-minded individuals wh
 
 Groups are rendered in 5 different component/container pairs, with a component for The group header/description and user-list being the parent component, and one of group-events, group-calendar, group-forum, and group-edit pages being a child component nested underneath the overarching group-page container.
 
-![image of group page](wireframes/Group_page_wireframe.png)
+![image of group page](docs/wireframes/Group_page_wireframe.png)
 
 Based on the buttons of the header, the rendered child component is decided, by using react-router to go to the route path that holds the child container. The Layout of having the group header and side-bar in place with a central portion of the page left to render dynamic content allows for a clean look and a clean architecture.
 
@@ -24,7 +24,7 @@ Events are nested underneath the group page, and replace the content of the grou
 
 Because Events require their own logic and props, It was a class component vs a functional compnent.
 
-![image of event page](wireframes/event_page.png)
+![image of event page](docs/wireframes/event_page.png)
 
 
 ### Homepage - tying it all together
@@ -38,7 +38,7 @@ If you toggle the group button, then it renders a container which holds all of t
 On the nav bar, you have a link to create a new Linkup, a button to log out or view your profile page, and a logo link that takes you back to the home page, which are present in every page on the website once you are logged in.
 
 
-![image of home page](wireframes/home_page.png)
+![image of home page](docs/wireframes/home_page.png)
 
 
 
