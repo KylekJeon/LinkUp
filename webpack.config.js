@@ -7,6 +7,8 @@ new Webpack.DefinePlugin({
   }
 });
 
+new Webpack.optimize.UglifyJsPlugin();
+
 module.exports = {
   context: __dirname,
   entry: "./frontend/linkup.jsx",
