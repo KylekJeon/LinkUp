@@ -3,6 +3,7 @@ json.array! @discussions do |discussion|
   json.id discussion.id
   json.time discussion.created_at.strftime("%I:%M%p, %b %d")
   json.comments discussion.comments do |comment|
+    json.id comment.id
     json.body comment.body
     json.time comment.created_at.strftime("%I:%M%p, %b %d")
     json.discussion_id comment.discussion_id

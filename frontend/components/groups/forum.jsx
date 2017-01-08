@@ -70,9 +70,9 @@ class Forum extends React.Component{
   }
 
   makeComments(comments, discussionId){
-    const commentsList = comments.map((comment) => (
+    const commentsList = comments.map((comment, idx) => (
       <li key={comment.id} className='forum-comments-item group'>
-        <div className='forum-comments-item-header group'>
+        <div  key={comment.id} className='forum-comments-item-header group'>
           <img className='forum-profile-photo' src={comment.user_image_url}/>
           <h2>{comment.user_first_name} {comment.user_last_name}</h2>
           <div>{comment.time}</div>
@@ -90,8 +90,8 @@ class Forum extends React.Component{
       const discussions = this.props.discussions;
       for(let i = 0; i < this.props.discussions.length; i++){
         if(this.state.selected === i){
-          discussionList.push(<div><li onClick={this.handleclick(i)} key={i} className="forum-discussion-item group active-discussion">
-            <div>Posted {discussions[i].time}</div>
+          discussionList.push(<div key={i}><li onClick={this.handleclick(i)} key={i} className="forum-discussion-item group active-discussion">
+            <div key={discussions[i].id}>Posted {discussions[i].time}</div>
             <h1>{discussions[i].title}</h1>
             <ul className='forum-comment-list'>
               {this.makeComments(discussions[i].comments, discussions[i].id)}
@@ -104,7 +104,7 @@ class Forum extends React.Component{
           </div>);
         } else {
           discussionList.push(<li onClick={this.handleClick(i)} key={i} className="forum-discussion-item group">
-            <div>Posted {discussions[i].time}</div>
+            <div key={discussions[i].id}>Posted {discussions[i].time}</div>
             <h1>{discussions[i].title}</h1>
             </li>);
         }
