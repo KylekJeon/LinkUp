@@ -1,4 +1,11 @@
 const path = require('path');
+const Webpack = require('webpack');
+
+new Webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify('production')
+  }
+});
 
 module.exports = {
   context: __dirname,
