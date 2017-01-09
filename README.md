@@ -1,6 +1,6 @@
 #LinkUp
 
-[LinkUp Live](https://linkupapplication.herokuapp.com)
+[LinkUp Live](https://linkup.city)
 
 LinkUp is a full-stack web application inspired by Meetup. It utilizes Ruby on Rails on the backend, a PostgreSQL databse, and React.js with a redux architectural framework on the frontend.
 

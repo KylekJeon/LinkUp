@@ -1,13 +1,5 @@
 const path = require('path');
-const Webpack = require('webpack');
-
-new Webpack.DefinePlugin({
-  'process.env': {
-    NODE_ENV: JSON.stringify('production')
-  }
-});
-
-new Webpack.optimize.UglifyJsPlugin();
+const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
@@ -18,6 +10,18 @@ module.exports = {
     devtoolModuleFilenameTemplate: '[resourcePath]',
     devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
   },
+  plugins:[
+    new webpack.DefinePlugin({
+      'process.env':{
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress:{
+        warnings: true
+      }
+    })
+  ],
   module: {
     loaders: [
       {
