@@ -130,6 +130,11 @@
   margin-bottom: 10px;
 }
 
+.content-header-nextlinkup span {
+    font-size: 14px;
+}
+
+
 
 
 .content-header-nextlinkup {
@@ -139,6 +144,7 @@
   box-sizing: border-box;
   float: left;
   margin-top: 15px;
+  position: relative;
 }
 
 
@@ -175,6 +181,8 @@
   font-family: "Lato", sans-serif;
   float: right;
   margin-top: 30px;
+  height: 500px;
+  position: relative;
 }
 
 .content-header-calendar-location > h3 {
@@ -682,4 +690,11 @@
 
 .category-active {
   display: block;
+}
+
+#home-map{
+  width: 280px;
+  height: 180px;
+  position: absolute;
+  left: -80px;
 }

@@ -12,4 +12,6 @@ json.array! @events do |event|
   json.year event.event_time.strftime("%Y").to_i
   json.month event.event_time.strftime("%m").to_i - 1
   json.day event.event_time.strftime("%d").to_i
+  json.latitude event.latitude
+  json.longitude event.longitude
 end

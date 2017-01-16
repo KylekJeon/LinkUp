@@ -43,6 +43,18 @@ class HomePage extends React.Component {
       currentUserGroups: nextProps.currentUserGroups,
       currentUserGroupEvents: nextProps.currentUserGroupEvents
     });
+    const latitude = parseFloat(nextProps.currentUserNextEvent.latitude);
+    const longitude = parseFloat(nextProps.currentUserNextEvent.longitude);
+    const myLatLng = {lat: latitude, lng: longitude};
+    const mapOptions = {
+      center: myLatLng,
+      zoom: 16,
+    };
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    const marker = new google.maps.Marker({
+      position: myLatLng,
+      map: this.map
+    });
   }
 
   submitCategory(category){
@@ -196,12 +208,14 @@ class HomePage extends React.Component {
               <div className='content-header-nextlinkup'>
                 <h4 className='content-header-text-header'>YOUR NEXT MEETUP</h4>
                 <Link to={`/groups/${this.props.currentUserNextEvent.groupId}/events/${this.props.currentUserNextEvent.id}`}><h3>Event: {this.props.currentUserNextEvent.name}</h3></Link>
-              <Link to={`/groups/${this.props.currentUserNextEvent.groupId}`}><h5>Hosted By: {this.props.currentUserNextEvent.groupName}</h5></Link>
+                <Link to={`/groups/${this.props.currentUserNextEvent.groupId}`}><h5>Hosted By: {this.props.currentUserNextEvent.groupName}</h5></Link>
+                <span>{this.props.currentUserNextEvent.datetime}</span>,
+                <span>{this.props.currentUserNextEvent.timeOfDay}</span>
+                <br/>
+                <span>Location: {this.props.currentUserNextEvent.location}</span>
               </div>
               <div className='content-header-calendar-location'>
-                <h3>Date: {this.props.currentUserNextEvent.datetime}</h3>
-                <h3>Time: {this.props.currentUserNextEvent.timeOfDay}</h3>
-                <h3>Location: {this.props.currentUserNextEvent.location}</h3>
+                <div id='home-map' ref={ map => this.mapNode = map}></div>
               </div>
             </div>
           </div>
