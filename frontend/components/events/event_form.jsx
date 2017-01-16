@@ -101,7 +101,6 @@ class EventForm extends React.Component {
       map.fitBounds(bounds);
       map.setZoom(15);
       const location = places[0].address_components[0].long_name + " " + places[0].address_components[1].long_name;
-      debugger
       const latitude = places[0].geometry.viewport.f.b;
       const longitude = places[0].geometry.viewport.b.b;
       that.setState({ latitude: latitude, longitude: longitude});

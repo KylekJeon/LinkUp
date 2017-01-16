@@ -44,7 +44,6 @@ class Api::EventsController < ApplicationController
 
 
   def create
-    debugger
     @event = Event.new(event_params)
     @event.group_id = params[:group_id]
     if @event.save
