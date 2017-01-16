@@ -21,6 +21,18 @@ class EventPage extends React.Component {
     } else if (this.props.currentEventUsers.length !== nextProps.currentEventUsers.length) {
       nextProps.fetchCurrentEventUsers(nextProps.currentEventId);
     }
+    const latitude = parseFloat(nextProps.currentEvent.latitude);
+    const longitude = parseFloat(nextProps.currentEvent.longitude);
+    const myLatLng = {lat: latitude, lng: longitude};
+    const mapOptions = {
+      center: myLatLng,
+      zoom: 16,
+    };
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    const marker = new google.maps.Marker({
+      position: myLatLng,
+      map: this.map
+    });
   }
 
   addUserToEvent(e){
@@ -75,6 +87,7 @@ class EventPage extends React.Component {
               <span className='event-page-time'>Time:   {this.props.currentEvent.timeOfDay}</span>
             </div>
             <div className='event-page-location'>Location: {this.props.currentEvent.location}</div>
+            <div id='map-container' ref={ map => this.mapNode = map}></div>
             <div className='event-page-description'>
               <span>What We're Doing</span>
               {createParagraphs(this.props.currentEvent.description)}

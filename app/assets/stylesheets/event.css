@@ -175,3 +175,9 @@
 .event-edit-button:active {
   background: rgba(233, 206, 100, 1);
 }
+
+#map-container{
+  margin-top: 20px;
+  width: 400px;
+  height: 300px;
+}

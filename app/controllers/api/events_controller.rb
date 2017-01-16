@@ -44,6 +44,7 @@ class Api::EventsController < ApplicationController
 
 
   def create
+    debugger
     @event = Event.new(event_params)
     @event.group_id = params[:group_id]
     if @event.save
@@ -69,7 +70,7 @@ class Api::EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :location, :event_time, :description)
+    params.require(:event).permit(:name, :location, :event_time, :description, :latitude, :longitude)
   end
 
 end

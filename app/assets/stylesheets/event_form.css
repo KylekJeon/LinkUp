@@ -90,16 +90,6 @@
 }
 
 
-.event-form-location {
-  background: white;
-  width: 260px;
-  height: 30px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  padding-left: 5px;
-  font-size: 16px;
-}
 
 .event-form-time {
   background: white;
@@ -134,4 +124,19 @@
 
 .event-form-button:active {
   background: rgba(41, 165, 153, 1);
+}
+#search-map {
+  width: 250px;
+  height: 200px;
+}
+
+#event-form-location {
+  background: white;
+  width: 260px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 16px;
 }
