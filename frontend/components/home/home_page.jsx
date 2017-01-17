@@ -208,11 +208,8 @@ class HomePage extends React.Component {
               <div className='content-header-nextlinkup'>
                 <h4 className='content-header-text-header'>YOUR NEXT MEETUP</h4>
                 <Link to={`/groups/${this.props.currentUserNextEvent.groupId}/events/${this.props.currentUserNextEvent.id}`}><h3>Event: {this.props.currentUserNextEvent.name}</h3></Link>
-                <Link to={`/groups/${this.props.currentUserNextEvent.groupId}`}><h5>Hosted By: {this.props.currentUserNextEvent.groupName}</h5></Link>
-                <span>{this.props.currentUserNextEvent.datetime}</span>,
-                <span>{this.props.currentUserNextEvent.timeOfDay}</span>
-                <br/>
-                <span>Location: {this.props.currentUserNextEvent.location}</span>
+                <Link to={`/groups/${this.props.currentUserNextEvent.groupId}`}><h4>Hosted By: {this.props.currentUserNextEvent.groupName}</h4></Link>
+                <span>{this.props.currentUserNextEvent.datetime}, {this.props.currentUserNextEvent.timeOfDay} @ {this.props.currentUserNextEvent.location}</span>
               </div>
               <div className='content-header-calendar-location'>
                 <div id='home-map' ref={ map => this.mapNode = map}></div>

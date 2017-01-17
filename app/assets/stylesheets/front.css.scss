@@ -131,11 +131,10 @@
 }
 
 .content-header-nextlinkup span {
-    font-size: 14px;
+  font-size: 14px;
+  margin-top: 10px;
+  display: block;
 }
-
-
-
 
 .content-header-nextlinkup {
   width: 650px;
@@ -149,7 +148,8 @@
 
 
 .content-header-nextlinkup h3 {
-  font-size: 20px;
+  font-size: 22px;
+  margin-bottom: 5px;
 }
 
 .content-header-nextlinkup h3:hover {
@@ -157,6 +157,18 @@
 }
 
 .content-header-nextlinkup h3:active {
+  color: rgba(243, 216, 111, 1);
+}
+
+.content-header-nextlinkup h4 {
+  font-size: 16px;
+}
+
+.content-header-nextlinkup h4:hover {
+  color: rgba(243, 216, 111, .7);
+}
+
+.content-header-nextlinkup h4:active {
   color: rgba(243, 216, 111, 1);
 }
 
