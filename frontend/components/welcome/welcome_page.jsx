@@ -6,7 +6,7 @@ const WelcomePage = (props) => (
   <div>
     <div className="video-wrapper">
       <video autoPlay muted loop>
-        <source src={window.assets.welcomeVideo} type="video/mp4"/>
+        <source src="https://s3.amazonaws.com/linkup-pro/users/profile_photos/000/000/169/original/welcome_video.mp4" type="video/mp4"/>
       </video>
     </div>
     <div className='explore'>
