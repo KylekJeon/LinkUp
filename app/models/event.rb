@@ -28,4 +28,8 @@ class Event < ActiveRecord::Base
     events
   end
 
+
+  def get_name
+    name
+  end
 end
