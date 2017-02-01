@@ -118,16 +118,16 @@
 
 .video-wrapper {
   width: 100%;
-  height: 600px;
+  height: 450px;
   overflow: hidden;
   position: relative;
 }
 
-.video-wrapper video {
+video {
   width: 100%;
   height: auto;
   position: absolute;
-  top: -450px;
+  top: -200px;
 }
 
 .welcome-footer {
