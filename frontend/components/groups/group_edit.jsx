@@ -77,25 +77,25 @@ class GroupEdit extends React.Component {
                   <img className='pic-1 group-edit-pic' src={window.assets.sportsImage} />
                 </li>
                 <li onClick={this.changeCategory("music")} key={2}>music
-                  <img className='pic-2 group-edit-pic' src={window.assets.musicImage} />
+                  <img className='pic-2 group-edit-pic' src={window.assets.smallMusicImage} />
                 </li>
                 <li onClick={this.changeCategory("health & fitness")} key={3}>health & fitness
                   <img className='pic-3 group-edit-pic' src={window.assets.healthImage} />
                 </li>
                 <li onClick={this.changeCategory("outdoor adventures")} key={4}>outdoor adventures
-                  <img className='pic-4 group-edit-pic' src={window.assets.outdoorImage} />
+                  <img className='pic-4 group-edit-pic' src={window.assets.smallOutdoorImage} />
                 </li>
                 <li onClick={this.changeCategory("arts")} key={5}>arts
-                  <img className='pic-5 group-edit-pic' src={window.assets.artsImage} />
+                  <img className='pic-5 group-edit-pic' src={window.assets.smallArtsImage} />
                 </li>
                 <li onClick={this.changeCategory("social")} key={6}>social
-                  <img className='pic-6 group-edit-pic' src={window.assets.socialImage} />
+                  <img className='pic-6 group-edit-pic' src={window.assets.smallSocialImage} />
                 </li>
                 <li onClick={this.changeCategory("career & business")} key={7}>career & business
                   <img className='pic-7 group-edit-pic' src={window.assets.businessImage} />
                 </li>
                 <li onClick={this.changeCategory("food & drinks")} key={8}>food & drinks
-                  <img className='pic-8 group-edit-pic' src={window.assets.foodImage} />
+                  <img className='pic-8 group-edit-pic' src={window.assets.smallFoodImage} />
                 </li>
               </ul>
             </div>

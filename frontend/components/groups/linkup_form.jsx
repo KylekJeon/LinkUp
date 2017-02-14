@@ -45,7 +45,7 @@ class linkUpForm extends React.Component {
       const li = <li key={idx}>{error}</li>;
       errors.push(li);
     });
-    
+
 
     return (
       <section className='linkup-page'>
@@ -75,25 +75,25 @@ class linkUpForm extends React.Component {
                   <img className='pic-1 linkup-pic' src={window.assets.sportsImage} />
                 </li>
                 <li onClick={this.changeCategory("music")} key={2}>music
-                  <img className='pic-2 linkup-pic' src={window.assets.musicImage} />
+                  <img className='pic-2 linkup-pic' src={window.assets.smallMusicImage} />
                 </li>
                 <li onClick={this.changeCategory("health & fitness")} key={3}>health & fitness
                   <img className='pic-3 linkup-pic' src={window.assets.healthImage} />
                 </li>
                 <li onClick={this.changeCategory("outdoor adventures")} key={4}>outdoor adventures
-                  <img className='pic-4 linkup-pic' src={window.assets.outdoorImage} />
+                  <img className='pic-4 linkup-pic' src={window.assets.smallOutdoorImage} />
                 </li>
                 <li onClick={this.changeCategory("arts")} key={5}>arts
-                  <img className='pic-5 linkup-pic' src={window.assets.artsImage} />
+                  <img className='pic-5 linkup-pic' src={window.assets.smallArtsImage} />
                 </li>
                 <li onClick={this.changeCategory("social")} key={6}>social
-                  <img className='pic-6 linkup-pic' src={window.assets.socialImage} />
+                  <img className='pic-6 linkup-pic' src={window.assets.smallSocialImage} />
                 </li>
                 <li onClick={this.changeCategory("career & business")} key={7}>career & business
                   <img className='pic-7 linkup-pic' src={window.assets.businessImage} />
                 </li>
                 <li onClick={this.changeCategory("food & drinks")} key={8}>food & drinks
-                  <img className='pic-8 linkup-pic' src={window.assets.foodImage} />
+                  <img className='pic-8 linkup-pic' src={window.assets.smallFoodImage} />
                 </li>
               </ul>
             </div>
